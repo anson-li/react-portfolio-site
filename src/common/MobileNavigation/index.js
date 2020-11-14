@@ -20,9 +20,9 @@ class MobileNavigation extends PureComponent {
           <h5>
           <ul className="menu" hidden="true">
             <li><a className="strikethrough menulink" href="/">HOME</a></li>
-            <li><a className="strikethrough menulink" href="resume.html">RESUME</a></li>
-            <li><a className="strikethrough menulink" href="work.html">WORK</a></li>
-            <li><a className="strikethrough menulink" href="contact.html">CONTACT</a></li>
+            <li><a className="strikethrough menulink" href="resume">RESUME</a></li>
+            <li><a className="strikethrough menulink" href="work">WORK</a></li>
+            <li><a className="strikethrough menulink" href="contact">CONTACT</a></li>
           </ul>
           </h5>
         </div>

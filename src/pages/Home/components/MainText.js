@@ -26,7 +26,7 @@ class MainText extends PureComponent {
               id="main-text"
               text="Hey - I'm Anson Li, and I am a software engineer at ATB."
             />
-            <a id="sub-link" href="work.html">
+            <a id="sub-link" href="work">
               <FadeText
                 type="h7"
                 id="sub-text"

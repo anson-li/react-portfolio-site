@@ -179,6 +179,10 @@
   .mid-center {
     top: 10%;
   }
+
+  .top-center {
+    padding-top: 10px;
+  }
   
   .left-top {
     top: 10%;
@@ -307,6 +311,11 @@
     text-align: left;
     font-size: 1.4em;
     line-height: 1.7;  
+  }
+
+  .h4, .h5, .h6, h4, h5, h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   
   @media (max-width: 768px) {
@@ -841,6 +850,12 @@
   /* * * * * * *
   * Other
   * * * * * * */
+
+  #id-light {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
   
   @media (max-width: 1024px) {
     #id-light {
@@ -848,9 +863,11 @@
     }
   }
 
+@import 'bootstrap/dist/css/bootstrap.css';
 @import '../../common/MobileNavigation/style.scss';
 @import '../../common/MainLogo/style.scss';
 @import '../../common/Loader/style.scss';
 @import '../../common/Background/style.scss';
 @import '../../common/Border/style.scss';
 @import '../../pages/Home/style.scss';
+@import './scrollpage.scss';

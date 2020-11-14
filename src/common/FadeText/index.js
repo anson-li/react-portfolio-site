@@ -6,7 +6,6 @@ class FadeText extends PureComponent {
 
   componentDidMount() {
     const targets = '#' + this.props.id + '.ml3 .letter';
-    console.log(targets);
     anime
       .timeline({ loop: this.props.loop })
       .add({

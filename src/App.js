@@ -10,9 +10,9 @@ class App extends PureComponent {
     return (
       <Router>
           <Switch>
-              <Route path="/" component={Home} />
               <Route path="/work" component={Work} />
               <Route path="/resume" component={Resume} />
+              <Route path="/" component={Home} />
           </Switch>
       </Router>
     );

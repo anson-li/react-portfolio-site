@@ -9,17 +9,15 @@ import ThreeSphere from '../../common/ThreeSphere';
 import MainText from './components/MainText';
 
 class Home extends PureComponent {
-
-  componentDidMount() {
-  }
-
   render() {
     return (
-      <div>
+      <div id="main-page">
         <Loader />
         <Background />
         <div className="fixed">
-          <Border />
+          <Border 
+            scroll={false}
+          />
           <TopNavigation />
           <MobileNavigation />
           <ThreeSphere />
