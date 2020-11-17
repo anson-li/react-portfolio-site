@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class Border extends PureComponent {
   render() {
@@ -10,9 +11,11 @@ class Border extends PureComponent {
         <div id="top">
         { this.props.scroll ? (
             <div className="col-md-12 top-center hidden-xs">
-              <h5 className="connect"><a className="strikethrough" href="resume">Resume</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <a className="strikethrough"  href="work" >Work</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <a className="strikethrough"  href="contact">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
+              <h5 className="connect">
+                <Link to={'/resume'} className="strikethrough top-item" href="resume">Resume</Link>
+                <Link to={'/work'} className="strikethrough top-item">Work</Link>
+                <Link to={'/contact'} className="strikethrough">Contact</Link>
+              </h5>
           </div>
           ) : null
         }

@@ -16,6 +16,8 @@ import TextHeader from '../../common/TextFormatter/TextHeader';
 import TextBody from '../../common/TextFormatter/TextBody';
 import TextList from '../../common/TextFormatter/TextList';
 
+import './style.scss';
+
 class Resume extends PureComponent {
   componentDidMount() {
     new WOW.WOW({
@@ -44,7 +46,7 @@ class Resume extends PureComponent {
                 <div className="center-sm">
                   <h2 className="scroll-title">
                     Anson Li
-                    <a href="../../web/assets/resume_ansonli.pdf"><img className="download-img" src={DownloadIcon} alt="Download the resume" /></a>
+                    <a href="../../web/assets/resume_ansonli.pdf" download><img className="download-img" src={DownloadIcon} alt="Download the resume" /></a>
                   </h2>
                   <div className="col-md-12">
                     <img className="line-break" src={LineBreak} alt="Line separator"/>
@@ -92,7 +94,7 @@ class Resume extends PureComponent {
                 <TextSection>
                   <TextHeader text="Work Experience" />
                   <TextBody>
-                    <span className="b">Team Gateway - Software Developer</span>, Questionmark Computing Ltd. || Edmonton, AB<br />
+                    <b>Team Gateway - Software Developer</b>, Questionmark Computing Ltd. || Edmonton, AB<br />
                     May 2017 ‐ Now
                     <TextList 
                       items = {[
@@ -103,7 +105,7 @@ class Resume extends PureComponent {
                       ]}
                     />
                     <br /><br />
-                    <span className="b">Team Gateway - Junior Developer</span>, Questionmark Computing Ltd. || Edmonton, AB<br />
+                    <b>Team Gateway - Junior Developer</b>, Questionmark Computing Ltd. || Edmonton, AB<br />
                     September ‐ December 2016
                     <TextList 
                       items = {[
@@ -114,7 +116,7 @@ class Resume extends PureComponent {
                       ]}
                     />
                     <br /><br />
-                    <span className="b">Full Stack Developer</span>, Crude Quality Inc. || Edmonton, AB<br />
+                    <b>Full Stack Developer</b>, Crude Quality Inc. || Edmonton, AB<br />
                     May ‐ September 2016
                     <TextList 
                       items = {[
@@ -125,7 +127,7 @@ class Resume extends PureComponent {
                       ]}
                     />
                     <br /><br />
-                    <span className="b">Software Developer</span>, Alberta Environment and Parks || Edmonton, AB<br />
+                    <b>Software Developer</b>, Alberta Environment and Parks || Edmonton, AB<br />
                     January ‐ August 2015
                     <TextList
                       items = {[
@@ -140,7 +142,7 @@ class Resume extends PureComponent {
                 <TextSection bottomSpacer={false} bottomPadding>
                   <TextHeader text="Software Experience" />
                   <TextBody>
-                    <span className="b">C Programming</span>
+                    <b>C Programming</b>
                     <TextList
                       items = {[
                         'Developed process monitoring software for Linux‐based systems',
@@ -148,14 +150,14 @@ class Resume extends PureComponent {
                       ]}
                     />
                     <br />
-                    <span className="b">Ruby / Ruby on Rails:</span>
+                    <b>Ruby / Ruby on Rails:</b>
                     <TextList
                       items = {[
                         'Implemented RoR framework in developing a website designed for statistics analysis and dynamic visual representation',
                       ]}
                     />
                     <br />
-                    <span className="b">Java / Android</span>
+                    <b>Java / Android</b>
                     <TextList
                       items = {[
                         'Developed an android application for trading cards',
@@ -163,7 +165,7 @@ class Resume extends PureComponent {
                       ]}
                     />
                     <br />
-                    <span className="b">Full Stack Development</span>
+                    <b>Full Stack Development</b>
                     <TextList
                       items = {[
                         'Developed AlbertaMES in MEAN, a heuristics‐driven web application for environmental models',
@@ -171,7 +173,7 @@ class Resume extends PureComponent {
                       ]}
                     />
                     <br />
-                    <span className="b">Front‐End Development</span>
+                    <b>Front‐End Development</b>
                     <TextList
                       items = {[
                         'Developed and sold various websites for customers',
@@ -179,7 +181,7 @@ class Resume extends PureComponent {
                       ]}
                     />
                     <br />
-                    <span className="b">Back‐End Development</span>
+                    <b>Back‐End Development</b>
                     <TextList
                       items = {[
                         'Developed backend structures and integrated them for AlbertaMES',
@@ -187,7 +189,7 @@ class Resume extends PureComponent {
                       ]}
                     />
                     <br />
-                    <span className="b">Other Work</span>
+                    <b>Other Work</b>
                     <TextList
                       items = {[
                         'Expertise in Microsoft products including Excel, Word, Access, PowerPoint',
