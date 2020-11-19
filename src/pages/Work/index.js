@@ -71,7 +71,7 @@ class Work extends PureComponent {
                     <div class="col-md-6 no-padding">
                       <div class="spacer-xs"></div>
                       <p>
-                        <a href="questionmark.html" class="btn">View case study</a>
+                        <a href="/questionmark" class="btn">View case study</a>
                       </p>
                       <div class="spacer-xs"></div>
                     </div>
@@ -107,7 +107,7 @@ class Work extends PureComponent {
                     <div class="col-md-6 no-padding">
                       <div class="spacer-xs"></div>
                       <p>
-                        <a href="crudemonitor.html" class="btn">View case study</a>
+                        <a href="/crudemonitor" class="btn">View case study</a>
                       </p>
                       <div class="spacer-xs"></div>
                     </div>
@@ -142,7 +142,7 @@ class Work extends PureComponent {
                     <div class="col-md-6 no-padding">
                       <div class="spacer-xs"></div>
                       <p>
-                        <a href="albertames.html" class="btn">View case study</a>
+                        <a href="/albertames" class="btn">View case study</a>
                       </p>
                       <div class="spacer-xs"></div>
                     </div>
@@ -177,7 +177,7 @@ class Work extends PureComponent {
                     <div class="col-md-6 no-padding">
                       <div class="spacer-xs"></div>
                       <p>
-                        <a href="dailyui.html" class="btn">View case study</a>
+                        <a href="/dailyui" class="btn">View case study</a>
                       </p>
                       <div class="spacer-xs"></div>
                     </div>
@@ -212,7 +212,7 @@ class Work extends PureComponent {
                     <div class="col-md-6 no-padding">
                       <div class="spacer-xs"></div>
                       <p>
-                        <a href="sscte.html" class="btn">View case study</a>
+                        <a href="/sscte" class="btn">View case study</a>
                       </p>
                       <div class="spacer-xs"></div>
                     </div>
@@ -247,7 +247,7 @@ class Work extends PureComponent {
                     <div class="col-md-6 no-padding">
                       <div class="spacer-xs"></div>
                       <p>
-                        <a href="teamaqua.html" class="btn">View case study</a>
+                        <a href="/teamaqua" class="btn">View case study</a>
                       </p>
                       <div class="spacer-xs"></div>
                     </div>

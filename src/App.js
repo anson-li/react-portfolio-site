@@ -5,12 +5,14 @@ import Home from './pages/Home';
 import Work from './pages/Work';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
+import Questionmark from './pages/Questionmark';
 
 class App extends PureComponent {
   render() {
     return (
       <Router>
           <Switch>
+              <Route path="/questionmark" component={Questionmark} />
               <Route path="/work" component={Work} />
               <Route path="/resume" component={Resume} />
               <Route path="/contact" component={Contact} />
