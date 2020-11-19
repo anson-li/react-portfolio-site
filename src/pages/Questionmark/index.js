@@ -1,6 +1,7 @@
 
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import Loader from '../../common/Loader';
 import MobileNavigation from '../../common/MobileNavigation';
@@ -46,32 +47,32 @@ class Questionmark extends PureComponent {
               <div class="spacer-xs"></div>
               <br />
 
-              <div class="col-md-12">
-                <br /><br />
-                <div class="col-md-3 wow fadeIn" data-wow-duration="1s">
-                  <p class="center-sm paddingtop-0">
-                    <span class="b">ERA ++</span><br /><br />
-                    2016 - 2019
-                  </p>
-                </div><div class="col-md-3 wow fadeIn" data-wow-duration="1.5s">
-                  <p class="center-sm paddingtop-0">
-                    <br class="visible-xs" />
-                    <span class="b">SKILLS ++</span><br /><br />
-                    Full stack<br />
-                    Agile<br />
-                    API Development
-                  </p>
-                </div><div class="col-md-3 wow fadeIn" data-wow-duration="2s">
-                  <p class="center-sm paddingtop-0">
-                    <br class="visible-xs" />
-                    <span class="b">TECHNOLOGY ++</span><br /><br />
-                    Drupal . PHP<br />
-                    Powershell<br />
-                    JQuery<br />
-                    <br class="visible-xs" />
-                  </p>
-                </div>
-              </div>
+              <Container>
+                <Row>
+                  <Col data-wow-delay="1s">
+                      <p class="center-sm paddingtop-0">
+                        <span class="b">ERA ++</span><br /><br />
+                        2016 - 2019
+                      </p>
+                  </Col>
+                  <Col data-wow-delay="1.5s">
+                    <p class="center-sm paddingtop-0">
+                      <span class="b">SKILLS ++</span><br /><br />
+                      Full stack<br />
+                      Agile<br />
+                      API Development
+                    </p>
+                  </Col>
+                  <Col data-wow-delay="2s">
+                    <p class="center-sm paddingtop-0">
+                      <span class="b">TECHNOLOGY ++</span><br /><br />
+                      Drupal . PHP<br />
+                      Powershell<br />
+                      JQuery<br />
+                    </p>
+                  </Col>
+                </Row>
+              </Container>
 
               <div class="col-md-12 wow fadeIn">
                 <div class="spacer-xs"></div>
@@ -125,7 +126,7 @@ class Questionmark extends PureComponent {
                 </div>
                 <div class="wow fadeIn">
                   <p class="serif">Next Work →</p>
-                  <h3><a class="bigstrike" href="crudemonitor">Crude Monitor</a></h3>
+                  <h3><a class="bigstrike" href="/crudemonitor">Crude Monitor</a></h3>
                 </div>
                 <br /><br /><br /><br /><br />
                 </div>
