@@ -1,4 +1,3 @@
-
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -9,9 +8,9 @@ import MainLogo from '../../common/MainLogo';
 import Border from '../../common/Border';
 
 import LineBreak from '../../web/assets/line-break.png';
-import BackgroundSSCTE from '../../web/assets/bg-sscte.png';
+import BackgroundAlbertaMES from '../../web/assets/bg-albertames.png';
 
-class SSCTE extends PureComponent {
+class WorkTemplate extends PureComponent {
   componentDidMount() {
     new WOW.WOW({
       boxClass: 'wow',
@@ -35,13 +34,13 @@ class SSCTE extends PureComponent {
           <div className="main-container">
             <div id="scrollContainer" className="flex-container container ">
               <div className="hide-under col-md-12 left-top">
-              <img class="bg-img" src={BackgroundSSCTE} alt="Background" />
+              {this.props.background}
               <div class="horizontal"><p>← Let's continue</p></div>
               <div class="spacer-sm"></div>
               <div class="center-sm">
-                <h2 class="scroll-title">SSCTE</h2>
+                <h2 class="scroll-title">AlbertaMES</h2>
                 <div class="col-md-12">
-                <img class="line-break" src={LineBreak} alt="Line break" />
+                  <img class="line-break" src={LineBreak} alt="Line break" />
                 </div>
               </div>
               <div class="spacer-xs"></div>
@@ -52,24 +51,24 @@ class SSCTE extends PureComponent {
                   <Col data-wow-delay="1s">
                     <p class="center-sm paddingtop-0">
                       <span class="b">ERA ++</span><br /><br />
-                      Late 2015
+                      2015
                     </p>
                   </Col>
                   <Col data-wow-delay="1s">
-                    <p class="center-sm paddingtop-0">
-                      <span class="b">SKILLS ++</span><br /><br />
-                      Project development<br />
-                      Android <br />
-                      UI . UX
+                  <p class="center-sm paddingtop-0">
+                    <span class="b">SKILLS ++</span><br /><br />
+                      Fullstack Development<br />
+                      GIS Development<br />
+                      MVC
                     </p>
                   </Col>
                   <Col data-wow-delay="1s">
-                    <p class="center-sm paddingtop-0">
-                      <span class="b">TECHNOLOGY ++</span><br /><br />
-                      Android Studio<br />
-                      Sketchapp<br />
-                      Slack
-                    </p>
+                  <p class="center-sm paddingtop-0">
+                    <span class="b">TECHNOLOGY ++</span><br /><br />
+                    MVC . jquery<br />
+                    arcgis api<br />
+                    d3.js<br />
+                  </p>
                   </Col>
                 </Row>
               </Container>
@@ -89,9 +88,9 @@ class SSCTE extends PureComponent {
                     <br /><br />
                     <div class="col-md-6">
                       <p>
-                        At the University of Alberta, my team was required to design and produce an android application that provided a single key feature – to allow the trading and borrowing of items. This product served as a first foray into product development, as well as offering a chance to develop management and leadership skills.
+                        AlbertaMES is a heuristics-based web application to filter and isolate projects, models and stations related to environmental care. I was signed on as the primary developer of the application, which was developed over the course of 8 months. 
                         <br /><br />
-                        <a href="https://github.com/CMPUT301F15T07/TradingApp" class="btn">Take a peek</a>
+                        <a href="http://www.blog.ansonli.ca/index.php/2016/01/04/35/" class="btn">Take a peek</a>
                       </p>
                       <br /><br /><br />
                     </div>
@@ -103,22 +102,21 @@ class SSCTE extends PureComponent {
                 </div>
                 <div class="wow fadeIn">
                   <div class="col-md-12 no-padding">
-                    <h3 class="center-sm paddingtop-0">Initial Design</h3>
+                    <h3 class="center-sm paddingtop-0">Overview</h3>
                     <br /><br />
                     <div class="col-md-3">
-                    <div class="box orange"><p>#FFB86F</p></div>
+                    <div class="box dark-blue"><p>#2C3D51</p></div>
                     &nbsp;&nbsp;&nbsp;
-                    <div class="box dark-pink"><p>#8E3B46</p></div>
+                    <div class="box green"><p>#81B175</p></div>
                     &nbsp;&nbsp;&nbsp;
-                    <div class="box light-pink"><p>#CF9295</p></div>
+                    <div class="box white"><p>#FFFFFF</p></div>
                     </div>
                     <div class="col-md-6">
                     <div class="spacer-sm hidden-md hidden-lg"></div>
                     <p>
-                      SSCTE served as an introductory step into the world of UX design for myself, as well as a valuable insight into Android design. 
+                      We used ArcGIS API for Javascript to develop this technology, alongside other supporting technologies such as MVC, JQuery and other libraries.
                       <br /><br />
-                      The artboards were designed using Sketch and Photoshop CS6. The design process took over four weeks, with extensive storyboarding and soft prototyping with the help of applications such as Sketchapp and Principle.
-                      <br /><br />
+                      Additionally, our team used a collection of software development methodologies, such as software requirements elicitations and post-mortems, to enhance both the quality of the team’s work as well as the team itself.
                     </p>
                     <br /><br /><br />
                     </div>
@@ -129,14 +127,16 @@ class SSCTE extends PureComponent {
                   <br /><br /><br />
                 </div>
                 <div class="wow fadeIn">
-                  <h3 class="center-sm paddingtop-0">Development</h3>
+                  <h3 class="center-sm paddingtop-0">Reflection</h3>
                   <br /><br />
                   <div class="col-md-12 no-padding">
                     <div class="col-md-6">
                     <p>
-                      SSCTE was later developed in Android Studio, over the course of several months.
+                      This project served as my first foray into professional software experience. I learned many facets of work life that are invaluable today; both with regards to technical and soft skills.
                       <br /><br />
-                      In addition to serving as my strongest experience in Android, this project helped solidify my skills in project management - a key skill that proved invaluable in future projects.
+                      Many of the skills that are developed at this stage, including development frameworks and UX, were later explored and reintegrated into future projects.
+                      <br /><br />
+                      This project was later integrated into the workflow of the Government of Alberta, and is currently under further development.
                       <br /><br /><br />
                     </p>
                     </div>
@@ -148,7 +148,7 @@ class SSCTE extends PureComponent {
                 </div>
                 <div class="wow fadeIn">
                   <p class="serif">Next Work →</p>
-                  <h3><a class="bigstrike" href="/teamaqua">Team Aqua - Ruby</a></h3>
+                  <h3><a class="bigstrike" href="/dailyui">#DailyUI</a></h3>
                 </div>
                 <div class="spacer-sm"></div>
               </div>
@@ -163,8 +163,8 @@ class SSCTE extends PureComponent {
         </div>
       </div>
     </div>
-    )
+    );
   }
 }
 
-export default SSCTE;
+export default WorkTemplate;

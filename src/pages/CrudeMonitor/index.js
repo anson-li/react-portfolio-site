@@ -1,6 +1,7 @@
 
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import Loader from '../../common/Loader';
 import MobileNavigation from '../../common/MobileNavigation';
@@ -46,33 +47,30 @@ class CrudeMonitor extends PureComponent {
                 <div class="spacer-xs"></div>
                 <br />
 
-                <div class="col-md-12">
-                  <br /><br />
-                  <div class="col-md-3 wow fadeIn" data-wow-duration="1s">
-                    <p class="center-sm paddingtop-0">
-                      <span class="b">ERA ++</span><br /><br />
-                      Early 2016
-                    </p>
-                  </div>
-                  <div class="col-md-3 wow fadeIn" data-wow-duration="1.5s">
-                    <p class="center-sm paddingtop-0">
-                      <br class="visible-xs" />
-                      <span class="b">SKILLS ++</span><br /><br />
-                        Fullstack Development<br />
-                        UI . UX<br />
-                        Agile Development
-                    </p>
-                  </div><div class="col-md-3 wow fadeIn" data-wow-duration="2s">
-                    <p class="center-sm paddingtop-0">
-                      <br class="visible-xs" />
+                <Container>
+                  <Row>
+                    <Col data-wow-delay="1s">
+                      <p class="center-sm paddingtop-0">
+                        <span class="b">ERA ++</span><br /><br />
+                        Early 2016
+                      </p>
+                    </Col>
+                    <Col data-wow-delay="1s">
+                      <p class="center-sm paddingtop-0">
+                        <span class="b">SKILLS ++</span><br /><br />
+                          Fullstack Development<br />
+                          UI . UX<br />
+                          Agile Development
+                      </p>
+                    </Col>
+                    <Col data-wow-delay="1s">
                       <span class="b">TECHNOLOGY ++</span><br /><br />
                       PHP<br />
                       HTML . CSS . JS<br />
                       d3.js<br />
-                      <br class="visible-xs" />
-                    </p>
-                  </div>
-                </div>
+                    </Col>
+                  </Row>
+                </Container>
 
                 <div class="col-md-12 wow fadeIn">
                   <div class="spacer-xs"></div>
@@ -140,10 +138,6 @@ class CrudeMonitor extends PureComponent {
                         <br /><br /><br />
                       </p>
                       </div>
-                      <div class="col-md-12">
-                        <img class="img-panel" src={LineBreak} alt="Line break" />
-                        <br /><br /><br /><br /><br />
-                      </div>
                     </div>
                   </div>
                   <div class="center-sm paddingtop-0">
@@ -153,7 +147,7 @@ class CrudeMonitor extends PureComponent {
                   </div>
                   <div class="wow fadeIn">
                   <p class="serif">Next Work →</p>
-                  <h3><a class="bigstrike" href="albertames">AlbertaMES</a></h3>
+                  <h3><a class="bigstrike" href="/albertames">AlbertaMES</a></h3>
                   </div>
                   <div class="spacer-sm"></div>
                 </div>
