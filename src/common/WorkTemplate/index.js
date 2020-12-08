@@ -34,11 +34,11 @@ class WorkTemplate extends PureComponent {
           <div className="main-container">
             <div id="scrollContainer" className="flex-container container ">
               <div className="hide-under col-md-12 left-top">
-              {this.props.background}
+              <img class="bg-img" src={this.props.background} alt="Background" />
               <div class="horizontal"><p>← Let's continue</p></div>
               <div class="spacer-sm"></div>
               <div class="center-sm">
-                <h2 class="scroll-title">AlbertaMES</h2>
+                <h2 class="scroll-title">{this.props.title}</h2>
                 <div class="col-md-12">
                   <img class="line-break" src={LineBreak} alt="Line break" />
                 </div>

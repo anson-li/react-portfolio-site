@@ -28,6 +28,7 @@ class AlbertaMES extends PureComponent {
     return (
       <WorkTemplate
         background={BackgroundAlbertaMES}
+        title="AlbertaMES"
       />
     )
   }
