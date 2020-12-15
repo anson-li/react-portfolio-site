@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import LineBreak from '../../../../web/assets/line-break.png';
+import LineBreak from '../../../../../../web/assets/line-break.png';
 
 class BodySection extends PureComponent {
   render() {

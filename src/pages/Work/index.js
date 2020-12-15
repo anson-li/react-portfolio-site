@@ -40,7 +40,7 @@ class Work extends PureComponent {
           <div className="main-container">
             <div id="scrollContainer" className="flex-container container ">
               <div className="hide-under col-md-12 left-top">
-                <img class="bg-img" src={WorkBackground} />
+                <img class="bg-img" src={WorkBackground} alt="Background"/>
                 <div class="horizontal hidden-xs visible-lg"><p>hello@ansonli.ca</p></div>
                 <div class="spacer-sm"></div>
                 <div class="center-sm">
@@ -66,7 +66,7 @@ class Work extends PureComponent {
                       <div class="spacer-xs"></div>
                     </div>
                   </div>
-                  <img class="img-panel" src={QuestionmarkPanel} />
+                  <img class="img-panel" src={QuestionmarkPanel} alt="Questionmark Panel"/>
                   <div class="col-md-12 no-padding">
                     <div class="col-md-6 no-padding">
                       <div class="spacer-xs"></div>
@@ -102,7 +102,7 @@ class Work extends PureComponent {
                       <div class="spacer-xs"></div>
                     </div>
                   </div>
-                  <img class="img-panel" src={CrudeMonitorPanel} />
+                  <img class="img-panel" src={CrudeMonitorPanel} alt="Crude Monitor Panel"/>
                   <div class="col-md-12 no-padding">
                     <div class="col-md-6 no-padding">
                       <div class="spacer-xs"></div>
@@ -137,7 +137,7 @@ class Work extends PureComponent {
                       <div class="spacer-xs"></div>
                     </div>
                   </div>
-                  <img class="img-panel" src={AlbertaMESPanel} />
+                  <img class="img-panel" src={AlbertaMESPanel} alt="AlbertaMES Panel"/>
                   <div class="col-md-12 no-padding">
                     <div class="col-md-6 no-padding">
                       <div class="spacer-xs"></div>
@@ -172,7 +172,7 @@ class Work extends PureComponent {
                       <div class="spacer-xs"></div>
                     </div>
                   </div>
-                  <img class="img-panel" src={DailyUIPanel} />
+                  <img class="img-panel" src={DailyUIPanel} alt="DailyUI Panel"/>
                   <div class="col-md-12 no-padding">
                     <div class="col-md-6 no-padding">
                       <div class="spacer-xs"></div>
@@ -207,7 +207,7 @@ class Work extends PureComponent {
                       <div class="spacer-xs"></div>
                     </div>
                   </div>
-                  <img class="img-panel" src={SSCTEPanel} />
+                  <img class="img-panel" src={SSCTEPanel} alt="SSCTE Panel"/>
                   <div class="col-md-12 no-padding">
                     <div class="col-md-6 no-padding">
                       <div class="spacer-xs"></div>
@@ -242,7 +242,7 @@ class Work extends PureComponent {
                       <div class="spacer-xs"></div><br />
                     </div>
                   </div>
-                  <img class="img-panel" src={TeamAquaPanel} />
+                  <img class="img-panel" src={TeamAquaPanel} alt="Team Aqua Panel"/>
                   <div class="col-md-12 no-padding">
                     <div class="col-md-6 no-padding">
                       <div class="spacer-xs"></div>

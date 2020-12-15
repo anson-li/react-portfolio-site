@@ -2,8 +2,8 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
-import BackgroundAlbertaMES from '../../web/assets/bg-albertames.png';
-import WorkTemplate from '../../common/WorkTemplate';
+import BackgroundAlbertaMES from '../../../web/assets/bg-albertames.png';
+import WorkTemplate from '../common/WorkTemplate';
 
 class AlbertaMES extends PureComponent {
   constructor(props) {

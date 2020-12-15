@@ -3,8 +3,8 @@ import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import BackgroundSSCTE from '../../web/assets/bg-sscte.png';
-import WorkTemplate from '../../common/WorkTemplate';
+import BackgroundSSCTE from '../../../web/assets/bg-sscte.png';
+import WorkTemplate from '../common/WorkTemplate';
 
 class SSCTE extends PureComponent {
   constructor(props) {

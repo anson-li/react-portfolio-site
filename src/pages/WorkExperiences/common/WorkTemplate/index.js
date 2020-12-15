@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 
-import Loader from '../../common/Loader';
-import MobileNavigation from '../../common/MobileNavigation';
-import MainLogo from '../../common/MainLogo';
-import Border from '../../common/Border';
+import Loader from '../../../../common/Loader';
+import MobileNavigation from '../../../../common/MobileNavigation';
+import MainLogo from '../../../../common/MainLogo';
+import Border from '../../../../common/Border';
 import BodySection from './components/BodySection';
 
-import LineBreak from '../../web/assets/line-break.png';
+import LineBreak from '../../../../web/assets/line-break.png';
 
 class WorkTemplate extends PureComponent {
   componentDidMount() {
