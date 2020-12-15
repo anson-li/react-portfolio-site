@@ -16,7 +16,7 @@ import QuestionmarkPanel from '../../web/assets/panel-questionmark.png';
 import SSCTEPanel from '../../web/assets/panel-sscte.png';
 import TeamAquaPanel from '../../web/assets/panel-teamaqua.png';
 
-class Work extends PureComponent {
+class WorkList extends PureComponent {
   componentDidMount() {
     new WOW.WOW({
       boxClass: 'wow',
@@ -280,4 +280,4 @@ class Work extends PureComponent {
   }
 }
 
-export default Work;
+export default WorkList;

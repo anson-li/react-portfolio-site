@@ -2,7 +2,7 @@ import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import React, { PureComponent } from 'react';
 
 import Home from './pages/Home';
-import Work from './pages/Work';
+import WorkList from './pages/WorkList';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
 
@@ -24,7 +24,7 @@ class App extends PureComponent {
               <Route path="/sscte" component={SSCTE} />
               <Route path="/crudemonitor" component={CrudeMonitor} />
               <Route path="/questionmark" component={Questionmark} />
-              <Route path="/work" component={Work} />
+              <Route path="/work" component={WorkList} />
               <Route path="/resume" component={Resume} />
               <Route path="/contact" component={Contact} />
               <Route path="/" component={Home} />
