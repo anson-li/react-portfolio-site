@@ -44,7 +44,6 @@ class TeamAqua extends PureComponent {
           </Col>
           <Col>
             <p class="center-sm paddingtop-0">
-                <br class="visible-xs" />
                 <span class="b">TECHNOLOGY ++</span><br /><br />
                 Ruby<br />
                 Gosu<br />
@@ -103,7 +102,7 @@ class TeamAqua extends PureComponent {
     return (
       <WorkTemplate
         background={BackgroundTeamAqua}
-        title="SSCTE"
+        title="Team Aqua"
         section={sections}
         nextTitle="Questionmark"
         nextURL="/questionmark"

@@ -20,7 +20,7 @@ class MainText extends PureComponent {
         <div className="flex-container container ">
           <div className="col-md-12 mid-center">
           <img className="background-dev-dark" src={DarkBackground} alt="Background subfill"/>
-            <div className="spacer-sm hidden-lg"></div>
+            <div className="spacer-sm d-lg-none"></div>
             <FadeText
               type="h1"
               id="main-text"
@@ -39,7 +39,7 @@ class MainText extends PureComponent {
         </div>
         <div className="col-md-12 fixed-bottom">
           <p className="item">
-            <span className="serif wow fadeIn hidden-sm hidden-md visible-lg" data-wow-duration="1s" data-wow-delay="0.5s">hello@ansonli.ca</span>
+            <span className="serif wow fadeIn d-none d-lg-block" data-wow-duration="1s" data-wow-delay="0.5s">hello@ansonli.ca</span>
           </p>
         </div>
       </div>

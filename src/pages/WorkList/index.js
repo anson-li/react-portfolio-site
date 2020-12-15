@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 
 import Loader from '../../common/Loader';
-import MobileNavigation from '../../common/MobileNavigation';
+import Navigation from '../../common/Navigation';
 import MainLogo from '../../common/MainLogo';
 import Border from '../../common/Border';
 
@@ -34,241 +34,241 @@ class WorkList extends PureComponent {
         <div id="fixed-wrapper" className="fixed-wrapper">
           <div className="fixed-header">
             <Border />
-            <MobileNavigation />
+            <Navigation scroll />
             <MainLogo />
           </div>
           <div className="main-container">
             <div id="scrollContainer" className="flex-container container ">
               <div className="hide-under col-md-12 left-top">
-                <img class="bg-img" src={WorkBackground} alt="Background"/>
-                <div class="horizontal hidden-xs visible-lg"><p>hello@ansonli.ca</p></div>
-                <div class="spacer-sm"></div>
-                <div class="center-sm">
-                  <h2 class="scroll-title">Projects</h2>
-                  <div class="col-md-12">
-                    <img class="line-break" src={LineBreak} alt="Line break"/>
+                <img className="bg-img" src={WorkBackground} alt="Background"/>
+                <div className="horizontal d-none d-sm-block"><p>hello@ansonli.ca</p></div>
+                <div className="spacer-sm"></div>
+                <div className="center-sm">
+                  <h2 className="scroll-title">Projects</h2>
+                  <div className="col-md-12">
+                    <img className="line-break" src={LineBreak} alt="Line break"/>
                   </div>
                 </div>
-                <div class="spacer-xs"></div>
+                <div className="spacer-xs"></div>
                 <br />
 
-                <div class="col-md-12">
+                <div className="col-md-12">
 
-                <div class="wow fadeIn">
+                <div className="wow fadeIn">
                   <h3>Questionmark</h3>
                   <br />
 
-                  <div class="col-md-12 no-padding">
-                    <div class="col-md-6 no-padding">
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
                       <p>
                         Questionmark creates assessment technologies. These are tools that primarily deal with building technologies that involve assessments through their lifecycle - from creation to assessing to results. I was signed on to build a key component of their technology - their Learning Tools Interoperability tool - as well as aid in developing their main software in Drupal.
                       </p>
-                      <div class="spacer-xs"></div>
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
-                  <img class="img-panel" src={QuestionmarkPanel} alt="Questionmark Panel"/>
-                  <div class="col-md-12 no-padding">
-                    <div class="col-md-6 no-padding">
-                      <div class="spacer-xs"></div>
+                  <img className="img-panel" src={QuestionmarkPanel} alt="Questionmark Panel"/>
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
+                      <div className="spacer-xs"></div>
                       <p>
-                        <a href="/questionmark" class="btn">View case study</a>
+                        <a href="/questionmark" className="btn">View case study</a>
                       </p>
-                      <div class="spacer-xs"></div>
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
-                  <div class="col-md-12 no-padding">
-                    <div class="visible-xs">
-                      <div class="spacer-xs"></div>
+                  <div className="col-md-12 no-padding">
+                    <div className="visible-xs">
+                      <div className="spacer-xs"></div>
                     </div>
-                    <div class="center-sm paddingtop-0">
-                      <img class="line-break" src={LineBreak} alt="Line break"/>
+                    <div className="center-sm paddingtop-0">
+                      <img className="line-break" src={LineBreak} alt="Line break"/>
                     </div>
-                    <div class="spacer-xs"></div>
-                    <div class="visible-xs">
-                      <div class="spacer-xs"></div>
+                    <div className="spacer-xs"></div>
+                    <div className="visible-xs">
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
                 </div>
 
-                <div class="wow fadeIn">
+                <div className="wow fadeIn">
                   <h3>Crude Monitor</h3>
                   <br />
 
-                  <div class="col-md-12 no-padding">
-                    <div class="col-md-6 no-padding">
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
                       <p>
                         CQI is a Canadian-based company which specialises in monitoring the quality of North American crude oil. They had tasked me with upgrading their primary application, Crude Monitor, to fit the needs and demands of today's generation.
                       </p>
-                      <div class="spacer-xs"></div>
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
-                  <img class="img-panel" src={CrudeMonitorPanel} alt="Crude Monitor Panel"/>
-                  <div class="col-md-12 no-padding">
-                    <div class="col-md-6 no-padding">
-                      <div class="spacer-xs"></div>
+                  <img className="img-panel" src={CrudeMonitorPanel} alt="Crude Monitor Panel"/>
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
+                      <div className="spacer-xs"></div>
                       <p>
-                        <a href="/crudemonitor" class="btn">View case study</a>
+                        <a href="/crudemonitor" className="btn">View case study</a>
                       </p>
-                      <div class="spacer-xs"></div>
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
-                  <div class="col-md-12 no-padding">
-                    <div class="visible-xs">
-                      <div class="spacer-xs"></div>
+                  <div className="col-md-12 no-padding">
+                    <div className="visible-xs">
+                      <div className="spacer-xs"></div>
                     </div>
-                    <div class="center-sm paddingtop-0">
-                      <img class="line-break" src={LineBreak} alt="Line break"/>
+                    <div className="center-sm paddingtop-0">
+                      <img className="line-break" src={LineBreak} alt="Line break"/>
                     </div>
-                    <div class="spacer-xs"></div>
-                    <div class="visible-xs">
-                      <div class="spacer-xs"></div>
+                    <div className="spacer-xs"></div>
+                    <div className="visible-xs">
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
                 </div>
 
-                <div class="wow fadeIn">
+                <div className="wow fadeIn">
                   <h3>AlbertaMES</h3>
                   <br />
-                  <div class="col-md-12 no-padding">
-                    <div class="col-md-6 no-padding">
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
                       <p>
                         AlbertaMES is a heuristics-based web application to filter and isolate projects, models and stations associated with Alberta Environment and Parks. I was signed on as the primary developer of the application, which was developed over the course of 8 months.
                       </p>
-                      <div class="spacer-xs"></div>
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
-                  <img class="img-panel" src={AlbertaMESPanel} alt="AlbertaMES Panel"/>
-                  <div class="col-md-12 no-padding">
-                    <div class="col-md-6 no-padding">
-                      <div class="spacer-xs"></div>
+                  <img className="img-panel" src={AlbertaMESPanel} alt="AlbertaMES Panel"/>
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
+                      <div className="spacer-xs"></div>
                       <p>
-                        <a href="/albertames" class="btn">View case study</a>
+                        <a href="/albertames" className="btn">View case study</a>
                       </p>
-                      <div class="spacer-xs"></div>
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
-                  <div class="col-md-12 no-padding">
-                    <div class="visible-xs">
-                      <div class="spacer-xs"></div>
+                  <div className="col-md-12 no-padding">
+                    <div className="visible-xs">
+                      <div className="spacer-xs"></div>
                     </div>
-                    <div class="center-sm paddingtop-0">
-                      <img class="line-break" src={LineBreak} alt="Line break"/>
+                    <div className="center-sm paddingtop-0">
+                      <img className="line-break" src={LineBreak} alt="Line break"/>
                     </div>
-                    <div class="spacer-xs"></div>
-                    <div class="visible-xs">
-                      <div class="spacer-xs"></div>
+                    <div className="spacer-xs"></div>
+                    <div className="visible-xs">
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
                 </div>
 
-                <div class="wow fadeIn">
+                <div className="wow fadeIn">
                   <h3>#DailyUI</h3>
                   <br />
-                  <div class="col-md-12 no-padding">
-                    <div class="col-md-6 no-padding">
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
                       <p>
                         DailyUI is, as the name suggests, a daily exploration into UX and UI. For 100 days, UI and UX elements were designed and created for the creative community. 
                       </p>
-                      <div class="spacer-xs"></div>
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
-                  <img class="img-panel" src={DailyUIPanel} alt="DailyUI Panel"/>
-                  <div class="col-md-12 no-padding">
-                    <div class="col-md-6 no-padding">
-                      <div class="spacer-xs"></div>
+                  <img className="img-panel" src={DailyUIPanel} alt="DailyUI Panel"/>
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
+                      <div className="spacer-xs"></div>
                       <p>
-                        <a href="/dailyui" class="btn">View case study</a>
+                        <a href="/dailyui" className="btn">View case study</a>
                       </p>
-                      <div class="spacer-xs"></div>
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
-                  <div class="col-md-12 no-padding">
-                    <div class="visible-xs">
-                      <div class="spacer-xs"></div>
+                  <div className="col-md-12 no-padding">
+                    <div className="visible-xs">
+                      <div className="spacer-xs"></div>
                     </div>
-                    <div class="center-sm paddingtop-0">
-                      <img class="line-break" src={LineBreak} alt="Line break"/>
+                    <div className="center-sm paddingtop-0">
+                      <img className="line-break" src={LineBreak} alt="Line break"/>
                     </div>
-                    <div class="spacer-xs"></div>
-                    <div class="visible-xs">
-                      <div class="spacer-xs"></div>
+                    <div className="spacer-xs"></div>
+                    <div className="visible-xs">
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
                 </div>
 
-                <div class="wow fadeIn">
+                <div className="wow fadeIn">
                   <h3>SSCTE</h3>
                   <br />
-                  <div class="col-md-12 no-padding">
-                    <div class="col-md-6 no-padding">
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
                       <p>
                         SSCTE is an android application that's designed for collecting and trading cards. It primarily served as an exploration of common UX and UI design behavior for Android technologies.
                       </p>
-                      <div class="spacer-xs"></div>
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
-                  <img class="img-panel" src={SSCTEPanel} alt="SSCTE Panel"/>
-                  <div class="col-md-12 no-padding">
-                    <div class="col-md-6 no-padding">
-                      <div class="spacer-xs"></div>
+                  <img className="img-panel" src={SSCTEPanel} alt="SSCTE Panel"/>
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
+                      <div className="spacer-xs"></div>
                       <p>
-                        <a href="/sscte" class="btn">View case study</a>
+                        <a href="/sscte" className="btn">View case study</a>
                       </p>
-                      <div class="spacer-xs"></div>
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
-                  <div class="col-md-12 no-padding">
-                    <div class="visible-xs">
-                      <div class="spacer-xs"></div>
+                  <div className="col-md-12 no-padding">
+                    <div className="visible-xs">
+                      <div className="spacer-xs"></div>
                     </div>
-                    <div class="center-sm paddingtop-0">
-                      <img class="line-break" src={LineBreak} alt="Line break"/>
+                    <div className="center-sm paddingtop-0">
+                      <img className="line-break" src={LineBreak} alt="Line break"/>
                     </div>
-                    <div class="spacer-xs"></div>
-                    <div class="visible-xs">
-                      <div class="spacer-xs"></div>
+                    <div className="spacer-xs"></div>
+                    <div className="visible-xs">
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
                 </div>
 
-                <div class="wow fadeIn">
+                <div className="wow fadeIn">
                   <h3>Team Aqua</h3>
                   <br />
-                  <div class="col-md-12 no-padding">
-                    <div class="col-md-6 no-padding">
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
                       <p>
                         Team Aqua is a development firm, created with the purpose of exploring Ruby development and design. Projects developed under this team include monitoring systems, libraries, and UI. 
                       </p>
-                      <div class="spacer-xs"></div><br />
+                      <div className="spacer-xs"></div><br />
                     </div>
                   </div>
-                  <img class="img-panel" src={TeamAquaPanel} alt="Team Aqua Panel"/>
-                  <div class="col-md-12 no-padding">
-                    <div class="col-md-6 no-padding">
-                      <div class="spacer-xs"></div>
+                  <img className="img-panel" src={TeamAquaPanel} alt="Team Aqua Panel"/>
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
+                      <div className="spacer-xs"></div>
                       <p>
-                        <a href="/teamaqua" class="btn">View case study</a>
+                        <a href="/teamaqua" className="btn">View case study</a>
                       </p>
-                      <div class="spacer-xs"></div>
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
-                  <div class="col-md-12 no-padding">
-                    <div class="visible-xs">
-                      <div class="spacer-xs"></div>
+                  <div className="col-md-12 no-padding">
+                    <div className="visible-xs">
+                      <div className="spacer-xs"></div>
                     </div>
-                    <div class="spacer-xs"></div>
-                    <div class="visible-xs">
-                      <div class="spacer-xs"></div>
+                    <div className="spacer-xs"></div>
+                    <div className="visible-xs">
+                      <div className="spacer-xs"></div>
                     </div>
                   </div>
                 </div>
 
               </div>
             </div>
-            <div class="spacer-sm"></div>
-            <div class="flex-container container">
+            <div className="spacer-sm"></div>
+            <div className="flex-container container">
               <br /><br />
-              <div class="col-md-12 fixed-bottom">
+              <div className="col-md-12 fixed-bottom">
               </div>
             </div>
           </div>

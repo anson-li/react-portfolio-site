@@ -10,7 +10,7 @@ class Border extends PureComponent {
         <div id="right" />
         <div id="top">
         { this.props.scroll ? (
-            <div className="col-md-12 top-center hidden-xs">
+            <div className="col-md-12 top-center d-none d-sm-block">
               <h5 className="connect">
                 <Link to={'/resume'} className="strikethrough top-item" href="resume">Resume</Link>
                 <Link to={'/work'} className="strikethrough top-item">Work</Link>

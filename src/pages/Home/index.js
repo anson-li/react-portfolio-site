@@ -3,8 +3,7 @@ import Loader from '../../common/Loader';
 import Border from '../../common/Border'; 
 import Background from '../../common/Background';
 import MainLogo from '../../common/MainLogo';
-import TopNavigation from '../../common/TopNavigation';
-import MobileNavigation from '../../common/MobileNavigation';
+import Navigation from '../../common/Navigation';
 import ThreeSphere from '../../common/ThreeSphere';
 import MainText from './components/MainText';
 
@@ -18,8 +17,7 @@ class Home extends PureComponent {
           <Border 
             scroll={false}
           />
-          <TopNavigation />
-          <MobileNavigation />
+          <Navigation />
           <ThreeSphere />
           <MainLogo />
           <MainText />

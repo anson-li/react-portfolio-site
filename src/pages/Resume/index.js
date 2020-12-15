@@ -3,7 +3,7 @@ import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import Loader from '../../common/Loader';
-import MobileNavigation from '../../common/MobileNavigation';
+import Navigation from '../../common/Navigation';
 import MainLogo from '../../common/MainLogo';
 import Border from '../../common/Border';
 
@@ -36,7 +36,7 @@ class Resume extends PureComponent {
         <div id="fixed-wrapper" className="fixed-wrapper">
           <div className="fixed-header">
             <Border />
-            <MobileNavigation />
+            <Navigation scroll />
             <MainLogo />
           </div>
           <div className="main-container">
