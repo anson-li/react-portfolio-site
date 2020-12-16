@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import BackgroundQuestionmark from '../../../web/assets/bg-questionmark.png';
+import BackgroundQuestionmark from '../../../web/assets/background/bg-questionmark.png';
 import WorkTemplate from '../common/WorkTemplate';
 
 class Questionmark extends PureComponent {

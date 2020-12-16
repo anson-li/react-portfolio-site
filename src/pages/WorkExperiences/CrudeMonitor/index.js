@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import BackgroundCrudeMonitor from '../../../web/assets/bg-oil.png';
+import BackgroundCrudeMonitor from '../../../web/assets/background/bg-oil.png';
 import WorkTemplate from '../common/WorkTemplate';
 
 class CrudeMonitor extends PureComponent {

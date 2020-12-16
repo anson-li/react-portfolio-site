@@ -7,9 +7,9 @@ import Navigation from '../../common/Navigation';
 import MainLogo from '../../common/MainLogo';
 import Border from '../../common/Border';
 
-import AlbertaBackground from '../../web/assets/bg-alberta.png';
+import AlbertaBackground from '../../web/assets/background/bg-alberta.png';
 import LineBreak from '../../web/assets/line-break.png';
-import DownloadIcon from '../../web/assets/ico-download.png';
+import DownloadIcon from '../../web/assets/icon/ico-download.png';
 
 import TextSection from '../../common/TextFormatter/TextSection';
 import TextHeader from '../../common/TextFormatter/TextHeader';

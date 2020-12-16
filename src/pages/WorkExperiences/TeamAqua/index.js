@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import BackgroundTeamAqua from '../../../web/assets/bg-teamaqua.png';
+import BackgroundTeamAqua from '../../../web/assets/background/bg-teamaqua.png';
 import WorkTemplate from '../common/WorkTemplate';
 
 class TeamAqua extends PureComponent {

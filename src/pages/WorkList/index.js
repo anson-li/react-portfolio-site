@@ -7,14 +7,14 @@ import MainLogo from '../../common/MainLogo';
 import Border from '../../common/Border';
 
 import LineBreak from '../../web/assets/line-break.png';
-import WorkBackground from '../../web/assets/bg-work.png';
+import WorkBackground from '../../web/assets/background/bg-work.png';
 
-import AlbertaMESPanel from '../../web/assets/panel-albertames.png';
-import CrudeMonitorPanel from '../../web/assets/panel-crudemonitor.png';
-import DailyUIPanel from '../../web/assets/panel-dailyui.png';
-import QuestionmarkPanel from '../../web/assets/panel-questionmark.png';
-import SSCTEPanel from '../../web/assets/panel-sscte.png';
-import TeamAquaPanel from '../../web/assets/panel-teamaqua.png';
+import AlbertaMESPanel from '../../web/assets/panel/panel-albertames.png';
+import CrudeMonitorPanel from '../../web/assets/panel/panel-crudemonitor.png';
+import DailyUIPanel from '../../web/assets/panel/panel-dailyui.png';
+import QuestionmarkPanel from '../../web/assets/panel/panel-questionmark.png';
+import SSCTEPanel from '../../web/assets/panel/panel-sscte.png';
+import TeamAquaPanel from '../../web/assets/panel/panel-teamaqua.png';
 
 class WorkList extends PureComponent {
   componentDidMount() {

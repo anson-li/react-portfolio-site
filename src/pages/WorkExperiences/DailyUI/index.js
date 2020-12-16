@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import BackgroundDailyUI from '../../../web/assets/bg-dailyui.png';
+import BackgroundDailyUI from '../../../web/assets/background/bg-dailyui.png';
 import WorkTemplate from '../common/WorkTemplate';
 
 class DailyUI extends PureComponent {

@@ -6,12 +6,12 @@ import Navigation from '../../common/Navigation';
 import MainLogo from '../../common/MainLogo';
 import Border from '../../common/Border';
 
-import AnsonBackground from '../../web/assets/bg-anson.png';
+import AnsonBackground from '../../web/assets/background/bg-anson.png';
 import LineBreak from '../../web/assets/line-break.png';
-import GithubIcon from '../../web/assets/ico-github.png';
-import HoverGithubIcon from '../../web/assets/ico-github-hover.png';
-import LinkedInIcon from '../../web/assets/ico-linkedin.png';
-import HoverLinkedInIcon from '../../web/assets/ico-linkedin-hover.png';
+import GithubIcon from '../../web/assets/icon/ico-github.png';
+import HoverGithubIcon from '../../web/assets/icon/ico-github-hover.png';
+import LinkedInIcon from '../../web/assets/icon/ico-linkedin.png';
+import HoverLinkedInIcon from '../../web/assets/icon/ico-linkedin-hover.png';
 
 class Contact extends PureComponent {
   componentDidMount() {
