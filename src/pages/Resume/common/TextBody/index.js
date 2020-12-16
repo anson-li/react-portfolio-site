@@ -6,7 +6,7 @@ class TextBody extends PureComponent {
       <div>
         <br />
         <p>
-          <span className="wow fadeIn" data-wow-duration="0.5s">
+          <span>
             {this.props.children}
           </span>
         </p>

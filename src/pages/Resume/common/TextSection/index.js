@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import LineBreak from '../../../web/assets/line-break.png';
+import LineBreak from '../../../../web/assets/line-break.png';
 import './style.scss';
 
 class TextSection extends PureComponent {

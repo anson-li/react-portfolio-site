@@ -11,10 +11,10 @@ import AlbertaBackground from '../../web/assets/background/bg-alberta.png';
 import LineBreak from '../../web/assets/line-break.png';
 import DownloadIcon from '../../web/assets/icon/ico-download.png';
 
-import TextSection from '../../common/TextFormatter/TextSection';
-import TextHeader from '../../common/TextFormatter/TextHeader';
-import TextBody from '../../common/TextFormatter/TextBody';
-import TextList from '../../common/TextFormatter/TextList';
+import TextSection from './common/TextSection';
+import TextHeader from './common/TextHeader';
+import TextBody from './common/TextBody';
+import TextList from './common/TextList';
 
 import ResumePDF from '../../web/assets/resume_ansonli.pdf';
 
