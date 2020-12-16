@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
-import DarkBackground from '../../../web/assets/background/bg-index-dev-dark.png';
-import FadeText from '../../../common/FadeText';
+import DarkBackground from '../../../../web/assets/background/bg-index-dev-dark.png';
+import FadeText from '../../../../common/FadeText';
 
 class MainText extends PureComponent {
   componentDidMount() {
