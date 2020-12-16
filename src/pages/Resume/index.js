@@ -16,6 +16,8 @@ import TextHeader from '../../common/TextFormatter/TextHeader';
 import TextBody from '../../common/TextFormatter/TextBody';
 import TextList from '../../common/TextFormatter/TextList';
 
+import ResumePDF from '../../web/assets/resume_ansonli.pdf';
+
 import './style.scss';
 
 class Resume extends PureComponent {
@@ -46,7 +48,7 @@ class Resume extends PureComponent {
                 <div className="center-sm">
                   <h2 className="scroll-title">
                     Anson Li
-                    <a href="../../web/assets/resume_ansonli.pdf" download><img className="download-img" src={DownloadIcon} alt="Download the resume" /></a>
+                    <a href={ResumePDF} download="resume_ansonli.pdf"><img className="download-img" src={DownloadIcon} alt="Download the resume" /></a>
                   </h2>
                   <div className="col-md-12">
                     <img className="line-break" src={LineBreak} alt="Line separator"/>
