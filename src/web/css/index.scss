@@ -57,6 +57,9 @@
     height: 100%;
   } */
   
+  html {
+    font-size: 10px;
+  }
   
   body {
     font-family: upgrade-lights, sans-serif;
@@ -79,15 +82,18 @@
       overflow: auto;
       font-size: 9px;
     }
-  } @media (min-width: 768px) {
+  } 
+  @media (min-width: 768px) {
     body {
       font-size: 11px;
     }
-  } @media (min-width: 1400px) {
+  } 
+  @media (min-width: 1400px) {
     body {
       font-size: 15px;
     }
-  } @media (min-width: 1500px) {
+  } 
+  @media (min-width: 1500px) {
     body {
       font-size: 16px;
     }
@@ -164,6 +170,10 @@
   #sub-text {
     padding-top: 1em;
     font-weight: 400;
+  }
+
+  .connect {
+    font-weight: bold;
   }
   
   .fixed-wrapper {
@@ -289,6 +299,7 @@
   }
   
   h5 {
+    font-weight: 500;
     text-align: center;
     font-size: 1.5em;
     font-weight: 100;
