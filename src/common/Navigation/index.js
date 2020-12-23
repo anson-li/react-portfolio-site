@@ -60,7 +60,8 @@ class Navigation extends PureComponent {
           <h5 class="connect">
             <Link to={'/resume'} className="strikethrough top-item" href="resume">Resume</Link>
             <Link to={'/work'} className="strikethrough top-item">Work</Link>
-            <Link to={'/contact'} className="strikethrough">Contact</Link>
+            <Link to={'/contact'} className="strikethrough top-item">Contact</Link>
+            <Link to={'/projects'} className="strikethrough project">Projects</Link>
           </h5>
         </div>
       );
@@ -83,6 +84,7 @@ class Navigation extends PureComponent {
             <li><a className="strikethrough menulink" href="resume">Resume</a></li>
             <li><a className="strikethrough menulink" href="work">Work</a></li>
             <li><a className="strikethrough menulink" href="contact">Contact</a></li>
+            <li><a className="strikethrough menulink project" href="projects">Projects</a></li>
           </ul>
           </h5>
         </div>

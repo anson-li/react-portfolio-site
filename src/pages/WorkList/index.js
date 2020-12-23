@@ -44,7 +44,7 @@ class WorkList extends PureComponent {
                 <div className="horizontal d-none d-sm-block"><p>hello@ansonli.ca</p></div>
                 <div className="spacer-sm"></div>
                 <div className="center-sm">
-                  <h2 className="scroll-title">Projects</h2>
+                  <h2 className="scroll-title">Work</h2>
                   <div className="col-md-12">
                     <img className="line-break" src={LineBreak} alt="Line break"/>
                   </div>
