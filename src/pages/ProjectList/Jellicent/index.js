@@ -4,7 +4,7 @@ import Border from '../../../common/Border';
 import Background from '../../../common/Background';
 import MainLogo from '../../../common/MainLogo';
 import Navigation from '../../../common/Navigation';
-import ThreeSphere from '../../Home/components/ThreeSphere';
+import JellicentObject from './components/JellicentObject';
 import MainText from '../../Home/components/MainText';
 
 class Jellicent extends PureComponent {
@@ -18,7 +18,7 @@ class Jellicent extends PureComponent {
             scroll={false}
           />
           <Navigation />
-          <ThreeSphere />
+          <JellicentObject />
       </div>
     </div>
     );
