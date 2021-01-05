@@ -14,6 +14,8 @@ import DailyUI from './pages/WorkExperiences/DailyUI';
 import TeamAqua from './pages/WorkExperiences/TeamAqua';
 import AlbertaMES from './pages/WorkExperiences/AlbertaMES';
 
+import WorkExperiences from './pages/WorkExperiences';
+
 import Jellicent from './pages/ProjectList/Jellicent';
 
 class App extends PureComponent {
@@ -21,12 +23,7 @@ class App extends PureComponent {
     return (
       <Router>
           <Switch>
-              <Route path="/albertames" component={AlbertaMES} />
-              <Route path="/teamaqua" component={TeamAqua} />
-              <Route path="/dailyui" component={DailyUI} />
-              <Route path="/sscte" component={SSCTE} />
-              <Route path="/crudemonitor" component={CrudeMonitor} />
-              <Route path="/questionmark" component={Questionmark} />
+              <Route path="/workexp" component={WorkExperiences} /> 
               <Route path="/work" component={WorkList} />
               <Route path="/resume" component={Resume} />
               <Route path="/contact" component={Contact} />

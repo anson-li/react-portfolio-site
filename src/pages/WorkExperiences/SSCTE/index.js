@@ -132,7 +132,7 @@ class SSCTE extends PureComponent {
         title="SSCTE"
         section={sections}
         nextTitle="Team Aqua - Ruby"
-        nextURL="/teamaqua"
+        nextURL="/workexp/teamaqua"
       />
     )
   }

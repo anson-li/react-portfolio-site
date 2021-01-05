@@ -133,7 +133,7 @@ class AlbertaMES extends PureComponent {
         title="AlbertaMES"
         section={sections}
         nextTitle="#DailyUI"
-        nextURL="/dailyui"
+        nextURL="/workexp/dailyui"
       />
     )
   }

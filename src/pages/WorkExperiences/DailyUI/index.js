@@ -35,7 +35,7 @@ class DailyUI extends PureComponent {
         title="#DailyUI"
         section={sections}
         nextTitle="SSCTE - Android"
-        nextURL="/sscte"
+        nextURL="/workexp/sscte"
       />
     )
   }

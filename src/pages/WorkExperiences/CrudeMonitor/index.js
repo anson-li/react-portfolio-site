@@ -132,7 +132,7 @@ class CrudeMonitor extends PureComponent {
         title="Crude Monitor"
         section={sections}
         nextTitle="AlbertaMES"
-        nextURL="/albertames"
+        nextURL="/workexp/albertames"
       />
     )
   }
