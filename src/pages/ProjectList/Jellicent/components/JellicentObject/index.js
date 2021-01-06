@@ -1,20 +1,20 @@
 import React, { PureComponent } from 'react';
 import * as THREE from 'three';
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
+import './style.scss';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass.js';
 
 class JellicentObject extends PureComponent {
-  componentDidMount() {
-    var mouseX = 0, mouseY = 0,
-
-    windowHalfX = window.innerWidth / 2,
+	constructor(props) {
+		super(props);
+		var windowHalfX = window.innerWidth / 2,
     windowHalfY = window.innerHeight / 2,
-    camera, scene, renderer;
+		camera, scene, renderer, composer,
+		renderPass, glitchPass;
 
-    var xDirection = true, yDirection = false;
-
-    init();
-    animate();
-
+		init();
+		
     function init() {
 
       var container;
@@ -22,10 +22,13 @@ class JellicentObject extends PureComponent {
       container = document.createElement('div');
       document.body.appendChild(container);
 
-      camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 0.1, 2000 );
-			camera.position.x = 42;
-			camera.position.y = 55;
-			camera.position.z = -59;
+      camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 2000 );
+			camera.position.x = 26.2;
+			camera.position.y = 38.6;
+			camera.position.z = 23;
+			camera.rotation.x = 0.44;
+			camera.rotation.y = -0.31;
+			camera.rotation.z = -167.14;
 
       scene = new THREE.Scene();
 
@@ -44,116 +47,56 @@ class JellicentObject extends PureComponent {
       renderer.setSize( window.innerWidth, window.innerHeight );
       container.appendChild( renderer.domElement );
 
-      // const objLoader = new OBJLoader();
-			// load a resource
-
-			// scene = new THREE.ObjectLoader().parse( '../../../../../web/assets/scene/jellicent.json' );
 			let jsonObject = require( '../../../../../web/assets/scene/jellicent.json' );
 			scene = new THREE.ObjectLoader().parse(jsonObject);
-			// var loader = new THREE.ObjectLoader();
-			// loader.load('../../../../../web/assets/scene/jellicent.json', function(object) {
-			// 	console.log(object);
-			// 	scene.add(object); // load the object into your scene here
-			// });
+			
+			composer = new EffectComposer( renderer );
+			renderPass = new RenderPass( scene, camera );
+			composer.addPass( renderPass );
 
-			// console.log(scene);
+			glitchPass = new GlitchPass();
+			composer.addPass( glitchPass );
 
-			// const color = 0xFFFFFF;
-			// const intensity = 1;
-			// const light = new THREE.DirectionalLight(color, intensity);
-			// light.position.set(0, 10, 0);
-			// light.target.position.set(-5, 0, 0);
-			// scene.add(light);
-			// scene.add(light.target);
+			window.addEventListener( 'resize', onWindowResize, false );
 
-      document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-      document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-      document.addEventListener( 'touchmove', onDocumentTouchMove, false );
-      window.addEventListener( 'resize', onWindowResize, false );
+			animate();
+		}
 
-    }
-
-    function onWindowResize() {
-      windowHalfX = window.innerWidth / 2;
-      windowHalfY = window.innerHeight / 2;
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize( window.innerWidth, window.innerHeight );
-    }
-
-    function onDocumentMouseMove(event) {
-      mouseX = (event.clientX - windowHalfX) / 2;
-      mouseY = (event.clientY - windowHalfY) / 2;
-    }
-
-    function onDocumentTouchStart( event ) {
-      if ( event.touches.length > 1 ) {
-        event.preventDefault();
-        mouseX = event.touches[ 0 ].pageX - windowHalfX;
-        mouseY = event.touches[ 0 ].pageY - windowHalfY;
-      }
-    }
-
-    function onDocumentTouchMove( event ) {
-      if ( event.touches.length === 1 ) {
-        event.preventDefault();
-        mouseX = event.touches[ 0 ].pageX - windowHalfX;
-        mouseY = event.touches[ 0 ].pageY - windowHalfY;
-      } else {
-        mouseX += 0.05;
-        mouseY -= 0.05;
-      }
-    }
+		function onWindowResize() {
+			windowHalfX = window.innerWidth / 2;
+			windowHalfY = window.innerHeight / 2;
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+		}
 
     function animate() {
+			animateCamera();
       requestAnimationFrame( animate );
-      render();
+      composer.render();
     }
 
-    function render() {
-			console.log(mouseX);
-      if (xDirection) {
-        if (mouseX >= 500) {
-          xDirection = false;
-        } else {
-          mouseX += 0.1;
-        }
-      } else {
-        if (mouseX < -500) {
-          xDirection = true;
-        } else {
-          mouseX -= 0.1;
-        }
-      }
-
-      if (yDirection) {
-        if (mouseY >= 400) {
-          yDirection = false;
-        } else {
-          mouseY += 0.1;
-        }
-      } else {
-        if (mouseY <= -400) {
-          yDirection = true;
-        } else {
-          mouseY -= 0.1;
-        }
+    function animateCamera() {
+			camera.rotation.x -= 0.001;
+			if (camera.rotation.x < -1.3) {
+				camera.rotation.x = 0.8;
 			}
-			
-			console.log(camera.position);
-
-      camera.position.x += ( mouseX - camera.position.x ) * .0015;
-      camera.position.y += ( mouseY - camera.position.y ) * .0015;
-      camera.lookAt( scene.position );
-      camera.rotation.x += 1 * Math.PI / 360;
-      camera.rotation.y += 1 * Math.PI / 360;
-      renderer.render( scene, camera );
-    }
+		}
   }
 
   render() {
     return (
-      <div ref={ref => (this.mount = ref)} />
+			<>
+				<div id="jellicent-details" className="col-4 d-none d-lg-block">
+					<h4 id="jellicent-details-header">
+						Jellicent - #593
+					</h4>
+					<p id="jellicent-details-body">
+						Jellicent is a large jellyfish-like Pokémon whose appearance varies based on gender. Both genders have five tentacles, two of which are long with petal-shaped ends. The remaining three are short and tapered. <br /><br />A male is blue with a short, white crown, and a white, mustache-like collar. Its eyes are red with blue sclerae, and there is one eyelash over each eye. Its long tentacles have white edges, while its short tentacles have white spots. A female is pink with a tall, white crown and a puffy, white collar. Its eyes are blue with red sclerae and surrounded by two eyelashes. Its mouth is red and heart-shaped. The long tentacles have white edges like the male, but the short ones have white frills.
+					</p>
+				</div>
+				<div ref={ref => (this.mount = ref)} />
+			</>
     );
   }
 }
