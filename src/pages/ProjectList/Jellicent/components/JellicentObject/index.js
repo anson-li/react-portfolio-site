@@ -8,9 +8,7 @@ import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass.js';
 class JellicentObject extends PureComponent {
 	constructor(props) {
 		super(props);
-		var windowHalfX = window.innerWidth / 2,
-    windowHalfY = window.innerHeight / 2,
-		camera, scene, renderer, composer,
+		var camera, scene, renderer, composer,
 		renderPass, glitchPass;
 
 		init();
@@ -63,8 +61,6 @@ class JellicentObject extends PureComponent {
 		}
 
 		function onWindowResize() {
-			windowHalfX = window.innerWidth / 2;
-			windowHalfY = window.innerHeight / 2;
 			camera.aspect = window.innerWidth / window.innerHeight;
 			camera.updateProjectionMatrix();
 			renderer.setSize( window.innerWidth, window.innerHeight );
