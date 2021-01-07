@@ -45,22 +45,22 @@ class DailyUI extends PureComponent {
       <Container>
         <Row>
           <Col data-wow-delay="1s">
-            <p class="center-sm paddingtop-0">
-              <span class="b">ERA ++</span><br /><br />
+            <p className="center-sm paddingtop-0">
+              <span className="b">ERA ++</span><br /><br />
               Late 2016
             </p>
           </Col>
           <Col data-wow-delay="1s">
-            <p class="center-sm paddingtop-0">
-              <span class="b">SKILLS ++</span><br /><br />
+            <p className="center-sm paddingtop-0">
+              <span className="b">SKILLS ++</span><br /><br />
               UI . UX<br />
               Animation<br />
               Design
             </p>
           </Col>
           <Col data-wow-delay="1s">
-            <p class="center-sm paddingtop-0">
-              <span class="b">TECHNOLOGY ++</span><br /><br />
+            <p className="center-sm paddingtop-0">
+              <span className="b">TECHNOLOGY ++</span><br /><br />
               Sketchapp<br />
               Principle<br />
               Marvel<br />
@@ -73,16 +73,16 @@ class DailyUI extends PureComponent {
 
   renderProjectDescription() {
     return (
-      <div class="col-md-12">
-        <div class="wow fadeIn">
-          <div class="col-md-12 no-padding">
-            <h3 class="center-sm paddingtop-0">The Project</h3>
+      <div className="col-md-12">
+        <div className="wow fadeIn">
+          <div className="col-md-12 no-padding">
+            <h3 className="center-sm paddingtop-0">The Project</h3>
             <br /><br />
-            <div class="col-md-6">
+            <div className="col-md-6">
               <p>
                 DailyUI is, as the name suggests, a daily exploration into UX and UI. For 100 days, UI and UX elements were designed and created for the creative community. Each day, a new project or requirement is issued. As a designer, it was my goal to identify the best way to convey or provide that feature through design.
                 <br /><br />
-                <a href="http://twitter.com/helloanson" class="btn">Take a peek</a>
+                <a href="http://twitter.com/helloanson" className="btn">Take a peek</a>
               </p>
             </div>
           </div>
@@ -93,11 +93,11 @@ class DailyUI extends PureComponent {
 
   renderProjectDeliverables() {
     return (
-      <div class="wow fadeIn">
-        <div class="col-md-12 no-padding">
-          <h3 class="center-sm paddingtop-0">Deliverables</h3>
+      <div className="wow fadeIn">
+        <div className="col-md-12 no-padding">
+          <h3 className="center-sm paddingtop-0">Deliverables</h3>
           <br /><br />
-          <div class="col-md-6">
+          <div className="col-md-6">
             <p>
               Over the course of several months, I honed my skills in UX development. Through various technologies (primarily Sketch for Mac), I developed a collection of UX inspirations for future projects. 
               <br /><br />

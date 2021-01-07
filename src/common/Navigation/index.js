@@ -57,7 +57,7 @@ class Navigation extends PureComponent {
     if (!this.props.scroll) {
       return (
         <div className="col-md-12 top-center d-none d-sm-block">
-          <h5 class="connect">
+          <h5 className="connect">
             <Link to={'/resume'} className="strikethrough top-item" href="resume">Resume</Link>
             <Link to={'/work'} className="strikethrough top-item">Work</Link>
             <Link to={'/contact'} className="strikethrough top-item">Contact</Link>

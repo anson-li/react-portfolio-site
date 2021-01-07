@@ -30,22 +30,22 @@ class SSCTE extends PureComponent {
       <Container>
         <Row>
           <Col data-wow-delay="1s">
-            <p class="center-sm paddingtop-0">
-              <span class="b">ERA ++</span><br /><br />
+            <p className="center-sm paddingtop-0">
+              <span className="b">ERA ++</span><br /><br />
               Late 2015
             </p>
           </Col>
           <Col data-wow-delay="1s">
-            <p class="center-sm paddingtop-0">
-              <span class="b">SKILLS ++</span><br /><br />
+            <p className="center-sm paddingtop-0">
+              <span className="b">SKILLS ++</span><br /><br />
               Project development<br />
               Android <br />
               UI . UX
             </p>
           </Col>
           <Col data-wow-delay="1s">
-            <p class="center-sm paddingtop-0">
-              <span class="b">TECHNOLOGY ++</span><br /><br />
+            <p className="center-sm paddingtop-0">
+              <span className="b">TECHNOLOGY ++</span><br /><br />
               Android Studio<br />
               Sketchapp<br />
               Slack
@@ -58,16 +58,16 @@ class SSCTE extends PureComponent {
 
   renderProjectDescription() {
     return (
-      <div class="col-md-12">
-        <div class="wow fadeIn">
-          <div class="col-md-12 no-padding">
-            <h3 class="center-sm paddingtop-0">The Project</h3>
+      <div className="col-md-12">
+        <div className="wow fadeIn">
+          <div className="col-md-12 no-padding">
+            <h3 className="center-sm paddingtop-0">The Project</h3>
             <br /><br />
-            <div class="col-md-6">
+            <div className="col-md-6">
               <p>
                 At the University of Alberta, my team was required to design and produce an android application that provided a single key feature – to allow the trading and borrowing of items. This product served as a first foray into product development, as well as offering a chance to develop management and leadership skills.
                 <br /><br />
-                <a href="https://github.com/CMPUT301F15T07/TradingApp" class="btn">Take a peek</a>
+                <a href="https://github.com/CMPUT301F15T07/TradingApp" className="btn">Take a peek</a>
               </p>
             </div>
           </div>
@@ -78,18 +78,18 @@ class SSCTE extends PureComponent {
 
   renderProjectOverview() {
     return (
-      <div class="wow fadeIn">
-        <div class="col-md-12 no-padding">
-          <h3 class="center-sm paddingtop-0">Initial Design</h3>
+      <div className="wow fadeIn">
+        <div className="col-md-12 no-padding">
+          <h3 className="center-sm paddingtop-0">Initial Design</h3>
           <br /><br />
-          <div class="col-md-3">
-            <div class="box orange"><p>#FFB86F</p></div>
+          <div className="col-md-3">
+            <div className="box orange"><p>#FFB86F</p></div>
             &nbsp;&nbsp;&nbsp;
-            <div class="box dark-pink"><p>#8E3B46</p></div>
+            <div className="box dark-pink"><p>#8E3B46</p></div>
             &nbsp;&nbsp;&nbsp;
-            <div class="box light-pink"><p>#CF9295</p></div>
+            <div className="box light-pink"><p>#CF9295</p></div>
           </div>
-          <div class="col-md-6">
+          <div className="col-md-6">
             <br /><br />
             <p>
               SSCTE served as an introductory step into the world of UX design for myself, as well as a valuable insight into Android design. 
@@ -104,11 +104,11 @@ class SSCTE extends PureComponent {
 
   renderProjectReflections() {
     return (
-      <div class="wow fadeIn">
-        <h3 class="center-sm paddingtop-0">Development</h3>
+      <div className="wow fadeIn">
+        <h3 className="center-sm paddingtop-0">Development</h3>
         <br /><br />
-        <div class="col-md-12 no-padding">
-          <div class="col-md-6">
+        <div className="col-md-12 no-padding">
+          <div className="col-md-6">
             <p>
               SSCTE was later developed in Android Studio, over the course of several months.
               <br /><br />

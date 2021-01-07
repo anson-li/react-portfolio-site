@@ -27,16 +27,16 @@ class CrudeMonitor extends PureComponent {
 
   renderProjectDescription() {
     return (
-      <div class="col-md-12">
-        <div class="wow fadeIn">
-          <h3 class="center-sm paddingtop-0">The Project</h3>
+      <div className="col-md-12">
+        <div className="wow fadeIn">
+          <h3 className="center-sm paddingtop-0">The Project</h3>
           <br /><br />
-          <div class="col-md-12 no-padding">
-            <div class="col-md-6">
+          <div className="col-md-12 no-padding">
+            <div className="col-md-6">
               <p>
                 CQI is a Canadian-based company which specialises in monitoring the quality of North American crude oil. They had tasked me with upgrading their primary application, Crude Monitor, to fit the needs and demands of today's generation.
                 <br /><br />
-                <a href="http://www.crudemonitor.ca" class="btn">Take a peek</a>
+                <a href="http://www.crudemonitor.ca" className="btn">Take a peek</a>
               </p>
             </div>
           </div>
@@ -47,18 +47,18 @@ class CrudeMonitor extends PureComponent {
 
   renderProjectOverview() {
     return (
-      <div class="wow fadeIn">
-        <div class="col-md-12 no-padding">
-          <h3 class="center-sm paddingtop-0">Initial Design</h3>
+      <div className="wow fadeIn">
+        <div className="col-md-12 no-padding">
+          <h3 className="center-sm paddingtop-0">Initial Design</h3>
           <br /><br />
-          <div class="col-md-3">
-            <div class="box blue"><p>#2E3F54</p></div>
+          <div className="col-md-3">
+            <div className="box blue"><p>#2E3F54</p></div>
             &nbsp;&nbsp;&nbsp;
-            <div class="box yellow"><p>#FFF8BD</p></div>
+            <div className="box yellow"><p>#FFF8BD</p></div>
             &nbsp;&nbsp;&nbsp;
-            <div class="box gray"><p>#EEEEEE</p></div>
+            <div className="box gray"><p>#EEEEEE</p></div>
           </div>
-          <div class="col-md-6">
+          <div className="col-md-6">
             <br /><br />
             <p>
               The initial design was created in Sketchapp, using an iterative development method that helped streamline communication between design and development.
@@ -78,21 +78,21 @@ class CrudeMonitor extends PureComponent {
       <Container>
         <Row>
           <Col data-wow-delay="1s">
-            <p class="center-sm paddingtop-0">
-              <span class="b">ERA ++</span><br /><br />
+            <p className="center-sm paddingtop-0">
+              <span className="b">ERA ++</span><br /><br />
               Early 2016
             </p>
           </Col>
           <Col data-wow-delay="1s">
-            <p class="center-sm paddingtop-0">
-              <span class="b">SKILLS ++</span><br /><br />
+            <p className="center-sm paddingtop-0">
+              <span className="b">SKILLS ++</span><br /><br />
                 Fullstack Development<br />
                 UI . UX<br />
                 Agile Development
             </p>
           </Col>
           <Col data-wow-delay="1s">
-            <span class="b">TECHNOLOGY ++</span><br /><br />
+            <span className="b">TECHNOLOGY ++</span><br /><br />
             PHP<br />
             HTML . CSS . JS<br />
             d3.js<br />
@@ -104,12 +104,12 @@ class CrudeMonitor extends PureComponent {
 
   renderReflections() {
     return (
-      <div class="wow fadeIn">
-        <div class="col-md-12 no-padding">
-        <h3 class="center-sm paddingtop-0">Development</h3>
+      <div className="wow fadeIn">
+        <div className="col-md-12 no-padding">
+        <h3 className="center-sm paddingtop-0">Development</h3>
           <br /><br />
-          <div class="col-md-12 no-padding">
-            <div class="col-md-6">
+          <div className="col-md-12 no-padding">
+            <div className="col-md-6">
             <p>
               The design eventually underwent multiple iterations throughout its two-month development phase. Development technologies largely involved PHP and JS development, including use of plugins such as Bootstrap and d3.js. 
             </p>

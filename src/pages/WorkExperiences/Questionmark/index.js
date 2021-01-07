@@ -29,22 +29,22 @@ class Questionmark extends PureComponent {
       <Container>
         <Row>
           <Col data-wow-delay="1s">
-              <p class="center-sm paddingtop-0">
-                <span class="b">ERA ++</span><br /><br />
+              <p className="center-sm paddingtop-0">
+                <span className="b">ERA ++</span><br /><br />
                 2016 - 2019
               </p>
           </Col>
           <Col data-wow-delay="1.5s">
-            <p class="center-sm paddingtop-0">
-              <span class="b">SKILLS ++</span><br /><br />
+            <p className="center-sm paddingtop-0">
+              <span className="b">SKILLS ++</span><br /><br />
               Full stack<br />
               Agile<br />
               API Development
             </p>
           </Col>
           <Col data-wow-delay="2s">
-            <p class="center-sm paddingtop-0">
-              <span class="b">TECHNOLOGY ++</span><br /><br />
+            <p className="center-sm paddingtop-0">
+              <span className="b">TECHNOLOGY ++</span><br /><br />
               Drupal . PHP<br />
               Powershell<br />
               JQuery<br />
@@ -57,18 +57,18 @@ class Questionmark extends PureComponent {
 
   renderProjectDescription() {
     return (
-      <div class="col-md-12">
-        <div class="wow fadeIn">
-          <div class="col-md-12 no-padding">
-            <h3 class="center-sm paddingtop-0">The Project</h3>
+      <div className="col-md-12">
+        <div className="wow fadeIn">
+          <div className="col-md-12 no-padding">
+            <h3 className="center-sm paddingtop-0">The Project</h3>
             <br /><br />
-            <div class="col-md-6">
+            <div className="col-md-6">
               <p>
                 Questionmark creates assessment technologies. These are tools that (primarily) deal with building technologies that involve assessments through their lifecycle - from creation to assessing to results.<br /><br />
                 One product in particular is the LTI (Learning Tools Interoperability) tool, which integrates the Questionmark technology with LMSs such as Moodle, Desire2Learn, and Blackboard. This tool was first announced in 2013, and - with the exclusion of minor bugfixes - has not been maintained since 2014. Additionally, this tool was initially developed by a third party.<br /><br /> 
                 In 2016, I was signed on to upgrade the existing LTI technology to suit our core customer base, as well as integrate any new components developed in previous systems.
                 <br /><br />
-                <a href="http://www.questionmark.com" class="btn">View the site</a>
+                <a href="http://www.questionmark.com" className="btn">View the site</a>
               </p>
             </div>
           </div>
@@ -79,11 +79,11 @@ class Questionmark extends PureComponent {
 
   renderProjectDeliverables() {
     return (
-      <div class="wow fadeIn">
-        <div class="col-md-12 no-padding">
-          <h3 class="center-sm paddingtop-0">Deliverables</h3>
+      <div className="wow fadeIn">
+        <div className="col-md-12 no-padding">
+          <h3 className="center-sm paddingtop-0">Deliverables</h3>
           <br /><br />
-          <div class="col-md-6">
+          <div className="col-md-6">
           <p>
           Over the course of two years, I was the primary developer attached on the LTI tool, and added / upgraded key features such as handling multiple results and viewing coaching reports (eg. reports that provided detailed result information on an assessment). As a result of the progress I had made, Questionmark was able to push a LTI Version 2 - a product of which is used by many large organizations today.
           <br /><br />
