@@ -9,7 +9,8 @@ import Border from '../../common/Border';
 import LineBreak from '../../web/assets/line-break.png';
 import WorkBackground from '../../web/assets/background/bg-work.png';
 
-import BoxLink from './common/BoxLink';
+import { Link } from 'react-router-dom';
+
 
 class Projects extends PureComponent {
   componentDidMount() {
@@ -46,15 +47,61 @@ class Projects extends PureComponent {
                 <div className="spacer-xs"></div>
                 <br />
 
-                <div className="col-md-12">
+                <div className="wow fadeIn">
+                  <h3>Jellicent</h3>
+                  <br />
+
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
+                      <p>
+                      Testing three.js basic React templating with passthroughs, scene design and camera manipulation.
+                      </p>
+                      <br />
+                    </div>
+                  </div>
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
+                      <p>
+                        <Link to="/jellicent" href="/jellicent" className="btn">View case study</Link>
+                      </p>
+                      <div className="spacer-xs"></div>
+                    </div>
+                  </div>
+                  <div className="col-md-12 no-padding">
+                    <div className="center-sm paddingtop-0">
+                      <img className="line-break" src={LineBreak} alt="Line break"/>
+                    </div>
+                    <div className="spacer-xs"></div>
+                  </div>
+                </div>
 
                 <div className="wow fadeIn">
-                  <BoxLink
-                    text="Jellicent"
-                    href="/jellicent"
-                  />
+                  <h3>LTI</h3>
+                  <br />
+
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
+                      <p>
+                      Learning Interoperability Tool developed for Questionmark systems.
+                      </p>
+                      <br />
+                    </div>
+                  </div>
+                  <div className="col-md-12 no-padding">
+                    <div className="col-md-6 no-padding">
+                      <p>
+                        <a href="https://github.com/questionmark/qm-lti" className="btn">View case study</a>
+                      </p>
+                      <div className="spacer-xs"></div>
+                    </div>
+                  </div>
+                  <div className="col-md-12 no-padding">
+                    <div className="center-sm paddingtop-0">
+                      <img className="line-break" src={LineBreak} alt="Line break"/>
+                    </div>
+                    <div className="spacer-xs"></div>
+                  </div>
                 </div>
-              </div>
             </div>
             <div className="spacer-sm"></div>
             <div className="flex-container container">
