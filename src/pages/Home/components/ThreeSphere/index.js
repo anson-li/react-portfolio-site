@@ -2,151 +2,178 @@ import React, { PureComponent } from 'react';
 import * as THREE from 'three';
 
 class ThreeSphere extends PureComponent {
+  constructor(props) {
+    super(props);
+        
+    this.mouseX = this.mouseY = 0;
+    this.windowHalfX = window.innerWidth / 2;
+    this.windowHalfY = window.innerHeight / 2;
+    this.camera = this.scene = this.container = this.particle = this.renderer = this.geometry = this.material = this.requestId = null;
+    this.particles = [];
+    this.xDirection = true;
+    this.yDirection = false;
+
+    this.onWindowResize = this.onWindowResize.bind(this);
+    this.onDocumentMouseMove = this.onDocumentMouseMove.bind(this);
+    this.onDocumentTouchStart = this.onDocumentTouchStart.bind(this);
+    this.onDocumentTouchMove = this.onDocumentTouchMove.bind(this);
+
+		this.init = this.init.bind(this);
+		this.animate = this.animate.bind(this);
+		this.animateFrame = this.animateFrame.bind(this);
+		this.stop = this.stop.bind(this);
+	}
+
   componentDidMount() {
-    var mouseX = 0, mouseY = 0,
+    this.init();
+    this.animate();
+  }
 
-    windowHalfX = window.innerWidth / 2,
-    windowHalfY = window.innerHeight / 2,
-    camera, scene, renderer, geometry;
+  init() {
 
-    var particles = [];
+    this.container = document.createElement('div');
+    document.body.appendChild(this.container);
 
-    var xDirection = true, yDirection = false;
+    this.camera = new THREE.PerspectiveCamera( 315, window.innerWidth / window.innerHeight, 1, 10000 );
+    this.camera.position.z = 650;
 
-    init();
-    animate();
+    this.scene = new THREE.Scene();
 
-    function init() {
+    this.renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: true
+    });
 
-      var container, particle;
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.autoClear = false;
+    this.renderer.shadowMap.type = THREE.PCFShadowMap;
+    this.renderer.shadowMapSoft = true;
 
-      container = document.createElement('div');
-      document.body.appendChild(container);
+    this.renderer.setPixelRatio( window.devicePixelRatio );
+    this.renderer.setSize( window.innerWidth, window.innerHeight );
+    this.container.appendChild( this.renderer.domElement );
 
-      camera = new THREE.PerspectiveCamera( 315, window.innerWidth / window.innerHeight, 1, 10000 );
-      camera.position.z = 650;
+    // particles
+    this.material = new THREE.SpriteMaterial({ color: 0xFFB86F });
+    this.geometry = new THREE.Geometry();
+    this.particles = [];
 
-      scene = new THREE.Scene();
+    for ( var i = 0; i < 100; i ++ ) {
+      this.particle = new THREE.Sprite( this.material );
+      this.particle.position.x = Math.random() * 3 - 1;
+      this.particle.position.y = Math.random() * 2 - 1;
+      this.particle.position.z = Math.random() * 5 - 1;
+      this.particle.position.normalize();
+      this.particle.position.multiplyScalar( Math.random() * 12 + 350 );
+      this.particle.scale.x = this.particle.scale.y = Math.random() * 3;
+      this.scene.add( this.particle );
 
-      renderer = new THREE.WebGLRenderer({
-          antialias: true,
-          alpha: true
-      });
-
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.shadowMap.enabled = true;
-      renderer.autoClear = false;
-      renderer.shadowMap.type = THREE.PCFShadowMap;
-      renderer.shadowMapSoft = true;
-
-      renderer.setPixelRatio( window.devicePixelRatio );
-      renderer.setSize( window.innerWidth, window.innerHeight );
-      container.appendChild( renderer.domElement );
-
-      // particles
-      var material = new THREE.SpriteMaterial({ color: 0xFFB86F });
-      geometry = new THREE.Geometry();
-      particles = [];
-
-      for ( var i = 0; i < 100; i ++ ) {
-        particle = new THREE.Sprite( material );
-        particle.position.x = Math.random() * 3 - 1;
-        particle.position.y = Math.random() * 2 - 1;
-        particle.position.z = Math.random() * 5 - 1;
-        particle.position.normalize();
-        particle.position.multiplyScalar( Math.random() * 12 + 350 );
-        particle.scale.x = particle.scale.y = Math.random() * 3;
-        scene.add( particle );
-
-        particles.push( particle );
-        geometry.vertices.push( particle.position );
-      }
-
-      // lines
-      var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0x161616, opacity: 1, linewidth: 0.5 } ) );
-      scene.add( line );
-
-      document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-      document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-      document.addEventListener( 'touchmove', onDocumentTouchMove, false );
-      window.addEventListener( 'resize', onWindowResize, false );
-
+      this.particles.push( this.particle );
+      this.geometry.vertices.push( this.particle.position );
     }
 
-    function onWindowResize() {
-      windowHalfX = window.innerWidth / 2;
-      windowHalfY = window.innerHeight / 2;
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize( window.innerWidth, window.innerHeight );
-    }
+    // lines
+    var line = new THREE.Line( this.geometry, new THREE.LineBasicMaterial( { color: 0x161616, opacity: 1, linewidth: 0.5 } ) );
+    this.scene.add( line );
 
-    function onDocumentMouseMove(event) {
-      mouseX = (event.clientX - windowHalfX) / 2;
-      mouseY = (event.clientY - windowHalfY) / 2;
-    }
+    document.addEventListener( 'mousemove', this.onDocumentMouseMove, false );
+    document.addEventListener( 'touchstart', this.onDocumentTouchStart, false );
+    document.addEventListener( 'touchmove', this.onDocumentTouchMove, false );
+    window.addEventListener( 'resize', this.onWindowResize, false );
 
-    function onDocumentTouchStart( event ) {
-      if ( event.touches.length > 1 ) {
-        event.preventDefault();
-        mouseX = event.touches[ 0 ].pageX - windowHalfX;
-        mouseY = event.touches[ 0 ].pageY - windowHalfY;
-      }
-    }
+  }
 
-    function onDocumentTouchMove( event ) {
-      if ( event.touches.length === 1 ) {
-        event.preventDefault();
-        mouseX = event.touches[ 0 ].pageX - windowHalfX;
-        mouseY = event.touches[ 0 ].pageY - windowHalfY;
-      } else {
-        mouseX += 0.05;
-        mouseY -= 0.05;
-      }
-    }
+  onWindowResize() {
+    this.windowHalfX = window.innerWidth / 2;
+    this.windowHalfY = window.innerHeight / 2;
+    this.camera.aspect = window.innerWidth / window.innerHeight;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize( window.innerWidth, window.innerHeight );
+  }
 
-    function animate() {
-      requestAnimationFrame( animate );
-      render();
-    }
+  onDocumentMouseMove(event) {
+    this.mouseX = (event.clientX - this.windowHalfX) / 2;
+    this.mouseY = (event.clientY - this.windowHalfY) / 2;
+  }
 
-    function render() {
-      if (xDirection) {
-        if (mouseX >= 500) {
-          xDirection = false;
-        } else {
-          mouseX += 0.1;
-        }
-      } else {
-        if (mouseX < -500) {
-          xDirection = true;
-        } else {
-          mouseX -= 0.1;
-        }
-      }
-
-      if (yDirection) {
-        if (mouseY >= 400) {
-          yDirection = false;
-        } else {
-          mouseY += 0.1;
-        }
-      } else {
-        if (mouseY <= -400) {
-          yDirection = true;
-        } else {
-          mouseY -= 0.1;
-        }
-      }
-
-      camera.position.x += ( mouseX - camera.position.x ) * .015;
-      camera.position.y += ( - mouseY - camera.position.y ) * .015;
-      camera.lookAt( scene.position );
-      camera.rotation.x += 5 * Math.PI / 180;
-      camera.rotation.y += 5 * Math.PI / 180;
-      renderer.render( scene, camera );
+  onDocumentTouchStart( event ) {
+    if ( event.touches.length > 1 ) {
+      event.preventDefault();
+      this.mouseX = event.touches[ 0 ].pageX - this.windowHalfX;
+      this.mouseY = event.touches[ 0 ].pageY - this.windowHalfY;
     }
   }
+
+  onDocumentTouchMove( event ) {
+    if ( event.touches.length === 1 ) {
+      event.preventDefault();
+      this.mouseX = event.touches[ 0 ].pageX - this.windowHalfX;
+      this.mouseY = event.touches[ 0 ].pageY - this.windowHalfY;
+    } else {
+      this.mouseX += 0.05;
+      this.mouseY -= 0.05;
+    }
+  }
+
+  animate() {
+    this.requestId = requestAnimationFrame( this.animate );
+    this.animateFrame();
+  }
+
+  animateFrame() {
+    if (this.xDirection) {
+      if (this.mouseX >= 500) {
+        this.xDirection = false;
+      } else {
+        this.mouseX += 0.1;
+      }
+    } else {
+      if (this.mouseX < -500) {
+        this.xDirection = true;
+      } else {
+        this.mouseX -= 0.1;
+      }
+    }
+
+    if (this.yDirection) {
+      if (this.mouseY >= 400) {
+        this.yDirection = false;
+      } else {
+        this.mouseY += 0.1;
+      }
+    } else {
+      if (this.mouseY <= -400) {
+        this.yDirection = true;
+      } else {
+        this.mouseY -= 0.1;
+      }
+    }
+
+    this.camera.position.x += ( this.mouseX - this.camera.position.x ) * .015;
+    this.camera.position.y += ( - this.mouseY - this.camera.position.y ) * .015;
+    this.camera.lookAt( this.scene.position );
+    this.camera.rotation.x += 5 * Math.PI / 180;
+    this.camera.rotation.y += 5 * Math.PI / 180;
+    this.renderer.render( this.scene, this.camera );
+  }
+
+  stop() {
+		cancelAnimationFrame( this.requestId );
+		this.requestId = undefined;
+	}
+
+  componentWillUnmount() {
+		window.removeEventListener("resize", this.onWindowResize);
+		this.container.removeChild(this.renderer.domElement);
+    this.stop();
+    
+		this.loader = null;
+		this.scene = null;
+		this.camera = null;
+		this.composer = null;
+		this.renderer = null;
+	}
 
   render() {
     return (

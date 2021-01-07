@@ -8,77 +8,102 @@ import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass.js';
 class JellicentObject extends PureComponent {
 	constructor(props) {
 		super(props);
-		var camera, scene, renderer, composer,
-		renderPass, glitchPass;
+		this.camera = this.scene = this.renderer = this.composer = this.renderPass = this.glitchPass = this.container = this.requestId = null;
 
-		init();
+		this.onWindowResize = this.onWindowResize.bind(this);
+		this.init = this.init.bind(this);
+		this.animate = this.animate.bind(this);
+		this.animateCamera = this.animateCamera.bind(this);
+		this.stop = this.stop.bind(this);
+	}
+
+	componentDidMount() {
+		this.init();
+	}
+
+	init() {
+
+		this.container = document.createElement('div');
+		document.body.appendChild(this.container);
+
+		this.camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 2000 );
+		this.camera.position.x = 26.2;
+		this.camera.position.y = 38.6;
+		this.camera.position.z = 23;
+		this.camera.rotation.x = 0.44;
+		this.camera.rotation.y = -0.31;
+		this.camera.rotation.z = -167.14;
+
+		this.scene = new THREE.Scene();
+
+		this.renderer = new THREE.WebGLRenderer({
+				antialias: true,
+				alpha: true
+		});
+
+		this.renderer.setSize(window.innerWidth, window.innerHeight);
+		this.renderer.shadowMap.enabled = true;
+		this.renderer.autoClear = false;
+		this.renderer.shadowMap.type = THREE.PCFShadowMap;
+		this.renderer.shadowMapSoft = true;
+
+		this.renderer.setPixelRatio( window.devicePixelRatio );
+		this.renderer.setSize( window.innerWidth, window.innerHeight );
+		this.container.appendChild( this.renderer.domElement );
+
+		let jsonObject = require( '../../../../../web/assets/scene/jellicent.json' );
+		this.scene = new THREE.ObjectLoader().parse(jsonObject);
 		
-    function init() {
+		this.composer = new EffectComposer( this.renderer );
+		this.renderPass = new RenderPass( this.scene, this.camera );
+		this.composer.addPass( this.renderPass );
 
-      var container;
+		this.glitchPass = new GlitchPass();
+		this.composer.addPass( this.glitchPass );
 
-      container = document.createElement('div');
-      document.body.appendChild(container);
+		window.addEventListener( 'resize', this.onWindowResize, false );
 
-      camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 2000 );
-			camera.position.x = 26.2;
-			camera.position.y = 38.6;
-			camera.position.z = 23;
-			camera.rotation.x = 0.44;
-			camera.rotation.y = -0.31;
-			camera.rotation.z = -167.14;
+		this.animate();
+	}
 
-      scene = new THREE.Scene();
+	onWindowResize() {
+		this.camera.aspect = window.innerWidth / window.innerHeight;
+		this.camera.updateProjectionMatrix();
+		this.renderer.setSize( window.innerWidth, window.innerHeight );
+	}
 
-      renderer = new THREE.WebGLRenderer({
-          antialias: true,
-          alpha: true
-      });
-
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.shadowMap.enabled = true;
-      renderer.autoClear = false;
-      renderer.shadowMap.type = THREE.PCFShadowMap;
-      renderer.shadowMapSoft = true;
-
-      renderer.setPixelRatio( window.devicePixelRatio );
-      renderer.setSize( window.innerWidth, window.innerHeight );
-      container.appendChild( renderer.domElement );
-
-			let jsonObject = require( '../../../../../web/assets/scene/jellicent.json' );
-			scene = new THREE.ObjectLoader().parse(jsonObject);
-			
-			composer = new EffectComposer( renderer );
-			renderPass = new RenderPass( scene, camera );
-			composer.addPass( renderPass );
-
-			glitchPass = new GlitchPass();
-			composer.addPass( glitchPass );
-
-			window.addEventListener( 'resize', onWindowResize, false );
-
-			animate();
+	animate() {
+		this.animateCamera();
+		this.requestId = requestAnimationFrame( this.animate );
+		if (this.composer) {
+			this.composer.render();
 		}
+	}
 
-		function onWindowResize() {
-			camera.aspect = window.innerWidth / window.innerHeight;
-			camera.updateProjectionMatrix();
-			renderer.setSize( window.innerWidth, window.innerHeight );
+	stop() {
+		cancelAnimationFrame( this.requestId );
+		this.requestId = undefined;
+	}
+
+	animateCamera() {
+		if (this.camera) {
+			this.camera.rotation.x -= 0.001;
+			if (this.camera.rotation.x < -1.3) {
+				this.camera.rotation.x = 0.8;
+			}	
 		}
-
-    function animate() {
-			animateCamera();
-      requestAnimationFrame( animate );
-      composer.render();
-    }
-
-    function animateCamera() {
-			camera.rotation.x -= 0.001;
-			if (camera.rotation.x < -1.3) {
-				camera.rotation.x = 0.8;
-			}
-		}
-  }
+	}
+	
+	componentWillUnmount() {
+		window.removeEventListener("resize", this.onWindowResize);
+		this.container.removeChild(this.renderer.domElement);
+		this.stop();
+		this.loader = null;
+		this.scene = null;
+		this.camera = null;
+		this.composer = null;
+		this.renderer = null;
+	}
 
   render() {
     return (
