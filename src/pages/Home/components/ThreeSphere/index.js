@@ -4,7 +4,7 @@ import * as THREE from 'three';
 class ThreeSphere extends PureComponent {
   constructor(props) {
     super(props);
-        
+
     this.mouseX = this.mouseY = 0;
     this.windowHalfX = window.innerWidth / 2;
     this.windowHalfY = window.innerHeight / 2;
@@ -18,11 +18,11 @@ class ThreeSphere extends PureComponent {
     this.onDocumentTouchStart = this.onDocumentTouchStart.bind(this);
     this.onDocumentTouchMove = this.onDocumentTouchMove.bind(this);
 
-		this.init = this.init.bind(this);
-		this.animate = this.animate.bind(this);
-		this.animateFrame = this.animateFrame.bind(this);
-		this.stop = this.stop.bind(this);
-	}
+    this.init = this.init.bind(this);
+    this.animate = this.animate.bind(this);
+    this.animateFrame = this.animateFrame.bind(this);
+    this.stop = this.stop.bind(this);
+  }
 
   componentDidMount() {
     this.init();
@@ -30,18 +30,17 @@ class ThreeSphere extends PureComponent {
   }
 
   init() {
-
     this.container = document.createElement('div');
     document.body.appendChild(this.container);
 
-    this.camera = new THREE.PerspectiveCamera( 315, window.innerWidth / window.innerHeight, 1, 10000 );
+    this.camera = new THREE.PerspectiveCamera(315, window.innerWidth / window.innerHeight, 1, 10000);
     this.camera.position.z = 650;
 
     this.scene = new THREE.Scene();
 
     this.renderer = new THREE.WebGLRenderer({
-        antialias: true,
-        alpha: true
+      antialias: true,
+      alpha: true,
     });
 
     this.renderer.setSize(window.innerWidth, window.innerHeight);
@@ -50,38 +49,37 @@ class ThreeSphere extends PureComponent {
     this.renderer.shadowMap.type = THREE.PCFShadowMap;
     this.renderer.shadowMapSoft = true;
 
-    this.renderer.setPixelRatio( window.devicePixelRatio );
-    this.renderer.setSize( window.innerWidth, window.innerHeight );
-    this.container.appendChild( this.renderer.domElement );
+    this.renderer.setPixelRatio(window.devicePixelRatio);
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.container.appendChild(this.renderer.domElement);
 
     // particles
     this.material = new THREE.SpriteMaterial({ color: 0xFFB86F });
     this.geometry = new THREE.Geometry();
     this.particles = [];
 
-    for ( var i = 0; i < 100; i ++ ) {
-      this.particle = new THREE.Sprite( this.material );
+    for (let i = 0; i < 100; i++) {
+      this.particle = new THREE.Sprite(this.material);
       this.particle.position.x = Math.random() * 3 - 1;
       this.particle.position.y = Math.random() * 2 - 1;
       this.particle.position.z = Math.random() * 5 - 1;
       this.particle.position.normalize();
-      this.particle.position.multiplyScalar( Math.random() * 12 + 350 );
+      this.particle.position.multiplyScalar(Math.random() * 12 + 350);
       this.particle.scale.x = this.particle.scale.y = Math.random() * 3;
-      this.scene.add( this.particle );
+      this.scene.add(this.particle);
 
-      this.particles.push( this.particle );
-      this.geometry.vertices.push( this.particle.position );
+      this.particles.push(this.particle);
+      this.geometry.vertices.push(this.particle.position);
     }
 
     // lines
-    var line = new THREE.Line( this.geometry, new THREE.LineBasicMaterial( { color: 0x161616, opacity: 1, linewidth: 0.5 } ) );
-    this.scene.add( line );
+    const line = new THREE.Line(this.geometry, new THREE.LineBasicMaterial({ color: 0x161616, opacity: 1, linewidth: 0.5 }));
+    this.scene.add(line);
 
-    document.addEventListener( 'mousemove', this.onDocumentMouseMove, false );
-    document.addEventListener( 'touchstart', this.onDocumentTouchStart, false );
-    document.addEventListener( 'touchmove', this.onDocumentTouchMove, false );
-    window.addEventListener( 'resize', this.onWindowResize, false );
-
+    document.addEventListener('mousemove', this.onDocumentMouseMove, false);
+    document.addEventListener('touchstart', this.onDocumentTouchStart, false);
+    document.addEventListener('touchmove', this.onDocumentTouchMove, false);
+    window.addEventListener('resize', this.onWindowResize, false);
   }
 
   onWindowResize() {
@@ -89,7 +87,7 @@ class ThreeSphere extends PureComponent {
     this.windowHalfY = window.innerHeight / 2;
     this.camera.aspect = window.innerWidth / window.innerHeight;
     this.camera.updateProjectionMatrix();
-    this.renderer.setSize( window.innerWidth, window.innerHeight );
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
   onDocumentMouseMove(event) {
@@ -97,19 +95,19 @@ class ThreeSphere extends PureComponent {
     this.mouseY = (event.clientY - this.windowHalfY) / 2;
   }
 
-  onDocumentTouchStart( event ) {
-    if ( event.touches.length > 1 ) {
+  onDocumentTouchStart(event) {
+    if (event.touches.length > 1) {
       event.preventDefault();
-      this.mouseX = event.touches[ 0 ].pageX - this.windowHalfX;
-      this.mouseY = event.touches[ 0 ].pageY - this.windowHalfY;
+      this.mouseX = event.touches[0].pageX - this.windowHalfX;
+      this.mouseY = event.touches[0].pageY - this.windowHalfY;
     }
   }
 
-  onDocumentTouchMove( event ) {
-    if ( event.touches.length === 1 ) {
+  onDocumentTouchMove(event) {
+    if (event.touches.length === 1) {
       event.preventDefault();
-      this.mouseX = event.touches[ 0 ].pageX - this.windowHalfX;
-      this.mouseY = event.touches[ 0 ].pageY - this.windowHalfY;
+      this.mouseX = event.touches[0].pageX - this.windowHalfX;
+      this.mouseY = event.touches[0].pageY - this.windowHalfY;
     } else {
       this.mouseX += 0.05;
       this.mouseY -= 0.05;
@@ -117,7 +115,7 @@ class ThreeSphere extends PureComponent {
   }
 
   animate() {
-    this.requestId = requestAnimationFrame( this.animate );
+    this.requestId = requestAnimationFrame(this.animate);
     this.animateFrame();
   }
 
@@ -128,12 +126,10 @@ class ThreeSphere extends PureComponent {
       } else {
         this.mouseX += 0.1;
       }
+    } else if (this.mouseX < -500) {
+      this.xDirection = true;
     } else {
-      if (this.mouseX < -500) {
-        this.xDirection = true;
-      } else {
-        this.mouseX -= 0.1;
-      }
+      this.mouseX -= 0.1;
     }
 
     if (this.yDirection) {
@@ -142,46 +138,42 @@ class ThreeSphere extends PureComponent {
       } else {
         this.mouseY += 0.1;
       }
+    } else if (this.mouseY <= -400) {
+      this.yDirection = true;
     } else {
-      if (this.mouseY <= -400) {
-        this.yDirection = true;
-      } else {
-        this.mouseY -= 0.1;
-      }
+      this.mouseY -= 0.1;
     }
 
-    this.camera.position.x += ( this.mouseX - this.camera.position.x ) * .015;
-    this.camera.position.y += ( - this.mouseY - this.camera.position.y ) * .015;
-    this.camera.lookAt( this.scene.position );
+    this.camera.position.x += (this.mouseX - this.camera.position.x) * 0.015;
+    this.camera.position.y += (-this.mouseY - this.camera.position.y) * 0.015;
+    this.camera.lookAt(this.scene.position);
     this.camera.rotation.x += 5 * Math.PI / 180;
     this.camera.rotation.y += 5 * Math.PI / 180;
-    this.renderer.render( this.scene, this.camera );
+    this.renderer.render(this.scene, this.camera);
   }
 
   stop() {
-		cancelAnimationFrame( this.requestId );
-		this.requestId = undefined;
-	}
+    cancelAnimationFrame(this.requestId);
+    this.requestId = undefined;
+  }
 
   componentWillUnmount() {
-		window.removeEventListener("resize", this.onWindowResize);
-		this.container.removeChild(this.renderer.domElement);
+    window.removeEventListener('resize', this.onWindowResize);
+    this.container.removeChild(this.renderer.domElement);
     this.stop();
-    
-		this.loader = null;
-		this.scene = null;
-		this.camera = null;
-		this.composer = null;
-		this.renderer = null;
-	}
+
+    this.loader = null;
+    this.scene = null;
+    this.camera = null;
+    this.composer = null;
+    this.renderer = null;
+  }
 
   render() {
     return (
-      <div ref={ref => (this.mount = ref)} />
+      <div ref={(ref) => (this.mount = ref)} />
     );
   }
 }
 
 export default ThreeSphere;
-
-

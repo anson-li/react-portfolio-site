@@ -6,12 +6,16 @@ class BodySection extends PureComponent {
     return (
       <div>
         {this.props.item}
-        <br /><br /><br />
+        <br />
+        <br />
+        <br />
         <div className="col-md-12 wow fadeIn">
           <div className="center-sm paddingtop-0">
             <img className="line-break" src={LineBreak} alt="Line break" />
           </div>
-          <br /><br /><br />
+          <br />
+          <br />
+          <br />
         </div>
       </div>
     );

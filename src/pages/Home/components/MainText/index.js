@@ -10,7 +10,7 @@ class MainText extends PureComponent {
       animateClass: 'animated',
       offset: 0,
       mobile: true,
-      live: false
+      live: false,
     }).init();
   }
 
@@ -19,8 +19,8 @@ class MainText extends PureComponent {
       <div className="full-page">
         <div className="flex-container container ">
           <div className="col-md-12 mid-center">
-          <img className="background-dev-dark" src={DarkBackground} alt="Background subfill"/>
-            <div className="spacer-sm d-lg-none"></div>
+            <img className="background-dev-dark" src={DarkBackground} alt="Background subfill" />
+            <div className="spacer-sm d-lg-none" />
             <FadeText
               type="h1"
               id="main-text"

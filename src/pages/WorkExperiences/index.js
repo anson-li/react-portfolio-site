@@ -12,14 +12,14 @@ class WorkExperiences extends PureComponent {
   render() {
     return (
       <Router>
-          <Switch>
-						<Route path="/workexp/albertames" component={AlbertaMES} />
-						<Route path="/workexp/teamaqua" component={TeamAqua} />
-						<Route path="/workexp/dailyui" component={DailyUI} />
-						<Route path="/workexp/sscte" component={SSCTE} />
-						<Route path="/workexp/crudemonitor" component={CrudeMonitor} />
-						<Route path="/workexp/questionmark" component={Questionmark} />
-          </Switch>
+        <Switch>
+          <Route path="/workexp/albertames" component={AlbertaMES} />
+          <Route path="/workexp/teamaqua" component={TeamAqua} />
+          <Route path="/workexp/dailyui" component={DailyUI} />
+          <Route path="/workexp/sscte" component={SSCTE} />
+          <Route path="/workexp/crudemonitor" component={CrudeMonitor} />
+          <Route path="/workexp/questionmark" component={Questionmark} />
+        </Switch>
       </Router>
     );
   }

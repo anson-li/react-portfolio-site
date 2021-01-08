@@ -15,15 +15,15 @@ class App extends PureComponent {
   render() {
     return (
       <Router>
-          <Switch>
-              <Route path="/workexp" component={WorkExperiences} /> 
-              <Route path="/work" component={WorkList} />
-              <Route path="/resume" component={Resume} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/projects" component={Projects} />
-              <Route path="/jellicent" component={Jellicent} />
-              <Route path="/" component={Home} />
-          </Switch>
+        <Switch>
+          <Route path="/workexp" component={WorkExperiences} />
+          <Route path="/work" component={WorkList} />
+          <Route path="/resume" component={Resume} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/jellicent" component={Jellicent} />
+          <Route path="/" component={Home} />
+        </Switch>
       </Router>
     );
   }

@@ -1,4 +1,3 @@
-
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import anime from 'animejs';
@@ -16,9 +15,9 @@ class Navigation extends PureComponent {
   }
 
   toggleMenu() {
-    this.setState(prevState => ({
-      visibleMenu: !prevState.visibleMenu
-    }), function() {
+    this.setState((prevState) => ({
+      visibleMenu: !prevState.visibleMenu,
+    }), function () {
       this.triggerMenuAnimation();
     });
   }
@@ -28,28 +27,28 @@ class Navigation extends PureComponent {
     const targets = '.menu';
     if (this.state.visibleMenu) {
       anime
-      .timeline({ loop: false })
-      .add({
-        targets: targets,
-        opacity: [0, 1],
-        easing: "easeOutQuart",
-        translateY: {
-          value: 10,
-        },
-        duration: 500,
-      })
+        .timeline({ loop: false })
+        .add({
+          targets,
+          opacity: [0, 1],
+          easing: 'easeOutQuart',
+          translateY: {
+            value: 10,
+          },
+          duration: 500,
+        });
     } else {
       anime
-      .timeline({ loop: false })
-      .add({
-        targets: targets,
-        opacity: [1, 0],
-        easing: "easeOutQuart",
-        translateY: {
-          value: -10,
-        },
-        duration: 500,
-      })
+        .timeline({ loop: false })
+        .add({
+          targets,
+          opacity: [1, 0],
+          easing: 'easeOutQuart',
+          translateY: {
+            value: -10,
+          },
+          duration: 500,
+        });
     }
   }
 
@@ -58,16 +57,15 @@ class Navigation extends PureComponent {
       return (
         <div className="col-md-12 top-center d-none d-sm-block">
           <h5 className="connect">
-            <Link to={'/resume'} className="strikethrough top-item" href="resume">Resume</Link>
-            <Link to={'/work'} className="strikethrough top-item">Work</Link>
-            <Link to={'/contact'} className="strikethrough top-item">Contact</Link>
-            <Link to={'/projects'} className="strikethrough project">Projects</Link>
+            <Link to="/resume" className="strikethrough top-item" href="resume">Resume</Link>
+            <Link to="/work" className="strikethrough top-item">Work</Link>
+            <Link to="/contact" className="strikethrough top-item">Contact</Link>
+            <Link to="/projects" className="strikethrough project">Projects</Link>
           </h5>
         </div>
       );
-    } else {
-      return null;
-    } 
+    }
+    return null;
   }
 
   renderMobile() {
@@ -79,17 +77,17 @@ class Navigation extends PureComponent {
         </h5>
         <div className="dropdown">
           <h5>
-          <ul className="menu">
-            <li><a className="strikethrough menulink" href="/">Home</a></li>
-            <li><a className="strikethrough menulink" href="resume">Resume</a></li>
-            <li><a className="strikethrough menulink" href="work">Work</a></li>
-            <li><a className="strikethrough menulink" href="contact">Contact</a></li>
-            <li><a className="strikethrough menulink project" href="projects">Projects</a></li>
-          </ul>
+            <ul className="menu">
+              <li><a className="strikethrough menulink" href="/">Home</a></li>
+              <li><a className="strikethrough menulink" href="resume">Resume</a></li>
+              <li><a className="strikethrough menulink" href="work">Work</a></li>
+              <li><a className="strikethrough menulink" href="contact">Contact</a></li>
+              <li><a className="strikethrough menulink project" href="projects">Projects</a></li>
+            </ul>
           </h5>
         </div>
       </div>
-    )
+    );
   }
 
   render() {

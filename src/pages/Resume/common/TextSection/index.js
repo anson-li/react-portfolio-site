@@ -11,7 +11,7 @@ class TextSection extends PureComponent {
         <div className="col-md-12">
           { this.props.children }
         </div>
-        { this.props.bottomSpacer ? <img className="line-break" src={LineBreak} alt="Line separator"/> : null }
+        { this.props.bottomSpacer ? <img className="line-break" src={LineBreak} alt="Line separator" /> : null }
         { this.props.bottomPadding ? <div className="section-spacer" /> : null }
       </div>
     );
@@ -21,11 +21,11 @@ class TextSection extends PureComponent {
 TextSection.propTypes = {
   bottomSpacer: PropTypes.bool,
   bottomPadding: PropTypes.bool,
-}
+};
 
 TextSection.defaultProps = {
   bottomSpacer: true,
   bottomPadding: false,
-}
+};
 
 export default TextSection;

@@ -1,4 +1,3 @@
-
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -21,7 +20,7 @@ class SSCTE extends PureComponent {
       animateClass: 'animated',
       offset: 0,
       mobile: true,
-      live: false
+      live: false,
     }).init();
   }
 
@@ -31,23 +30,34 @@ class SSCTE extends PureComponent {
         <Row>
           <Col data-wow-delay="1s">
             <p className="center-sm paddingtop-0">
-              <span className="b">ERA ++</span><br /><br />
+              <span className="b">ERA ++</span>
+              <br />
+              <br />
               Late 2015
             </p>
           </Col>
           <Col data-wow-delay="1s">
             <p className="center-sm paddingtop-0">
-              <span className="b">SKILLS ++</span><br /><br />
-              Project development<br />
-              Android <br />
+              <span className="b">SKILLS ++</span>
+              <br />
+              <br />
+              Project development
+              <br />
+              Android
+              {' '}
+              <br />
               UI . UX
             </p>
           </Col>
           <Col data-wow-delay="1s">
             <p className="center-sm paddingtop-0">
-              <span className="b">TECHNOLOGY ++</span><br /><br />
-              Android Studio<br />
-              Sketchapp<br />
+              <span className="b">TECHNOLOGY ++</span>
+              <br />
+              <br />
+              Android Studio
+              <br />
+              Sketchapp
+              <br />
               Slack
             </p>
           </Col>
@@ -62,11 +72,13 @@ class SSCTE extends PureComponent {
         <div className="wow fadeIn">
           <div className="col-md-12 no-padding">
             <h3 className="center-sm paddingtop-0">The Project</h3>
-            <br /><br />
+            <br />
+            <br />
             <div className="col-md-6">
               <p>
                 At the University of Alberta, my team was required to design and produce an android application that provided a single key feature – to allow the trading and borrowing of items. This product served as a first foray into product development, as well as offering a chance to develop management and leadership skills.
-                <br /><br />
+                <br />
+                <br />
                 <a href="https://github.com/CMPUT301F15T07/TradingApp" className="btn">Take a peek</a>
               </p>
             </div>
@@ -81,7 +93,8 @@ class SSCTE extends PureComponent {
       <div className="wow fadeIn">
         <div className="col-md-12 no-padding">
           <h3 className="center-sm paddingtop-0">Initial Design</h3>
-          <br /><br />
+          <br />
+          <br />
           <div className="col-md-3">
             <div className="box orange"><p>#FFB86F</p></div>
             &nbsp;&nbsp;&nbsp;
@@ -90,10 +103,12 @@ class SSCTE extends PureComponent {
             <div className="box light-pink"><p>#CF9295</p></div>
           </div>
           <div className="col-md-6">
-            <br /><br />
+            <br />
+            <br />
             <p>
-              SSCTE served as an introductory step into the world of UX design for myself, as well as a valuable insight into Android design. 
-              <br /><br />
+              SSCTE served as an introductory step into the world of UX design for myself, as well as a valuable insight into Android design.
+              <br />
+              <br />
               The artboards were designed using Sketch and Photoshop CS6. The design process took over four weeks, with extensive storyboarding and soft prototyping with the help of applications such as Sketchapp and Principle.
             </p>
           </div>
@@ -106,20 +121,22 @@ class SSCTE extends PureComponent {
     return (
       <div className="wow fadeIn">
         <h3 className="center-sm paddingtop-0">Development</h3>
-        <br /><br />
+        <br />
+        <br />
         <div className="col-md-12 no-padding">
           <div className="col-md-6">
             <p>
               SSCTE was later developed in Android Studio, over the course of several months.
-              <br /><br />
+              <br />
+              <br />
               In addition to serving as my strongest experience in Android, this project helped solidify my skills in project management - a key skill that proved invaluable in future projects.
             </p>
           </div>
         </div>
       </div>
-    )
+    );
   }
-  
+
   render() {
     const sections = [];
     sections[0] = this.renderSkills();
@@ -134,7 +151,7 @@ class SSCTE extends PureComponent {
         nextTitle="Team Aqua - Ruby"
         nextURL="/workexp/teamaqua"
       />
-    )
+    );
   }
 }
 

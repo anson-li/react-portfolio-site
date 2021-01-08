@@ -1,4 +1,3 @@
-
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -20,7 +19,7 @@ class AlbertaMES extends PureComponent {
       animateClass: 'animated',
       offset: 0,
       mobile: true,
-      live: false
+      live: false,
     }).init();
   }
 
@@ -30,25 +29,36 @@ class AlbertaMES extends PureComponent {
         <Row>
           <Col data-wow-delay="1s">
             <p className="center-sm paddingtop-0">
-              <span className="b">ERA ++</span><br /><br />
+              <span className="b">ERA ++</span>
+              <br />
+              <br />
               2015
             </p>
           </Col>
           <Col data-wow-delay="1s">
-          <p className="center-sm paddingtop-0">
-            <span className="b">SKILLS ++</span><br /><br />
-              Fullstack Development<br />
-              GIS Development<br />
+            <p className="center-sm paddingtop-0">
+              <span className="b">SKILLS ++</span>
+              <br />
+              <br />
+              Fullstack Development
+              <br />
+              GIS Development
+              <br />
               MVC
             </p>
           </Col>
           <Col data-wow-delay="1s">
-          <p className="center-sm paddingtop-0">
-            <span className="b">TECHNOLOGY ++</span><br /><br />
-            MVC . jquery<br />
-            arcgis api<br />
-            d3.js<br />
-          </p>
+            <p className="center-sm paddingtop-0">
+              <span className="b">TECHNOLOGY ++</span>
+              <br />
+              <br />
+              MVC . jquery
+              <br />
+              arcgis api
+              <br />
+              d3.js
+              <br />
+            </p>
           </Col>
         </Row>
       </Container>
@@ -61,18 +71,20 @@ class AlbertaMES extends PureComponent {
         <div className="wow fadeIn">
           <div className="col-md-12 no-padding">
             <h3 className="center-sm paddingtop-0">The Project</h3>
-            <br /><br />
+            <br />
+            <br />
             <div className="col-md-6">
               <p>
-                AlbertaMES is a heuristics-based web application to filter and isolate projects, models and stations related to environmental care. I was signed on as the primary developer of the application, which was developed over the course of 8 months. 
-                <br /><br />
+                AlbertaMES is a heuristics-based web application to filter and isolate projects, models and stations related to environmental care. I was signed on as the primary developer of the application, which was developed over the course of 8 months.
+                <br />
+                <br />
                 <a href="http://www.blog.ansonli.ca/index.php/2016/01/04/35/" className="btn">Take a peek</a>
               </p>
             </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   renderProjectOverview() {
@@ -80,19 +92,22 @@ class AlbertaMES extends PureComponent {
       <div className="col-md-12 no-padding">
         <div className="wow fadeIn">
           <h3 className="center-sm paddingtop-0">Overview</h3>
-            <br /><br />
-            <div className="col-md-3">
-              <div className="box dark-blue"><p>#2C3D51</p></div>
+          <br />
+          <br />
+          <div className="col-md-3">
+            <div className="box dark-blue"><p>#2C3D51</p></div>
               &nbsp;&nbsp;&nbsp;
-              <div className="box green"><p>#81B175</p></div>
+            <div className="box green"><p>#81B175</p></div>
               &nbsp;&nbsp;&nbsp;
-              <div className="box white"><p>#FFFFFF</p></div>
-            </div>
-            <br /><br />
-            <div className="col-md-6">
+            <div className="box white"><p>#FFFFFF</p></div>
+          </div>
+          <br />
+          <br />
+          <div className="col-md-6">
             <p>
               We used ArcGIS API for Javascript to develop this technology, alongside other supporting technologies such as MVC, JQuery and other libraries.
-              <br /><br />
+              <br />
+              <br />
               Additionally, our team used a collection of software development methodologies, such as software requirements elicitations and post-mortems, to enhance both the quality of the team’s work as well as the team itself.
             </p>
           </div>
@@ -106,19 +121,22 @@ class AlbertaMES extends PureComponent {
       <div className="col-md-12 no-padding">
         <div className="wow fadeIn">
           <h3 className="center-sm paddingtop-0">Reflection</h3>
-          <br /><br />
+          <br />
+          <br />
           <div className="col-md-6">
-          <p>
-            This project served as my first foray into professional software experience. I learned many facets of work life that are invaluable today; both with regards to technical and soft skills.
-            <br /><br />
-            Many of the skills that are developed at this stage, including development frameworks and UX, were later explored and reintegrated into future projects.
-            <br /><br />
-            This project was later integrated into the workflow of the Government of Alberta, and is currently under further development.
-          </p>
+            <p>
+              This project served as my first foray into professional software experience. I learned many facets of work life that are invaluable today; both with regards to technical and soft skills.
+              <br />
+              <br />
+              Many of the skills that are developed at this stage, including development frameworks and UX, were later explored and reintegrated into future projects.
+              <br />
+              <br />
+              This project was later integrated into the workflow of the Government of Alberta, and is currently under further development.
+            </p>
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   render() {
@@ -135,7 +153,7 @@ class AlbertaMES extends PureComponent {
         nextTitle="#DailyUI"
         nextURL="/workexp/dailyui"
       />
-    )
+    );
   }
 }
 

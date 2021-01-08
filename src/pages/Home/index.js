@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Loader from '../../common/Loader';
-import Border from '../../common/Border'; 
+import Border from '../../common/Border';
 import Background from '../../common/Background';
 import MainLogo from '../../common/MainLogo';
 import Navigation from '../../common/Navigation';
@@ -14,15 +14,15 @@ class Home extends PureComponent {
         <Loader />
         <Background />
         <div className="fixed">
-          <Border 
+          <Border
             scroll={false}
           />
           <Navigation />
           <ThreeSphere />
           <MainLogo />
           <MainText />
+        </div>
       </div>
-    </div>
     );
   }
 }

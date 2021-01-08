@@ -1,4 +1,3 @@
-
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -20,7 +19,7 @@ class DailyUI extends PureComponent {
       animateClass: 'animated',
       offset: 0,
       mobile: true,
-      live: false
+      live: false,
     }).init();
   }
 
@@ -37,7 +36,7 @@ class DailyUI extends PureComponent {
         nextTitle="SSCTE - Android"
         nextURL="/workexp/sscte"
       />
-    )
+    );
   }
 
   renderSkills() {
@@ -46,29 +45,40 @@ class DailyUI extends PureComponent {
         <Row>
           <Col data-wow-delay="1s">
             <p className="center-sm paddingtop-0">
-              <span className="b">ERA ++</span><br /><br />
+              <span className="b">ERA ++</span>
+              <br />
+              <br />
               Late 2016
             </p>
           </Col>
           <Col data-wow-delay="1s">
             <p className="center-sm paddingtop-0">
-              <span className="b">SKILLS ++</span><br /><br />
-              UI . UX<br />
-              Animation<br />
+              <span className="b">SKILLS ++</span>
+              <br />
+              <br />
+              UI . UX
+              <br />
+              Animation
+              <br />
               Design
             </p>
           </Col>
           <Col data-wow-delay="1s">
             <p className="center-sm paddingtop-0">
-              <span className="b">TECHNOLOGY ++</span><br /><br />
-              Sketchapp<br />
-              Principle<br />
-              Marvel<br />
+              <span className="b">TECHNOLOGY ++</span>
+              <br />
+              <br />
+              Sketchapp
+              <br />
+              Principle
+              <br />
+              Marvel
+              <br />
             </p>
           </Col>
         </Row>
       </Container>
-    )
+    );
   }
 
   renderProjectDescription() {
@@ -77,11 +87,13 @@ class DailyUI extends PureComponent {
         <div className="wow fadeIn">
           <div className="col-md-12 no-padding">
             <h3 className="center-sm paddingtop-0">The Project</h3>
-            <br /><br />
+            <br />
+            <br />
             <div className="col-md-6">
               <p>
                 DailyUI is, as the name suggests, a daily exploration into UX and UI. For 100 days, UI and UX elements were designed and created for the creative community. Each day, a new project or requirement is issued. As a designer, it was my goal to identify the best way to convey or provide that feature through design.
-                <br /><br />
+                <br />
+                <br />
                 <a href="http://twitter.com/helloanson" className="btn">Take a peek</a>
               </p>
             </div>
@@ -96,16 +108,18 @@ class DailyUI extends PureComponent {
       <div className="wow fadeIn">
         <div className="col-md-12 no-padding">
           <h3 className="center-sm paddingtop-0">Deliverables</h3>
-          <br /><br />
+          <br />
+          <br />
           <div className="col-md-6">
             <p>
-              Over the course of several months, I honed my skills in UX development. Through various technologies (primarily Sketch for Mac), I developed a collection of UX inspirations for future projects. 
-              <br /><br />
+              Over the course of several months, I honed my skills in UX development. Through various technologies (primarily Sketch for Mac), I developed a collection of UX inspirations for future projects.
+              <br />
+              <br />
               Included is a sample of my best work - however, for a view of the progression of work, you can look at Twitter for all #DailyUI updates.
             </p>
           </div>
+        </div>
       </div>
-    </div>
     );
   }
 }

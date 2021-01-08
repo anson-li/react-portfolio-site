@@ -1,4 +1,3 @@
-
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -21,7 +20,7 @@ class CrudeMonitor extends PureComponent {
       animateClass: 'animated',
       offset: 0,
       mobile: true,
-      live: false
+      live: false,
     }).init();
   }
 
@@ -30,12 +29,14 @@ class CrudeMonitor extends PureComponent {
       <div className="col-md-12">
         <div className="wow fadeIn">
           <h3 className="center-sm paddingtop-0">The Project</h3>
-          <br /><br />
+          <br />
+          <br />
           <div className="col-md-12 no-padding">
             <div className="col-md-6">
               <p>
                 CQI is a Canadian-based company which specialises in monitoring the quality of North American crude oil. They had tasked me with upgrading their primary application, Crude Monitor, to fit the needs and demands of today's generation.
-                <br /><br />
+                <br />
+                <br />
                 <a href="http://www.crudemonitor.ca" className="btn">Take a peek</a>
               </p>
             </div>
@@ -50,7 +51,8 @@ class CrudeMonitor extends PureComponent {
       <div className="wow fadeIn">
         <div className="col-md-12 no-padding">
           <h3 className="center-sm paddingtop-0">Initial Design</h3>
-          <br /><br />
+          <br />
+          <br />
           <div className="col-md-3">
             <div className="box blue"><p>#2E3F54</p></div>
             &nbsp;&nbsp;&nbsp;
@@ -59,18 +61,21 @@ class CrudeMonitor extends PureComponent {
             <div className="box gray"><p>#EEEEEE</p></div>
           </div>
           <div className="col-md-6">
-            <br /><br />
+            <br />
+            <br />
             <p>
               The initial design was created in Sketchapp, using an iterative development method that helped streamline communication between design and development.
-              <br /><br />
+              <br />
+              <br />
               In addition to restructuring the system to better reflect the new design, both frontend and backend technologies were revamped to ensure that the application could be extended in future development.
-              <br /><br />
+              <br />
+              <br />
               The total process took over two months of development.
             </p>
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   renderSkills() {
@@ -79,45 +84,57 @@ class CrudeMonitor extends PureComponent {
         <Row>
           <Col data-wow-delay="1s">
             <p className="center-sm paddingtop-0">
-              <span className="b">ERA ++</span><br /><br />
+              <span className="b">ERA ++</span>
+              <br />
+              <br />
               Early 2016
             </p>
           </Col>
           <Col data-wow-delay="1s">
             <p className="center-sm paddingtop-0">
-              <span className="b">SKILLS ++</span><br /><br />
-                Fullstack Development<br />
-                UI . UX<br />
-                Agile Development
+              <span className="b">SKILLS ++</span>
+              <br />
+              <br />
+              Fullstack Development
+              <br />
+              UI . UX
+              <br />
+              Agile Development
             </p>
           </Col>
           <Col data-wow-delay="1s">
-            <span className="b">TECHNOLOGY ++</span><br /><br />
-            PHP<br />
-            HTML . CSS . JS<br />
-            d3.js<br />
+            <span className="b">TECHNOLOGY ++</span>
+            <br />
+            <br />
+            PHP
+            <br />
+            HTML . CSS . JS
+            <br />
+            d3.js
+            <br />
           </Col>
         </Row>
       </Container>
-    )
+    );
   }
 
   renderReflections() {
     return (
       <div className="wow fadeIn">
         <div className="col-md-12 no-padding">
-        <h3 className="center-sm paddingtop-0">Development</h3>
-          <br /><br />
+          <h3 className="center-sm paddingtop-0">Development</h3>
+          <br />
+          <br />
           <div className="col-md-12 no-padding">
             <div className="col-md-6">
-            <p>
-              The design eventually underwent multiple iterations throughout its two-month development phase. Development technologies largely involved PHP and JS development, including use of plugins such as Bootstrap and d3.js. 
-            </p>
+              <p>
+                The design eventually underwent multiple iterations throughout its two-month development phase. Development technologies largely involved PHP and JS development, including use of plugins such as Bootstrap and d3.js.
+              </p>
             </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   render() {
@@ -134,7 +151,7 @@ class CrudeMonitor extends PureComponent {
         nextTitle="AlbertaMES"
         nextURL="/workexp/albertames"
       />
-    )
+    );
   }
 }
 
