@@ -8,7 +8,7 @@ import MainLogo from '../../common/MainLogo';
 import Border from '../../common/Border';
 
 import LineBreak from '../../web/assets/line-break.png';
-import WorkBackground from '../../web/assets/background/bg-work.png';
+import WorkBackground from '../../web/assets/background/bg-project.png';
 
 class Projects extends PureComponent {
   componentDidMount() {
