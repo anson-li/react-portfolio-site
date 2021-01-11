@@ -6,7 +6,7 @@ class TextList extends PureComponent {
 
     this.props.items.forEach((element) => {
       items.push(<span>
-        ●
+        ●&nbsp;
         {element}
         <br />
       </span>);
