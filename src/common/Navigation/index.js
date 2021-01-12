@@ -23,7 +23,6 @@ class Navigation extends PureComponent {
   }
 
   triggerMenuAnimation() {
-    console.log(this.state.visibleMenu);
     const targets = '.menu';
     if (this.state.visibleMenu) {
       anime

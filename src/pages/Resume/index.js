@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
+import anime from 'animejs';
 
 import Loader from '../../common/Loader';
 import Navigation from '../../common/Navigation';
@@ -17,6 +18,7 @@ import TextBody from './common/TextBody';
 import TextList from './common/TextList';
 
 import ResumePDF from '../../web/assets/resume_ansonli.pdf';
+import withTransition from '../../common/WithTransition';
 
 import './style.scss';
 
@@ -31,9 +33,32 @@ class Resume extends PureComponent {
     }).init();
   }
 
+  animateIn() {
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateX: [-100, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
+  }
+
+  animateOut() {
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateX: -100,
+      opacity: 0,
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
+  }
+
   render() {
     return (
-      <div id="scroll-page">
+      // eslint-disable-next-line no-return-assign
+      <div id="scroll-page" ref={(e) => (this.el = e)}>
         <Loader />
         <div id="fixed-wrapper" className="fixed-wrapper">
           <div className="fixed-header">
@@ -227,4 +252,4 @@ class Resume extends PureComponent {
   }
 }
 
-export default Resume;
+export default withTransition(Resume);
