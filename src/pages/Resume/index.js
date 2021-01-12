@@ -34,6 +34,7 @@ class Resume extends PureComponent {
   }
 
   animateIn() {
+    console.log('Animate in resume');
     anime.remove(this.el);
     return anime({
       targets: this.el,
@@ -45,6 +46,7 @@ class Resume extends PureComponent {
   }
 
   animateOut() {
+    console.log('Animate out resume');
     anime.remove(this.el);
     return anime({
       targets: this.el,

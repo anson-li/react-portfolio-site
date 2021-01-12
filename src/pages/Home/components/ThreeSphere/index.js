@@ -97,7 +97,7 @@ class ThreeSphere extends PureComponent {
 
   onDocumentTouchStart(event) {
     if (event.touches.length > 1) {
-      event.preventDefault();
+      // event.preventDefault();
       this.mouseX = event.touches[0].pageX - this.windowHalfX;
       this.mouseY = event.touches[0].pageY - this.windowHalfY;
     }
@@ -105,7 +105,7 @@ class ThreeSphere extends PureComponent {
 
   onDocumentTouchMove(event) {
     if (event.touches.length === 1) {
-      event.preventDefault();
+      // event.preventDefault();
       this.mouseX = event.touches[0].pageX - this.windowHalfX;
       this.mouseY = event.touches[0].pageY - this.windowHalfY;
     } else {

@@ -1,5 +1,8 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
+import anime from 'animejs';
+
+import withTransition from '../../common/WithTransition';
 
 import Loader from '../../common/Loader';
 import Navigation from '../../common/Navigation';
@@ -24,9 +27,34 @@ class Contact extends PureComponent {
     }).init();
   }
 
+  animateIn() {
+    console.log('Animate in contact');
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateX: [-100, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
+  }
+
+  animateOut() {
+    console.log('Animate out contact');
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateX: -100,
+      opacity: 0,
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
+  }
+
   render() {
     return (
-      <div id="scroll-page">
+      // eslint-disable-next-line no-return-assign
+      <div id="scroll-page" ref={(e) => (this.el = e)}>
         <Loader />
         <div id="fixed-wrapper" className="fixed-wrapper">
           <div className="fixed-header">
@@ -92,4 +120,4 @@ class Contact extends PureComponent {
   }
 }
 
-export default Contact;
+export default withTransition(Contact);

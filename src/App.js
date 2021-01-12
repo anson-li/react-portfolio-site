@@ -1,10 +1,6 @@
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import React, { PureComponent } from 'react';
-import {
-  TransitionGroup,
-  CSSTransition as Transition,
-} from 'react-transition-group';
-import anime from 'animejs';
+import { TransitionGroup } from 'react-transition-group';
 
 import Home from './pages/Home';
 import WorkList from './pages/WorkList';
