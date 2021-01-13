@@ -1,10 +1,8 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
+import { Link } from 'react-router-dom';
 
 import Loader from '../../../../common/Loader';
-import Navigation from '../../../../common/Navigation';
-import MainLogo from '../../../../common/MainLogo';
-import Border from '../../../../common/Border';
 import BodySection from './components/BodySection';
 
 import LineBreak from '../../../../web/assets/line-break.png';
@@ -50,7 +48,7 @@ class WorkTemplate extends PureComponent {
                 <br />
                 <div className="wow fadeIn">
                   <p className="serif">Next Work →</p>
-                  <h3><a className="bigstrike" href={this.props.nextURL}>{this.props.nextTitle}</a></h3>
+                  <h3><Link to={this.props.nextURL} className="bigstrike" href={this.props.nextURL}>{this.props.nextTitle}</Link></h3>
                 </div>
                 <div className="spacer-sm" />
               </div>

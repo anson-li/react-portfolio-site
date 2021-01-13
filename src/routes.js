@@ -49,14 +49,6 @@ export default [
     },
   },
   {
-    key: 'home',
-    Component: Home,
-    path: {
-      path: '/',
-      exact: true,
-    },
-  },
-  {
     key: 'questionmark',
     Component: Questionmark,
     path: {
@@ -96,6 +88,14 @@ export default [
     Component: AlbertaMES,
     path: {
       path: '/albertames',
+    },
+  },
+  {
+    key: 'home',
+    Component: Home,
+    path: {
+      path: '/',
+      exact: true,
     },
   },
 ];

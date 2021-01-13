@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import anime from 'animejs';
+import { Link } from 'react-router-dom';
 
 import LineBreak from '../../web/assets/line-break.png';
 import WorkBackground from '../../web/assets/background/bg-work.png';
@@ -85,7 +86,7 @@ class WorkList extends PureComponent {
                       <div className="col-md-6 no-padding">
                         <div className="spacer-xs" />
                         <p>
-                          <a href="/questionmark" className="btn">View case study</a>
+                          <Link to="/questionmark" href="/questionmark" className="btn">View case study</Link>
                         </p>
                         <div className="spacer-xs" />
                       </div>
@@ -121,7 +122,7 @@ class WorkList extends PureComponent {
                       <div className="col-md-6 no-padding">
                         <div className="spacer-xs" />
                         <p>
-                          <a href="/crudemonitor" className="btn">View case study</a>
+                          <Link to="/crudemonitor" href="/crudemonitor" className="btn">View case study</Link>
                         </p>
                         <div className="spacer-xs" />
                       </div>
@@ -156,7 +157,7 @@ class WorkList extends PureComponent {
                       <div className="col-md-6 no-padding">
                         <div className="spacer-xs" />
                         <p>
-                          <a href="/albertames" className="btn">View case study</a>
+                          <Link to="/albertames" href="/albertames" className="btn">View case study</Link>
                         </p>
                         <div className="spacer-xs" />
                       </div>
@@ -191,7 +192,7 @@ class WorkList extends PureComponent {
                       <div className="col-md-6 no-padding">
                         <div className="spacer-xs" />
                         <p>
-                          <a href="/dailyui" className="btn">View case study</a>
+                          <Link to="/dailyui" href="/dailyui" className="btn">View case study</Link>
                         </p>
                         <div className="spacer-xs" />
                       </div>
@@ -226,7 +227,7 @@ class WorkList extends PureComponent {
                       <div className="col-md-6 no-padding">
                         <div className="spacer-xs" />
                         <p>
-                          <a href="/sscte" className="btn">View case study</a>
+                          <Link to="/sscte" href="/sscte" className="btn">View case study</Link>
                         </p>
                         <div className="spacer-xs" />
                       </div>
@@ -262,7 +263,7 @@ class WorkList extends PureComponent {
                       <div className="col-md-6 no-padding">
                         <div className="spacer-xs" />
                         <p>
-                          <a href="/teamaqua" className="btn">View case study</a>
+                          <Link to="/teamaqua" href="/teamaqua" className="btn">View case study</Link>
                         </p>
                         <div className="spacer-xs" />
                       </div>
