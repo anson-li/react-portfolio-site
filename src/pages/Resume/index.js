@@ -34,11 +34,10 @@ class Resume extends PureComponent {
   }
 
   animateIn() {
-    console.log('Animate in resume');
     anime.remove(this.el);
     return anime({
       targets: this.el,
-      translateX: [-100, 0],
+      translateY: [-100, 0],
       opacity: [0, 1],
       duration: 1000,
       easing: 'easeOutExpo',
@@ -46,11 +45,10 @@ class Resume extends PureComponent {
   }
 
   animateOut() {
-    console.log('Animate out resume');
     anime.remove(this.el);
     return anime({
       targets: this.el,
-      translateX: -100,
+      translateY: -100,
       opacity: 0,
       duration: 1000,
       easing: 'easeOutExpo',

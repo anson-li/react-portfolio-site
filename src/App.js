@@ -1,31 +1,22 @@
-import { Route, BrowserRouter as Router } from 'react-router-dom';
+/* eslint-disable react/destructuring-assignment */
 import React, { PureComponent } from 'react';
 import { TransitionGroup } from 'react-transition-group';
-
-import Home from './pages/Home';
-import WorkList from './pages/WorkList';
-import Resume from './pages/Resume';
-import Contact from './pages/Contact';
-import Projects from './pages/Projects';
-
-import WorkExperiences from './pages/WorkExperiences';
-
-import Jellicent from './pages/ProjectList/Jellicent';
+import { matchPath } from 'react-router-dom';
 
 class App extends PureComponent {
+  matchPath = (path) => matchPath(window.location.pathname, path);
+
   render() {
     return (
-      <Router>
+      <div id="app">
         <TransitionGroup id="content">
-          <Route path="/workexp" component={WorkExperiences} />
-          <Route path="/work" component={WorkList} />
-          <Route path="/resume" component={Resume} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/jellicent" component={Jellicent} />
-          <Route path="/" exact component={Home} />
+          {this.props.routes
+            .filter(({ path }) => this.matchPath(path))
+            .map(({ Component, key }) => (
+              <Component key={key} />
+            ))}
         </TransitionGroup>
-      </Router>
+      </div>
     );
   }
 }

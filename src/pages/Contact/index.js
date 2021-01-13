@@ -28,7 +28,6 @@ class Contact extends PureComponent {
   }
 
   animateIn() {
-    console.log('Animate in contact');
     anime.remove(this.el);
     return anime({
       targets: this.el,
@@ -40,7 +39,6 @@ class Contact extends PureComponent {
   }
 
   animateOut() {
-    console.log('Animate out contact');
     anime.remove(this.el);
     return anime({
       targets: this.el,
