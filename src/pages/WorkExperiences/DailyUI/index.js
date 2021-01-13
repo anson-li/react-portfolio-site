@@ -137,13 +137,15 @@ class DailyUI extends PureComponent {
     sections[1] = this.renderProjectDescription();
     sections[2] = this.renderProjectDeliverables();
     return (
-      <WorkTemplate
-        background={BackgroundDailyUI}
-        title="#DailyUI"
-        section={sections}
-        nextTitle="SSCTE - Android"
-        nextURL="/sscte"
-      />
+      <div ref={(e) => (this.el = e)}>
+        <WorkTemplate
+          background={BackgroundDailyUI}
+          title="#DailyUI"
+          section={sections}
+          nextTitle="SSCTE - Android"
+          nextURL="/sscte"
+        />
+      </div>
     );
   }
 }

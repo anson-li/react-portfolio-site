@@ -168,13 +168,15 @@ class CrudeMonitor extends PureComponent {
     sections[2] = this.renderProjectOverview();
     sections[3] = this.renderReflections();
     return (
-      <WorkTemplate
-        background={BackgroundCrudeMonitor}
-        title="Crude Monitor"
-        section={sections}
-        nextTitle="AlbertaMES"
-        nextURL="/albertames"
-      />
+      <div ref={(e) => (this.el = e)}>
+        <WorkTemplate
+          background={BackgroundCrudeMonitor}
+          title="Crude Monitor"
+          section={sections}
+          nextTitle="AlbertaMES"
+          nextURL="/albertames"
+        />
+      </div>
     );
   }
 }

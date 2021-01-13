@@ -171,13 +171,15 @@ class AlbertaMES extends PureComponent {
     sections[2] = this.renderProjectOverview();
     sections[3] = this.renderReflections();
     return (
-      <WorkTemplate
-        background={BackgroundAlbertaMES}
-        title="AlbertaMES"
-        section={sections}
-        nextTitle="#DailyUI"
-        nextURL="/dailyui"
-      />
+      <div ref={(e) => (this.el = e)}>
+        <WorkTemplate
+          background={BackgroundAlbertaMES}
+          title="AlbertaMES"
+          section={sections}
+          nextTitle="#DailyUI"
+          nextURL="/dailyui"
+        />
+      </div>
     );
   }
 }

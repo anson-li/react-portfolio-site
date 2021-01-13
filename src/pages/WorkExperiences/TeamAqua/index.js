@@ -139,13 +139,15 @@ class TeamAqua extends PureComponent {
     sections[1] = this.renderProjectDescription();
     sections[2] = this.renderProjectDeliverables();
     return (
-      <WorkTemplate
-        background={BackgroundTeamAqua}
-        title="Team Aqua"
-        section={sections}
-        nextTitle="Questionmark"
-        nextURL="/questionmark"
-      />
+      <div ref={(e) => (this.el = e)}>
+        <WorkTemplate
+          background={BackgroundTeamAqua}
+          title="Team Aqua"
+          section={sections}
+          nextTitle="Questionmark"
+          nextURL="/questionmark"
+        />
+      </div>
     );
   }
 }

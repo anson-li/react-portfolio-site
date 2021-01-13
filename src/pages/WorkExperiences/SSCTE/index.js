@@ -170,13 +170,15 @@ class SSCTE extends PureComponent {
     sections[2] = this.renderProjectOverview();
     sections[3] = this.renderProjectReflections();
     return (
-      <WorkTemplate
-        background={BackgroundSSCTE}
-        title="SSCTE"
-        section={sections}
-        nextTitle="Team Aqua - Ruby"
-        nextURL="/teamaqua"
-      />
+      <div ref={(e) => (this.el = e)}>
+        <WorkTemplate
+          background={BackgroundSSCTE}
+          title="SSCTE"
+          section={sections}
+          nextTitle="Team Aqua - Ruby"
+          nextURL="/teamaqua"
+        />
+      </div>
     );
   }
 }

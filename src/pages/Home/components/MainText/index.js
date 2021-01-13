@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
+import { Link } from 'react-router-dom';
+
 import DarkBackground from '../../../../web/assets/background/bg-index-dev-dark.png';
 import FadeText from '../../../../common/FadeText';
 
@@ -26,7 +28,7 @@ class MainText extends PureComponent {
               id="main-text"
               text="Hey - I'm Anson Li, and I am a software engineer at ATB."
             />
-            <a id="sub-link" href="work">
+            <Link to="/work" id="sub-link" href="work">
               <FadeText
                 type="h7"
                 id="sub-text"
@@ -34,7 +36,7 @@ class MainText extends PureComponent {
                 text="Let's take a look →"
                 base={1800}
               />
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col-md-12 fixed-bottom">
