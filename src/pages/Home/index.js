@@ -14,7 +14,7 @@ class Home extends PureComponent {
     return anime({
       targets: this.el,
       opacity: [0, 1],
-      duration: 1000,
+      duration: 500,
       easing: 'easeOutExpo',
     }).finished;
   }
@@ -24,7 +24,7 @@ class Home extends PureComponent {
     return anime({
       targets: this.el,
       opacity: 0,
-      duration: 1000,
+      duration: 500,
       easing: 'easeOutExpo',
     }).finished;
   }

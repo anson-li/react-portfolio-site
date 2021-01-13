@@ -39,7 +39,7 @@ class Resume extends PureComponent {
       targets: this.el,
       translateY: [-100, 0],
       opacity: [0, 1],
-      duration: 1000,
+      duration: 500,
       easing: 'easeOutExpo',
     }).finished;
   }
@@ -49,8 +49,8 @@ class Resume extends PureComponent {
     return anime({
       targets: this.el,
       translateY: -100,
-      opacity: 0,
-      duration: 1000,
+      opacity: 0.5,
+      duration: 500,
       easing: 'easeOutExpo',
     }).finished;
   }
