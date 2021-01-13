@@ -32,11 +32,6 @@ class WorkList extends PureComponent {
       <div id="scroll-page">
         <Loader />
         <div id="fixed-wrapper" className="fixed-wrapper">
-          <div className="fixed-header">
-            <Border />
-            <Navigation scroll />
-            <MainLogo />
-          </div>
           <div className="main-container">
             <div id="scrollContainer" className="flex-container container ">
               <div className="hide-under col-md-12 left-top">

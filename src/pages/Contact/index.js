@@ -4,11 +4,6 @@ import anime from 'animejs';
 
 import withTransition from '../../common/WithTransition';
 
-import Loader from '../../common/Loader';
-import Navigation from '../../common/Navigation';
-import MainLogo from '../../common/MainLogo';
-import Border from '../../common/Border';
-
 import AnsonBackground from '../../web/assets/background/bg-anson.png';
 import LineBreak from '../../web/assets/line-break.png';
 import GithubIcon from '../../web/assets/icon/ico-github.png';
@@ -31,7 +26,7 @@ class Contact extends PureComponent {
     anime.remove(this.el);
     return anime({
       targets: this.el,
-      translateX: [-100, 0],
+      translateY: [-100, 0],
       opacity: [0, 1],
       duration: 1000,
       easing: 'easeOutExpo',
@@ -42,7 +37,7 @@ class Contact extends PureComponent {
     anime.remove(this.el);
     return anime({
       targets: this.el,
-      translateX: -100,
+      translateY: -100,
       opacity: 0,
       duration: 1000,
       easing: 'easeOutExpo',
@@ -53,13 +48,7 @@ class Contact extends PureComponent {
     return (
       // eslint-disable-next-line no-return-assign
       <div id="scroll-page" ref={(e) => (this.el = e)}>
-        <Loader />
         <div id="fixed-wrapper" className="fixed-wrapper">
-          <div className="fixed-header">
-            <Border />
-            <Navigation scroll />
-            <MainLogo />
-          </div>
           <div className="main-container">
             <div id="scrollContainer" className="flex-container container ">
               <div className="hide-under col-md-12 left-top">
