@@ -8,7 +8,6 @@ import { Transition } from 'react-transition-group';
 export default function withTransition(WrappedComponent) {
   return class extends React.Component {
     handleAnimateIn(done) {
-      console.log('!!!');
       if (typeof this.wrappedComponent.animateIn === 'function') {
         const promise = this.wrappedComponent.animateIn();
         if (promise && typeof promise.then === 'function') {
@@ -20,7 +19,6 @@ export default function withTransition(WrappedComponent) {
     }
 
     handleAnimateOut(done) {
-      console.log('***');
       const next = () => {
         if (done) done();
       };
@@ -41,7 +39,7 @@ export default function withTransition(WrappedComponent) {
         <Transition
           {...this.props}
           addEndListener={(node, done) => {
-            console.log('AddEndListener triggered');
+            window.scrollTo(0, 0);
             if (this.props.in) {
               this.handleAnimateIn(done);
             } else {
