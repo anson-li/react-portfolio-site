@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
+import anime from 'animejs';
 
 import BackgroundCrudeMonitor from '../../../web/assets/background/bg-oil.png';
 import WorkTemplate from '../common/WorkTemplate';
+import withTransition from '../../../common/WithTransition';
 
 class CrudeMonitor extends PureComponent {
   constructor(props) {
@@ -22,6 +24,28 @@ class CrudeMonitor extends PureComponent {
       mobile: true,
       live: false,
     }).init();
+  }
+
+  animateIn() {
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateY: [-100, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
+  }
+
+  animateOut() {
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateY: -100,
+      opacity: 0,
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
   }
 
   renderProjectDescription() {
@@ -149,10 +173,10 @@ class CrudeMonitor extends PureComponent {
         title="Crude Monitor"
         section={sections}
         nextTitle="AlbertaMES"
-        nextURL="/workexp/albertames"
+        nextURL="/albertames"
       />
     );
   }
 }
 
-export default CrudeMonitor;
+export default withTransition(CrudeMonitor);

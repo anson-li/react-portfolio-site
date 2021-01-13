@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
+import anime from 'animejs';
 
 import BackgroundSSCTE from '../../../web/assets/background/bg-sscte.png';
 import WorkTemplate from '../common/WorkTemplate';
+import withTransition from '../../../common/WithTransition';
 
 class SSCTE extends PureComponent {
   constructor(props) {
@@ -22,6 +24,30 @@ class SSCTE extends PureComponent {
       mobile: true,
       live: false,
     }).init();
+  }
+
+  animateIn() {
+    console.log('A');
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateY: [-100, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
+  }
+
+  animateOut() {
+    console.log('B');
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateY: -100,
+      opacity: 0,
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
   }
 
   renderSkills() {
@@ -149,10 +175,10 @@ class SSCTE extends PureComponent {
         title="SSCTE"
         section={sections}
         nextTitle="Team Aqua - Ruby"
-        nextURL="/workexp/teamaqua"
+        nextURL="/teamaqua"
       />
     );
   }
 }
 
-export default SSCTE;
+export default withTransition(SSCTE);

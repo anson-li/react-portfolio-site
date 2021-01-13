@@ -39,6 +39,7 @@ export default function withTransition(WrappedComponent) {
         <Transition
           {...this.props}
           addEndListener={(node, done) => {
+            console.log('Triggered!');
             window.scrollTo(0, 0);
             if (this.props.in) {
               this.handleAnimateIn(done);

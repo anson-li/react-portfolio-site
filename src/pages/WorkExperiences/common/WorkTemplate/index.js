@@ -22,7 +22,7 @@ class WorkTemplate extends PureComponent {
 
   render() {
     return (
-      <div id="scroll-page">
+      <div id="scroll-page" ref={(e) => (this.el = e)}>
         <Loader />
         <div id="fixed-wrapper" className="fixed-wrapper">
           <div className="main-container">

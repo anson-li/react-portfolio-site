@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
+import anime from 'animejs';
 
 import BackgroundQuestionmark from '../../../web/assets/background/bg-questionmark.png';
 import WorkTemplate from '../common/WorkTemplate';
+import withTransition from '../../../common/WithTransition';
 
 class Questionmark extends PureComponent {
   constructor(props) {
@@ -21,6 +23,28 @@ class Questionmark extends PureComponent {
       mobile: true,
       live: false,
     }).init();
+  }
+
+  animateIn() {
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateY: [-100, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
+  }
+
+  animateOut() {
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateY: -100,
+      opacity: 0,
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
   }
 
   renderSkills() {
@@ -127,10 +151,10 @@ class Questionmark extends PureComponent {
         title="Questionmark"
         section={sections}
         nextTitle="Crude Monitor"
-        nextURL="/workexp/crudemonitor"
+        nextURL="/crudemonitor"
       />
     );
   }
 }
 
-export default Questionmark;
+export default withTransition(Questionmark);

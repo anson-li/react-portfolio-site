@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
+import anime from 'animejs';
 
 import BackgroundDailyUI from '../../../web/assets/background/bg-dailyui.png';
 import WorkTemplate from '../common/WorkTemplate';
+import withTransition from '../../../common/WithTransition';
 
 class DailyUI extends PureComponent {
   constructor(props) {
@@ -23,20 +25,26 @@ class DailyUI extends PureComponent {
     }).init();
   }
 
-  render() {
-    const sections = [];
-    sections[0] = this.renderSkills();
-    sections[1] = this.renderProjectDescription();
-    sections[2] = this.renderProjectDeliverables();
-    return (
-      <WorkTemplate
-        background={BackgroundDailyUI}
-        title="#DailyUI"
-        section={sections}
-        nextTitle="SSCTE - Android"
-        nextURL="/workexp/sscte"
-      />
-    );
+  animateIn() {
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateY: [-100, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
+  }
+
+  animateOut() {
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateY: -100,
+      opacity: 0,
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
   }
 
   renderSkills() {
@@ -122,6 +130,22 @@ class DailyUI extends PureComponent {
       </div>
     );
   }
+
+  render() {
+    const sections = [];
+    sections[0] = this.renderSkills();
+    sections[1] = this.renderProjectDescription();
+    sections[2] = this.renderProjectDeliverables();
+    return (
+      <WorkTemplate
+        background={BackgroundDailyUI}
+        title="#DailyUI"
+        section={sections}
+        nextTitle="SSCTE - Android"
+        nextURL="/sscte"
+      />
+    );
+  }
 }
 
-export default DailyUI;
+export default withTransition(DailyUI);

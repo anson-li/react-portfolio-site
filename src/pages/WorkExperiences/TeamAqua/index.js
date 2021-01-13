@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
+import anime from 'animejs';
 
 import BackgroundTeamAqua from '../../../web/assets/background/bg-teamaqua.png';
 import WorkTemplate from '../common/WorkTemplate';
+import withTransition from '../../../common/WithTransition';
 
 class TeamAqua extends PureComponent {
   constructor(props) {
@@ -22,6 +24,29 @@ class TeamAqua extends PureComponent {
       live: false,
     }).init();
   }
+
+  animateIn() {
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateY: [-100, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
+  }
+
+  animateOut() {
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateY: -100,
+      opacity: 0,
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
+  }
+
 
   renderSkills() {
     return (
@@ -119,10 +144,10 @@ class TeamAqua extends PureComponent {
         title="Team Aqua"
         section={sections}
         nextTitle="Questionmark"
-        nextURL="/workexp/questionmark"
+        nextURL="/questionmark"
       />
     );
   }
 }
 
-export default TeamAqua;
+export default withTransition(TeamAqua);

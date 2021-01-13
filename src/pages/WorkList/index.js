@@ -85,7 +85,7 @@ class WorkList extends PureComponent {
                       <div className="col-md-6 no-padding">
                         <div className="spacer-xs" />
                         <p>
-                          <a href="/workexp/questionmark" className="btn">View case study</a>
+                          <a href="/questionmark" className="btn">View case study</a>
                         </p>
                         <div className="spacer-xs" />
                       </div>
@@ -121,7 +121,7 @@ class WorkList extends PureComponent {
                       <div className="col-md-6 no-padding">
                         <div className="spacer-xs" />
                         <p>
-                          <a href="/workexp/crudemonitor" className="btn">View case study</a>
+                          <a href="/crudemonitor" className="btn">View case study</a>
                         </p>
                         <div className="spacer-xs" />
                       </div>
@@ -156,7 +156,7 @@ class WorkList extends PureComponent {
                       <div className="col-md-6 no-padding">
                         <div className="spacer-xs" />
                         <p>
-                          <a href="/workexp/albertames" className="btn">View case study</a>
+                          <a href="/albertames" className="btn">View case study</a>
                         </p>
                         <div className="spacer-xs" />
                       </div>
@@ -191,7 +191,7 @@ class WorkList extends PureComponent {
                       <div className="col-md-6 no-padding">
                         <div className="spacer-xs" />
                         <p>
-                          <a href="/workexp/dailyui" className="btn">View case study</a>
+                          <a href="/dailyui" className="btn">View case study</a>
                         </p>
                         <div className="spacer-xs" />
                       </div>
@@ -226,7 +226,7 @@ class WorkList extends PureComponent {
                       <div className="col-md-6 no-padding">
                         <div className="spacer-xs" />
                         <p>
-                          <a href="/workexp/sscte" className="btn">View case study</a>
+                          <a href="/sscte" className="btn">View case study</a>
                         </p>
                         <div className="spacer-xs" />
                       </div>
@@ -262,7 +262,7 @@ class WorkList extends PureComponent {
                       <div className="col-md-6 no-padding">
                         <div className="spacer-xs" />
                         <p>
-                          <a href="/workexp/teamaqua" className="btn">View case study</a>
+                          <a href="/teamaqua" className="btn">View case study</a>
                         </p>
                         <div className="spacer-xs" />
                       </div>
