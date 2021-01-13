@@ -1,10 +1,6 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
-
-import Loader from '../../common/Loader';
-import Navigation from '../../common/Navigation';
-import MainLogo from '../../common/MainLogo';
-import Border from '../../common/Border';
+import anime from 'animejs';
 
 import LineBreak from '../../web/assets/line-break.png';
 import WorkBackground from '../../web/assets/background/bg-work.png';
@@ -15,6 +11,8 @@ import DailyUIPanel from '../../web/assets/panel/panel-dailyui.png';
 import QuestionmarkPanel from '../../web/assets/panel/panel-questionmark.png';
 import SSCTEPanel from '../../web/assets/panel/panel-sscte.png';
 import TeamAquaPanel from '../../web/assets/panel/panel-teamaqua.png';
+
+import withTransition from '../../common/WithTransition';
 
 class WorkList extends PureComponent {
   componentDidMount() {
@@ -27,10 +25,31 @@ class WorkList extends PureComponent {
     }).init();
   }
 
+  animateIn() {
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateY: [-100, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
+  }
+
+  animateOut() {
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateY: -100,
+      opacity: 0,
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
+  }
+
   render() {
     return (
-      <div id="scroll-page">
-        <Loader />
+      <div id="scroll-page" ref={(e) => (this.el = e)}>
         <div id="fixed-wrapper" className="fixed-wrapper">
           <div className="main-container">
             <div id="scrollContainer" className="flex-container container ">
@@ -276,4 +295,4 @@ class WorkList extends PureComponent {
   }
 }
 
-export default WorkList;
+export default withTransition(WorkList);

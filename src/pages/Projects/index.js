@@ -1,14 +1,12 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
+import anime from 'animejs';
 
 import { Link } from 'react-router-dom';
-import Loader from '../../common/Loader';
-import Navigation from '../../common/Navigation';
-import MainLogo from '../../common/MainLogo';
-import Border from '../../common/Border';
 
 import LineBreak from '../../web/assets/line-break.png';
 import WorkBackground from '../../web/assets/background/bg-project.png';
+import withTransition from '../../common/WithTransition';
 
 class Projects extends PureComponent {
   componentDidMount() {
@@ -21,10 +19,31 @@ class Projects extends PureComponent {
     }).init();
   }
 
+  animateIn() {
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateY: [-100, 0],
+      opacity: [0, 1],
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
+  }
+
+  animateOut() {
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      translateY: -100,
+      opacity: 0,
+      duration: 1000,
+      easing: 'easeOutExpo',
+    }).finished;
+  }
+
   render() {
     return (
-      <div id="scroll-page">
-        <Loader />
+      <div id="scroll-page" ref={(e) => (this.el = e)}>
         <div id="fixed-wrapper" className="fixed-wrapper">
           <div className="main-container">
             <div id="scrollContainer" className="flex-container container ">
@@ -111,4 +130,4 @@ class Projects extends PureComponent {
   }
 }
 
-export default Projects;
+export default withTransition(Projects);
