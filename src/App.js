@@ -2,6 +2,8 @@
 import React, { PureComponent } from 'react';
 import { TransitionGroup } from 'react-transition-group';
 import { matchPath } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import Border from './common/Border';
 import MainLogo from './common/MainLogo';
 
@@ -26,5 +28,11 @@ class App extends PureComponent {
     );
   }
 }
+
+App.propTypes = {
+  routes: PropTypes.shape({
+    filter: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default App;

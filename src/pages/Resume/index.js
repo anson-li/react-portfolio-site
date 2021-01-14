@@ -4,9 +4,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import anime from 'animejs';
 
 import Loader from '../../common/Loader';
-import Navigation from '../../common/Navigation';
-import MainLogo from '../../common/MainLogo';
-import Border from '../../common/Border';
 
 import AlbertaBackground from '../../web/assets/background/bg-alberta.png';
 import LineBreak from '../../web/assets/line-break.png';
@@ -78,7 +75,10 @@ class Resume extends PureComponent {
                 <TextSection>
                   <TextHeader text="Overview" />
                   <TextBody>
-                    Versatile software engineer with solid experience in full-stack technologies, and a strong suite of supplementary languages. Strong background in team management and support with hands-on experience in project development and management.
+                    Versatile software engineer with solid experience in full-stack technologies,
+                    and a strong suite of supplementary languages.
+                    Strong background in team management and support with hands-on
+                    experience in project development and management.
                     <TextList
                       items={[
                         '5 years combined project and software experience in full-stack development',

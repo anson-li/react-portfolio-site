@@ -50,7 +50,7 @@
 }
 
 .zindex-100 {
-  z-index: 100;
+  z-index: 2000;
 }
 
 .menuhead {
@@ -80,3 +80,14 @@
   color: #ffd5a8 !important;
 }
 
+#menu-button {
+  color: white;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+#menu-button:focus {
+  outline: none;
+}

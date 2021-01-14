@@ -15,16 +15,18 @@ class Border extends PureComponent {
   }
 
   toggleMenu() {
+    console.log('menu toggled');
     this.setState((prevState) => ({
       visibleMenu: !prevState.visibleMenu,
-    }), function () {
+    }), () => {
       this.triggerMenuAnimation();
     });
   }
 
   triggerMenuAnimation() {
     const targets = '.menu';
-    if (this.state.visibleMenu) {
+    const { visibleMenu } = this.state;
+    if (visibleMenu) {
       anime
         .timeline({ loop: false })
         .add({
@@ -73,10 +75,12 @@ class Border extends PureComponent {
   renderMobile() {
     return (
       <div className="zindex-100 col-md-12 d-block d-sm-none paddingleft-0">
-        <h5 className="toggle menuhead" onClick={this.toggleMenu}>
-          <span className="title">Anson Li</span>
-          <div className="hamburger-menu">&#9776;</div>
-        </h5>
+        <button type="button" id="menu-button" onClick={this.toggleMenu} onKeyDown={this.toggleMenu}>
+          <h5 className="toggle menuhead">
+            <span className="title">Anson Li</span>
+            <div className="hamburger-menu">&#9776;</div>
+          </h5>
+        </button>
         <div className="dropdown">
           <h5>
             <ul className="menu">
