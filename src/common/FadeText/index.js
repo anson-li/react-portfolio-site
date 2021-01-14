@@ -4,27 +4,31 @@ import anime from 'animejs';
 
 class FadeText extends PureComponent {
   componentDidMount() {
-    const targets = `#${this.props.id}.ml3 .letter`;
+    const {
+      id, loop, base, iteration,
+    } = this.props;
+    const targets = `#${id}.ml3 .letter`;
     anime
-      .timeline({ loop: this.props.loop })
+      .timeline({ loop })
       .add({
         targets,
         opacity: [0, 1],
         easing: 'easeOutExpo',
         duration: 2250,
-        delay: (el, i) => this.props.base + this.props.iteration * i,
+        delay: (el, i) => base + iteration * i,
       });
   }
 
   render() {
+    const { className, id, text } = this.props;
     return (
       <this.props.type
-        className={`${this.props.className} ml3`}
-        id={this.props.id}
+        className={`${className} ml3`}
+        id={id}
       >
         {
-      this.props.text.split('').map((v, index) => (
-        <span className="letter" key={index}>{v}</span>
+      text.split('').map((v, index) => (
+        <span className="letter" key={v.concat(index)}>{v}</span>
       ))
       }
       </this.props.type>
@@ -33,7 +37,6 @@ class FadeText extends PureComponent {
 }
 
 FadeText.propTypes = {
-  type: PropTypes.elementType.isRequired,
   className: PropTypes.string,
   id: PropTypes.string,
   text: PropTypes.string.isRequired,

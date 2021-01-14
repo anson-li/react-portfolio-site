@@ -15,7 +15,6 @@ class Border extends PureComponent {
   }
 
   toggleMenu() {
-    console.log('menu toggled');
     this.setState((prevState) => ({
       visibleMenu: !prevState.visibleMenu,
     }), () => {

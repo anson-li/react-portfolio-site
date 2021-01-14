@@ -43,7 +43,7 @@ class Projects extends PureComponent {
 
   render() {
     return (
-      <div id="scroll-page" ref={(e) => (this.el = e)}>
+      <div id="scroll-page" ref={(e) => { this.el = e; }}>
         <div id="fixed-wrapper" className="fixed-wrapper">
           <div className="main-container">
             <div id="scrollContainer" className="flex-container container ">

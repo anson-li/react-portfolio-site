@@ -11,7 +11,6 @@ export default function withTransition(WrappedComponent) {
       const doNotScroll = ['Home', 'Jellicent'];
       if (typeof this.wrappedComponent.animateIn === 'function') {
         if (!doNotScroll.includes(this.wrappedComponent.constructor.name)) {
-          console.log('scrolling!');
           window.scrollTo(0, 0);
         }
         const promise = this.wrappedComponent.animateIn();
@@ -44,6 +43,7 @@ export default function withTransition(WrappedComponent) {
         <Transition
           {...this.props}
           addEndListener={(node, done) => {
+            // eslint-disable-next-line react/prop-types
             if (this.props.in) {
               this.handleAnimateIn(done);
             } else {
@@ -53,8 +53,7 @@ export default function withTransition(WrappedComponent) {
         >
           {(status) => (
             <WrappedComponent
-              // eslint-disable-next-line no-return-assign
-              ref={(e) => (this.wrappedComponent = e)}
+              ref={(e) => { this.wrappedComponent = e; }}
               {...this.props}
               transitionStatus={status}
             />

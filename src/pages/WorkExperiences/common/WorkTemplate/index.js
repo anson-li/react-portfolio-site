@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Link } from 'react-router-dom';
 
-import Loader from '../../../../common/Loader';
 import BodySection from './components/BodySection';
 
 import LineBreak from '../../../../web/assets/line-break.png';
@@ -21,7 +20,6 @@ class WorkTemplate extends PureComponent {
   render() {
     return (
       <div id="scroll-page">
-        <Loader />
         <div id="fixed-wrapper" className="fixed-wrapper">
           <div className="main-container">
             <div id="scrollContainer" className="flex-container container ">

@@ -3,8 +3,6 @@ import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
 import anime from 'animejs';
 
-import Loader from '../../common/Loader';
-
 import AlbertaBackground from '../../web/assets/background/bg-alberta.png';
 import LineBreak from '../../web/assets/line-break.png';
 import DownloadIcon from '../../web/assets/icon/ico-download.png';
@@ -54,9 +52,7 @@ class Resume extends PureComponent {
 
   render() {
     return (
-      // eslint-disable-next-line no-return-assign
-      <div id="scroll-page" ref={(e) => (this.el = e)}>
-        <Loader />
+      <div id="scroll-page" ref={(e) => { this.el = e; }}>
         <div id="fixed-wrapper" className="fixed-wrapper">
           <div className="main-container">
             <div id="scrollContainer" className="flex-container container ">

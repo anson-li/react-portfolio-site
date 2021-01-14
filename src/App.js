@@ -11,6 +11,7 @@ class App extends PureComponent {
   matchPath = (path) => matchPath(window.location.pathname, path);
 
   render() {
+    const { routes } = this.props;
     return (
       <div id="app">
         <div className="fixed-header">
@@ -18,7 +19,7 @@ class App extends PureComponent {
           <MainLogo />
         </div>
         <TransitionGroup id="content">
-          {this.props.routes
+          { routes
             .filter(({ path }) => this.matchPath(path))
             .map(({ Component, key }) => (
               <Component key={key} />
@@ -30,9 +31,11 @@ class App extends PureComponent {
 }
 
 App.propTypes = {
-  routes: PropTypes.shape({
-    filter: PropTypes.func.isRequired,
-  }).isRequired,
+  routes: PropTypes.arrayOf(PropTypes.object),
+};
+
+App.defaultProps = {
+  routes: [],
 };
 
 export default App;
