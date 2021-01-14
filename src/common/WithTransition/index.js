@@ -8,11 +8,7 @@ import { Transition } from 'react-transition-group';
 export default function withTransition(WrappedComponent) {
   return class extends React.Component {
     handleAnimateIn(done) {
-      const doNotScroll = ['Home', 'Jellicent'];
       if (typeof this.wrappedComponent.animateIn === 'function') {
-        if (!doNotScroll.includes(this.wrappedComponent.constructor.name)) {
-          window.scrollTo(0, 0);
-        }
         const promise = this.wrappedComponent.animateIn();
         if (promise && typeof promise.then === 'function') {
           promise.then(done);
@@ -43,6 +39,7 @@ export default function withTransition(WrappedComponent) {
         <Transition
           {...this.props}
           addEndListener={(node, done) => {
+            window.scrollTo(0, 0);
             // eslint-disable-next-line react/prop-types
             if (this.props.in) {
               this.handleAnimateIn(done);
