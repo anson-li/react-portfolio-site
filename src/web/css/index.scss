@@ -891,6 +891,11 @@ canvas {
   }
 }
 
+.fixed-header {
+  position: fixed;
+  z-index: 1;
+}
+
 @import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import '../../common/MainLogo/style.scss';
 @import '../../common/Loader/style.scss';
