@@ -66,7 +66,8 @@ class Projects extends PureComponent {
                   <div className="col-md-12 no-padding">
                     <div className="col-md-6 no-padding">
                       <p>
-                        Testing three.js basic React templating with passthroughs, scene design and camera manipulation.
+                        Testing three.js basic React templating with
+                        passthroughs, scene design and camera manipulation.
                       </p>
                       <br />
                     </div>

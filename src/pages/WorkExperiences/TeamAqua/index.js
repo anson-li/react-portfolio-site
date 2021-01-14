@@ -47,7 +47,6 @@ class TeamAqua extends PureComponent {
     }).finished;
   }
 
-
   renderSkills() {
     return (
       <Container>
@@ -101,7 +100,10 @@ class TeamAqua extends PureComponent {
             <br />
             <div className="col-md-6">
               <p>
-                Team Aqua is a student-led development group that focused on ruby and ruby on rails technology. Using the latest development platforms, Team Aqua developed a series of five modules which explored the boundaries of Ruby.
+                Team Aqua is a student-led development group that focused on
+                ruby and ruby on rails technology. Using the latest
+                development platforms, Team Aqua developed a series of
+                five modules which explored the boundaries of Ruby.
                 <br />
                 <br />
                 <a href="http://www.teamaqua.ca" className="btn">Take a peek</a>
@@ -122,10 +124,13 @@ class TeamAqua extends PureComponent {
           <br />
           <div className="col-md-6">
             <p>
-              Each module explored a different facet of ruby technology; whether that be integrating with command line interfaces, or developing a GUI - Team Aqua was an outlet for creativity in development.
+              Each module explored a different facet of ruby technology;
+              whether that be integrating with command line interfaces,
+              or developing a GUI - Team Aqua was an outlet for creativity in development.
               <br />
               <br />
-              Each module created was created under GPL, and as such is available for future development.
+              Each module created was created under GPL, and as such
+              is available for future development.
             </p>
           </div>
         </div>
@@ -139,7 +144,7 @@ class TeamAqua extends PureComponent {
     sections[1] = this.renderProjectDescription();
     sections[2] = this.renderProjectDeliverables();
     return (
-      <div ref={(e) => (this.el = e)}>
+      <div ref={(e) => { this.el = e; }}>
         <WorkTemplate
           background={BackgroundTeamAqua}
           title="Team Aqua"

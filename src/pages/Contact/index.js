@@ -64,13 +64,18 @@ class Contact extends PureComponent {
                 <div className="col-md-12">
                   <div className="col-md-6 wow fadeIn">
                     <p>
-                      Hi, I'm
+                      Hi, I&rsquo;m
                       {' '}
                       <span className="b"> Anson Li</span>
-                      . I'm currently out and about, working as a software developer at ATB. When I'm not busy learning the ins and outs of React and NodeJS development, I dedicate my learning to full-stack development, scripting languages, and coffee culture.
+                      . I&rsquo;m currently out and about, working as a software developer
+                      at ATB. When I&rsquo;m not busy learning the ins and outs of React
+                      and NodeJS development, I dedicate my learning to full-stack
+                      development, scripting languages, and coffee culture.
                       <br />
                       <br />
-                      Feel free to shoot me a message about my works, my experiences, or anything else that you'd like to know -- I'm ready.
+                      Feel free to shoot me a message about my works,
+                      my experiences, or anything else that you&rsquo;d
+                      like to know -- I&rsquo;m ready.
                       <br />
                       <br />
                       <div className="crossfade wow fadeIn item-one" data-wow-duration="2s">

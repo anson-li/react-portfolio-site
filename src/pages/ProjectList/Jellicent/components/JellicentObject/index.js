@@ -1,14 +1,21 @@
 import React, { PureComponent } from 'react';
 import * as THREE from 'three';
 import './style.scss';
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
-import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass.js';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
+import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass';
 
 class JellicentObject extends PureComponent {
   constructor(props) {
     super(props);
-    this.camera = this.scene = this.renderer = this.composer = this.renderPass = this.glitchPass = this.container = this.requestId = null;
+    this.camera = null;
+    this.scene = null;
+    this.renderer = null;
+    this.composer = null;
+    this.renderPass = null;
+    this.glitchPass = null;
+    this.container = null;
+    this.requestId = null;
 
     this.onWindowResize = this.onWindowResize.bind(this);
     this.init = this.init.bind(this);
@@ -21,11 +28,29 @@ class JellicentObject extends PureComponent {
     this.init();
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onWindowResize);
+    this.container.removeChild(this.renderer.domElement);
+    this.stop();
+    this.loader = null;
+    this.scene = null;
+    this.camera = null;
+    this.composer = null;
+    this.renderer = null;
+  }
+
+  onWindowResize() {
+    this.camera.aspect = window.innerWidth / window.innerHeight;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+  }
+
   init() {
     this.container = document.createElement('div');
     document.body.appendChild(this.container);
 
-    this.camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 2000);
+    this.camera = new THREE.PerspectiveCamera(50,
+      window.innerWidth / window.innerHeight, 0.1, 2000);
     this.camera.position.x = 26.2;
     this.camera.position.y = 38.6;
     this.camera.position.z = 23;
@@ -50,6 +75,7 @@ class JellicentObject extends PureComponent {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.container.appendChild(this.renderer.domElement);
 
+    // eslint-disable-next-line global-require
     const jsonObject = require('../../../../../web/assets/scene/jellicent.json');
     this.scene = new THREE.ObjectLoader().parse(jsonObject);
 
@@ -63,12 +89,6 @@ class JellicentObject extends PureComponent {
     window.addEventListener('resize', this.onWindowResize, false);
 
     this.animate();
-  }
-
-  onWindowResize() {
-    this.camera.aspect = window.innerWidth / window.innerHeight;
-    this.camera.updateProjectionMatrix();
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
   animate() {
@@ -93,17 +113,6 @@ class JellicentObject extends PureComponent {
     }
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.onWindowResize);
-    this.container.removeChild(this.renderer.domElement);
-    this.stop();
-    this.loader = null;
-    this.scene = null;
-    this.camera = null;
-    this.composer = null;
-    this.renderer = null;
-  }
-
   render() {
     return (
       <>
@@ -112,14 +121,24 @@ class JellicentObject extends PureComponent {
             Jellicent - #593
           </h4>
           <p id="jellicent-details-body">
-            Jellicent is a large jellyfish-like Pokémon whose appearance varies based on gender. Both genders have five tentacles, two of which are long with petal-shaped ends. The remaining three are short and tapered.
+            Jellicent is a large jellyfish-like Pokémon whose
+            appearance varies based on gender. Both genders
+            have five tentacles, two of which are long with
+            petal-shaped ends. The remaining three are short and tapered.
             {' '}
             <br />
             <br />
-            A male is blue with a short, white crown, and a white, mustache-like collar. Its eyes are red with blue sclerae, and there is one eyelash over each eye. Its long tentacles have white edges, while its short tentacles have white spots. A female is pink with a tall, white crown and a puffy, white collar. Its eyes are blue with red sclerae and surrounded by two eyelashes. Its mouth is red and heart-shaped. The long tentacles have white edges like the male, but the short ones have white frills.
+            A male is blue with a short, white crown, and a white,
+            mustache-like collar. Its eyes are red with blue sclerae,
+            and there is one eyelash over each eye. Its long tentacles
+            have white edges, while its short tentacles have white spots.
+            A female is pink with a tall, white crown and a puffy, white
+            collar. Its eyes are blue with red sclerae and surrounded by
+            two eyelashes. Its mouth is red and heart-shaped. The long
+            tentacles have white edges like the male, but the short ones have white frills.
           </p>
         </div>
-        <div ref={(ref) => (this.mount = ref)} />
+        <div ref={(ref) => { this.mount = ref; }} />
       </>
     );
   }

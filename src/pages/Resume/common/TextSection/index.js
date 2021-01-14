@@ -6,19 +6,21 @@ import './style.scss';
 
 class TextSection extends PureComponent {
   render() {
+    const { children, bottomSpacer, bottomPadding } = this.props;
     return (
       <div className="text-section wow fadeIn" data-wow-duration="1s">
         <div className="col-md-12">
-          { this.props.children }
+          { children }
         </div>
-        { this.props.bottomSpacer ? <img className="line-break" src={LineBreak} alt="Line separator" /> : null }
-        { this.props.bottomPadding ? <div className="section-spacer" /> : null }
+        { bottomSpacer ? <img className="line-break" src={LineBreak} alt="Line separator" /> : null }
+        { bottomPadding ? <div className="section-spacer" /> : null }
       </div>
     );
   }
 }
 
 TextSection.propTypes = {
+  children: PropTypes.element.isRequired,
   bottomSpacer: PropTypes.bool,
   bottomPadding: PropTypes.bool,
 };

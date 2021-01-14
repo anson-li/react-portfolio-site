@@ -31,7 +31,7 @@ class Home extends PureComponent {
 
   render() {
     return (
-      <div id="main-page" ref={(e) => (this.el = e)}>
+      <div id="main-page" ref={(e) => { this.el = e; }}>
         <Background />
         <div className="fixed">
           <ThreeSphere />

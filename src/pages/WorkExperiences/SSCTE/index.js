@@ -27,7 +27,6 @@ class SSCTE extends PureComponent {
   }
 
   animateIn() {
-    console.log('A');
     anime.remove(this.el);
     return anime({
       targets: this.el,
@@ -39,7 +38,6 @@ class SSCTE extends PureComponent {
   }
 
   animateOut() {
-    console.log('B');
     anime.remove(this.el);
     return anime({
       targets: this.el,
@@ -102,7 +100,12 @@ class SSCTE extends PureComponent {
             <br />
             <div className="col-md-6">
               <p>
-                At the University of Alberta, my team was required to design and produce an android application that provided a single key feature – to allow the trading and borrowing of items. This product served as a first foray into product development, as well as offering a chance to develop management and leadership skills.
+                At the University of Alberta, my team was required
+                to design and produce an android application that
+                provided a single key feature – to allow the
+                trading and borrowing of items. This product served
+                as a first foray into product development, as well
+                as offering a chance to develop management and leadership skills.
                 <br />
                 <br />
                 <a href="https://github.com/CMPUT301F15T07/TradingApp" className="btn">Take a peek</a>
@@ -132,10 +135,14 @@ class SSCTE extends PureComponent {
             <br />
             <br />
             <p>
-              SSCTE served as an introductory step into the world of UX design for myself, as well as a valuable insight into Android design.
+              SSCTE served as an introductory step into the world of
+              UX design for myself, as well as a valuable insight into Android design.
               <br />
               <br />
-              The artboards were designed using Sketch and Photoshop CS6. The design process took over four weeks, with extensive storyboarding and soft prototyping with the help of applications such as Sketchapp and Principle.
+              The artboards were designed using Sketch and Photoshop CS6.
+              The design process took over four weeks, with extensive
+              storyboarding and soft prototyping with the help of
+              applications such as Sketchapp and Principle.
             </p>
           </div>
         </div>
@@ -155,7 +162,9 @@ class SSCTE extends PureComponent {
               SSCTE was later developed in Android Studio, over the course of several months.
               <br />
               <br />
-              In addition to serving as my strongest experience in Android, this project helped solidify my skills in project management - a key skill that proved invaluable in future projects.
+              In addition to serving as my strongest experience in Android,
+              this project helped solidify my skills in project management -
+              a key skill that proved invaluable in future projects.
             </p>
           </div>
         </div>
@@ -170,7 +179,7 @@ class SSCTE extends PureComponent {
     sections[2] = this.renderProjectOverview();
     sections[3] = this.renderProjectReflections();
     return (
-      <div ref={(e) => (this.el = e)}>
+      <div ref={(e) => { this.el = e; }}>
         <WorkTemplate
           background={BackgroundSSCTE}
           title="SSCTE"

@@ -76,7 +76,13 @@ class WorkList extends PureComponent {
                     <div className="col-md-12 no-padding">
                       <div className="col-md-6 no-padding">
                         <p>
-                          Questionmark creates assessment technologies. These are tools that primarily deal with building technologies that involve assessments through their lifecycle - from creation to assessing to results. I was signed on to build a key component of their technology - their Learning Tools Interoperability tool - as well as aid in developing their main software in Drupal.
+                          Questionmark creates assessment technologies.
+                          These are tools that primarily deal with building technologies
+                          that involve assessments through their lifecycle - from
+                          creation to assessing to results. I was signed on to build a
+                          key component of their technology - their Learning Tools
+                          Interoperability tool - as well as aid in developing their
+                          main software in Drupal.
                         </p>
                         <div className="spacer-xs" />
                       </div>
@@ -112,7 +118,10 @@ class WorkList extends PureComponent {
                     <div className="col-md-12 no-padding">
                       <div className="col-md-6 no-padding">
                         <p>
-                          CQI is a Canadian-based company which specialises in monitoring the quality of North American crude oil. They had tasked me with upgrading their primary application, Crude Monitor, to fit the needs and demands of today's generation.
+                          CQI is a Canadian-based company which specialises in monitoring
+                          the quality of North American crude oil. They had tasked me
+                          with upgrading their primary application, Crude Monitor,
+                          to fit the needs and demands of today&rsquo;s generation.
                         </p>
                         <div className="spacer-xs" />
                       </div>
@@ -147,7 +156,11 @@ class WorkList extends PureComponent {
                     <div className="col-md-12 no-padding">
                       <div className="col-md-6 no-padding">
                         <p>
-                          AlbertaMES is a heuristics-based web application to filter and isolate projects, models and stations associated with Alberta Environment and Parks. I was signed on as the primary developer of the application, which was developed over the course of 8 months.
+                          AlbertaMES is a heuristics-based web application to filter
+                          and isolate projects, models and stations associated with
+                          Alberta Environment and Parks. I was signed on as the
+                          primary developer of the application, which was developed
+                          over the course of 8 months.
                         </p>
                         <div className="spacer-xs" />
                       </div>
@@ -182,7 +195,9 @@ class WorkList extends PureComponent {
                     <div className="col-md-12 no-padding">
                       <div className="col-md-6 no-padding">
                         <p>
-                          DailyUI is, as the name suggests, a daily exploration into UX and UI. For 100 days, UI and UX elements were designed and created for the creative community.
+                          DailyUI is, as the name suggests, a daily exploration into UX
+                          and UI. For 100 days, UI and UX elements were designed and
+                          created for the creative community.
                         </p>
                         <div className="spacer-xs" />
                       </div>
@@ -217,7 +232,9 @@ class WorkList extends PureComponent {
                     <div className="col-md-12 no-padding">
                       <div className="col-md-6 no-padding">
                         <p>
-                          SSCTE is an android application that's designed for collecting and trading cards. It primarily served as an exploration of common UX and UI design behavior for Android technologies.
+                          SSCTE is an android application that&rsquo;s designed for collecting and
+                          trading cards. It primarily served as an exploration of common UX
+                          and UI design behavior for Android technologies.
                         </p>
                         <div className="spacer-xs" />
                       </div>
@@ -252,7 +269,10 @@ class WorkList extends PureComponent {
                     <div className="col-md-12 no-padding">
                       <div className="col-md-6 no-padding">
                         <p>
-                          Team Aqua is a development firm, created with the purpose of exploring Ruby development and design. Projects developed under this team include monitoring systems, libraries, and UI.
+                          Team Aqua is a development firm, created with the
+                          purpose of exploring Ruby development and design.
+                          Projects developed under this team include monitoring
+                          systems, libraries, and UI.
                         </p>
                         <div className="spacer-xs" />
                         <br />

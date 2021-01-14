@@ -10,6 +10,7 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/prefer-stateless-function': [0, { ignorePureComponents: true }],
     'react/style-prop-object': [0],
+    // eslint-disable-next-line global-require
     'linebreak-style': ['error', (require('os').EOL === '\r\n' ? 'windows' : 'unix')],
     'class-methods-use-this': [0],
     'import/no-named-as-default': 0,

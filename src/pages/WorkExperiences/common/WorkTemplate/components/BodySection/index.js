@@ -1,11 +1,14 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+
 import LineBreak from '../../../../../../web/assets/line-break.png';
 
 class BodySection extends PureComponent {
   render() {
+    const { item } = this.props;
     return (
       <div>
-        {this.props.item}
+        {item}
         <br />
         <br />
         <br />
@@ -21,5 +24,9 @@ class BodySection extends PureComponent {
     );
   }
 }
+
+BodySection.propTypes = {
+  item: PropTypes.element.isRequired,
+};
 
 export default BodySection;

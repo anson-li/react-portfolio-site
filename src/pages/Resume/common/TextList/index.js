@@ -1,24 +1,32 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 class TextList extends PureComponent {
   render() {
-    const items = [];
+    const cleanedItems = [];
+    const { items } = this.props;
 
-    this.props.items.forEach((element) => {
-      items.push(<span>
-        ●&nbsp;
-        {element}
-        <br />
-      </span>);
+    items.forEach((element) => {
+      cleanedItems.push(
+        <span>
+          ●&nbsp;
+          {element}
+          <br />
+        </span>,
+      );
     });
 
     return (
       <div className="text-list">
         <br />
-        {items}
+        {cleanedItems}
       </div>
     );
   }
 }
+
+TextList.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.element).isRequired,
+};
 
 export default TextList;

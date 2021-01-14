@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import BodySection from './components/BodySection';
 
@@ -18,17 +19,20 @@ class WorkTemplate extends PureComponent {
   }
 
   render() {
+    const {
+      background, title, section, nextURL, nextTitle,
+    } = this.props;
     return (
       <div id="scroll-page">
         <div id="fixed-wrapper" className="fixed-wrapper">
           <div className="main-container">
             <div id="scrollContainer" className="flex-container container ">
               <div className="hide-under col-md-12 left-top">
-                <img className="bg-img" src={this.props.background} alt="Background" />
-                <div className="horizontal"><p>← Let's continue</p></div>
+                <img className="bg-img" src={background} alt="Background" />
+                <div className="horizontal"><p>← Let&rsquo;s continue</p></div>
                 <div className="spacer-sm" />
                 <div className="center-sm">
-                  <h2 className="scroll-title">{this.props.title}</h2>
+                  <h2 className="scroll-title">{title}</h2>
                   <div className="col-md-12">
                     <img className="line-break" src={LineBreak} alt="Line break" />
                   </div>
@@ -36,9 +40,10 @@ class WorkTemplate extends PureComponent {
                 <div className="spacer-xs" />
                 <br />
 
-                { this.props.section.map((item, index) => (
+                { section.map((item, index) => (
                   <BodySection
                     item={item}
+                    key={'body-'.concat(index)}
                   />
                 ))}
 
@@ -46,7 +51,7 @@ class WorkTemplate extends PureComponent {
                 <br />
                 <div className="wow fadeIn">
                   <p className="serif">Next Work →</p>
-                  <h3><Link to={this.props.nextURL} className="bigstrike" href={this.props.nextURL}>{this.props.nextTitle}</Link></h3>
+                  <h3><Link to={nextURL} className="bigstrike" href={nextURL}>{nextTitle}</Link></h3>
                 </div>
                 <div className="spacer-sm" />
               </div>
@@ -63,5 +68,13 @@ class WorkTemplate extends PureComponent {
     );
   }
 }
+
+WorkTemplate.propTypes = {
+  background: PropTypes.element.isRequired,
+  title: PropTypes.string.isRequired,
+  section: PropTypes.arrayOf(PropTypes.element).isRequired,
+  nextURL: PropTypes.string.isRequired,
+  nextTitle: PropTypes.string.isRequired,
+};
 
 export default WorkTemplate;

@@ -100,7 +100,10 @@ class AlbertaMES extends PureComponent {
             <br />
             <div className="col-md-6">
               <p>
-                AlbertaMES is a heuristics-based web application to filter and isolate projects, models and stations related to environmental care. I was signed on as the primary developer of the application, which was developed over the course of 8 months.
+                AlbertaMES is a heuristics-based web application to filter
+                and isolate projects, models and stations related to
+                environmental care. I was signed on as the primary developer
+                of the application, which was developed over the course of 8 months.
                 <br />
                 <br />
                 <a href="http://www.blog.ansonli.ca/index.php/2016/01/04/35/" className="btn">Take a peek</a>
@@ -130,10 +133,14 @@ class AlbertaMES extends PureComponent {
           <br />
           <div className="col-md-6">
             <p>
-              We used ArcGIS API for Javascript to develop this technology, alongside other supporting technologies such as MVC, JQuery and other libraries.
+              We used ArcGIS API for Javascript to develop this technology,
+              alongside other supporting technologies such as MVC, JQuery and other libraries.
               <br />
               <br />
-              Additionally, our team used a collection of software development methodologies, such as software requirements elicitations and post-mortems, to enhance both the quality of the team’s work as well as the team itself.
+              Additionally, our team used a collection of software development
+              methodologies, such as software requirements elicitations and
+              post-mortems, to enhance both the quality of the team’s work
+              as well as the team itself.
             </p>
           </div>
         </div>
@@ -150,13 +157,19 @@ class AlbertaMES extends PureComponent {
           <br />
           <div className="col-md-6">
             <p>
-              This project served as my first foray into professional software experience. I learned many facets of work life that are invaluable today; both with regards to technical and soft skills.
+              This project served as my first foray into professional
+              software experience. I learned many facets of work life
+              that are invaluable today; both with regards to technical
+              and soft skills.
               <br />
               <br />
-              Many of the skills that are developed at this stage, including development frameworks and UX, were later explored and reintegrated into future projects.
+              Many of the skills that are developed at this stage, including
+              development frameworks and UX, were later explored and
+              reintegrated into future projects.
               <br />
               <br />
-              This project was later integrated into the workflow of the Government of Alberta, and is currently under further development.
+              This project was later integrated into the workflow of the
+              Government of Alberta, and is currently under further development.
             </p>
           </div>
         </div>
@@ -171,7 +184,7 @@ class AlbertaMES extends PureComponent {
     sections[2] = this.renderProjectOverview();
     sections[3] = this.renderReflections();
     return (
-      <div ref={(e) => (this.el = e)}>
+      <div ref={(e) => { this.el = e; }}>
         <WorkTemplate
           background={BackgroundAlbertaMES}
           title="AlbertaMES"

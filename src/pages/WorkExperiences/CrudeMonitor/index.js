@@ -58,7 +58,10 @@ class CrudeMonitor extends PureComponent {
           <div className="col-md-12 no-padding">
             <div className="col-md-6">
               <p>
-                CQI is a Canadian-based company which specialises in monitoring the quality of North American crude oil. They had tasked me with upgrading their primary application, Crude Monitor, to fit the needs and demands of today's generation.
+                CQI is a Canadian-based company which specialises in monitoring the
+                quality of North American crude oil. They had tasked me with
+                upgrading their primary application, Crude Monitor, to fit the
+                needs and demands of today&rsquo;s generation.
                 <br />
                 <br />
                 <a href="http://www.crudemonitor.ca" className="btn">Take a peek</a>
@@ -88,10 +91,15 @@ class CrudeMonitor extends PureComponent {
             <br />
             <br />
             <p>
-              The initial design was created in Sketchapp, using an iterative development method that helped streamline communication between design and development.
+              The initial design was created in Sketchapp,
+              using an iterative development method that helped
+              streamline communication between design and development.
               <br />
               <br />
-              In addition to restructuring the system to better reflect the new design, both frontend and backend technologies were revamped to ensure that the application could be extended in future development.
+              In addition to restructuring the system to better
+              reflect the new design, both frontend and backend
+              technologies were revamped to ensure that the application
+              could be extended in future development.
               <br />
               <br />
               The total process took over two months of development.
@@ -152,7 +160,10 @@ class CrudeMonitor extends PureComponent {
           <div className="col-md-12 no-padding">
             <div className="col-md-6">
               <p>
-                The design eventually underwent multiple iterations throughout its two-month development phase. Development technologies largely involved PHP and JS development, including use of plugins such as Bootstrap and d3.js.
+                The design eventually underwent multiple iterations
+                throughout its two-month development phase. Development
+                technologies largely involved PHP and JS development,
+                including use of plugins such as Bootstrap and d3.js.
               </p>
             </div>
           </div>
@@ -168,7 +179,7 @@ class CrudeMonitor extends PureComponent {
     sections[2] = this.renderProjectOverview();
     sections[3] = this.renderReflections();
     return (
-      <div ref={(e) => (this.el = e)}>
+      <div ref={(e) => { this.el = e; }}>
         <WorkTemplate
           background={BackgroundCrudeMonitor}
           title="Crude Monitor"

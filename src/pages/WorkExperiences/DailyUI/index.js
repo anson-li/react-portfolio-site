@@ -99,7 +99,12 @@ class DailyUI extends PureComponent {
             <br />
             <div className="col-md-6">
               <p>
-                DailyUI is, as the name suggests, a daily exploration into UX and UI. For 100 days, UI and UX elements were designed and created for the creative community. Each day, a new project or requirement is issued. As a designer, it was my goal to identify the best way to convey or provide that feature through design.
+                DailyUI is, as the name suggests, a daily exploration
+                into UX and UI. For 100 days, UI and UX elements were
+                designed and created for the creative community. Each day,
+                a new project or requirement is issued. As a designer, it
+                was my goal to identify the best way to convey or provide
+                that feature through design.
                 <br />
                 <br />
                 <a href="http://twitter.com/helloanson" className="btn">Take a peek</a>
@@ -120,10 +125,13 @@ class DailyUI extends PureComponent {
           <br />
           <div className="col-md-6">
             <p>
-              Over the course of several months, I honed my skills in UX development. Through various technologies (primarily Sketch for Mac), I developed a collection of UX inspirations for future projects.
+              Over the course of several months, I honed my skills in UX
+              development. Through various technologies (primarily Sketch
+              for Mac), I developed a collection of UX inspirations for future projects.
               <br />
               <br />
-              Included is a sample of my best work - however, for a view of the progression of work, you can look at Twitter for all #DailyUI updates.
+              Included is a sample of my best work - however, for a view
+              of the progression of work, you can look at Twitter for all #DailyUI updates.
             </p>
           </div>
         </div>
@@ -137,7 +145,7 @@ class DailyUI extends PureComponent {
     sections[1] = this.renderProjectDescription();
     sections[2] = this.renderProjectDeliverables();
     return (
-      <div ref={(e) => (this.el = e)}>
+      <div ref={(e) => { this.el = e; }}>
         <WorkTemplate
           background={BackgroundDailyUI}
           title="#DailyUI"
