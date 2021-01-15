@@ -30,9 +30,8 @@ class Jellicent extends PureComponent {
     return (
       <div id="main-page" ref={(e) => { this.el = e; }}>
         <Background />
-        <div className="fixed">
-          <JellicentObject />
-        </div>
+        <JellicentObject />
+        <div id="bottom" />
       </div>
     );
   }
