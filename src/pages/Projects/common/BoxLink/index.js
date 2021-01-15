@@ -2,28 +2,20 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import './style.scss';
-
 class BoxLink extends PureComponent {
   render() {
     const {
-      internalRef, externalRef, title, description,
+      internalLink, externalLink,
     } = this.props;
     return (
-      <div className="box-outline">
-        { internalRef
+      <div>
+        { internalLink
         && (
-        <Link to={internalRef} href={internalRef}>
-          <h4 className="box-title">{title}</h4>
-          <div className="box-description">{description}</div>
-        </Link>
+          <Link to={internalLink} href={internalLink} className="btn">View case study</Link>
         )}
-        { externalRef
+        { externalLink
         && (
-        <a href={externalRef}>
-          <h4 className="box-title">{title}</h4>
-          <div className="box-description">{description}</div>
-        </a>
+          <a href={externalLink} className="btn">View case study</a>
         )}
       </div>
     );
@@ -31,15 +23,13 @@ class BoxLink extends PureComponent {
 }
 
 BoxLink.propTypes = {
-  internalRef: PropTypes.string,
-  externalRef: PropTypes.string,
-  title: PropTypes.element.isRequired,
-  description: PropTypes.element.isRequired,
+  internalLink: PropTypes.string,
+  externalLink: PropTypes.string,
 };
 
 BoxLink.defaultProps = {
-  internalRef: '',
-  externalRef: '',
+  internalLink: null,
+  externalLink: null,
 };
 
 export default BoxLink;
