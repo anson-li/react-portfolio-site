@@ -112,10 +112,24 @@ class Resume extends PureComponent {
                 <TextSection>
                   <TextHeader text="Work Experience" />
                   <TextBody>
+                    <b>Software Engineer</b>
+                    , ATB Financial Ltd. || Edmonton, AB
+                    <br />
+                    February 2019 - Now
+                    <TextList
+                      items={[
+                        'Developed team member tools for ATB, which was used by ATB team members across the province.',
+                        'Created support tools for development, including Google chatbots used for emergency coordination and management',
+                        'Member of the Front End CoE team within ATB, which led several initiatives including the development of organization-wide best practices',
+                        'Assisted in migration of key software across various systems',
+                      ]}
+                    />
+                    <br />
+                    <br />
                     <b>Team Gateway - Software Developer</b>
                     , Questionmark Computing Ltd. || Edmonton, AB
                     <br />
-                    May 2017 ‐ Now
+                    May 2017 ‐ December 2018
                     <TextList
                       items={[
                         'Led a team of eight team members on developing Questionmark\'s central platform, which is used by clients totaling in excess of $1MM.',
@@ -199,6 +213,7 @@ class Resume extends PureComponent {
                       items={[
                         'Developed AlbertaMES in MEAN, a heuristics‐driven web application for environmental models',
                         'Developed CrudeMonitor in LAMP, a data management and analytics tool for Canadian crude oil',
+                        'Worked on Team Member Tools as part of ATB\'s initiative, using React and node.js',
                       ]}
                     />
                     <br />
@@ -206,7 +221,9 @@ class Resume extends PureComponent {
                     <TextList
                       items={[
                         'Developed and sold various websites for customers',
-                        'Oversaw development of corporate websites for companies including Enerfest, Inc.',
+                        'Oversaw development of corporate websites for companies including Enerfest Inc.',
+                        'Developed various web applications for ATB Financial Ltd.',
+                        'Produced various experimental web projects using tools including three.js',
                       ]}
                     />
                     <br />
