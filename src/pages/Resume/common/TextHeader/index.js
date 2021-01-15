@@ -13,7 +13,7 @@ class TextHeader extends PureComponent {
 }
 
 TextHeader.propTypes = {
-  text: PropTypes.element.isRequired,
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
 };
 
 export default TextHeader;

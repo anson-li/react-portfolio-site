@@ -30,7 +30,7 @@ class MainText extends PureComponent {
             />
             <Link to="/work" id="sub-link" href="work">
               <FadeText
-                type="h7"
+                type="h6"
                 id="sub-text"
                 className="strikethrough"
                 text="Let's take a look →"

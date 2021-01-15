@@ -20,7 +20,10 @@ class TextSection extends PureComponent {
 }
 
 TextSection.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
   bottomSpacer: PropTypes.bool,
   bottomPadding: PropTypes.bool,
 };

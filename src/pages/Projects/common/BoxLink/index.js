@@ -8,7 +8,7 @@ class BoxLink extends PureComponent {
       internalLink, externalLink,
     } = this.props;
     return (
-      <div>
+      <>
         { internalLink
         && (
           <Link to={internalLink} href={internalLink} className="btn">View case study</Link>
@@ -17,7 +17,7 @@ class BoxLink extends PureComponent {
         && (
           <a href={externalLink} className="btn">View case study</a>
         )}
-      </div>
+      </>
     );
   }
 }

@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import LineBreak from '../../../../web/assets/line-break.png';
@@ -61,7 +60,6 @@ class ProjectTemplate extends PureComponent {
 ProjectTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
   lineBreak: PropTypes.bool,
   internalLink: PropTypes.string,
   externalLink: PropTypes.string,

@@ -310,12 +310,6 @@ h5 {
 }
 
 h6 {
-  font-family: ivymode, serif;
-  letter-spacing: 5px;
-  font-size: 3.5em;
-}
-
-h7 {
   font-family: upgrade-lights, serif;
   letter-spacing: 3px;
   font-size: 1.5em;
@@ -331,10 +325,8 @@ p {
 
 .h4,
 .h5,
-.h6,
 h4,
-h5,
-h6 {
+h5 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -364,7 +356,7 @@ h6 {
     font-size: 1.2rem;
   }
 
-  h7 {
+  h6 {
     font-size: 1.2rem;
   }
 
@@ -378,7 +370,7 @@ h6 {
     font-size: 0.9em;
   }
 
-  h7 {
+  h6 {
     font-size: 1.1em;
   }
 

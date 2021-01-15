@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import anime from 'animejs';
-import { Link } from 'react-router-dom';
 
 import LineBreak from '../../web/assets/line-break.png';
 import WorkBackground from '../../web/assets/background/bg-work.png';

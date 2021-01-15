@@ -65,7 +65,7 @@ class WorkTemplate extends PureComponent {
 WorkTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  panel: PropTypes.element.isRequired,
+  panel: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   lineBreak: PropTypes.bool,
 };

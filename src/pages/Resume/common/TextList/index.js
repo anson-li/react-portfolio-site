@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 class TextList extends PureComponent {
   render() {
     const cleanedItems = [];
-    const { items } = this.props;
+    const { id, items } = this.props;
 
-    items.forEach((element) => {
+    items.forEach((element, index) => {
       cleanedItems.push(
-        <span>
+        // eslint-disable-next-line react/no-array-index-key
+        <span key={`${id}-${index}`}>
           ●&nbsp;
           {element}
           <br />
@@ -17,16 +18,17 @@ class TextList extends PureComponent {
     });
 
     return (
-      <div className="text-list">
+      <span className="text-list">
         <br />
         {cleanedItems}
-      </div>
+      </span>
     );
   }
 }
 
 TextList.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.element).isRequired,
+  id: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.element])).isRequired,
 };
 
 export default TextList;

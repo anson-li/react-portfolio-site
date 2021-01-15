@@ -70,7 +70,7 @@ class WorkTemplate extends PureComponent {
 }
 
 WorkTemplate.propTypes = {
-  background: PropTypes.element.isRequired,
+  background: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   section: PropTypes.arrayOf(PropTypes.element).isRequired,
   nextURL: PropTypes.string.isRequired,

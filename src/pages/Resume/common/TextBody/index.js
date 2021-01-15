@@ -7,18 +7,19 @@ class TextBody extends PureComponent {
     return (
       <div>
         <br />
-        <p>
-          <span>
-            {children}
-          </span>
-        </p>
+        <span>
+          {children}
+        </span>
       </div>
     );
   }
 }
 
 TextBody.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
 };
 
 export default TextBody;
