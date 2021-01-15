@@ -43,7 +43,7 @@ class WorkList extends PureComponent {
     return anime({
       targets: this.el,
       translateY: -100,
-      opacity: 0.5,
+      opacity: 0,
       duration: 500,
       easing: 'easeOutExpo',
     }).finished;

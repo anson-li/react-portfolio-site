@@ -20,7 +20,7 @@ class Jellicent extends PureComponent {
     anime.remove(this.el);
     return anime({
       targets: this.el,
-      opacity: 0.5,
+      opacity: 0,
       duration: 500,
       easing: 'easeOutExpo',
     }).finished;
