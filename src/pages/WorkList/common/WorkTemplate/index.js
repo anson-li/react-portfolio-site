@@ -18,10 +18,11 @@ class WorkTemplate extends PureComponent {
 
   render() {
     const {
-      title, description, panel, link, lineBreak,
+      title, description, panel, link, lineBreak, animated
     } = this.props;
+    const wow = animated ? 'wow' : '';
     return (
-      <div className="wow fadeIn">
+      <div className={` ${wow} fadeIn`}>
         <h3>{title}</h3>
         <br />
 
@@ -68,10 +69,12 @@ WorkTemplate.propTypes = {
   panel: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   lineBreak: PropTypes.bool,
+  animated: PropTypes.bool,
 };
 
 WorkTemplate.defaultProps = {
   lineBreak: false,
+  animated: true,
 };
 
 export default WorkTemplate;

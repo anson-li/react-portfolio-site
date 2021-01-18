@@ -72,6 +72,7 @@ class WorkList extends PureComponent {
                       panel={QuestionmarkPanel}
                       link="/questionmark"
                       lineBreak
+                      animated={false}
                     />
                     <WorkTemplate
                       title="Crude Monitor"
