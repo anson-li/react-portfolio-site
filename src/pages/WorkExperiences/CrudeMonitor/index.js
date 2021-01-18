@@ -6,6 +6,7 @@ import anime from 'animejs';
 import BackgroundCrudeMonitor from '../../../web/assets/background/bg-oil.png';
 import WorkTemplate from '../common/WorkTemplate';
 import withTransition from '../../../common/WithTransition';
+import SmoothScroll from '../../../common/SmoothScroll';
 
 class CrudeMonitor extends PureComponent {
   constructor(props) {
@@ -14,16 +15,6 @@ class CrudeMonitor extends PureComponent {
     this.renderProjectDescription = this.renderProjectDescription.bind(this);
     this.renderProjectOverview = this.renderProjectOverview.bind(this);
     this.renderReflections = this.renderReflections.bind(this);
-  }
-
-  componentDidMount() {
-    new WOW.WOW({
-      boxClass: 'wow',
-      animateClass: 'animated',
-      offset: 0,
-      mobile: true,
-      live: false,
-    }).init();
   }
 
   animateIn() {
@@ -179,15 +170,17 @@ class CrudeMonitor extends PureComponent {
     sections[2] = this.renderProjectOverview();
     sections[3] = this.renderReflections();
     return (
-      <div ref={(e) => { this.el = e; }}>
-        <WorkTemplate
-          background={BackgroundCrudeMonitor}
-          title="Crude Monitor"
-          section={sections}
-          nextTitle="AlbertaMES"
-          nextURL="/albertames"
-        />
-      </div>
+      <SmoothScroll>
+        <div ref={(e) => { this.el = e; }}>
+          <WorkTemplate
+            background={BackgroundCrudeMonitor}
+            title="Crude Monitor"
+            section={sections}
+            nextTitle="AlbertaMES"
+            nextURL="/albertames"
+          />
+        </div>
+      </SmoothScroll>
     );
   }
 }

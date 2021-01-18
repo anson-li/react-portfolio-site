@@ -60,7 +60,7 @@ class Resume extends PureComponent {
                     </div>
                   </div>
 
-                  <TextSection>
+                  <TextSection animated={false}>
                     <TextHeader text="Overview" />
                     <TextBody>
                       <p>

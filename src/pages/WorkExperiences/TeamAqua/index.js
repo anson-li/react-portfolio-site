@@ -6,6 +6,7 @@ import anime from 'animejs';
 import BackgroundTeamAqua from '../../../web/assets/background/bg-teamaqua.png';
 import WorkTemplate from '../common/WorkTemplate';
 import withTransition from '../../../common/WithTransition';
+import SmoothScroll from '../../../common/SmoothScroll';
 
 class TeamAqua extends PureComponent {
   constructor(props) {
@@ -13,16 +14,6 @@ class TeamAqua extends PureComponent {
     this.renderSkills = this.renderSkills.bind(this);
     this.renderProjectDescription = this.renderProjectDescription.bind(this);
     this.renderProjectDeliverables = this.renderProjectDeliverables.bind(this);
-  }
-
-  componentDidMount() {
-    new WOW.WOW({
-      boxClass: 'wow',
-      animateClass: 'animated',
-      offset: 0,
-      mobile: true,
-      live: false,
-    }).init();
   }
 
   animateIn() {
@@ -144,15 +135,17 @@ class TeamAqua extends PureComponent {
     sections[1] = this.renderProjectDescription();
     sections[2] = this.renderProjectDeliverables();
     return (
-      <div ref={(e) => { this.el = e; }}>
-        <WorkTemplate
-          background={BackgroundTeamAqua}
-          title="Team Aqua"
-          section={sections}
-          nextTitle="Questionmark"
-          nextURL="/questionmark"
-        />
-      </div>
+      <SmoothScroll>
+        <div ref={(e) => { this.el = e; }}>
+          <WorkTemplate
+            background={BackgroundTeamAqua}
+            title="Team Aqua"
+            section={sections}
+            nextTitle="Questionmark"
+            nextURL="/questionmark"
+          />
+        </div>
+      </SmoothScroll>
     );
   }
 }

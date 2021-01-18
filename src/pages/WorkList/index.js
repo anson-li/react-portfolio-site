@@ -14,17 +14,9 @@ import TeamAquaPanel from '../../web/assets/panel/panel-teamaqua.png';
 
 import withTransition from '../../common/WithTransition';
 import WorkTemplate from './common/WorkTemplate';
+import SmoothScroll from '../../common/SmoothScroll';
 
 class WorkList extends PureComponent {
-  componentDidMount() {
-    new WOW.WOW({
-      boxClass: 'wow',
-      animateClass: 'animated',
-      offset: 0,
-      mobile: true,
-      live: false,
-    }).init();
-  }
 
   animateIn() {
     anime.remove(this.el);
@@ -50,98 +42,100 @@ class WorkList extends PureComponent {
 
   render() {
     return (
-      <div id="scroll-page" ref={(e) => { this.el = e; }}>
-        <div id="fixed-wrapper" className="fixed-wrapper">
-          <div className="main-container">
-            <div id="scrollContainer" className="flex-container container ">
-              <div className="hide-under col-md-12 left-top">
-                <img className="bg-img" src={WorkBackground} alt="Background" />
-                <div className="horizontal d-none d-sm-block"><p>hello@ansonli.ca</p></div>
-                <div className="spacer-sm" />
-                <div className="center-sm">
-                  <h2 className="scroll-title">Work</h2>
+      <SmoothScroll>
+        <div id="scroll-page" ref={(e) => { this.el = e; }}>
+          <div id="fixed-wrapper" className="fixed-wrapper">
+            <div className="main-container">
+              <div id="scrollContainer" className="flex-container container ">
+                <div className="hide-under col-md-12 left-top">
+                  <img className="bg-img" src={WorkBackground} alt="Background" />
+                  <div className="horizontal d-none d-sm-block"><p>hello@ansonli.ca</p></div>
+                  <div className="spacer-sm" />
+                  <div className="center-sm">
+                    <h2 className="scroll-title">Work</h2>
+                    <div className="col-md-12">
+                      <img className="line-break" src={LineBreak} alt="Line break" />
+                    </div>
+                  </div>
+                  <div className="spacer-xs" />
+                  <br />
+
                   <div className="col-md-12">
-                    <img className="line-break" src={LineBreak} alt="Line break" />
+                    <WorkTemplate
+                      title="Questionmark"
+                      description="Questionmark creates assessment technologies.
+                        These are tools that primarily deal with building technologies
+                        that involve assessments through their lifecycle - from
+                        creation to assessing to results. I was signed on to build a
+                        key component of their technology - their Learning Tools
+                        Interoperability tool - as well as aid in developing their
+                        main software in Drupal."
+                      panel={QuestionmarkPanel}
+                      link="/questionmark"
+                      lineBreak
+                    />
+                    <WorkTemplate
+                      title="Crude Monitor"
+                      description="CQI is a Canadian-based company which specialises in monitoring
+                        the quality of North American crude oil. They had tasked me
+                        with upgrading their primary application, Crude Monitor,
+                        to fit the needs and demands of today&rsquo;s generation."
+                      panel={CrudeMonitorPanel}
+                      link="/crudemonitor"
+                      lineBreak
+                    />
+                    <WorkTemplate
+                      title="AlbertaMES"
+                      description="AlbertaMES is a heuristics-based web application to filter
+                        and isolate projects, models and stations associated with
+                        Alberta Environment and Parks. I was signed on as the
+                        primary developer of the application, which was developed
+                        over the course of 8 months."
+                      panel={AlbertaMESPanel}
+                      link="/albertames"
+                      lineBreak
+                    />
+                    <WorkTemplate
+                      title="#DailyUI"
+                      description="DailyUI is, as the name suggests, a daily exploration into UX
+                        and UI. For 100 days, UI and UX elements were designed and
+                        created for the creative community."
+                      panel={DailyUIPanel}
+                      link="/dailyui"
+                      lineBreak
+                    />
+                    <WorkTemplate
+                      title="SSCTE"
+                      description="SSCTE is an android application that&rsquo;s designed for collecting and
+                        trading cards. It primarily served as an exploration of common UX
+                        and UI design behavior for Android technologies."
+                      panel={SSCTEPanel}
+                      link="/sscte"
+                      lineBreak
+                    />
+                    <WorkTemplate
+                      title="Team Aqua"
+                      description="Team Aqua is a development firm, created with the
+                        purpose of exploring Ruby development and design.
+                        Projects developed under this team include monitoring
+                        systems, libraries, and UI."
+                      panel={TeamAquaPanel}
+                      link="/teamaqua"
+                    />
                   </div>
                 </div>
-                <div className="spacer-xs" />
-                <br />
-
-                <div className="col-md-12">
-                  <WorkTemplate
-                    title="Questionmark"
-                    description="Questionmark creates assessment technologies.
-                      These are tools that primarily deal with building technologies
-                      that involve assessments through their lifecycle - from
-                      creation to assessing to results. I was signed on to build a
-                      key component of their technology - their Learning Tools
-                      Interoperability tool - as well as aid in developing their
-                      main software in Drupal."
-                    panel={QuestionmarkPanel}
-                    link="/questionmark"
-                    lineBreak
-                  />
-                  <WorkTemplate
-                    title="Crude Monitor"
-                    description="CQI is a Canadian-based company which specialises in monitoring
-                      the quality of North American crude oil. They had tasked me
-                      with upgrading their primary application, Crude Monitor,
-                      to fit the needs and demands of today&rsquo;s generation."
-                    panel={CrudeMonitorPanel}
-                    link="/crudemonitor"
-                    lineBreak
-                  />
-                  <WorkTemplate
-                    title="AlbertaMES"
-                    description="AlbertaMES is a heuristics-based web application to filter
-                      and isolate projects, models and stations associated with
-                      Alberta Environment and Parks. I was signed on as the
-                      primary developer of the application, which was developed
-                      over the course of 8 months."
-                    panel={AlbertaMESPanel}
-                    link="/albertames"
-                    lineBreak
-                  />
-                  <WorkTemplate
-                    title="#DailyUI"
-                    description="DailyUI is, as the name suggests, a daily exploration into UX
-                      and UI. For 100 days, UI and UX elements were designed and
-                      created for the creative community."
-                    panel={DailyUIPanel}
-                    link="/dailyui"
-                    lineBreak
-                  />
-                  <WorkTemplate
-                    title="SSCTE"
-                    description="SSCTE is an android application that&rsquo;s designed for collecting and
-                      trading cards. It primarily served as an exploration of common UX
-                      and UI design behavior for Android technologies."
-                    panel={SSCTEPanel}
-                    link="/sscte"
-                    lineBreak
-                  />
-                  <WorkTemplate
-                    title="Team Aqua"
-                    description="Team Aqua is a development firm, created with the
-                      purpose of exploring Ruby development and design.
-                      Projects developed under this team include monitoring
-                      systems, libraries, and UI."
-                    panel={TeamAquaPanel}
-                    link="/teamaqua"
-                  />
+                <div className="spacer-sm" />
+                <div className="flex-container container">
+                  <br />
+                  <br />
+                  <div className="col-md-12 fixed-bottom" />
                 </div>
               </div>
-              <div className="spacer-sm" />
-              <div className="flex-container container">
-                <br />
-                <br />
-                <div className="col-md-12 fixed-bottom" />
-              </div>
+              <div id="bottom" />
             </div>
-            <div id="bottom" />
           </div>
         </div>
-      </div>
+      </SmoothScroll>
     );
   }
 }

@@ -6,6 +6,7 @@ import anime from 'animejs';
 import BackgroundSSCTE from '../../../web/assets/background/bg-sscte.png';
 import WorkTemplate from '../common/WorkTemplate';
 import withTransition from '../../../common/WithTransition';
+import SmoothScroll from '../../../common/SmoothScroll';
 
 class SSCTE extends PureComponent {
   constructor(props) {
@@ -14,16 +15,6 @@ class SSCTE extends PureComponent {
     this.renderProjectDescription = this.renderProjectDescription.bind(this);
     this.renderProjectOverview = this.renderProjectOverview.bind(this);
     this.renderProjectReflections = this.renderProjectReflections.bind(this);
-  }
-
-  componentDidMount() {
-    new WOW.WOW({
-      boxClass: 'wow',
-      animateClass: 'animated',
-      offset: 0,
-      mobile: true,
-      live: false,
-    }).init();
   }
 
   animateIn() {
@@ -179,15 +170,17 @@ class SSCTE extends PureComponent {
     sections[2] = this.renderProjectOverview();
     sections[3] = this.renderProjectReflections();
     return (
-      <div ref={(e) => { this.el = e; }}>
-        <WorkTemplate
-          background={BackgroundSSCTE}
-          title="SSCTE"
-          section={sections}
-          nextTitle="Team Aqua - Ruby"
-          nextURL="/teamaqua"
-        />
-      </div>
+      <SmoothScroll>
+        <div ref={(e) => { this.el = e; }}>
+          <WorkTemplate
+            background={BackgroundSSCTE}
+            title="SSCTE"
+            section={sections}
+            nextTitle="Team Aqua - Ruby"
+            nextURL="/teamaqua"
+          />
+        </div>
+      </SmoothScroll>
     );
   }
 }

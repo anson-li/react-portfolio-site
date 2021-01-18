@@ -6,6 +6,7 @@ import anime from 'animejs';
 import BackgroundDailyUI from '../../../web/assets/background/bg-dailyui.png';
 import WorkTemplate from '../common/WorkTemplate';
 import withTransition from '../../../common/WithTransition';
+import SmoothScroll from '../../../common/SmoothScroll';
 
 class DailyUI extends PureComponent {
   constructor(props) {
@@ -13,16 +14,6 @@ class DailyUI extends PureComponent {
     this.renderSkills = this.renderSkills.bind(this);
     this.renderProjectDescription = this.renderProjectDescription.bind(this);
     this.renderProjectDeliverables = this.renderProjectDeliverables.bind(this);
-  }
-
-  componentDidMount() {
-    new WOW.WOW({
-      boxClass: 'wow',
-      animateClass: 'animated',
-      offset: 0,
-      mobile: true,
-      live: false,
-    }).init();
   }
 
   animateIn() {
@@ -145,15 +136,17 @@ class DailyUI extends PureComponent {
     sections[1] = this.renderProjectDescription();
     sections[2] = this.renderProjectDeliverables();
     return (
-      <div ref={(e) => { this.el = e; }}>
-        <WorkTemplate
-          background={BackgroundDailyUI}
-          title="#DailyUI"
-          section={sections}
-          nextTitle="SSCTE - Android"
-          nextURL="/sscte"
-        />
-      </div>
+      <SmoothScroll>
+        <div ref={(e) => { this.el = e; }}>
+          <WorkTemplate
+            background={BackgroundDailyUI}
+            title="#DailyUI"
+            section={sections}
+            nextTitle="SSCTE - Android"
+            nextURL="/sscte"
+          />
+        </div>
+      </SmoothScroll>
     );
   }
 }

@@ -6,9 +6,10 @@ import './style.scss';
 
 class TextSection extends PureComponent {
   render() {
-    const { children, bottomSpacer, bottomPadding } = this.props;
+    const { children, bottomSpacer, bottomPadding, animated } = this.props;
+    const wow = animated ? 'wow' : '';
     return (
-      <div className="text-section wow fadeIn" data-wow-duration="1s">
+      <div className={`text-section fadeIn ${wow}`} data-wow-duration="1s">
         <div className="col-md-12">
           { children }
         </div>
@@ -26,11 +27,13 @@ TextSection.propTypes = {
   ]).isRequired,
   bottomSpacer: PropTypes.bool,
   bottomPadding: PropTypes.bool,
+  animated: PropTypes.bool,
 };
 
 TextSection.defaultProps = {
   bottomSpacer: true,
   bottomPadding: false,
+  animated: true,
 };
 
 export default TextSection;

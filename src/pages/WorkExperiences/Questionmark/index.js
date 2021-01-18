@@ -6,6 +6,7 @@ import anime from 'animejs';
 import BackgroundQuestionmark from '../../../web/assets/background/bg-questionmark.png';
 import WorkTemplate from '../common/WorkTemplate';
 import withTransition from '../../../common/WithTransition';
+import SmoothScroll from '../../../common/SmoothScroll';
 
 class Questionmark extends PureComponent {
   constructor(props) {
@@ -13,16 +14,6 @@ class Questionmark extends PureComponent {
     this.renderSkills = this.renderSkills.bind(this);
     this.renderProjectDescription = this.renderProjectDescription.bind(this);
     this.renderProjectDeliverables = this.renderProjectDeliverables.bind(this);
-  }
-
-  componentDidMount() {
-    new WOW.WOW({
-      boxClass: 'wow',
-      animateClass: 'animated',
-      offset: 0,
-      mobile: true,
-      live: false,
-    }).init();
   }
 
   animateIn() {
@@ -167,15 +158,17 @@ class Questionmark extends PureComponent {
     sections[1] = this.renderProjectDescription();
     sections[2] = this.renderProjectDeliverables();
     return (
-      <div ref={(e) => { this.el = e; }}>
-        <WorkTemplate
-          background={BackgroundQuestionmark}
-          title="Questionmark"
-          section={sections}
-          nextTitle="Crude Monitor"
-          nextURL="/crudemonitor"
-        />
-      </div>
+      <SmoothScroll>
+        <div ref={(e) => { this.el = e; }}>
+          <WorkTemplate
+            background={BackgroundQuestionmark}
+            title="Questionmark"
+            section={sections}
+            nextTitle="Crude Monitor"
+            nextURL="/crudemonitor"
+          />
+        </div>
+      </SmoothScroll>
     );
   }
 }

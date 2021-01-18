@@ -6,6 +6,7 @@ import anime from 'animejs';
 import BackgroundAlbertaMES from '../../../web/assets/background/bg-albertames.png';
 import WorkTemplate from '../common/WorkTemplate';
 import withTransition from '../../../common/WithTransition';
+import SmoothScroll from '../../../common/SmoothScroll';
 
 class AlbertaMES extends PureComponent {
   constructor(props) {
@@ -184,15 +185,17 @@ class AlbertaMES extends PureComponent {
     sections[2] = this.renderProjectOverview();
     sections[3] = this.renderReflections();
     return (
-      <div ref={(e) => { this.el = e; }}>
-        <WorkTemplate
-          background={BackgroundAlbertaMES}
-          title="AlbertaMES"
-          section={sections}
-          nextTitle="#DailyUI"
-          nextURL="/dailyui"
-        />
-      </div>
+      <SmoothScroll>
+        <div ref={(e) => { this.el = e; }}>
+          <WorkTemplate
+            background={BackgroundAlbertaMES}
+            title="AlbertaMES"
+            section={sections}
+            nextTitle="#DailyUI"
+            nextURL="/dailyui"
+          />
+        </div>
+      </SmoothScroll>
     );
   }
 }
