@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
 import anime from 'animejs';
 
@@ -15,16 +14,6 @@ class AlbertaMES extends PureComponent {
     this.renderProjectDescription = this.renderProjectDescription.bind(this);
     this.renderProjectOverview = this.renderProjectOverview.bind(this);
     this.renderReflections = this.renderReflections.bind(this);
-  }
-
-  componentDidMount() {
-    new WOW.WOW({
-      boxClass: 'wow',
-      animateClass: 'animated',
-      offset: 0,
-      mobile: true,
-      live: false,
-    }).init();
   }
 
   animateIn() {
@@ -44,7 +33,7 @@ class AlbertaMES extends PureComponent {
       targets: this.el,
       translateY: -100,
       opacity: 0,
-      duration: 500,
+      duration: 0,
       easing: 'easeOutExpo',
     }).finished;
   }

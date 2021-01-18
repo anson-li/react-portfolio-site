@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import WOW from 'wowjs';
 import anime from 'animejs';
 
 import LineBreak from '../../web/assets/line-break.png';
@@ -35,7 +34,7 @@ class WorkList extends PureComponent {
       targets: this.el,
       translateY: -100,
       opacity: 0,
-      duration: 500,
+      duration: 0,
       easing: 'easeOutExpo',
     }).finished;
   }

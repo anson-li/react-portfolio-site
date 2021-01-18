@@ -36,7 +36,7 @@ class Resume extends PureComponent {
       targets: this.el,
       translateY: -100,
       opacity: 0,
-      duration: 500,
+      duration: 0,
       easing: 'easeOutExpo',
     }).finished;
   }
@@ -81,7 +81,7 @@ class Resume extends PureComponent {
                     </TextBody>
                   </TextSection>
 
-                  <TextSection>
+                  <TextSection animated={false}>
                     <TextHeader text="Education" />
                     <TextBody>
                       <p>

@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import WOW from 'wowjs';
 import { Container, Row, Col } from 'react-bootstrap';
 import anime from 'animejs';
 
@@ -33,7 +32,7 @@ class TeamAqua extends PureComponent {
       targets: this.el,
       translateY: -100,
       opacity: 0,
-      duration: 500,
+      duration: 0,
       easing: 'easeOutExpo',
     }).finished;
   }

@@ -30,7 +30,7 @@ class Contact extends PureComponent {
       targets: this.el,
       translateY: -100,
       opacity: 0,
-      duration: 500,
+      duration: 0,
       easing: 'easeOutExpo',
     }).finished;
   }
@@ -54,7 +54,7 @@ class Contact extends PureComponent {
                   <div className="spacer-xs" />
                   <br />
                   <div className="col-md-12">
-                    <div className="col-md-6 wow fadeIn">
+                    <div className="col-md-6">
                       <p>
                         Hi, I&rsquo;m
                         {' '}
@@ -70,13 +70,13 @@ class Contact extends PureComponent {
                         like to know -- I&rsquo;m ready.
                         <br />
                         <br />
-                        <div className="crossfade wow fadeIn item-one" data-wow-duration="2s">
+                        <div className="crossfade item-one" data-wow-duration="2s">
                           <a className="img-icon" href="http://github.com/anson-li">
                             <img className="bottom" src={HoverGithubIcon} alt="Anson's Github, hightlighted" />
                             <img className="top" src={GithubIcon} alt="Anson's Github" />
                           </a>
                         </div>
-                        <div className="crossfade wow fadeIn item-two" data-wow-duration="3s">
+                        <div className="crossfade item-two" data-wow-duration="3s">
                           <a className="img-icon" href="https://www.linkedin.com/in/anson-ii">
                             <img className="bottom" src={HoverLinkedInIcon} alt="Anson's LinkedIn, highlighted" />
                             <img className="top" src={LinkedInIcon} alt="Anson's LinkedIn" />
