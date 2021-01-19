@@ -32,7 +32,6 @@ export default class SmoothScroll extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log(this.viewport.style)
     window.removeEventListener("scroll", this.onScroll);
     this.ro.disconnect();
   }
