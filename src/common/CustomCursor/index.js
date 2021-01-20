@@ -16,10 +16,11 @@ class CustomCursor extends PureComponent {
   componentDidMount() {
     window.addEventListener("mousemove", this.moveCircle);
     window.addEventListener("scroll", this.onScroll);
+    window.addEventListener("onmouseover", this.hoverFunc);
+    window.addEventListener("onmouseout", this.unhoverFunc);
   }
 
   moveCircle(e) {
-    console.log(e);
     TweenLite.to(this.circle, 0.3, {
       x: e.x,
       y: e.y,
@@ -31,6 +32,7 @@ class CustomCursor extends PureComponent {
   }
   
   hoverFunc(e) {
+    console.log('hit hover func');
     TweenLite.to(this.circle, 0.3, {
       opacity: 1,
       scale: 0

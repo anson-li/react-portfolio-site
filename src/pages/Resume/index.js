@@ -15,7 +15,6 @@ import ResumePDF from '../../web/assets/resume_ansonli.pdf';
 import withTransition from '../../common/WithTransition';
 
 import SmoothScroll from '../../common/SmoothScroll';
-import CustomCursor from '../../common/CustomCursor';
 
 import './style.scss';
 
@@ -45,7 +44,6 @@ class Resume extends PureComponent {
   render() {
     return (
       <>
-        <CustomCursor />
         <SmoothScroll>
           <div id="scroll-page" ref={(e) => { this.el = e; }}>
             <div id="fixed-wrapper" className="fixed-wrapper">
