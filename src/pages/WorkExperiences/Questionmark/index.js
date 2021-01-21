@@ -108,7 +108,7 @@ class Questionmark extends PureComponent {
                 components developed in previous systems.
                 <br />
                 <br />
-                <a href="http://www.questionmark.com" onMouseEnter={() => this.props.cursorHover()} onMouseLeave={() => this.props.cursorUnhover()}  className="btn">View the site</a>
+                <a href="http://www.questionmark.com" className="btn">View the site</a>
               </p>
             </div>
           </div>
@@ -165,7 +165,6 @@ class Questionmark extends PureComponent {
             section={sections}
             nextTitle="Crude Monitor"
             nextURL="/crudemonitor"
-            {...this.props}
           />
         </div>
       </SmoothScroll>

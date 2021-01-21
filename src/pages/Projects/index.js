@@ -9,10 +9,6 @@ import ProjectTemplate from './common/ProjectTemplate';
 import SmoothScroll from '../../common/SmoothScroll';
 
 class Projects extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   animateIn() {
     anime.remove(this.el);
     return anime({
@@ -59,13 +55,11 @@ class Projects extends PureComponent {
                       passthroughs, scene design and camera manipulation."
                     internalLink="/jellicent"
                     lineBreak
-                    {...this.props}
                   />
                   <ProjectTemplate
                     title="LTI"
                     description="Learning Interoperability Tool developed for Questionmark systems."
                     externalLink="https://github.com/questionmark/qm-lti"
-                    {...this.props}
                   />
                 </div>
                 <div className="spacer-sm" />

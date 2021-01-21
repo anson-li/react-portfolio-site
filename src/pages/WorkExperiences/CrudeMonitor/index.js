@@ -54,7 +54,7 @@ class CrudeMonitor extends PureComponent {
                 needs and demands of today&rsquo;s generation.
                 <br />
                 <br />
-                <a href="http://www.crudemonitor.ca" onMouseEnter={() => this.props.cursorHover()} onMouseLeave={() => this.props.cursorUnhover()} className="btn">Take a peek</a>
+                <a href="http://www.crudemonitor.ca" className="btn">Take a peek</a>
               </p>
             </div>
           </div>
@@ -177,7 +177,6 @@ class CrudeMonitor extends PureComponent {
             section={sections}
             nextTitle="AlbertaMES"
             nextURL="/albertames"
-            {...this.props}
           />
         </div>
       </SmoothScroll>

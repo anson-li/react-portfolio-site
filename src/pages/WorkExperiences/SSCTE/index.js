@@ -98,7 +98,7 @@ class SSCTE extends PureComponent {
                 as offering a chance to develop management and leadership skills.
                 <br />
                 <br />
-                <a href="https://github.com/CMPUT301F15T07/TradingApp" onMouseEnter={() => this.props.cursorHover()} onMouseLeave={() => this.props.cursorUnhover()} className="btn">Take a peek</a>
+                <a href="https://github.com/CMPUT301F15T07/TradingApp" className="btn">Take a peek</a>
               </p>
             </div>
           </div>
@@ -177,7 +177,6 @@ class SSCTE extends PureComponent {
             section={sections}
             nextTitle="Team Aqua - Ruby"
             nextURL="/teamaqua"
-            {...this.props}
           />
         </div>
       </SmoothScroll>

@@ -39,7 +39,6 @@ class ProjectTemplate extends PureComponent {
               <BoxLink
                 internalLink={internalLink}
                 externalLink={externalLink}
-                {...this.props}
               />
             </p>
             <div className="spacer-xs" />

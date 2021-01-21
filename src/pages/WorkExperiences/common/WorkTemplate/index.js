@@ -18,10 +18,6 @@ class WorkTemplate extends PureComponent {
     }).init();
   }
 
-  componentWillUnmount() {
-    this.props.cursorUnhover();
-  }
-
   render() {
     const {
       background, title, section, nextURL, nextTitle,
@@ -55,7 +51,7 @@ class WorkTemplate extends PureComponent {
                 <br />
                 <div className="wow fadeIn">
                   <p className="serif">Next Work →</p>
-                  <h3><Link to={nextURL} onMouseEnter={() => this.props.cursorHover()} onMouseLeave={() => this.props.cursorUnhover()} className="bigstrike" href={nextURL}>{nextTitle}</Link></h3>
+                  <h3><Link to={nextURL} className="bigstrike" href={nextURL}>{nextTitle}</Link></h3>
                 </div>
                 <div className="spacer-sm" />
               </div>

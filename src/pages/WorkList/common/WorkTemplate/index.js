@@ -39,7 +39,7 @@ class WorkTemplate extends PureComponent {
           <div className="col-md-6 no-padding">
             <div className="spacer-xs" />
             <p>
-              <Link to={link} href={link} onMouseEnter={() => this.props.cursorHover()} onMouseLeave={() => this.props.cursorUnhover()} className="btn">View case study</Link>
+              <Link to={link} href={link} className="btn">View case study</Link>
             </p>
             <div className="spacer-xs" />
           </div>

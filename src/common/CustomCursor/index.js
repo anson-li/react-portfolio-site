@@ -6,29 +6,29 @@ import "./style.scss";
 class CustomCursor extends PureComponent {
   constructor(props) {
     super(props);
+    this.state = {
+      scrollY: 0,
+    };
     this.moveCircle = this.moveCircle.bind(this);
     this.hoverFunc = this.hoverFunc.bind(this);
     this.unhoverFunc = this.unhoverFunc.bind(this);
-    this.circleTween = null;
-    this.followTween = null;
+    this.onScroll = this.onScroll.bind(this);
   }
 
   componentDidMount() {
     window.addEventListener("mousemove", this.moveCircle);
     window.addEventListener("scroll", this.onScroll);
-    window.addEventListener("onmouseover", this.hoverFunc);
-    window.addEventListener("onmouseout", this.unhoverFunc);
   }
 
   moveCircle(e) {
-    TweenLite.to(this.circle, 0.2, {
-      x: e.x,
-      y: e.y,
+    TweenLite.to(this.circle, 0.3, {
+      x: e.clientX,
+      y: e.clientY + window.pageYOffset
     });
     TweenLite.to(this.follow, 0.7, {
-      x: e.x,
-      y: e.y,
-    });
+      x: e.clientX,
+      y: e.clientY + window.pageYOffset
+    });  
   }
   
   hoverFunc(e) {
@@ -37,33 +37,34 @@ class CustomCursor extends PureComponent {
       scale: 0
     });
     TweenLite.to(this.follow, 0.3, {
-      scale: 2,
-      borderColor: '#ffd5a8',
+      scale: 3
     });  
   }
 
   unhoverFunc(e) {
     TweenLite.to(this.circle, 0.3, {
       opacity: 1,
-      scale: 1,
+      scale: 1
     });
     TweenLite.to(this.follow, 0.3, {
-      scale: 1,
-      borderColor: '#FFFFFF',
+      scale: 1
     });  
   }
 
-  onScroll(e) {
-    console.log(e);
-    TweenLite.to(this.circle, 0.2, {
-      x: e.x,
-      y: e.y,
-    });
-    TweenLite.to(this.follow, 0.7, {
-      x: e.x,
-      y: e.y,
-    });
-  }
+  onScroll = (e) => {
+    // FIXME: Fix scroll behavior to properly move smoothly
+    // const { scrollY } = this.state;
+    // console.log(window.pageYOffset - scrollY);
+    // TweenLite.to(this.circle, 0.1, {
+    //   y: "+=10", // + (window.pageYOffset - scrollY),
+    // });
+    // TweenLite.to(this.follow, 0.1, {
+    //   y: "+=" + (window.pageYOffset - scrollY),
+    // });
+    // this.setState({
+    //   scrollY: window.pageYOffset,
+    // });
+  };
 
   render() {
     return (

@@ -35,15 +35,3 @@
   //     transform: scale(3);
   // }  
 }
-
-body {
-  cursor: none !important;
-}
-
-a:hover, a:visited, a:link, a:active {
-  cursor: none;
-}
-
-.btn:not(:disabled):not(.disabled) {
-  cursor: none;
-}
