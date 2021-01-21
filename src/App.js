@@ -33,7 +33,10 @@ class App extends PureComponent {
       <div id="app">
         <CustomCursor ref={this.cursor} />
         <div className="fixed-header">
-          <Border />
+          <Border 
+            cursorHover = {this.onCursorHover}
+            cursorUnhover = {this.onCursorUnhover}
+          />
           <MainLogo 
             cursorHover = {this.onCursorHover}
             cursorUnhover = {this.onCursorUnhover}
@@ -43,7 +46,11 @@ class App extends PureComponent {
           { routes
             .filter(({ path }) => this.matchPath(path))
             .map(({ Component, key }) => (
-              <Component key={key} />
+              <Component
+                key={key}
+                cursorHover = {this.onCursorHover}
+                cursorUnhover = {this.onCursorUnhover}
+              />
             ))}
         </TransitionGroup>
       </div>

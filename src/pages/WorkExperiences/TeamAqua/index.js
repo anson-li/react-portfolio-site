@@ -96,7 +96,7 @@ class TeamAqua extends PureComponent {
                 five modules which explored the boundaries of Ruby.
                 <br />
                 <br />
-                <a href="http://www.teamaqua.ca" className="btn">Take a peek</a>
+                <a href="http://www.teamaqua.ca" onMouseEnter={() => this.props.cursorHover()} onMouseLeave={() => this.props.cursorUnhover()} className="btn">Take a peek</a>
               </p>
             </div>
           </div>
@@ -142,6 +142,7 @@ class TeamAqua extends PureComponent {
             section={sections}
             nextTitle="Questionmark"
             nextURL="/questionmark"
+            {...this.props}
           />
         </div>
       </SmoothScroll>

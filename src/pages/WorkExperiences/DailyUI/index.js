@@ -97,7 +97,7 @@ class DailyUI extends PureComponent {
                 that feature through design.
                 <br />
                 <br />
-                <a href="http://twitter.com/helloanson" className="btn">Take a peek</a>
+                <a href="http://twitter.com/helloanson" onMouseEnter={() => this.props.cursorHover()} onMouseLeave={() => this.props.cursorUnhover()} className="btn">Take a peek</a>
               </p>
             </div>
           </div>
@@ -143,6 +143,7 @@ class DailyUI extends PureComponent {
             section={sections}
             nextTitle="SSCTE - Android"
             nextURL="/sscte"
+            {...this.props}
           />
         </div>
       </SmoothScroll>

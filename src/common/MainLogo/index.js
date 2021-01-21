@@ -6,7 +6,6 @@ import Logo from '../../web/assets/logo.svg';
 class MainLogo extends PureComponent {
   constructor(props) {
     super(props);
-    console.log(this.props);
   }
 
   render() {

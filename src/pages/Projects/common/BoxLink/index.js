@@ -11,11 +11,11 @@ class BoxLink extends PureComponent {
       <>
         { internalLink
         && (
-          <Link to={internalLink} href={internalLink} className="btn">View case study</Link>
+          <Link to={internalLink} href={internalLink} onMouseEnter={() => this.props.cursorHover()} onMouseLeave={() => this.props.cursorUnhover()} className="btn">View case study</Link>
         )}
         { externalLink
         && (
-          <a href={externalLink} className="btn">View case study</a>
+          <a href={externalLink} onMouseEnter={() => this.props.cursorHover()} onMouseLeave={() => this.props.cursorUnhover()} className="btn">View case study</a>
         )}
       </>
     );

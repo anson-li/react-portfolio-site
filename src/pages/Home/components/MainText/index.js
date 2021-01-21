@@ -28,7 +28,7 @@ class MainText extends PureComponent {
               id="main-text"
               text="Hey - I'm Anson Li, and I am a software engineer at ATB."
             />
-            <Link to="/work" id="sub-link" href="work">
+            <Link to="/work" id="sub-link" href="work" onMouseEnter={() => this.props.cursorHover()} onMouseLeave={() => this.props.cursorUnhover()}>
               <FadeText
                 type="h6"
                 id="sub-text"

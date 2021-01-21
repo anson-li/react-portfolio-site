@@ -9,6 +9,10 @@ import MainText from './components/MainText';
 import withTransition from '../../common/WithTransition';
 
 class Home extends PureComponent {
+  constructor(props) {
+    super(props);
+  }
+
   animateIn() {
     anime.remove(this.el);
     return anime({
@@ -35,7 +39,9 @@ class Home extends PureComponent {
         <Background />
         <div className="fixed">
           <ThreeSphere />
-          <MainText />
+          <MainText 
+            {...this.props}
+          />
         </div>
         <div id="bottom" />
       </div>

@@ -182,6 +182,7 @@ class AlbertaMES extends PureComponent {
             section={sections}
             nextTitle="#DailyUI"
             nextURL="/dailyui"
+            {...this.props}
           />
         </div>
       </SmoothScroll>

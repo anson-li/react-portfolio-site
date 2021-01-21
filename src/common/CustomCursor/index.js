@@ -21,7 +21,7 @@ class CustomCursor extends PureComponent {
   }
 
   moveCircle(e) {
-    TweenLite.to(this.circle, 0.3, {
+    TweenLite.to(this.circle, 0.2, {
       x: e.x,
       y: e.y,
     });
@@ -32,13 +32,13 @@ class CustomCursor extends PureComponent {
   }
   
   hoverFunc(e) {
-    console.log('hit hover func');
     TweenLite.to(this.circle, 0.3, {
       opacity: 1,
       scale: 0
     });
     TweenLite.to(this.follow, 0.3, {
-      scale: 3
+      scale: 2,
+      borderColor: '#ffd5a8',
     });  
   }
 
@@ -49,12 +49,13 @@ class CustomCursor extends PureComponent {
     });
     TweenLite.to(this.follow, 0.3, {
       scale: 1,
+      borderColor: '#FFFFFF',
     });  
   }
 
   onScroll(e) {
     console.log(e);
-    TweenLite.to(this.circle, 0.3, {
+    TweenLite.to(this.circle, 0.2, {
       x: e.x,
       y: e.y,
     });

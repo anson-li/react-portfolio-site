@@ -16,6 +16,9 @@ import WorkTemplate from './common/WorkTemplate';
 import SmoothScroll from '../../common/SmoothScroll';
 
 class WorkList extends PureComponent {
+  constructor(props) {
+    super(props);
+  }
 
   animateIn() {
     anime.remove(this.el);
@@ -73,6 +76,7 @@ class WorkList extends PureComponent {
                       link="/questionmark"
                       lineBreak
                       animated={false}
+                      {...this.props}
                     />
                     <WorkTemplate
                       title="Crude Monitor"
@@ -83,6 +87,7 @@ class WorkList extends PureComponent {
                       panel={CrudeMonitorPanel}
                       link="/crudemonitor"
                       lineBreak
+                      {...this.props}
                     />
                     <WorkTemplate
                       title="AlbertaMES"
@@ -94,6 +99,7 @@ class WorkList extends PureComponent {
                       panel={AlbertaMESPanel}
                       link="/albertames"
                       lineBreak
+                      {...this.props}
                     />
                     <WorkTemplate
                       title="#DailyUI"
@@ -103,6 +109,7 @@ class WorkList extends PureComponent {
                       panel={DailyUIPanel}
                       link="/dailyui"
                       lineBreak
+                      {...this.props}
                     />
                     <WorkTemplate
                       title="SSCTE"
@@ -112,6 +119,7 @@ class WorkList extends PureComponent {
                       panel={SSCTEPanel}
                       link="/sscte"
                       lineBreak
+                      {...this.props}
                     />
                     <WorkTemplate
                       title="Team Aqua"
@@ -121,6 +129,7 @@ class WorkList extends PureComponent {
                         systems, libraries, and UI."
                       panel={TeamAquaPanel}
                       link="/teamaqua"
+                      {...this.props}
                     />
                   </div>
                 </div>
