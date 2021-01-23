@@ -8,6 +8,7 @@ import withTransition from '../../common/WithTransition';
 import BannerLink from './common/BannerLink';
 import SmoothScroll from '../../common/SmoothScroll';
 import './style.scss';
+import { Tween } from 'gsap/gsap-core';
 
 gsap.registerPlugin(TextPlugin);
 
@@ -19,14 +20,15 @@ class Projects extends PureComponent {
   }
 
   showDescription(description) {
-    console.log(this.description);
-    console.log(description);
     TweenLite.to(this.description, 0, {
-      text: description
+      text: description,
     });
   }
 
   hideDescription() {
+    // TweenLite.to(this.description, 0, {
+    //   text: 'Web Projects',
+    // });
   }
 
   animateIn() {
@@ -61,7 +63,7 @@ class Projects extends PureComponent {
                 <div className="hide-under col-md-12 left-top">
                   <div className="row">
                     <div className="col">
-                      <h3 id="description" ref={(e) => { this.description = e; }}>Placeholder text</h3>
+                      <h3 className="description" ref={(e) => { this.description = e; }}>Web Projects</h3>
                       <div id="box-image" />
                     </div>
                     <div className="col">
@@ -88,7 +90,7 @@ class Projects extends PureComponent {
                         hideDescription={this.hideDescription}
                       />
                       <BannerLink
-                        title="Flight for Finance"
+                        title="Flight for Financial Freedom"
                         description="Right now, 42% of Canadians are struggling to meet financial commitments."
                         externalLink="https://github.com/questionmark/qm-lti"
                         showDescription={this.showDescription}
