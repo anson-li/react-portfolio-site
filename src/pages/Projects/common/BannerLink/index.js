@@ -2,9 +2,17 @@ import React, { PureComponent } from 'react';
 import WOW from 'wowjs';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { TweenLite } from 'gsap';
+
 import './style.scss';
 
 class BannerLink extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.showDescription = this.showDescription.bind(this);
+    this.hideDescription = this.hideDescription.bind(this);
+  }
+
   componentDidMount() {
     new WOW.WOW({
       boxClass: 'wow',
@@ -15,33 +23,54 @@ class BannerLink extends PureComponent {
     }).init();
   }
 
+  showDescription(description) {
+    TweenLite.to(this.bannerlink, 0.1, {
+      color: '#ffd5a8',
+    });
+    this.props.showDescription(description);
+  }
+
+  hideDescription() {
+    TweenLite.to(this.bannerlink, 0.1, {
+      color: '#ffffff',
+    });
+    this.props.hideDescription();
+  }
+
   render() {
     const {
-      title, description, internalLink, externalLink, showDescription, hideDescription,
+      title, date, description, internalLink, externalLink,
     } = this.props;
     return (
       <div className="wow fadeIn banner-link">
-        <h6>
+        <p>
           { internalLink
           && (
             <Link
-              onMouseEnter={() => showDescription(description)}
-              onMouseLeave={() => hideDescription()}
+              onMouseEnter={() => this.showDescription(description)}
+              onMouseLeave={() => this.hideDescription()}
               to={internalLink}
               href={internalLink}>
-              {title}
+              <span ref={(e) => { this.bannerlink = e; }}>
+                <span className="project-description">{title}</span>
+                <span className="project-date">{date}</span>
+              </span>
             </Link>
           )}
           { externalLink
           && (
             <a
               href={externalLink}
-              onMouseEnter={() => showDescription(description)}
-              onMouseLeave={() => hideDescription()}>
-              {title}
+              onMouseEnter={() => this.showDescription(description)}
+              onMouseLeave={() => this.hideDescription()}>
+              <span ref={(e) => { this.bannerlink = e; }}>
+                <span className="project-description">{title}</span>
+                <span className="project-date">{date}</span>
+              </span>
             </a>
           )}
-        </h6>
+        </p>
+        <br />
       </div>
     );
   }

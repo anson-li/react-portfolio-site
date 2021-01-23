@@ -12,3 +12,13 @@
 .filler-bottom {
   height: 50vh;
 }
+
+.project-top {
+  top: 10%;
+}
+
+@media (min-width: 1024px) {
+  .project-top {
+    padding-top: 20%;
+  }
+}

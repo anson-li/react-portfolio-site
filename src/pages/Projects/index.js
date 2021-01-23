@@ -60,7 +60,7 @@ class Projects extends PureComponent {
           <div id="fixed-wrapper" className="fixed-wrapper">
             <div className="main-container">
               <div id="scrollContainer" className="flex-container container ">
-                <div className="hide-under col-md-12 left-top">
+                <div className="hide-under col-md-12 project-top">
                   <div className="row">
                     <div className="col">
                       <h3 className="description" ref={(e) => { this.description = e; }}>Web Projects</h3>
@@ -71,6 +71,7 @@ class Projects extends PureComponent {
                         title="Jellicent"
                         description="Testing three.js basic React templating with
                           passthroughs, scene design and camera manipulation."
+                        date="January 2020"
                         internalLink="/jellicent"
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
@@ -79,6 +80,7 @@ class Projects extends PureComponent {
                         title="LTI"
                         description="Learning Interoperability Tool developed for Questionmark systems."
                         externalLink="https://github.com/questionmark/qm-lti"
+                        date="July 2018"
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
                       />
@@ -86,6 +88,7 @@ class Projects extends PureComponent {
                         title="UnleashedBot"
                         description="Support tool developed for ATB for easier processing."
                         internalLink="/jellicent"
+                        date="June 2019"
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
                       />
@@ -93,6 +96,7 @@ class Projects extends PureComponent {
                         title="Flight for Financial Freedom"
                         description="Right now, 42% of Canadians are struggling to meet financial commitments."
                         externalLink="https://github.com/questionmark/qm-lti"
+                        date="November 2019"
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
                       />

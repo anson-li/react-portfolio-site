@@ -1,8 +1,17 @@
 .banner-link {
   padding: 1rem;
+  letter-spacing: 2px;
 
   h6 {
     text-align: left;
     vertical-align: middle;
+  }
+
+  .project-description {
+    float: left;
+  }
+
+  .project-date {
+    float: right;
   }
 }
