@@ -1,14 +1,34 @@
 import React, { PureComponent } from 'react';
 import anime from 'animejs';
+import { TweenLite, gsap } from 'gsap';
+import { TextPlugin } from "gsap/TextPlugin";
 
-import LineBreak from '../../web/assets/line-break.png';
-import WorkBackground from '../../web/assets/background/bg-project.png';
 import withTransition from '../../common/WithTransition';
 
-import ProjectTemplate from './common/ProjectTemplate';
+import BannerLink from './common/BannerLink';
 import SmoothScroll from '../../common/SmoothScroll';
+import './style.scss';
+
+gsap.registerPlugin(TextPlugin);
 
 class Projects extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.showDescription = this.showDescription.bind(this);
+    this.hideDescription = this.hideDescription.bind(this);
+  }
+
+  showDescription(description) {
+    console.log(this.description);
+    console.log(description);
+    TweenLite.to(this.description, 0, {
+      text: description
+    });
+  }
+
+  hideDescription() {
+  }
+
   animateIn() {
     anime.remove(this.el);
     return anime({
@@ -39,35 +59,46 @@ class Projects extends PureComponent {
             <div className="main-container">
               <div id="scrollContainer" className="flex-container container ">
                 <div className="hide-under col-md-12 left-top">
-                  <img className="bg-img" src={WorkBackground} alt="Background" />
-                  <div className="spacer-sm" />
-                  <div className="center-sm">
-                    <h2 className="scroll-title">Projects</h2>
-                    <div className="col-md-12">
-                      <img className="line-break" src={LineBreak} alt="Line break" />
+                  <div className="row">
+                    <div className="col">
+                      <h3 id="description" ref={(e) => { this.description = e; }}>Placeholder text</h3>
+                      <div id="box-image" />
                     </div>
-                  </div>
-                  <div className="spacer-xs" />
-                  <br />
-                  <ProjectTemplate
-                    title="Jellicent"
-                    description="Testing three.js basic React templating with
-                      passthroughs, scene design and camera manipulation."
-                    internalLink="/jellicent"
-                    lineBreak
-                  />
-                  <ProjectTemplate
-                    title="LTI"
-                    description="Learning Interoperability Tool developed for Questionmark systems."
-                    externalLink="https://github.com/questionmark/qm-lti"
-                  />
+                    <div className="col">
+                      <BannerLink
+                        title="Jellicent"
+                        description="Testing three.js basic React templating with
+                          passthroughs, scene design and camera manipulation."
+                        internalLink="/jellicent"
+                        showDescription={this.showDescription}
+                        hideDescription={this.hideDescription}
+                      />
+                      <BannerLink
+                        title="LTI"
+                        description="Learning Interoperability Tool developed for Questionmark systems."
+                        externalLink="https://github.com/questionmark/qm-lti"
+                        showDescription={this.showDescription}
+                        hideDescription={this.hideDescription}
+                      />
+                      <BannerLink
+                        title="UnleashedBot"
+                        description="Support tool developed for ATB for easier processing."
+                        internalLink="/jellicent"
+                        showDescription={this.showDescription}
+                        hideDescription={this.hideDescription}
+                      />
+                      <BannerLink
+                        title="Flight for Finance"
+                        description="Right now, 42% of Canadians are struggling to meet financial commitments."
+                        externalLink="https://github.com/questionmark/qm-lti"
+                        showDescription={this.showDescription}
+                        hideDescription={this.hideDescription}
+                      />
+                    </div>
+                  </div>                  
                 </div>
+                <div className="filler-bottom" />
                 <div className="spacer-sm" />
-                <div className="flex-container container">
-                  <br />
-                  <br />
-                  <div className="col-md-12 fixed-bottom" />
-                </div>
               </div>
               <div id="bottom" />
             </div>
