@@ -7,6 +7,7 @@
   position: absolute;
   padding-top: 50%;
   right: 150px;
+  z-index: 2;
 }
 
 .filler-bottom {
@@ -21,4 +22,11 @@
   .project-top {
     padding-top: 20%;
   }
+}
+
+.box-image-background {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: grayscale(75%);
 }

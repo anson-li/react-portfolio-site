@@ -9,6 +9,8 @@ import BannerLink from './common/BannerLink';
 import SmoothScroll from '../../common/SmoothScroll';
 import './style.scss';
 import { Tween } from 'gsap/gsap-core';
+import DefaultBackground from '../../web/assets/projects/default.jpg';
+
 
 gsap.registerPlugin(TextPlugin);
 
@@ -64,7 +66,9 @@ class Projects extends PureComponent {
                   <div className="row">
                     <div className="col">
                       <h3 className="description" ref={(e) => { this.description = e; }}>Web Projects</h3>
-                      <div id="box-image" />
+                      <div id="box-image">
+                        <img className="box-image-background" src={DefaultBackground} alt="Default project background" />
+                      </div>
                     </div>
                     <div className="col">
                       <BannerLink
