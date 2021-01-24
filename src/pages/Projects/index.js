@@ -8,9 +8,12 @@ import withTransition from '../../common/WithTransition';
 import BannerLink from './common/BannerLink';
 import SmoothScroll from '../../common/SmoothScroll';
 import './style.scss';
-import { Tween } from 'gsap/gsap-core';
-import DefaultBackground from '../../web/assets/projects/default.jpg';
 
+import DefaultBackground from '../../web/assets/projects/default.jpg';
+import FlightBackground from '../../web/assets/projects/flight.jpg';
+import JellicentBackground from '../../web/assets/projects/jellicent.jpg';
+import LTIBackground from '../../web/assets/projects/lti.jpg';
+import UnleashedBackground from '../../web/assets/projects/unleashedbot.jpg';
 
 gsap.registerPlugin(TextPlugin);
 
@@ -21,10 +24,16 @@ class Projects extends PureComponent {
     this.hideDescription = this.hideDescription.bind(this);
   }
 
-  showDescription(description) {
+  showDescription(description, background) {
     TweenLite.to(this.description, 0, {
       text: description,
     });
+    TweenLite.to(this.background, 0, {
+      attr: {
+        src: background,
+      },
+    });
+    console.log(this.background);
   }
 
   hideDescription() {
@@ -67,7 +76,7 @@ class Projects extends PureComponent {
                     <div className="col">
                       <h3 className="description" ref={(e) => { this.description = e; }}>Web Projects</h3>
                       <div id="box-image">
-                        <img className="box-image-background" src={DefaultBackground} alt="Default project background" />
+                        <img className="box-image-background" src={DefaultBackground} alt="Default project background" ref={(e) => { this.background = e; }} />
                       </div>
                     </div>
                     <div className="col">
@@ -79,6 +88,7 @@ class Projects extends PureComponent {
                         internalLink="/jellicent"
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
+                        background={JellicentBackground}
                       />
                       <BannerLink
                         title="LTI"
@@ -87,6 +97,7 @@ class Projects extends PureComponent {
                         date="July 2018"
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
+                        background={LTIBackground}
                       />
                       <BannerLink
                         title="UnleashedBot"
@@ -95,6 +106,7 @@ class Projects extends PureComponent {
                         date="June 2019"
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
+                        background={UnleashedBackground}
                       />
                       <BannerLink
                         title="Flight for Financial Freedom"
@@ -103,6 +115,7 @@ class Projects extends PureComponent {
                         date="November 2019"
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
+                        background={FlightBackground}
                       />
                     </div>
                   </div>                  
