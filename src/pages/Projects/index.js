@@ -82,8 +82,7 @@ class Projects extends PureComponent {
                     <div className="col">
                       <BannerLink
                         title="Jellicent"
-                        description="Testing three.js basic React templating with
-                          passthroughs, scene design and camera manipulation."
+                        description="three.js / react / exploration in web design and 3D space"
                         date="January 2020"
                         internalLink="/jellicent"
                         showDescription={this.showDescription}
@@ -91,17 +90,17 @@ class Projects extends PureComponent {
                         background={JellicentBackground}
                       />
                       <BannerLink
-                        title="LTI"
-                        description="Learning Interoperability Tool developed for Questionmark systems."
-                        externalLink="https://github.com/questionmark/qm-lti"
-                        date="July 2018"
+                        title="Flight to Financial Freedom"
+                        description="three.js / flask / building a better financial future"
+                        externalLink="https://github.com/anson-li/flight-to-financial-freedom"
+                        date="November 2019"
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
-                        background={LTIBackground}
+                        background={FlightBackground}
                       />
                       <BannerLink
                         title="UnleashedBot"
-                        description="Support tool developed for ATB for easier processing."
+                        description="flask / google api / support tool developed for ATB for easier processing"
                         internalLink="/jellicent"
                         date="June 2019"
                         showDescription={this.showDescription}
@@ -109,13 +108,13 @@ class Projects extends PureComponent {
                         background={UnleashedBackground}
                       />
                       <BannerLink
-                        title="Flight for Financial Freedom"
-                        description="Right now, 42% of Canadians are struggling to meet financial commitments."
+                        title="LTI"
+                        description="Learning Interoperability Tool developed for Questionmark systems"
                         externalLink="https://github.com/questionmark/qm-lti"
-                        date="November 2019"
+                        date="July 2018"
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
-                        background={FlightBackground}
+                        background={LTIBackground}
                       />
                     </div>
                   </div>                  
