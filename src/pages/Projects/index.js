@@ -99,9 +99,9 @@ class Projects extends PureComponent {
                         background={FlightBackground}
                       />
                       <BannerLink
-                        title="UnleashedBot"
-                        description="flask / google api / support tool developed for ATB for easier processing"
-                        internalLink="/jellicent"
+                        title="Google Bot app template"
+                        description="flask / google api / support tool developed for ease of use"
+                        internalLink="https://github.com/anson-li/google-bot-flask-template"
                         date="June 2019"
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
@@ -109,7 +109,7 @@ class Projects extends PureComponent {
                       />
                       <BannerLink
                         title="LTI"
-                        description="Learning Interoperability Tool developed for Questionmark systems"
+                        description="php / web tool made for Questionmark integration"
                         externalLink="https://github.com/questionmark/qm-lti"
                         date="July 2018"
                         showDescription={this.showDescription}
