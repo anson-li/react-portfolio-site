@@ -101,7 +101,7 @@ class Projects extends PureComponent {
                       <BannerLink
                         title="Google Bot app template"
                         description="flask / google api / support tool developed for ease of use"
-                        internalLink="https://github.com/anson-li/google-bot-flask-template"
+                        externalLink="https://github.com/anson-li/google-bot-flask-template"
                         date="June 2019"
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
