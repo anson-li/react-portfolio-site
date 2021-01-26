@@ -140,8 +140,8 @@ class TeamAqua extends PureComponent {
             background={BackgroundTeamAqua}
             title="Team Aqua"
             section={sections}
-            nextTitle="Questionmark"
-            nextURL="/questionmark"
+            nextTitle="SSCTE"
+            nextURL="/sscte"
           />
         </div>
       </SmoothScroll>

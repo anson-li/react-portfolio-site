@@ -14,6 +14,9 @@ import FlightBackground from '../../web/assets/projects/flight.jpg';
 import JellicentBackground from '../../web/assets/projects/jellicent.jpg';
 import LTIBackground from '../../web/assets/projects/lti.jpg';
 import UnleashedBackground from '../../web/assets/projects/unleashedbot.jpg';
+import SSCTEBackground from '../../web/assets/projects/sscte.jpg';
+import DailyUIBackground from '../../web/assets/projects/dailyui.jpg';
+import TeamAquaBackground from '../../web/assets/projects/teamaqua.jpg';
 
 gsap.registerPlugin(TextPlugin);
 
@@ -115,6 +118,33 @@ class Projects extends PureComponent {
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
                         background={LTIBackground}
+                      />
+                      <BannerLink
+                        title="#DailyUI"
+                        description="sketch / photoshop / design every day"
+                        internalLink="/dailyui"
+                        date="Late 2016"
+                        showDescription={this.showDescription}
+                        hideDescription={this.hideDescription}
+                        background={DailyUIBackground}
+                      />
+                      <BannerLink
+                        title="Team Aqua"
+                        description="ruby library development for maxtrix calculation support"
+                        internalLink="/teamaqua"
+                        date="Early 2016"
+                        showDescription={this.showDescription}
+                        hideDescription={this.hideDescription}
+                        background={TeamAquaBackground}
+                      />
+                      <BannerLink
+                        title="SSCTE"
+                        description="android / ux / card trading application"
+                        internalLink="/sscte"
+                        date="Late 2015"
+                        showDescription={this.showDescription}
+                        hideDescription={this.hideDescription}
+                        background={SSCTEBackground}
                       />
                     </div>
                   </div>                  

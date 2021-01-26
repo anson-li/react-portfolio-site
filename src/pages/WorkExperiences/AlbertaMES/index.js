@@ -180,8 +180,8 @@ class AlbertaMES extends PureComponent {
             background={BackgroundAlbertaMES}
             title="AlbertaMES"
             section={sections}
-            nextTitle="#DailyUI"
-            nextURL="/dailyui"
+            nextTitle="Questionmark"
+            nextURL="/questionmark"
           />
         </div>
       </SmoothScroll>

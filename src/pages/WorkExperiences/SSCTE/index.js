@@ -175,8 +175,8 @@ class SSCTE extends PureComponent {
             background={BackgroundSSCTE}
             title="SSCTE"
             section={sections}
-            nextTitle="Team Aqua - Ruby"
-            nextURL="/teamaqua"
+            nextTitle="#DailyUI"
+            nextURL="/dailyui"
           />
         </div>
       </SmoothScroll>

@@ -75,7 +75,7 @@ class WorkList extends PureComponent {
                       animated={false}
                     />
                     <WorkTemplate
-                      title="Crude Monitor"
+                      title="CQI"
                       description="CQI is a Canadian-based company which specialises in monitoring
                         the quality of North American crude oil. They had tasked me
                         with upgrading their primary application, Crude Monitor,
@@ -85,7 +85,7 @@ class WorkList extends PureComponent {
                       lineBreak
                     />
                     <WorkTemplate
-                      title="AlbertaMES"
+                      title="Environment &amp; Parks"
                       description="AlbertaMES is a heuristics-based web application to filter
                         and isolate projects, models and stations associated with
                         Alberta Environment and Parks. I was signed on as the
@@ -94,33 +94,6 @@ class WorkList extends PureComponent {
                       panel={AlbertaMESPanel}
                       link="/albertames"
                       lineBreak
-                    />
-                    <WorkTemplate
-                      title="#DailyUI"
-                      description="DailyUI is, as the name suggests, a daily exploration into UX
-                        and UI. For 100 days, UI and UX elements were designed and
-                        created for the creative community."
-                      panel={DailyUIPanel}
-                      link="/dailyui"
-                      lineBreak
-                    />
-                    <WorkTemplate
-                      title="SSCTE"
-                      description="SSCTE is an android application that&rsquo;s designed for collecting and
-                        trading cards. It primarily served as an exploration of common UX
-                        and UI design behavior for Android technologies."
-                      panel={SSCTEPanel}
-                      link="/sscte"
-                      lineBreak
-                    />
-                    <WorkTemplate
-                      title="Team Aqua"
-                      description="Team Aqua is a development firm, created with the
-                        purpose of exploring Ruby development and design.
-                        Projects developed under this team include monitoring
-                        systems, libraries, and UI."
-                      panel={TeamAquaPanel}
-                      link="/teamaqua"
                     />
                   </div>
                 </div>

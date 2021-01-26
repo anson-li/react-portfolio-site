@@ -163,7 +163,7 @@ class Questionmark extends PureComponent {
             background={BackgroundQuestionmark}
             title="Questionmark"
             section={sections}
-            nextTitle="Crude Monitor"
+            nextTitle="CQI"
             nextURL="/crudemonitor"
           />
         </div>

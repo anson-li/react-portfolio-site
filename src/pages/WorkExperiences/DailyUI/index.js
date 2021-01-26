@@ -141,8 +141,8 @@ class DailyUI extends PureComponent {
             background={BackgroundDailyUI}
             title="#DailyUI"
             section={sections}
-            nextTitle="SSCTE - Android"
-            nextURL="/sscte"
+            nextTitle="Team Aqua"
+            nextURL="/teamaqua"
           />
         </div>
       </SmoothScroll>

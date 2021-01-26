@@ -173,9 +173,9 @@ class CrudeMonitor extends PureComponent {
         <div ref={(e) => { this.el = e; }}>
           <WorkTemplate
             background={BackgroundCrudeMonitor}
-            title="Crude Monitor"
+            title="CQI"
             section={sections}
-            nextTitle="AlbertaMES"
+            nextTitle="Environment &amp; Parks"
             nextURL="/albertames"
           />
         </div>
