@@ -143,6 +143,7 @@ class DailyUI extends PureComponent {
             section={sections}
             nextTitle="Team Aqua"
             nextURL="/teamaqua"
+            redirect={false}
           />
         </div>
       </SmoothScroll>

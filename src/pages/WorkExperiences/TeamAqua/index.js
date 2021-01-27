@@ -142,6 +142,7 @@ class TeamAqua extends PureComponent {
             section={sections}
             nextTitle="SSCTE"
             nextURL="/sscte"
+            redirect={false}
           />
         </div>
       </SmoothScroll>

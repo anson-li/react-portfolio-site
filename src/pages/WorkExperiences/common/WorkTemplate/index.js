@@ -20,7 +20,7 @@ class WorkTemplate extends PureComponent {
 
   render() {
     const {
-      background, title, section, nextURL, nextTitle,
+      background, title, section, nextURL, nextTitle, redirect,
     } = this.props;
     return (
       <div id="scroll-page">
@@ -49,10 +49,12 @@ class WorkTemplate extends PureComponent {
 
                 <br />
                 <br />
-                <div className="wow fadeIn">
-                  <p className="serif">Next Work →</p>
-                  <h3><Link to={nextURL} className="bigstrike" href={nextURL}>{nextTitle}</Link></h3>
-                </div>
+                { redirect && (
+                  <div className="wow fadeIn">
+                    <p className="serif">Next Work →</p>
+                    <h3><Link to={nextURL} className="bigstrike" href={nextURL}>{nextTitle}</Link></h3>
+                  </div>
+                )}
                 <div className="spacer-sm" />
               </div>
             </div>
@@ -75,6 +77,11 @@ WorkTemplate.propTypes = {
   section: PropTypes.arrayOf(PropTypes.element).isRequired,
   nextURL: PropTypes.string.isRequired,
   nextTitle: PropTypes.string.isRequired,
+  redirect: PropTypes.bool,
 };
+
+WorkTemplate.defaultProps = {
+  redirect: true,
+}
 
 export default WorkTemplate;

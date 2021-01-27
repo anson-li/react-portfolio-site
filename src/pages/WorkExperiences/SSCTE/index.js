@@ -177,6 +177,7 @@ class SSCTE extends PureComponent {
             section={sections}
             nextTitle="#DailyUI"
             nextURL="/dailyui"
+            redirect={false}
           />
         </div>
       </SmoothScroll>
