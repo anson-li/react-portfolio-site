@@ -1,0 +1,12 @@
+.bg-img {
+  position: absolute;
+  top: -150px;
+  clip: rect(128px, 6000px, 1500px, 0);
+  left: -350px;
+}
+
+@media (min-width: 1024px) {
+  .bg-img {
+    left: 0;
+  }
+}

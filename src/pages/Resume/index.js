@@ -17,6 +17,8 @@ import withTransition from '../../common/WithTransition';
 import SmoothScroll from '../../common/SmoothScroll';
 
 import './style.scss';
+import Background from '../../common/Background';
+import BackgroundImage from '../../common/BackgroundImage'
 
 class Resume extends PureComponent {
   animateIn() {
@@ -49,7 +51,10 @@ class Resume extends PureComponent {
             <div className="main-container">
               <div id="scrollContainer" className="flex-container container ">
                 <div className="hide-under col-md-12 left-top">
-                  <img className="bg-img" src={AlbertaBackground} alt="Background showing Alberta" />
+                  <BackgroundImage
+                    src={AlbertaBackground}
+                    alt="Background showing Alberta"
+                  />
                   <div className="center-sm">
                     <h2 className="scroll-title">
                       Anson Li

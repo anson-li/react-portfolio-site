@@ -241,13 +241,6 @@ img {
   position: relative;
 }
 
-.bg-img {
-  position: absolute;
-  top: -150px;
-  clip: rect(128px, 6000px, 1500px, 0);
-  left: -350px;
-}
-
 .line-break {
   width: 170px;
 }
@@ -263,10 +256,6 @@ img {
 
   .img-panel {
     width: auto;
-  }
-
-  .bg-img {
-    left: 0;
   }
 }
 
