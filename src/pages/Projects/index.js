@@ -122,7 +122,7 @@ class Projects extends PureComponent {
                       <BannerLink
                         title="#DailyUI"
                         description="sketch / photoshop / design every day"
-                        internalLink="/dailyui"
+                        externalLink="http://twitter.com/helloanson"
                         date="Late 2016"
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
@@ -131,7 +131,7 @@ class Projects extends PureComponent {
                       <BannerLink
                         title="Team Aqua"
                         description="ruby library development for maxtrix calculation support"
-                        internalLink="/teamaqua"
+                        externalLink="https://github.com/Team-Aqua"
                         date="Early 2016"
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
@@ -140,7 +140,7 @@ class Projects extends PureComponent {
                       <BannerLink
                         title="SSCTE"
                         description="android / ux / card trading application"
-                        internalLink="/sscte"
+                        externalLink="https://github.com/CMPUT301F15T07/TradingApp"
                         date="Late 2015"
                         showDescription={this.showDescription}
                         hideDescription={this.hideDescription}
