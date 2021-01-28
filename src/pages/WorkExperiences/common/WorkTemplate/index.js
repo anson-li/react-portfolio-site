@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import BodySection from './components/BodySection';
+import BackgroundImage from '../../../../common/BackgroundImage';
 
 import LineBreak from '../../../../web/assets/line-break.png';
 
@@ -28,7 +29,10 @@ class WorkTemplate extends PureComponent {
           <div className="main-container">
             <div id="scrollContainer" className="flex-container container ">
               <div className="hide-under col-md-12 left-top">
-                <img className="bg-img" src={background} alt="Background" />
+                <BackgroundImage
+                    src={background}
+                    alt="Background"
+                  />
                 <div className="horizontal"><p>← Let&rsquo;s continue</p></div>
                 <div className="spacer-sm" />
                 <div className="center-sm">

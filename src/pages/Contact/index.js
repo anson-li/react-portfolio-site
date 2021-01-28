@@ -11,6 +11,7 @@ import HoverGithubIcon from '../../web/assets/icon/ico-github-hover.png';
 import LinkedInIcon from '../../web/assets/icon/ico-linkedin.png';
 import HoverLinkedInIcon from '../../web/assets/icon/ico-linkedin-hover.png';
 import SmoothScroll from '../../common/SmoothScroll';
+import BackgroundImage from '../../common/BackgroundImage';
 
 class Contact extends PureComponent {
   animateIn() {
@@ -43,7 +44,10 @@ class Contact extends PureComponent {
             <div className="main-container">
               <div id="scrollContainer" className="flex-container container ">
                 <div className="hide-under col-md-12 left-top">
-                  <img className="bg-img" src={AnsonBackground} alt="Background with a portrait of Anson" />
+                  <BackgroundImage
+                    src={AnsonBackground}
+                    alt="Background with Anson"
+                  />
                   <div className="spacer-sm" />
                   <div className="center-sm">
                     <h2 className="scroll-title">Contact</h2>

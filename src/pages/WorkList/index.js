@@ -6,14 +6,12 @@ import WorkBackground from '../../web/assets/background/bg-work.png';
 
 import AlbertaMESPanel from '../../web/assets/panel/panel-albertames.png';
 import CrudeMonitorPanel from '../../web/assets/panel/panel-crudemonitor.png';
-import DailyUIPanel from '../../web/assets/panel/panel-dailyui.png';
 import QuestionmarkPanel from '../../web/assets/panel/panel-questionmark.png';
-import SSCTEPanel from '../../web/assets/panel/panel-sscte.png';
-import TeamAquaPanel from '../../web/assets/panel/panel-teamaqua.png';
 
 import withTransition from '../../common/WithTransition';
 import WorkTemplate from './common/WorkTemplate';
 import SmoothScroll from '../../common/SmoothScroll';
+import BackgroundImage from '../../common/BackgroundImage';
 
 class WorkList extends PureComponent {
 
@@ -47,7 +45,10 @@ class WorkList extends PureComponent {
             <div className="main-container">
               <div id="scrollContainer" className="flex-container container ">
                 <div className="hide-under col-md-12 left-top">
-                  <img className="bg-img" src={WorkBackground} alt="Background" />
+                  <BackgroundImage
+                    src={WorkBackground}
+                    alt="Background"
+                  />
                   <div className="horizontal d-none d-sm-block"><p>hello@ansonli.ca</p></div>
                   <div className="spacer-sm" />
                   <div className="center-sm">
