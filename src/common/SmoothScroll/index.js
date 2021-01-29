@@ -6,7 +6,7 @@ import "./style.scss";
 
 export default class SmoothScroll extends React.Component {
   state = {
-    height: window.innerHeight
+    height: window.innerHeight,
   };
 
   ro = new ResizeObserver(elements => {
@@ -32,7 +32,6 @@ export default class SmoothScroll extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log(this.viewport.style)
     window.removeEventListener("scroll", this.onScroll);
     this.ro.disconnect();
   }

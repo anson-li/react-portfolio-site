@@ -51,7 +51,7 @@ class WorkList extends PureComponent {
                     alt="Background"
                   />
                   <FixedScroll
-                    text="hello@ansonli.ca"
+                    text="Let&rsquo;s continue →"
                   />
                   <div className="spacer-sm" />
                   <div className="center-sm">
