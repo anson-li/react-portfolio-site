@@ -34,11 +34,11 @@ class FixedScroll extends PureComponent {
     const scrollPosition = Math.ceil(scrollTop / totalDocScrollLength * 100);
     this.setState({ scrollPosition });
 
-    if (scrollPosition > 95) {
+    if (scrollPosition > 90) {
       TweenLite.to(this.fixedScroll, 1, {
         opacity: 0,
       });
-    } else if (scrollPosition < 95) {
+    } else if (scrollPosition <= 90) {
       TweenLite.to(this.fixedScroll, 1, {
         opacity: 1,
       });
