@@ -12,6 +12,7 @@ import withTransition from '../../common/WithTransition';
 import WorkTemplate from './common/WorkTemplate';
 import SmoothScroll from '../../common/SmoothScroll';
 import BackgroundImage from '../../common/BackgroundImage';
+import FixedScroll from '../../common/FixedScroll';
 
 class WorkList extends PureComponent {
 
@@ -49,7 +50,9 @@ class WorkList extends PureComponent {
                     src={WorkBackground}
                     alt="Background"
                   />
-                  <div className="horizontal d-none d-sm-block"><p>hello@ansonli.ca</p></div>
+                  <FixedScroll
+                    text="hello@ansonli.ca"
+                  />
                   <div className="spacer-sm" />
                   <div className="center-sm">
                     <h2 className="scroll-title">Work</h2>

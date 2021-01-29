@@ -1,0 +1,12 @@
+.horizontal {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  filter: progid:dximagetransform.microsoft.basicimage(rotation=3);
+  position: absolute;
+  top: 20%;
+  left: 85%;
+  font-size: 120%;
+  width: max-content;
+}

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import BodySection from './components/BodySection';
 import BackgroundImage from '../../../../common/BackgroundImage';
+import FixedScroll from '../../../../common/FixedScroll';
 
 import LineBreak from '../../../../web/assets/line-break.png';
 
@@ -33,7 +34,9 @@ class WorkTemplate extends PureComponent {
                     src={background}
                     alt="Background"
                   />
-                <div className="horizontal"><p>← Let&rsquo;s continue</p></div>
+                <FixedScroll
+                  text="Let&rsquo;s continue →"
+                />
                 <div className="spacer-sm" />
                 <div className="center-sm">
                   <h2 className="scroll-title">{title}</h2>
