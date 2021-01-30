@@ -91,7 +91,7 @@ class ATBFinancial extends PureComponent {
             <div className="col-md-6">
               <p>
               I joined ATB as part of its transformation journey, which lead 3 years
-              of innovation, technology and engineering. During that journey, I was able to
+              of innovation, technology and discovery. During that journey, I was able to
               work on a suite of projects - from Google App bots that eased our workflow, to
               building the Unleashed initiative to support our front line team members.
               <br /><br />
@@ -134,7 +134,7 @@ class ATBFinancial extends PureComponent {
               support delivery.
               <br />
               <br />
-              Additionally, I was part of the UI developer Center of Excellence,
+              Additionally, I was part of the UI Center of Excellence,
               which worked with key teams across ATB to unify and develop best 
               practice across all front end software.
               <br />
