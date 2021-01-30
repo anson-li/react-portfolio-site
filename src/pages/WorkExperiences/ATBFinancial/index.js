@@ -2,12 +2,12 @@ import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import anime from 'animejs';
 
-import BackgroundAlbertaMES from '../../../web/assets/background/bg-albertames.png';
+import BackgroundATBFinancial from '../../../web/assets/background/bg-atbfinancial.png';
 import WorkTemplate from '../common/WorkTemplate';
 import withTransition from '../../../common/WithTransition';
 import SmoothScroll from '../../../common/SmoothScroll';
 
-class AlbertaMES extends PureComponent {
+class ATBFinancial extends PureComponent {
   constructor(props) {
     super(props);
     this.renderSkills = this.renderSkills.bind(this);
@@ -47,7 +47,7 @@ class AlbertaMES extends PureComponent {
               <span className="b">ERA ++</span>
               <br />
               <br />
-              2015
+              2019 - Now
             </p>
           </Col>
           <Col data-wow-delay="1s">
@@ -55,11 +55,11 @@ class AlbertaMES extends PureComponent {
               <span className="b">SKILLS ++</span>
               <br />
               <br />
-              Fullstack Development
+              Enterprise
               <br />
-              GIS Development
+              Frontend
               <br />
-              MVC
+              Large Projects 
             </p>
           </Col>
           <Col data-wow-delay="1s">
@@ -67,11 +67,11 @@ class AlbertaMES extends PureComponent {
               <span className="b">TECHNOLOGY ++</span>
               <br />
               <br />
-              MVC . jquery
+              React
               <br />
-              arcgis api
+              node.js
               <br />
-              d3.js
+              Google App Engine
               <br />
             </p>
           </Col>
@@ -90,13 +90,17 @@ class AlbertaMES extends PureComponent {
             <br />
             <div className="col-md-6">
               <p>
-                AlbertaMES is a heuristics-based web application to filter
-                and isolate projects, models and stations related to
-                environmental care. I was signed on as the primary developer
-                of the application, which was developed over the course of 8 months.
+              I joined ATB as part of its transformation journey, which lead 3 years
+              of innovation, technology and engineering. During that journey, I was able to
+              work on a suite of projects - from Google App bots that eased our workflow, to
+              building the Unleashed initiative to support our front line team members.
+              <br /><br />
+              As part of the Unleashed project, we were tasked with building
+              a holistic platform of team member tools to simplify,
+              streamline and curate the perfect customer experience.
                 <br />
                 <br />
-                <a href="http://www.blog.ansonli.ca/index.php/2016/01/04/35/" className="btn">Take a peek</a>
+                <a href="https://www.atb.com/personal/" className="btn">Take a peek</a>
               </p>
             </div>
           </div>
@@ -113,24 +117,31 @@ class AlbertaMES extends PureComponent {
           <br />
           <br />
           <div className="col-md-3">
-            <div className="box dark-blue"><p>#2C3D51</p></div>
-              &nbsp;&nbsp;&nbsp;
-            <div className="box green"><p>#81B175</p></div>
-              &nbsp;&nbsp;&nbsp;
-            <div className="box white"><p>#FFFFFF</p></div>
+            <div className="box atb-blue"><p>#005EB8</p></div>
+            &nbsp;&nbsp;&nbsp;
+            <div className="box atb-blue-3"><p>#009BDE</p></div>
+            &nbsp;&nbsp;&nbsp;
+            <div className="box atb-blue-2"><p>#002385</p></div>
           </div>
           <br />
           <br />
           <div className="col-md-6">
             <p>
-              We used ArcGIS API for Javascript to develop this technology,
-              alongside other supporting technologies such as MVC, JQuery and other libraries.
+              Unleashed, as part of the Team Member Tools initiative, was built
+              on top of a React front end, which was supported by node.js and an 
+              enterprise backend. My role was primarily to develop key features
+              on the React Frontend, and building connections to our backend to
+              support delivery.
               <br />
               <br />
-              Additionally, our team used a collection of software development
-              methodologies, such as software requirements elicitations and
-              post-mortems, to enhance both the quality of the team’s work
-              as well as the team itself.
+              Additionally, I was part of the UI developer Center of Excellence,
+              which worked with key teams across ATB to unify and develop best 
+              practice across all front end software.
+              <br />
+              <br />
+              Finally, I worked with key product members to identify, plan
+              and execute on key features that would improve our team members'
+              everyday lives.
             </p>
           </div>
         </div>
@@ -147,19 +158,26 @@ class AlbertaMES extends PureComponent {
           <br />
           <div className="col-md-6">
             <p>
-              This project served as my first foray into professional
-              software experience. I learned many facets of work life
-              that are invaluable today; both with regards to technical
-              and soft skills.
+              ATB Financial offered me a chance to hone my experience at a large
+              enterprise, using larger systems and processes than I have ever worked on.
+              This allowed me the opportunity to improve my skills at assessing the 'big picture'
+              of software development.
               <br />
               <br />
-              Many of the skills that are developed at this stage, including
-              development frameworks and UX, were later explored and
-              reintegrated into future projects.
+              Thanks to the transformation phase that ATB went through, 
+              I had the chance to explore a ton of different technologies through
+              various programs including internal Hackathons,
+              including:
               <br />
               <br />
-              This project was later integrated into the workflow of the
-              Government of Alberta, and is currently under further development.
+              ●&nbsp;ThreeJS with <a className="project" href="https://github.com/anson-li/flight-to-financial-freedom">Flight to Financial Future</a><br />
+              ●&nbsp;Google App Engine with <a className="project" href="https://github.com/anson-li/google-bot-flask-template">various bots, including a MIO tracker and a support bot</a><br />
+              ●&nbsp;Various NoSQL database solutions including Google Firestore
+              <br />
+              <br />
+              Finally, I had the chance to work with a ton of industry experts and high-class
+              software developers, which gave me the chance to improve my own skills at a
+              rapid pace.
             </p>
           </div>
         </div>
@@ -177,11 +195,11 @@ class AlbertaMES extends PureComponent {
       <SmoothScroll>
         <div ref={(e) => { this.el = e; }}>
           <WorkTemplate
-            background={BackgroundAlbertaMES}
-            title="AlbertaMES"
+            background={BackgroundATBFinancial}
+            title="ATB Financial"
             section={sections}
-            nextTitle="ATB Financial"
-            nextURL="/atbfinancial"
+            nextTitle="Questionmark"
+            nextURL="/questionmark"
           />
         </div>
       </SmoothScroll>
@@ -189,4 +207,4 @@ class AlbertaMES extends PureComponent {
   }
 }
 
-export default withTransition(AlbertaMES);
+export default withTransition(ATBFinancial);

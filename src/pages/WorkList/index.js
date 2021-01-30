@@ -7,12 +7,14 @@ import WorkBackground from '../../web/assets/background/bg-work.png';
 import AlbertaMESPanel from '../../web/assets/panel/panel-albertames.png';
 import CrudeMonitorPanel from '../../web/assets/panel/panel-crudemonitor.png';
 import QuestionmarkPanel from '../../web/assets/panel/panel-questionmark.png';
+import ATBFinancialPanel from '../../web/assets/panel/panel-atbfinancial.png';
 
 import withTransition from '../../common/WithTransition';
 import WorkTemplate from './common/WorkTemplate';
 import SmoothScroll from '../../common/SmoothScroll';
 import BackgroundImage from '../../common/BackgroundImage';
 import FixedScroll from '../../common/FixedScroll';
+import ATBFinancial from '../WorkExperiences/ATBFinancial';
 
 class WorkList extends PureComponent {
 
@@ -65,6 +67,18 @@ class WorkList extends PureComponent {
 
                   <div className="col-md-12">
                     <WorkTemplate
+                      title="ATB Financial"
+                      description="ATB Financial is a financial institution
+                      and Crown corporation owned by the Province of Alberta. I
+                      was brought on to support the Team Member Tools initiative,
+                      which is a system of tools designed to help our front line
+                      team members excel at their work."
+                      panel={ATBFinancialPanel}
+                      link="/atbfinancial"
+                      lineBreak
+                      animated={false}
+                    />
+                    <WorkTemplate
                       title="Questionmark"
                       description="Questionmark creates assessment technologies.
                         These are tools that primarily deal with building technologies
@@ -76,7 +90,6 @@ class WorkList extends PureComponent {
                       panel={QuestionmarkPanel}
                       link="/questionmark"
                       lineBreak
-                      animated={false}
                     />
                     <WorkTemplate
                       title="CQI"

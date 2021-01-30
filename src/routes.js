@@ -11,6 +11,7 @@ import SSCTE from './pages/WorkExperiences/SSCTE';
 import DailyUI from './pages/WorkExperiences/DailyUI';
 import TeamAqua from './pages/WorkExperiences/TeamAqua';
 import AlbertaMES from './pages/WorkExperiences/AlbertaMES';
+import ATBFinancial from './pages/WorkExperiences/ATBFinancial';
 
 export default [
   {
@@ -46,6 +47,13 @@ export default [
     Component: Jellicent,
     path: {
       path: '/jellicent',
+    },
+  },
+  {
+    key: 'atbfinancial',
+    Component: ATBFinancial,
+    path: {
+      path: '/atbfinancial',
     },
   },
   {
