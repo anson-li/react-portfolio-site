@@ -39,7 +39,7 @@ class BannerLink extends PureComponent {
 
   render() {
     const {
-      title, date, description, internalLink, externalLink, background
+      title, date, description, internalLink, externalLink, background,
     } = this.props;
     return (
       <div className="wow fadeIn banner-link">
@@ -50,7 +50,8 @@ class BannerLink extends PureComponent {
               onMouseEnter={() => this.showDescription(description, background)}
               onMouseLeave={() => this.hideDescription()}
               to={internalLink}
-              href={internalLink}>
+              href={internalLink}
+            >
               <span ref={(e) => { this.bannerlink = e; }}>
                 <span className="project-description">{title}</span>
                 <span className="project-date">{date}</span>
@@ -62,7 +63,8 @@ class BannerLink extends PureComponent {
             <a
               href={externalLink}
               onMouseEnter={() => this.showDescription(description, background)}
-              onMouseLeave={() => this.hideDescription()}>
+              onMouseLeave={() => this.hideDescription()}
+            >
               <span ref={(e) => { this.bannerlink = e; }}>
                 <span className="project-description">{title}</span>
                 <span className="project-date">{date}</span>

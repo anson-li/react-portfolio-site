@@ -18,7 +18,7 @@ class WorkTemplate extends PureComponent {
 
   render() {
     const {
-      title, description, panel, link, lineBreak, animated
+      title, description, panel, link, lineBreak, animated,
     } = this.props;
     const wow = animated ? 'wow' : '';
     return (

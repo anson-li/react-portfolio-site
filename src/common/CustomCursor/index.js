@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import { TweenLite, Power0 } from "gsap";
+import { TweenLite, Power0 } from 'gsap';
 
-import "./style.scss";
+import './style.scss';
 
 class CustomCursor extends PureComponent {
   constructor(props) {
@@ -14,10 +14,10 @@ class CustomCursor extends PureComponent {
   }
 
   componentDidMount() {
-    window.addEventListener("mousemove", this.moveCircle);
-    window.addEventListener("scroll", this.onScroll);
-    window.addEventListener("onmouseover", this.hoverFunc);
-    window.addEventListener("onmouseout", this.unhoverFunc);
+    window.addEventListener('mousemove', this.moveCircle);
+    window.addEventListener('scroll', this.onScroll);
+    window.addEventListener('onmouseover', this.hoverFunc);
+    window.addEventListener('onmouseout', this.unhoverFunc);
   }
 
   moveCircle(e) {
@@ -30,16 +30,16 @@ class CustomCursor extends PureComponent {
       y: e.y,
     });
   }
-  
+
   hoverFunc(e) {
     TweenLite.to(this.circle, 0.3, {
       opacity: 1,
-      scale: 0
+      scale: 0,
     });
     TweenLite.to(this.follow, 0.3, {
       scale: 2,
       borderColor: '#ffd5a8',
-    });  
+    });
   }
 
   unhoverFunc(e) {
@@ -50,7 +50,7 @@ class CustomCursor extends PureComponent {
     TweenLite.to(this.follow, 0.3, {
       scale: 1,
       borderColor: '#FFFFFF',
-    });  
+    });
   }
 
   onScroll(e) {
@@ -67,12 +67,11 @@ class CustomCursor extends PureComponent {
   render() {
     return (
       <>
-        <div className="cursor-circle" ref={ref => (this.circle = ref)} />
-        <div className="cursor-circle-follow" ref={ref => (this.follow = ref)}/>
+        <div className="cursor-circle" ref={(ref) => (this.circle = ref)} />
+        <div className="cursor-circle-follow" ref={(ref) => (this.follow = ref)} />
       </>
     );
   }
 }
 
 export default CustomCursor;
-

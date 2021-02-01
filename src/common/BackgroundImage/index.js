@@ -28,7 +28,7 @@ class BackgroundImage extends PureComponent {
   render() {
     const { src, alt } = this.props;
     return (
-      <img className="bg-img" src={src} alt={alt} ref={ref => (this.backgroundImage = ref)} />
+      <img className="bg-img" src={src} alt={alt} ref={(ref) => (this.backgroundImage = ref)} />
     );
   }
 }

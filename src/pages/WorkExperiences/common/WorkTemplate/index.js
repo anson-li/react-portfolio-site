@@ -31,9 +31,9 @@ class WorkTemplate extends PureComponent {
             <div id="scrollContainer" className="flex-container container ">
               <div className="hide-under col-md-12 left-top">
                 <BackgroundImage
-                    src={background}
-                    alt="Background"
-                  />
+                  src={background}
+                  alt="Background"
+                />
                 <FixedScroll
                   text="Let&rsquo;s continue →"
                 />
@@ -89,6 +89,6 @@ WorkTemplate.propTypes = {
 
 WorkTemplate.defaultProps = {
   redirect: true,
-}
+};
 
 export default WorkTemplate;

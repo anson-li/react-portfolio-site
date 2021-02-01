@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import anime from 'animejs';
 import { TweenLite, gsap } from 'gsap';
-import { TextPlugin } from "gsap/TextPlugin";
+import { TextPlugin } from 'gsap/TextPlugin';
 
 import withTransition from '../../common/WithTransition';
 
@@ -146,7 +146,7 @@ class Projects extends PureComponent {
                         background={SSCTEBackground}
                       />
                     </div>
-                  </div>                  
+                  </div>
                 </div>
                 <div className="filler-bottom" />
                 <div className="spacer-sm" />

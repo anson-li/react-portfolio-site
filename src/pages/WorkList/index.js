@@ -17,7 +17,6 @@ import FixedScroll from '../../common/FixedScroll';
 import ATBFinancial from '../WorkExperiences/ATBFinancial';
 
 class WorkList extends PureComponent {
-
   animateIn() {
     anime.remove(this.el);
     return anime({

@@ -18,7 +18,7 @@ import SmoothScroll from '../../common/SmoothScroll';
 
 import './style.scss';
 import Background from '../../common/Background';
-import BackgroundImage from '../../common/BackgroundImage'
+import BackgroundImage from '../../common/BackgroundImage';
 
 class Resume extends PureComponent {
   animateIn() {

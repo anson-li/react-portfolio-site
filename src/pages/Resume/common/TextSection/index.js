@@ -6,7 +6,9 @@ import './style.scss';
 
 class TextSection extends PureComponent {
   render() {
-    const { children, bottomSpacer, bottomPadding, animated } = this.props;
+    const {
+      children, bottomSpacer, bottomPadding, animated,
+    } = this.props;
     const wow = animated ? 'wow' : '';
     return (
       <div className={`text-section fadeIn ${wow}`} data-wow-duration="1s">

@@ -59,7 +59,7 @@ class ATBFinancial extends PureComponent {
               <br />
               Frontend
               <br />
-              Large Projects 
+              Large Projects
             </p>
           </Col>
           <Col data-wow-delay="1s">
@@ -90,14 +90,15 @@ class ATBFinancial extends PureComponent {
             <br />
             <div className="col-md-6">
               <p>
-              I joined ATB as part of its transformation journey, which lead 3 years
-              of innovation, technology and discovery. During that journey, I was able to
-              work on a suite of projects - from Google App bots that eased our workflow, to
-              building the Unleashed initiative to support our front line team members.
-              <br /><br />
-              As part of the Unleashed project, we were tasked with building
-              a holistic platform of team member tools to simplify,
-              streamline and curate the perfect customer experience.
+                I joined ATB as part of its transformation journey, which lead 3 years
+                of innovation, technology and discovery. During that journey, I was able to
+                work on a suite of projects - from Google App bots that eased our workflow, to
+                building the Unleashed initiative to support our front line team members.
+                <br />
+                <br />
+                As part of the Unleashed project, we were tasked with building
+                a holistic platform of team member tools to simplify,
+                streamline and curate the perfect customer experience.
                 <br />
                 <br />
                 <a href="https://www.atb.com/personal/" className="btn">Take a peek</a>
@@ -128,14 +129,14 @@ class ATBFinancial extends PureComponent {
           <div className="col-md-6">
             <p>
               Unleashed, as part of the Team Member Tools initiative, was built
-              on top of a React front end, which was supported by node.js and an 
+              on top of a React front end, which was supported by node.js and an
               enterprise backend. My role was primarily to develop key features
               on the React Frontend, and building connections to our backend to
               support delivery.
               <br />
               <br />
               Additionally, I was part of the UI Center of Excellence,
-              which worked with key teams across ATB to unify and develop best 
+              which worked with key teams across ATB to unify and develop best
               practice across all front end software.
               <br />
               <br />
@@ -164,14 +165,20 @@ class ATBFinancial extends PureComponent {
               of software development.
               <br />
               <br />
-              Thanks to the transformation phase that ATB went through, 
+              Thanks to the transformation phase that ATB went through,
               I had the chance to explore a ton of different technologies through
               various programs including internal Hackathons,
               including:
               <br />
               <br />
-              ●&nbsp;ThreeJS with <a className="project" href="https://github.com/anson-li/flight-to-financial-freedom">Flight to Financial Future</a><br />
-              ●&nbsp;Google App Engine with <a className="project" href="https://github.com/anson-li/google-bot-flask-template">various bots, including a MIO tracker and a support bot</a><br />
+              ●&nbsp;ThreeJS with
+              {' '}
+              <a className="project" href="https://github.com/anson-li/flight-to-financial-freedom">Flight to Financial Future</a>
+              <br />
+              ●&nbsp;Google App Engine with
+              {' '}
+              <a className="project" href="https://github.com/anson-li/google-bot-flask-template">various bots, including a MIO tracker and a support bot</a>
+              <br />
               ●&nbsp;Various NoSQL database solutions including Google Firestore
               <br />
               <br />

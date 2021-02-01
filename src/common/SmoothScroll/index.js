@@ -1,25 +1,25 @@
-import React from "react";
-import { TweenLite, Power0 } from "gsap";
-import WOW from "wowjs";
+import React from 'react';
+import { TweenLite, Power0 } from 'gsap';
+import WOW from 'wowjs';
 
-import "./style.scss";
+import './style.scss';
 
 export default class SmoothScroll extends React.Component {
   state = {
     height: window.innerHeight,
   };
 
-  ro = new ResizeObserver(elements => {
-    for (let elem of elements) {
+  ro = new ResizeObserver((elements) => {
+    for (const elem of elements) {
       const crx = elem.contentRect;
       this.setState({
-        height: crx.height
+        height: crx.height,
       });
     }
   });
 
   componentDidMount() {
-    window.addEventListener("scroll", this.onScroll);
+    window.addEventListener('scroll', this.onScroll);
     this.ro.observe(this.viewport);
     new WOW.WOW({
       boxClass: 'wow',
@@ -32,7 +32,7 @@ export default class SmoothScroll extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.onScroll);
+    window.removeEventListener('scroll', this.onScroll);
     this.ro.disconnect();
   }
 
@@ -46,13 +46,13 @@ export default class SmoothScroll extends React.Component {
   render() {
     return (
       <>
-        <div className="viewport" ref={ref => (this.viewport = ref)}>
+        <div className="viewport" ref={(ref) => (this.viewport = ref)}>
           {this.props.children}
         </div>
         <div
-          ref={ref => (this.fake = ref)}
+          ref={(ref) => (this.fake = ref)}
           style={{
-            height: this.state.height
+            height: this.state.height,
           }}
         />
       </>
