@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { TweenLite, Power0 } from 'gsap';
+
 import './style.scss';
-import { TweenLite, Power0 } from "gsap";
 
 class BackgroundImage extends PureComponent {
   constructor(props) {
@@ -9,11 +11,11 @@ class BackgroundImage extends PureComponent {
   }
 
   componentDidMount() {
-    window.addEventListener("scroll", this.onScroll);
+    window.addEventListener('scroll', this.onScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.onScroll);
+    window.removeEventListener('scroll', this.onScroll);
   }
 
   onScroll() {
@@ -21,7 +23,7 @@ class BackgroundImage extends PureComponent {
       y: window.pageYOffset * 0.3,
       ease: Power0,
     });
-  };
+  }
 
   render() {
     const { src, alt } = this.props;
@@ -30,5 +32,9 @@ class BackgroundImage extends PureComponent {
     );
   }
 }
+
+BackgroundImage.propTypes = {
+  src: PropTypes.string.isRequired,
+};
 
 export default BackgroundImage;
