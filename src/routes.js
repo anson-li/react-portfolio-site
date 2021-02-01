@@ -3,13 +3,11 @@ import WorkList from './pages/WorkList';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
+
 import Jellicent from './pages/ProjectList/Jellicent';
 
 import Questionmark from './pages/WorkExperiences/Questionmark';
 import CrudeMonitor from './pages/WorkExperiences/CrudeMonitor';
-import SSCTE from './pages/WorkExperiences/SSCTE';
-import DailyUI from './pages/WorkExperiences/DailyUI';
-import TeamAqua from './pages/WorkExperiences/TeamAqua';
 import AlbertaMES from './pages/WorkExperiences/AlbertaMES';
 import ATBFinancial from './pages/WorkExperiences/ATBFinancial';
 
@@ -68,27 +66,6 @@ export default [
     Component: CrudeMonitor,
     path: {
       path: '/crudemonitor',
-    },
-  },
-  {
-    key: 'sscte',
-    Component: SSCTE,
-    path: {
-      path: '/sscte',
-    },
-  },
-  {
-    key: 'dailyui',
-    Component: DailyUI,
-    path: {
-      path: '/dailyui',
-    },
-  },
-  {
-    key: 'teamaqua',
-    Component: TeamAqua,
-    path: {
-      path: '/teamaqua',
     },
   },
   {

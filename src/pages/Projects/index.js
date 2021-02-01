@@ -36,7 +36,6 @@ class Projects extends PureComponent {
         src: background,
       },
     });
-    console.log(this.background);
   }
 
   hideDescription() {

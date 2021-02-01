@@ -9,7 +9,6 @@ class BackgroundImage extends PureComponent {
   }
 
   componentDidMount() {
-    console.log('this');
     window.addEventListener("scroll", this.onScroll);
   }
 
@@ -18,8 +17,6 @@ class BackgroundImage extends PureComponent {
   }
 
   onScroll() {
-    console.log('test');
-    console.log(window.pageYOffset);
     TweenLite.to(this.backgroundImage, 1, {
       y: window.pageYOffset * 0.3,
       ease: Power0,
