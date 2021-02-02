@@ -1,14 +1,11 @@
 import React from 'react';
 import { TweenLite, Power0 } from 'gsap';
 import WOW from 'wowjs';
+import PropTypes from 'prop-types';
 
 import './style.scss';
 
-export default class SmoothScroll extends React.Component {
-  state = {
-    height: window.innerHeight,
-  };
-
+class SmoothScroll extends React.Component {
   ro = new ResizeObserver((elements) => {
     for (const elem of elements) {
       const crx = elem.contentRect;
@@ -18,13 +15,21 @@ export default class SmoothScroll extends React.Component {
     }
   });
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      height: window.innerHeight,
+    };
+  }
+
   componentDidMount() {
     window.addEventListener('scroll', this.onScroll);
     this.ro.observe(this.viewport);
+    const { height } = this.state;
     new WOW.WOW({
       boxClass: 'wow',
       animateClass: 'animated',
-      offset: this.state.height - 500,
+      offset: height - 500,
       mobile: true,
       live: false,
     }).init();
@@ -44,18 +49,29 @@ export default class SmoothScroll extends React.Component {
   };
 
   render() {
+    const { children } = this.props;
+    const { height } = this.state;
     return (
       <>
-        <div className="viewport" ref={(ref) => (this.viewport = ref)}>
-          {this.props.children}
+        <div className="viewport" ref={(ref) => { this.viewport = ref; }}>
+          {children}
         </div>
         <div
-          ref={(ref) => (this.fake = ref)}
+          ref={(ref) => { this.fake = ref; }}
           style={{
-            height: this.state.height,
+            height,
           }}
         />
       </>
     );
   }
 }
+
+SmoothScroll.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+};
+
+export default SmoothScroll;

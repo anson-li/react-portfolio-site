@@ -5,20 +5,18 @@ import anime from 'animejs';
 import AlbertaBackground from '../../web/assets/background/bg-alberta.png';
 import LineBreak from '../../web/assets/line-break.png';
 import DownloadIcon from '../../web/assets/icon/ico-download.png';
+import ResumePDF from '../../web/assets/resume_ansonli.pdf';
 
 import TextSection from './common/TextSection';
 import TextHeader from './common/TextHeader';
 import TextBody from './common/TextBody';
 import TextList from './common/TextList';
 
-import ResumePDF from '../../web/assets/resume_ansonli.pdf';
 import withTransition from '../../common/WithTransition';
-
 import SmoothScroll from '../../common/SmoothScroll';
+import BackgroundImage from '../../common/BackgroundImage';
 
 import './style.scss';
-import Background from '../../common/Background';
-import BackgroundImage from '../../common/BackgroundImage';
 
 class Resume extends PureComponent {
   animateIn() {
@@ -69,15 +67,16 @@ class Resume extends PureComponent {
                     <TextHeader text="Overview" />
                     <TextBody>
                       <p>
-                        Versatile software engineer with solid experience in full-stack technologies,
-                        and a strong suite of supplementary languages.
+                        Versatile software engineer with solid experience in full-stack
+                        technologies, and a strong suite of supplementary languages.
                         Strong background in team management and support with hands-on
                         experience in project development and management.
                         <TextList
                           id="overview"
                           items={[
                             '5 years combined project and software experience in full-stack development',
-                            'Experience in project management and agile development methods with startups and established business solution providers; projects ranged from $2k - $3m',
+                            'Experience in project management and agile development methods with startups and established business solution'
+                            + ' providers; projects ranged from $2k - $3m',
                             'Knowledgeable of asset management, code quality, and code security',
                             'Proven ability to work in multidisciplinary teams of 4 - 30 members to meet project deliverables and deadlines',
                           ]}

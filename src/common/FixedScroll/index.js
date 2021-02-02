@@ -1,13 +1,12 @@
 import React, { PureComponent } from 'react';
-import './style.scss';
+import PropTypes from 'prop-types';
 import { TweenLite, Power0 } from 'gsap';
+
+import './style.scss';
 
 class FixedScroll extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = {
-      scrollPosition: 0,
-    };
     this.onScroll = this.onScroll.bind(this);
   }
 
@@ -31,8 +30,7 @@ class FixedScroll extends PureComponent {
     const docHeight = this.getDocHeight();
 
     const totalDocScrollLength = docHeight - windowHeight;
-    const scrollPosition = Math.ceil(scrollTop / totalDocScrollLength * 100);
-    this.setState({ scrollPosition });
+    const scrollPosition = Math.ceil((scrollTop / totalDocScrollLength) * 100);
 
     if (scrollPosition > 90) {
       TweenLite.to(this.fixedScroll, 1, {
@@ -54,9 +52,13 @@ class FixedScroll extends PureComponent {
   render() {
     const { text } = this.props;
     return (
-      <div className="horizontal d-none d-sm-block" ref={(ref) => (this.fixedScroll = ref)}><p>{text}</p></div>
+      <div className="horizontal d-none d-sm-block" ref={(ref) => { this.fixedScroll = ref; }}><p>{text}</p></div>
     );
   }
 }
+
+FixedScroll.propTypes = {
+  text: PropTypes.string.isRequired,
+};
 
 export default FixedScroll;

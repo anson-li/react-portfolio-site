@@ -141,7 +141,7 @@ class ATBFinancial extends PureComponent {
               <br />
               <br />
               Finally, I worked with key product members to identify, plan
-              and execute on key features that would improve our team members'
+              and execute on key features that would improve our team members&apos;
               everyday lives.
             </p>
           </div>
@@ -161,8 +161,8 @@ class ATBFinancial extends PureComponent {
             <p>
               ATB Financial offered me a chance to hone my experience at a large
               enterprise, using larger systems and processes than I have ever worked on.
-              This allowed me the opportunity to improve my skills at assessing the 'big picture'
-              of software development.
+              This allowed me the opportunity to improve my skills at assessing the
+              &lsquo;big picture&rsquo; of software development.
               <br />
               <br />
               Thanks to the transformation phase that ATB went through,

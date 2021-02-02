@@ -67,8 +67,8 @@ class CustomCursor extends PureComponent {
   render() {
     return (
       <>
-        <div className="cursor-circle" ref={(ref) => (this.circle = ref)} />
-        <div className="cursor-circle-follow" ref={(ref) => (this.follow = ref)} />
+        <div className="cursor-circle" ref={(ref) => { this.circle = ref; }} />
+        <div className="cursor-circle-follow" ref={(ref) => { this.follow = ref; }} />
       </>
     );
   }

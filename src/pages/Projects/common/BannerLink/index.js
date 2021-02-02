@@ -24,17 +24,19 @@ class BannerLink extends PureComponent {
   }
 
   showDescription(description, background) {
+    const { showDescription } = this.props;
     TweenLite.to(this.bannerlink, 0.1, {
       color: '#ffd5a8',
     });
-    this.props.showDescription(description, background);
+    showDescription(description, background);
   }
 
   hideDescription() {
+    const { hideDescription } = this.props;
     TweenLite.to(this.bannerlink, 0.1, {
       color: '#ffffff',
     });
-    this.props.hideDescription();
+    hideDescription();
   }
 
   render() {
@@ -83,6 +85,10 @@ BannerLink.propTypes = {
   description: PropTypes.string.isRequired,
   internalLink: PropTypes.string,
   externalLink: PropTypes.string,
+  showDescription: PropTypes.func.isRequired,
+  hideDescription: PropTypes.func.isRequired,
+  date: PropTypes.string.isRequired,
+  background: PropTypes.string.isRequired,
 };
 
 BannerLink.defaultProps = {

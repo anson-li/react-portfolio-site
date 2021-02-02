@@ -14,7 +14,6 @@ import WorkTemplate from './common/WorkTemplate';
 import SmoothScroll from '../../common/SmoothScroll';
 import BackgroundImage from '../../common/BackgroundImage';
 import FixedScroll from '../../common/FixedScroll';
-import ATBFinancial from '../WorkExperiences/ATBFinancial';
 
 class WorkList extends PureComponent {
   animateIn() {

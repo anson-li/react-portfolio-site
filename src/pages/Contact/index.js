@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import WOW from 'wowjs';
 import anime from 'animejs';
 
 import withTransition from '../../common/WithTransition';
