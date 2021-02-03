@@ -75,13 +75,14 @@ class Projects extends PureComponent {
               <div id="scrollContainer" className="flex-container container ">
                 <div className="hide-under col-md-12 project-top">
                   <div className="row">
-                    <div className="col">
+                    <div className="col-xl-6 col-lg-12">
                       <h3 className="description" ref={(e) => { this.description = e; }}>Web Projects</h3>
                       <div id="box-image">
                         <img className="box-image-background" src={DefaultBackground} alt="Default project background" ref={(e) => { this.background = e; }} />
                       </div>
+                      <div className="spacer-sm	d-xl-none" />
                     </div>
-                    <div className="col">
+                    <div className="col-xl-6 col-lg-12">
                       <BannerLink
                         title="Jellicent"
                         description="three.js / react / exploration in web design and 3D space"

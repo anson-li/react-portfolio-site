@@ -11,6 +11,15 @@
   z-index: 2;
 }
 
+@media (max-width: 1024px) {
+  .description {
+    // Center align elements
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+  }
+}
+
 .filler-bottom {
   height: 50vh;
 }
