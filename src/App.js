@@ -9,14 +9,14 @@ import MainLogo from './common/MainLogo';
 import Loader from './common/Loader';
 
 class App extends PureComponent {
-  matchPath = (path) => matchPath(window.location.pathname, path);
-
   constructor(props) {
     super(props);
     this.showLoader = this.showLoader.bind(this);
     this.hideLoader = this.hideLoader.bind(this);
     this.loader = React.createRef();
   }
+
+  matchPath = (path) => matchPath(window.location.pathname, path);
 
   showLoader() {
     this.loader.current.fadeIn();

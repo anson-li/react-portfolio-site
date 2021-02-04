@@ -91,7 +91,8 @@ class JellicentObject extends PureComponent {
     this.composer.addPass(this.glitchPass);
 
     window.addEventListener('resize', this.onWindowResize, false);
-    this.props.hideLoader();
+    const { hideLoader } = this.props;
+    hideLoader();
     this.animate();
   }
 

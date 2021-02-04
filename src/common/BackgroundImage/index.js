@@ -12,7 +12,8 @@ class BackgroundImage extends PureComponent {
 
   componentDidMount() {
     window.addEventListener('scroll', this.onScroll);
-    if (this.backgroundImage.complete) { this.props.afterLoad(); }
+    const { afterLoad } = this.props;
+    if (this.backgroundImage.complete) { afterLoad(); }
   }
 
   componentWillUnmount() {

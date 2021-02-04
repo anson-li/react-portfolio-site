@@ -31,6 +31,18 @@ class Projects extends PureComponent {
     this.imagesLoaded = 0;
   }
 
+  componentDidMount() {
+    [
+      DefaultBackground, FlightBackground, JellicentBackground,
+      LTIBackground, UnleashedBackground, SSCTEBackground,
+      DailyUIBackground, TeamAquaBackground,
+    ].forEach((picture) => {
+      const img = new Image();
+      img.src = picture.fileName;
+      this.countImagesLoaded();
+    });
+  }
+
   showDescription(description, background) {
     TweenLite.to(this.description, 0, {
       text: description,
@@ -63,7 +75,8 @@ class Projects extends PureComponent {
   animateOut() {
     anime.remove(this.el);
     this.imagesLoaded = 0;
-    this.props.showLoader();
+    const { showLoader } = this.props;
+    showLoader();
     return anime({
       targets: this.el,
       translateY: -100,
@@ -73,22 +86,11 @@ class Projects extends PureComponent {
     }).finished;
   }
 
-  componentDidMount() {
-    [
-      DefaultBackground, FlightBackground, JellicentBackground,
-      LTIBackground, UnleashedBackground, SSCTEBackground,
-      DailyUIBackground, TeamAquaBackground,
-    ].forEach((picture) => {
-      const img = new Image();
-      img.src = picture.fileName;
-      this.countImagesLoaded();
-    });
-  }
-
   countImagesLoaded() {
-    this.imagesLoaded++;
+    this.imagesLoaded += 1;
+    const { hideLoader } = this.props;
     if (this.imagesLoaded >= this.imageCount) {
-      this.props.hideLoader();
+      hideLoader();
     }
   }
 

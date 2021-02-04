@@ -36,7 +36,6 @@ class ThreeSphere extends PureComponent {
   componentDidMount() {
     setTimeout(() => {
       this.init();
-      this.animate();
     }, 1000);
   }
 
@@ -138,7 +137,11 @@ class ThreeSphere extends PureComponent {
     document.addEventListener('touchstart', this.onDocumentTouchStart, false);
     document.addEventListener('touchmove', this.onDocumentTouchMove, false);
     window.addEventListener('resize', this.onWindowResize, false);
-    this.props.hideLoader();
+
+    const { hideLoader } = this.props;
+    hideLoader();
+
+    this.animate();
   }
 
   animate() {

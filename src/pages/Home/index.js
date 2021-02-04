@@ -23,7 +23,8 @@ class Home extends PureComponent {
 
   animateOut() {
     anime.remove(this.el);
-    this.props.showLoader();
+    const { showLoader } = this.props;
+    showLoader();
     return anime({
       targets: this.el,
       opacity: 0,

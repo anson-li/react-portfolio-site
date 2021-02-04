@@ -30,7 +30,8 @@ class Questionmark extends PureComponent {
 
   animateOut() {
     anime.remove(this.el);
-    this.props.showLoader();
+    const { showLoader } = this.props;
+    showLoader();
     return anime({
       targets: this.el,
       translateY: -100,

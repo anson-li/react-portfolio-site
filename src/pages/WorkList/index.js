@@ -39,7 +39,8 @@ class WorkList extends PureComponent {
   animateOut() {
     anime.remove(this.el);
     this.imagesLoaded = 0;
-    this.props.showLoader();
+    const { showLoader } = this.props;
+    showLoader();
     return anime({
       targets: this.el,
       translateY: -100,
@@ -50,9 +51,10 @@ class WorkList extends PureComponent {
   }
 
   countImagesLoaded() {
-    this.imagesLoaded++;
+    this.imagesLoaded += 1;
+    const { hideLoader } = this.props;
     if (this.imagesLoaded >= this.imageCount) {
-      this.props.hideLoader();
+      hideLoader();
     }
   }
 

@@ -91,7 +91,7 @@ WorkTemplate.propTypes = {
 
 WorkTemplate.defaultProps = {
   redirect: true,
-  backgroundLoad: () => {},
+  hideLoader: () => {},
 };
 
 export default WorkTemplate;
