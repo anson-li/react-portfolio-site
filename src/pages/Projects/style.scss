@@ -5,10 +5,16 @@
 
 .description {
   position: absolute;
-  padding-top: 50%;
+  padding-top: 30%;
   left: -50px;
   margin-right: 50px;
   z-index: 2;
+}
+
+@media (max-height: 1024px) {
+  .description {
+    padding-top: 50px;
+  }
 }
 
 @media (max-width: 1024px) {

@@ -164,7 +164,7 @@ class Projects extends PureComponent {
                       />
                       <BannerLink
                         title="Team Aqua"
-                        description="ruby library development for maxtrix calculation support"
+                        description="ruby library development for matrix calculation support"
                         externalLink="https://github.com/Team-Aqua"
                         date="Early 2016"
                         showDescription={this.showDescription}
