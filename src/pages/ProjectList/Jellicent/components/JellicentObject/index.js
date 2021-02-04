@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 import * as THREE from 'three';
+import PropTypes from 'prop-types';
+
 import './style.scss';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
@@ -25,7 +27,9 @@ class JellicentObject extends PureComponent {
   }
 
   componentDidMount() {
-    this.init();
+    setTimeout( function() {
+      this.init();
+    }.bind(this), 1000);
   }
 
   componentWillUnmount() {
@@ -87,7 +91,7 @@ class JellicentObject extends PureComponent {
     this.composer.addPass(this.glitchPass);
 
     window.addEventListener('resize', this.onWindowResize, false);
-
+    this.props.hideLoader();
     this.animate();
   }
 
@@ -142,6 +146,10 @@ class JellicentObject extends PureComponent {
       </>
     );
   }
+}
+
+JellicentObject.propTypes = {
+  hideLoader: PropTypes.func.isRequired,
 }
 
 export default JellicentObject;
