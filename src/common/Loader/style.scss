@@ -157,3 +157,7 @@
 .no-js #loader-wrapper {
   display: none;
 }
+
+.loader-bottom {
+  z-index: 1000;
+}

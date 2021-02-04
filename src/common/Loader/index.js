@@ -29,6 +29,7 @@ class Loader extends PureComponent {
         <img className="loader-img" src={Logo} alt="Loader logo" />
         <div className="loader-section section-left" />
         <div className="loader-section section-right" />
+        <div id="bottom" className="loader-bottom" />
       </div>
     );
   }
