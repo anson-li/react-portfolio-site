@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import anime from 'animejs';
 import { TweenLite, gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
+import PropTypes from 'prop-types';
 
 import withTransition from '../../common/WithTransition';
 
@@ -25,6 +26,9 @@ class Projects extends PureComponent {
     super(props);
     this.showDescription = this.showDescription.bind(this);
     this.hideDescription = this.hideDescription.bind(this);
+    this.countImagesLoaded = this.countImagesLoaded.bind(this);
+    this.imageCount = 8;
+    this.imagesLoaded = 0;
   }
 
   showDescription(description, background) {
@@ -50,20 +54,42 @@ class Projects extends PureComponent {
       targets: this.el,
       translateY: [-100, 0],
       opacity: [0, 1],
-      duration: 500,
+      duration: 1000,
+      delay: 1000,
       easing: 'easeOutExpo',
     }).finished;
   }
 
   animateOut() {
     anime.remove(this.el);
+    this.imagesLoaded = 0;
+    this.props.showLoader();
     return anime({
       targets: this.el,
       translateY: -100,
       opacity: 0,
-      duration: 0,
+      duration: 1000,
       easing: 'easeOutExpo',
     }).finished;
+  }
+
+  componentDidMount() {
+    [
+      DefaultBackground, FlightBackground, JellicentBackground,
+      LTIBackground, UnleashedBackground, SSCTEBackground,
+      DailyUIBackground, TeamAquaBackground,
+    ].forEach((picture) => {
+      const img = new Image();
+      img.src = picture.fileName;
+      this.countImagesLoaded();
+    });
+  }
+
+  countImagesLoaded() {
+    this.imagesLoaded++;
+    if (this.imagesLoaded >= this.imageCount) {
+      this.props.hideLoader();
+    }
   }
 
   render() {
@@ -78,7 +104,13 @@ class Projects extends PureComponent {
                     <div className="col-xl-6 col-lg-12">
                       <h3 className="description" ref={(e) => { this.description = e; }}>Web Projects</h3>
                       <div id="box-image">
-                        <img className="box-image-background" src={DefaultBackground} alt="Default project background" ref={(e) => { this.background = e; }} />
+                        <img
+                          className="box-image-background"
+                          src={DefaultBackground}
+                          alt="Default project background"
+                          onLoad={this.countImagesLoaded}
+                          ref={(e) => { this.background = e; }}
+                        />
                       </div>
                       <div className="spacer-sm	d-xl-none" />
                     </div>
@@ -159,6 +191,11 @@ class Projects extends PureComponent {
       </SmoothScroll>
     );
   }
+}
+
+Projects.propTypes = {
+  showLoader: PropTypes.func.isRequired,
+  hideLoader: PropTypes.func.isRequired,
 }
 
 export default withTransition(Projects);

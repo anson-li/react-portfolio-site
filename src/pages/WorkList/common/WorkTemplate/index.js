@@ -18,7 +18,7 @@ class WorkTemplate extends PureComponent {
 
   render() {
     const {
-      title, description, panel, link, lineBreak, animated,
+      title, description, panel, link, lineBreak, animated, afterLoad,
     } = this.props;
     const wow = animated ? 'wow' : '';
     return (
@@ -34,12 +34,20 @@ class WorkTemplate extends PureComponent {
             <div className="spacer-xs" />
           </div>
         </div>
-        <img className="img-panel" src={panel} alt={`${title} Panel`} />
+        <img
+          className="img-panel"
+          onLoad={afterLoad}
+          ref={(ref) => { this.panelImage = ref;}}
+          src={panel}
+          alt={`${title} Panel`}
+        />
         <div className="col-md-12 no-padding">
           <div className="col-md-6 no-padding">
             <div className="spacer-xs" />
             <p>
-              <Link to={link} href={link} className="btn">View case study</Link>
+              <Link to={link} href={link} className="btn">
+                View case study
+              </Link>
             </p>
             <div className="spacer-xs" />
           </div>
@@ -70,11 +78,13 @@ WorkTemplate.propTypes = {
   link: PropTypes.string.isRequired,
   lineBreak: PropTypes.bool,
   animated: PropTypes.bool,
+  afterLoad: PropTypes.func,
 };
 
 WorkTemplate.defaultProps = {
   lineBreak: false,
   animated: true,
+  afterLoad: () => {},
 };
 
 export default WorkTemplate;

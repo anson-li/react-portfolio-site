@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import anime from 'animejs';
+import PropTypes from 'prop-types';
 
 import LineBreak from '../../web/assets/line-break.png';
 import WorkBackground from '../../web/assets/background/bg-work.png';
@@ -16,26 +17,43 @@ import BackgroundImage from '../../common/BackgroundImage';
 import FixedScroll from '../../common/FixedScroll';
 
 class WorkList extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.countImagesLoaded = this.countImagesLoaded.bind(this);
+    this.imageCount = 5;
+    this.imagesLoaded = 0;
+  }
+
   animateIn() {
     anime.remove(this.el);
     return anime({
       targets: this.el,
       translateY: [-100, 0],
       opacity: [0, 1],
-      duration: 500,
+      duration: 1000,
+      delay: 1000,
       easing: 'easeOutExpo',
     }).finished;
   }
 
   animateOut() {
     anime.remove(this.el);
+    this.imagesLoaded = 0;
+    this.props.showLoader();
     return anime({
       targets: this.el,
       translateY: -100,
       opacity: 0,
-      duration: 0,
+      duration: 1000,
       easing: 'easeOutExpo',
     }).finished;
+  }
+
+  countImagesLoaded() {
+    this.imagesLoaded++;
+    if (this.imagesLoaded >= this.imageCount) {
+      this.props.hideLoader();
+    }
   }
 
   render() {
@@ -49,6 +67,7 @@ class WorkList extends PureComponent {
                   <BackgroundImage
                     src={WorkBackground}
                     alt="Background"
+                    afterLoad={this.countImagesLoaded}
                   />
                   <FixedScroll
                     text="Let&rsquo;s continue →"
@@ -75,6 +94,7 @@ class WorkList extends PureComponent {
                       link="/atbfinancial"
                       lineBreak
                       animated={false}
+                      afterLoad={this.countImagesLoaded}
                     />
                     <WorkTemplate
                       title="Questionmark"
@@ -88,6 +108,7 @@ class WorkList extends PureComponent {
                       panel={QuestionmarkPanel}
                       link="/questionmark"
                       lineBreak
+                      afterLoad={this.countImagesLoaded}
                     />
                     <WorkTemplate
                       title="CQI"
@@ -98,6 +119,7 @@ class WorkList extends PureComponent {
                       panel={CrudeMonitorPanel}
                       link="/crudemonitor"
                       lineBreak
+                      afterLoad={this.countImagesLoaded}
                     />
                     <WorkTemplate
                       title="Environment &amp; Parks"
@@ -109,6 +131,7 @@ class WorkList extends PureComponent {
                       panel={AlbertaMESPanel}
                       link="/albertames"
                       lineBreak
+                      afterLoad={this.countImagesLoaded}
                     />
                   </div>
                 </div>
@@ -126,6 +149,11 @@ class WorkList extends PureComponent {
       </SmoothScroll>
     );
   }
+}
+
+WorkList.propTypes = {
+  showLoader: PropTypes.func.isRequired,
+  hideLoader: PropTypes.func.isRequired,
 }
 
 export default withTransition(WorkList);

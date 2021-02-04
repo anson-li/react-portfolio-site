@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import anime from 'animejs';
+import PropTypes from 'prop-types';
 
 import withTransition from '../../common/WithTransition';
 
@@ -19,23 +20,26 @@ class Contact extends PureComponent {
       targets: this.el,
       translateY: [-100, 0],
       opacity: [0, 1],
-      duration: 500,
+      duration: 1000,
+      delay: 1000,
       easing: 'easeOutExpo',
     }).finished;
   }
 
   animateOut() {
     anime.remove(this.el);
+    this.props.showLoader();
     return anime({
       targets: this.el,
       translateY: -100,
       opacity: 0,
-      duration: 0,
+      duration: 1000,
       easing: 'easeOutExpo',
     }).finished;
   }
 
   render() {
+    const { hideLoader } = this.props;
     return (
       <SmoothScroll>
         <div id="scroll-page" ref={(e) => { this.el = e; }}>
@@ -46,6 +50,7 @@ class Contact extends PureComponent {
                   <BackgroundImage
                     src={AnsonBackground}
                     alt="Background with Anson"
+                    afterLoad={hideLoader}
                   />
                   <div className="spacer-sm" />
                   <div className="center-sm">
@@ -105,6 +110,11 @@ class Contact extends PureComponent {
       </SmoothScroll>
     );
   }
+}
+
+Contact.propTypes = {
+  showLoader: PropTypes.func.isRequired,
+  hideLoader: PropTypes.func.isRequired,
 }
 
 export default withTransition(Contact);
