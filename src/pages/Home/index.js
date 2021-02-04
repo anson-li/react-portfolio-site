@@ -52,6 +52,6 @@ class Home extends PureComponent {
 Home.propTypes = {
   showLoader: PropTypes.func.isRequired,
   hideLoader: PropTypes.func.isRequired,
-}
+};
 
 export default withTransition(Home);

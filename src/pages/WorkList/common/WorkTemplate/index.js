@@ -37,7 +37,7 @@ class WorkTemplate extends PureComponent {
         <img
           className="img-panel"
           onLoad={afterLoad}
-          ref={(ref) => { this.panelImage = ref;}}
+          ref={(ref) => { this.panelImage = ref; }}
           src={panel}
           alt={`${title} Panel`}
         />

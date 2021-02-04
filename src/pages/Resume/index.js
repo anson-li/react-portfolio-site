@@ -287,6 +287,6 @@ class Resume extends PureComponent {
 Resume.propTypes = {
   showLoader: PropTypes.func.isRequired,
   hideLoader: PropTypes.func.isRequired,
-}
+};
 
 export default withTransition(Resume);

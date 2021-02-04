@@ -196,6 +196,6 @@ class Projects extends PureComponent {
 Projects.propTypes = {
   showLoader: PropTypes.func.isRequired,
   hideLoader: PropTypes.func.isRequired,
-}
+};
 
 export default withTransition(Projects);

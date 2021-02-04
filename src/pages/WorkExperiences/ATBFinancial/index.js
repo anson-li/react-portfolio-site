@@ -41,7 +41,6 @@ class ATBFinancial extends PureComponent {
     }).finished;
   }
 
-
   renderSkills() {
     return (
       <Container>
@@ -223,6 +222,6 @@ class ATBFinancial extends PureComponent {
 ATBFinancial.propTypes = {
   showLoader: PropTypes.func.isRequired,
   hideLoader: PropTypes.func.isRequired,
-}
+};
 
 export default withTransition(ATBFinancial);

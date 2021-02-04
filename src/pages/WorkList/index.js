@@ -154,6 +154,6 @@ class WorkList extends PureComponent {
 WorkList.propTypes = {
   showLoader: PropTypes.func.isRequired,
   hideLoader: PropTypes.func.isRequired,
-}
+};
 
 export default withTransition(WorkList);

@@ -22,7 +22,7 @@ class WorkTemplate extends PureComponent {
 
   render() {
     const {
-      background, title, section, nextURL, nextTitle, redirect, hideLoader
+      background, title, section, nextURL, nextTitle, redirect, hideLoader,
     } = this.props;
     return (
       <div id="scroll-page">

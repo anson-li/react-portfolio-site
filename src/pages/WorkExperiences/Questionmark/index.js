@@ -180,6 +180,6 @@ class Questionmark extends PureComponent {
 Questionmark.propTypes = {
   showLoader: PropTypes.func.isRequired,
   hideLoader: PropTypes.func.isRequired,
-}
+};
 
 export default withTransition(Questionmark);

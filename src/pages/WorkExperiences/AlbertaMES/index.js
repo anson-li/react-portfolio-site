@@ -197,6 +197,6 @@ class AlbertaMES extends PureComponent {
 AlbertaMES.propTypes = {
   showLoader: PropTypes.func.isRequired,
   hideLoader: PropTypes.func.isRequired,
-}
+};
 
 export default withTransition(AlbertaMES);

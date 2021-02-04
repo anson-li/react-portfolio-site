@@ -20,7 +20,7 @@ class App extends PureComponent {
 
   showLoader() {
     this.loader.current.fadeIn();
-  };
+  }
 
   hideLoader() {
     this.loader.current.fadeOut();

@@ -33,7 +33,7 @@ class BackgroundImage extends PureComponent {
         className="bg-img"
         src={src}
         alt={alt}
-        ref={(ref) => { this.backgroundImage = ref;}} 
+        ref={(ref) => { this.backgroundImage = ref; }}
         onLoad={afterLoad}
       />
     );

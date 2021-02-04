@@ -27,9 +27,9 @@ class JellicentObject extends PureComponent {
   }
 
   componentDidMount() {
-    setTimeout( function() {
+    setTimeout(() => {
       this.init();
-    }.bind(this), 1000);
+    }, 1000);
   }
 
   componentWillUnmount() {
@@ -150,6 +150,6 @@ class JellicentObject extends PureComponent {
 
 JellicentObject.propTypes = {
   hideLoader: PropTypes.func.isRequired,
-}
+};
 
 export default JellicentObject;
