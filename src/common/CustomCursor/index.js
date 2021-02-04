@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { TweenLite, Power0 } from 'gsap';
+import { TweenLite } from 'gsap';
 
 import './style.scss';
 

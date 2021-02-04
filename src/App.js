@@ -6,9 +6,25 @@ import PropTypes from 'prop-types';
 
 import Border from './common/Border';
 import MainLogo from './common/MainLogo';
+import Loader from './common/Loader';
 
 class App extends PureComponent {
   matchPath = (path) => matchPath(window.location.pathname, path);
+
+  constructor(props) {
+    super(props);
+    this.showLoader = this.showLoader.bind(this);
+    this.hideLoader = this.hideLoader.bind(this);
+    this.loader = React.createRef();
+  }
+
+  showLoader() {
+    this.loader.current.fadeIn();
+  };
+
+  hideLoader() {
+    this.loader.current.fadeOut();
+  }
 
   render() {
     const { routes } = this.props;
@@ -18,11 +34,16 @@ class App extends PureComponent {
           <Border />
           <MainLogo />
         </div>
+        <Loader ref={this.loader} />
         <TransitionGroup id="content">
           { routes
             .filter(({ path }) => this.matchPath(path))
             .map(({ Component, key }) => (
-              <Component key={key} />
+              <Component
+                key={key}
+                showLoader={this.showLoader}
+                hideLoader={this.hideLoader}
+              />
             ))}
         </TransitionGroup>
       </div>

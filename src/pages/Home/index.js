@@ -1,6 +1,7 @@
 /* eslint-disable no-return-assign */
 import anime from 'animejs';
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 import Background from '../../common/Background';
 import ThreeSphere from './components/ThreeSphere';
@@ -11,20 +12,23 @@ import withTransition from '../../common/WithTransition';
 class Home extends PureComponent {
   animateIn() {
     anime.remove(this.el);
+    this.props.hideLoader();
     return anime({
       targets: this.el,
       opacity: [0, 1],
-      duration: 500,
+      duration: 1000,
+      delay: 1000,
       easing: 'easeOutExpo',
     }).finished;
   }
 
   animateOut() {
     anime.remove(this.el);
+    this.props.showLoader();
     return anime({
       targets: this.el,
       opacity: 0,
-      duration: 500,
+      duration: 1000,
       easing: 'easeOutExpo',
     }).finished;
   }
@@ -41,6 +45,11 @@ class Home extends PureComponent {
       </div>
     );
   }
+}
+
+Home.propTypes = {
+  showLoader: PropTypes.func.isRequired,
+  hideLoader: PropTypes.func.isRequired,
 }
 
 export default withTransition(Home);

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import anime from 'animejs';
+import PropTypes from 'prop-types';
 
 import AlbertaBackground from '../../web/assets/background/bg-alberta.png';
 import LineBreak from '../../web/assets/line-break.png';
@@ -21,17 +22,20 @@ import './style.scss';
 class Resume extends PureComponent {
   animateIn() {
     anime.remove(this.el);
+    this.props.hideLoader();
     return anime({
       targets: this.el,
       translateY: [-100, 0],
       opacity: [0, 1],
-      duration: 500,
+      duration: 1000,
+      delay: 1000,
       easing: 'easeOutExpo',
     }).finished;
   }
 
   animateOut() {
     anime.remove(this.el);
+    this.props.showLoader();
     return anime({
       targets: this.el,
       translateY: -100,
@@ -278,5 +282,11 @@ class Resume extends PureComponent {
     );
   }
 }
+
+Resume.propTypes = {
+  showLoader: PropTypes.func.isRequired,
+  hideLoader: PropTypes.func.isRequired,
+}
+
 
 export default withTransition(Resume);
