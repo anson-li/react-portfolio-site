@@ -33,8 +33,10 @@ class ThreeSphere extends PureComponent {
   }
 
   componentDidMount() {
-    this.init();
-    this.animate();
+    setTimeout( function() {
+      this.init();
+      this.animate();
+    }.bind(this), 1000);
   }
 
   componentWillUnmount() {

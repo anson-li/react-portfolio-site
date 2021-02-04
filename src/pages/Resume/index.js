@@ -40,7 +40,7 @@ class Resume extends PureComponent {
       targets: this.el,
       translateY: -100,
       opacity: 0,
-      duration: 0,
+      duration: 1000,
       easing: 'easeOutExpo',
     }).finished;
   }
