@@ -22,7 +22,6 @@ import './style.scss';
 class Resume extends PureComponent {
   animateIn() {
     anime.remove(this.el);
-    this.props.hideLoader();
     return anime({
       targets: this.el,
       translateY: [-100, 0],
@@ -46,6 +45,7 @@ class Resume extends PureComponent {
   }
 
   render() {
+    const { hideLoader } = this.props;
     return (
       <SmoothScroll>
         <div id="scroll-page" ref={(e) => { this.el = e; }}>
@@ -56,6 +56,7 @@ class Resume extends PureComponent {
                   <BackgroundImage
                     src={AlbertaBackground}
                     alt="Background showing Alberta"
+                    afterLoad={hideLoader}
                   />
                   <div className="center-sm">
                     <h2 className="scroll-title">

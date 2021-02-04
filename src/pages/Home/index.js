@@ -12,7 +12,6 @@ import withTransition from '../../common/WithTransition';
 class Home extends PureComponent {
   animateIn() {
     anime.remove(this.el);
-    this.props.hideLoader();
     return anime({
       targets: this.el,
       opacity: [0, 1],
@@ -34,11 +33,14 @@ class Home extends PureComponent {
   }
 
   render() {
+    const { hideLoader } = this.props;
     return (
       <div id="main-page" ref={(e) => { this.el = e; }}>
         <Background />
         <div className="fixed">
-          <ThreeSphere />
+          <ThreeSphere
+            hideLoader={hideLoader}
+          />
           <MainText />
         </div>
         <div id="bottom" />

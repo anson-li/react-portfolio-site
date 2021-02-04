@@ -26,9 +26,15 @@ class BackgroundImage extends PureComponent {
   }
 
   render() {
-    const { src, alt } = this.props;
+    const { src, alt, afterLoad } = this.props;
     return (
-      <img className="bg-img" src={src} alt={alt} ref={(ref) => { this.backgroundImage = ref; }} />
+      <img
+        className="bg-img"
+        src={src}
+        alt={alt}
+        ref={(ref) => { this.backgroundImage = ref;}} 
+        onLoad={afterLoad}
+      />
     );
   }
 }
@@ -36,6 +42,11 @@ class BackgroundImage extends PureComponent {
 BackgroundImage.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
+  afterLoad: PropTypes.func,
+};
+
+BackgroundImage.defaultProps = {
+  afterLoad: () => {},
 };
 
 export default BackgroundImage;

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import * as THREE from 'three';
 
 class ThreeSphere extends PureComponent {
@@ -137,6 +138,7 @@ class ThreeSphere extends PureComponent {
     document.addEventListener('touchstart', this.onDocumentTouchStart, false);
     document.addEventListener('touchmove', this.onDocumentTouchMove, false);
     window.addEventListener('resize', this.onWindowResize, false);
+    this.props.hideLoader();
   }
 
   animate() {
@@ -188,5 +190,9 @@ class ThreeSphere extends PureComponent {
     );
   }
 }
+
+ThreeSphere.propTypes = {
+  hideLoader: PropTypes.func.isRequired,
+};
 
 export default ThreeSphere;
