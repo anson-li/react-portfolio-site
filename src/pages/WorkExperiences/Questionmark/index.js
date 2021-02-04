@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import anime from 'animejs';
+import PropTypes from 'prop-types';
 
 import BackgroundQuestionmark from '../../../web/assets/background/bg-questionmark.png';
 import WorkTemplate from '../common/WorkTemplate';
@@ -21,18 +22,20 @@ class Questionmark extends PureComponent {
       targets: this.el,
       translateY: [-100, 0],
       opacity: [0, 1],
-      duration: 500,
+      duration: 1000,
+      delay: 1000,
       easing: 'easeOutExpo',
     }).finished;
   }
 
   animateOut() {
     anime.remove(this.el);
+    this.props.showLoader();
     return anime({
       targets: this.el,
       translateY: -100,
       opacity: 0,
-      duration: 0,
+      duration: 1000,
       easing: 'easeOutExpo',
     }).finished;
   }
@@ -156,6 +159,7 @@ class Questionmark extends PureComponent {
     sections[0] = this.renderSkills();
     sections[1] = this.renderProjectDescription();
     sections[2] = this.renderProjectDeliverables();
+    const { hideLoader } = this.props;
     return (
       <SmoothScroll>
         <div ref={(e) => { this.el = e; }}>
@@ -165,11 +169,17 @@ class Questionmark extends PureComponent {
             section={sections}
             nextTitle="CQI"
             nextURL="/crudemonitor"
+            hideLoader={hideLoader}
           />
         </div>
       </SmoothScroll>
     );
   }
+}
+
+Questionmark.propTypes = {
+  showLoader: PropTypes.func.isRequired,
+  hideLoader: PropTypes.func.isRequired,
 }
 
 export default withTransition(Questionmark);

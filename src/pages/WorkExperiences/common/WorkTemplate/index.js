@@ -22,7 +22,7 @@ class WorkTemplate extends PureComponent {
 
   render() {
     const {
-      background, title, section, nextURL, nextTitle, redirect,
+      background, title, section, nextURL, nextTitle, redirect, hideLoader
     } = this.props;
     return (
       <div id="scroll-page">
@@ -33,6 +33,7 @@ class WorkTemplate extends PureComponent {
                 <BackgroundImage
                   src={background}
                   alt="Background"
+                  afterLoad={hideLoader}
                 />
                 <FixedScroll
                   text="Let&rsquo;s continue →"
@@ -85,10 +86,12 @@ WorkTemplate.propTypes = {
   nextURL: PropTypes.string.isRequired,
   nextTitle: PropTypes.string.isRequired,
   redirect: PropTypes.bool,
+  hideLoader: PropTypes.func,
 };
 
 WorkTemplate.defaultProps = {
   redirect: true,
+  backgroundLoad: () => {},
 };
 
 export default WorkTemplate;

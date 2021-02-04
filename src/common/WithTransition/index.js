@@ -39,7 +39,7 @@ export default function withTransition(WrappedComponent) {
         <Transition
           {...this.props}
           addEndListener={(node, done) => {
-            window.scrollTo(0, 0);
+            window.scroll(0, 0);
             // eslint-disable-next-line react/prop-types
             if (this.props.in) {
               this.handleAnimateIn(done);

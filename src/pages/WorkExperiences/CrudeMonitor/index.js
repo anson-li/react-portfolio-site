@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import anime from 'animejs';
+import PropTypes from 'prop-types';
 
 import BackgroundCrudeMonitor from '../../../web/assets/background/bg-oil.png';
 import WorkTemplate from '../common/WorkTemplate';
@@ -22,18 +23,20 @@ class CrudeMonitor extends PureComponent {
       targets: this.el,
       translateY: [-100, 0],
       opacity: [0, 1],
-      duration: 500,
+      duration: 1000,
+      delay: 1000,
       easing: 'easeOutExpo',
     }).finished;
   }
 
   animateOut() {
     anime.remove(this.el);
+    this.props.showLoader();
     return anime({
       targets: this.el,
       translateY: -100,
       opacity: 0,
-      duration: 0,
+      duration: 1000,
       easing: 'easeOutExpo',
     }).finished;
   }
@@ -168,6 +171,7 @@ class CrudeMonitor extends PureComponent {
     sections[1] = this.renderProjectDescription();
     sections[2] = this.renderProjectOverview();
     sections[3] = this.renderReflections();
+    const { hideLoader } = this.props;
     return (
       <SmoothScroll>
         <div ref={(e) => { this.el = e; }}>
@@ -177,11 +181,17 @@ class CrudeMonitor extends PureComponent {
             section={sections}
             nextTitle="Environment &amp; Parks"
             nextURL="/albertames"
+            hideLoader={hideLoader}
           />
         </div>
       </SmoothScroll>
     );
   }
+}
+
+CrudeMonitor.propTypes = {
+  showLoader: PropTypes.func.isRequired,
+  hideLoader: PropTypes.func.isRequired,
 }
 
 export default withTransition(CrudeMonitor);

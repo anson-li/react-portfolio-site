@@ -289,5 +289,4 @@ Resume.propTypes = {
   hideLoader: PropTypes.func.isRequired,
 }
 
-
 export default withTransition(Resume);
