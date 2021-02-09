@@ -45,6 +45,8 @@ class SmoothScroll extends React.Component {
     TweenLite.to(this.viewport, 1, {
       y: -window.pageYOffset,
       ease: Power0,
+      force3D: true,
+      rotationY: 0.01,
     });
   };
 

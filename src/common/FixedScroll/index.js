@@ -22,6 +22,8 @@ class FixedScroll extends PureComponent {
     TweenLite.to(this.fixedScroll, 1, {
       y: window.pageYOffset * 0.8,
       ease: Power0,
+      force3D: true,
+      rotationY: 0.01,
       backfaceVisibility: 'hidden',
     });
 

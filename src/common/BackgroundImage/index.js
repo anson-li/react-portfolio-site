@@ -24,6 +24,8 @@ class BackgroundImage extends PureComponent {
     TweenLite.to(this.backgroundImage, 1, {
       y: window.pageYOffset * 0.3,
       ease: Power0,
+      force3D: true,
+      rotationY: 0.01,
     });
   }
 
