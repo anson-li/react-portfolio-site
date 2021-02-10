@@ -38,7 +38,7 @@
     "lint": "concurrently \"eslint ./src\" \"stylelint **/*.scss\"",
     "lint-fix": "concurrently \"eslint --fix ./src\" \"stylelint **/*.scss --fix\"",
     "analyze": "source-map-explorer \"build/static/js/*.js\"",
-    "bundle-report": "webpack-bundle-analyzer --port 4200 compilation-stats.json"
+    "bundle-report": "node --max-old-space-size=8192 scripts/bundle-analyze.js"
   },
   "eslintConfig": {
     "extends": [
@@ -65,6 +65,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.0.0",
+    "progress-bar-webpack-plugin": "^2.1.0",
     "webpack-bundle-analyzer": "^4.4.0"
   }
 }
