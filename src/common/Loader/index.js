@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { TweenLite } from 'gsap';
 import Logo from '../../web/assets/logo_flat.png';
+import './style.scss';
 
 class Loader extends PureComponent {
   constructor(props) {
