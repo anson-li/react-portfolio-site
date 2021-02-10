@@ -23,12 +23,12 @@ class BannerLink extends PureComponent {
     }).init();
   }
 
-  showDescription(description, background) {
+  showDescription(description, background, ref) {
     const { showDescription } = this.props;
     TweenLite.to(this.bannerlink, 0.1, {
       color: '#ffd5a8',
     });
-    showDescription(description, background);
+    showDescription(description, background, ref);
   }
 
   hideDescription() {
@@ -41,7 +41,7 @@ class BannerLink extends PureComponent {
 
   render() {
     const {
-      title, date, description, internalLink, externalLink, background,
+      title, date, description, internalLink, externalLink, background, imageref,
     } = this.props;
     return (
       <div className="wow fadeIn banner-link">
@@ -49,7 +49,7 @@ class BannerLink extends PureComponent {
           { internalLink
           && (
             <Link
-              onMouseEnter={() => this.showDescription(description, background)}
+              onMouseEnter={() => this.showDescription(description, background, imageref)}
               onMouseLeave={() => this.hideDescription()}
               to={internalLink}
               href={internalLink}
@@ -64,7 +64,7 @@ class BannerLink extends PureComponent {
           && (
             <a
               href={externalLink}
-              onMouseEnter={() => this.showDescription(description, background)}
+              onMouseEnter={() => this.showDescription(description, background, imageref)}
               onMouseLeave={() => this.hideDescription()}
             >
               <span ref={(e) => { this.bannerlink = e; }}>
@@ -89,6 +89,7 @@ BannerLink.propTypes = {
   hideDescription: PropTypes.func.isRequired,
   date: PropTypes.string.isRequired,
   background: PropTypes.string.isRequired,
+  imageref: PropTypes.object.isRequired,
 };
 
 BannerLink.defaultProps = {

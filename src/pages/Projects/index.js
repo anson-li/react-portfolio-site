@@ -27,8 +27,16 @@ class Projects extends PureComponent {
     this.showDescription = this.showDescription.bind(this);
     this.hideDescription = this.hideDescription.bind(this);
     this.countImagesLoaded = this.countImagesLoaded.bind(this);
-    this.imageCount = 8;
+    this.imageCount = 7;
     this.imagesLoaded = 0;
+
+    this.jellicent = React.createRef();
+    this.flight = React.createRef();
+    this.unleashed = React.createRef();
+    this.lti = React.createRef();
+    this.dailyui = React.createRef();
+    this.teamaqua = React.createRef();
+    this.sscte = React.createRef();
 
     this.projects = [
       { image: JellicentBackground,
@@ -93,7 +101,7 @@ class Projects extends PureComponent {
         date: 'Late 2015',
         ref: this.sscte,
       },
-    ]
+    ];
   }
 
   componentDidMount() {
@@ -106,17 +114,28 @@ class Projects extends PureComponent {
       img.src = picture.fileName;
       this.countImagesLoaded();
     });
+    // Sets a default image
+    this.prevRef = this.sscte.current;
+    TweenLite.to(this.prevRef, 1, {
+      opacity: 1,
+    });
   }
 
-  showDescription(description, background) {
+  showDescription(description, background, ref) {
     TweenLite.to(this.description, 0, {
       text: description,
     });
-    TweenLite.to(this.background, 0, {
-      attr: {
-        src: background,
-      },
+    TweenLite.to(ref.current, 1, {
+      // zIndex: 1,
+      opacity: 1,
     });
+    if (this.prevRef && this.prevRef != ref.current) {
+      TweenLite.to(this.prevRef, 1, {
+        // zIndex: 0,
+        opacity: 0,
+      });
+      this.prevRef = ref.current;
+    }
   }
 
   hideDescription() {
@@ -160,6 +179,14 @@ class Projects extends PureComponent {
   }
 
   render() {
+    const renderImages = this.projects.map((project) =>
+      <img
+        className="box-image-background"
+        src={project.image}
+        alt="Project background"
+        ref={project.ref}
+      />
+    );
     const renderProjects = this.projects.map((project) =>
       <BannerLink
         title={project.title}
@@ -170,7 +197,7 @@ class Projects extends PureComponent {
         showDescription={this.showDescription}
         hideDescription={this.hideDescription}
         background={project.image}
-        ref={project.ref}
+        imageref={project.ref}
       />
     );
     return (
@@ -181,16 +208,11 @@ class Projects extends PureComponent {
               <div id="scrollContainer" className="flex-container container ">
                 <div className="hide-under col-md-12 project-top">
                   <div className="row">
-                    <div className="col-xl-6 col-lg-12">
+                    <div className="col-lg-12 d-xl-none" style={{ padding: '20%' }} />
+                    <div className="col-xl-6 col-lg-12 d-none d-xl-block">
                       <h3 className="description" ref={(e) => { this.description = e; }}>Web Projects</h3>
                       <div id="box-image">
-                        <img
-                          className="box-image-background"
-                          src={DefaultBackground}
-                          alt="Default project background"
-                          onLoad={this.countImagesLoaded}
-                          ref={(e) => { this.background = e; }}
-                        />
+                        { renderImages }
                       </div>
                       <div className="spacer-sm	d-xl-none" />
                     </div>
