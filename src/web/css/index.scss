@@ -699,9 +699,10 @@ li a {
 
 #main-text {
   line-height: 130%;
+  padding-top: 25vh;
 }
 
-@media (min-height: 1000px) {
+@media (min-width: 1024px) {
   #main-text {
     padding-top: 10vh;
   }
