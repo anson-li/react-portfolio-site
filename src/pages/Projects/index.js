@@ -29,6 +29,71 @@ class Projects extends PureComponent {
     this.countImagesLoaded = this.countImagesLoaded.bind(this);
     this.imageCount = 8;
     this.imagesLoaded = 0;
+
+    this.projects = [
+      { image: JellicentBackground,
+        title: 'Jellicent',
+        description: 'three.js / react / exploration in web design and 3D space',
+        internalLink: '/jellicent',
+        externalLink: undefined,
+        date: 'January 2020',
+        ref: this.jellicent,
+      },
+      {
+        image: FlightBackground,
+        title: 'Flight to Financial Freedom',
+        description: 'three.js / flask / building a better financial future',
+        internalLink: undefined,
+        externalLink: 'https://github.com/anson-li/flight-to-financial-freedom',
+        date: 'November 2019',
+        ref: this.flight,
+      },
+      {
+        image: UnleashedBackground,
+        title: 'Google Bot app template',
+        description: 'flask / google api / support tool developed for ease of use',
+        internalLink: undefined,
+        externalLink: 'https://github.com/anson-li/google-bot-flask-template',
+        date: 'June 2019',
+        ref: this.unleashed,
+      },
+      {
+        image: LTIBackground,
+        title: 'LTI',
+        description: 'php / web tool made for Questionmark integration',
+        internalLink: undefined,
+        externalLink: 'https://github.com/questionmark/qm-lti',
+        date: 'July 2018',
+        ref: this.lti,
+      },
+      {
+        image: DailyUIBackground,
+        title: '#DailyUI',
+        description: 'sketch / photoshop / design every day',
+        internalLink: undefined,
+        externalLink: 'http://twitter.com/helloanson',
+        date: 'Late 2016',
+        ref: this.dailyui,
+      },
+      {
+        image: TeamAquaBackground,
+        title: 'Team Aqua',
+        description: 'ruby library development for matrix calculation support',
+        internalLink: undefined,
+        externalLink: 'https://github.com/Team-Aqua',
+        date: 'Early 2016',
+        ref: this.teamaqua,
+      },
+      {
+        image: SSCTEBackground,
+        title: 'SSCTE',
+        description: 'android / ux / card trading application',
+        internalLink: undefined,
+        externalLink: 'https://github.com/CMPUT301F15T07/TradingApp',
+        date: 'Late 2015',
+        ref: this.sscte,
+      },
+    ]
   }
 
   componentDidMount() {
@@ -95,6 +160,19 @@ class Projects extends PureComponent {
   }
 
   render() {
+    const renderProjects = this.projects.map((project) =>
+      <BannerLink
+        title={project.title}
+        description={project.description}
+        date={project.date}
+        internalLink={project.internalLink}
+        externalLink={project.externalLink}
+        showDescription={this.showDescription}
+        hideDescription={this.hideDescription}
+        background={project.image}
+        ref={project.ref}
+      />
+    );
     return (
       <SmoothScroll>
         <div id="scroll-page" ref={(e) => { this.el = e; }}>
@@ -117,69 +195,7 @@ class Projects extends PureComponent {
                       <div className="spacer-sm	d-xl-none" />
                     </div>
                     <div className="col-xl-6 col-lg-12">
-                      <BannerLink
-                        title="Jellicent"
-                        description="three.js / react / exploration in web design and 3D space"
-                        date="January 2020"
-                        internalLink="/jellicent"
-                        showDescription={this.showDescription}
-                        hideDescription={this.hideDescription}
-                        background={JellicentBackground}
-                      />
-                      <BannerLink
-                        title="Flight to Financial Freedom"
-                        description="three.js / flask / building a better financial future"
-                        externalLink="https://github.com/anson-li/flight-to-financial-freedom"
-                        date="November 2019"
-                        showDescription={this.showDescription}
-                        hideDescription={this.hideDescription}
-                        background={FlightBackground}
-                      />
-                      <BannerLink
-                        title="Google Bot app template"
-                        description="flask / google api / support tool developed for ease of use"
-                        externalLink="https://github.com/anson-li/google-bot-flask-template"
-                        date="June 2019"
-                        showDescription={this.showDescription}
-                        hideDescription={this.hideDescription}
-                        background={UnleashedBackground}
-                      />
-                      <BannerLink
-                        title="LTI"
-                        description="php / web tool made for Questionmark integration"
-                        externalLink="https://github.com/questionmark/qm-lti"
-                        date="July 2018"
-                        showDescription={this.showDescription}
-                        hideDescription={this.hideDescription}
-                        background={LTIBackground}
-                      />
-                      <BannerLink
-                        title="#DailyUI"
-                        description="sketch / photoshop / design every day"
-                        externalLink="http://twitter.com/helloanson"
-                        date="Late 2016"
-                        showDescription={this.showDescription}
-                        hideDescription={this.hideDescription}
-                        background={DailyUIBackground}
-                      />
-                      <BannerLink
-                        title="Team Aqua"
-                        description="ruby library development for matrix calculation support"
-                        externalLink="https://github.com/Team-Aqua"
-                        date="Early 2016"
-                        showDescription={this.showDescription}
-                        hideDescription={this.hideDescription}
-                        background={TeamAquaBackground}
-                      />
-                      <BannerLink
-                        title="SSCTE"
-                        description="android / ux / card trading application"
-                        externalLink="https://github.com/CMPUT301F15T07/TradingApp"
-                        date="Late 2015"
-                        showDescription={this.showDescription}
-                        hideDescription={this.hideDescription}
-                        background={SSCTEBackground}
-                      />
+                      { renderProjects }
                     </div>
                   </div>
                 </div>
