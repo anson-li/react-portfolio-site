@@ -14,15 +14,15 @@
     "prop-types": "^15.7.2",
     "proptypes": "^1.1.0",
     "react": "^17.0.1",
-    "react-animejs": "^0.5.4",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
     "react-gsap": "^2.2.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^4.0.2",
     "react-transition-group": "^4.4.1",
     "react-wow": "^1.0.0",
+    "source-map-explorer": "^2.5.2",
     "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0",
     "three": "^0.122.0",
@@ -36,7 +36,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "concurrently \"eslint ./src\" \"stylelint **/*.scss\"",
-    "lint-fix": "concurrently \"eslint --fix ./src\" \"stylelint **/*.scss --fix\""
+    "lint-fix": "concurrently \"eslint --fix ./src\" \"stylelint **/*.scss --fix\"",
+    "analyze": "source-map-explorer \"build/static/js/*.js\""
   },
   "eslintConfig": {
     "extends": [
@@ -57,7 +58,7 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^6.6.0",
+    "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
