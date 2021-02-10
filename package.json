@@ -37,7 +37,8 @@
     "eject": "react-scripts eject",
     "lint": "concurrently \"eslint ./src\" \"stylelint **/*.scss\"",
     "lint-fix": "concurrently \"eslint --fix ./src\" \"stylelint **/*.scss --fix\"",
-    "analyze": "source-map-explorer \"build/static/js/*.js\""
+    "analyze": "source-map-explorer \"build/static/js/*.js\"",
+    "bundle-report": "webpack-bundle-analyzer --port 4200 compilation-stats.json"
   },
   "eslintConfig": {
     "extends": [
@@ -63,6 +64,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
-    "eslint-plugin-react-hooks": "^4.0.0"
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "webpack-bundle-analyzer": "^4.4.0"
   }
 }
