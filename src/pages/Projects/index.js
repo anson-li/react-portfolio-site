@@ -41,7 +41,7 @@ class Projects extends PureComponent {
     this.projects = [
       { image: JellicentBackground,
         title: 'Jellicent',
-        description: 'three.js / react / exploration in web design and 3D space',
+        description: 'three.js / react / exploration in web & 3D space',
         internalLink: '/jellicent',
         externalLink: undefined,
         date: 'January 2020',
@@ -59,7 +59,7 @@ class Projects extends PureComponent {
       {
         image: UnleashedBackground,
         title: 'Google Bot app template',
-        description: 'flask / google api / support tool developed for ease of use',
+        description: 'flask / google api / chat support tool',
         internalLink: undefined,
         externalLink: 'https://github.com/anson-li/google-bot-flask-template',
         date: 'June 2019',
@@ -68,7 +68,7 @@ class Projects extends PureComponent {
       {
         image: LTIBackground,
         title: 'LTI',
-        description: 'php / web tool made for Questionmark integration',
+        description: 'php / learning platform integration',
         internalLink: undefined,
         externalLink: 'https://github.com/questionmark/qm-lti',
         date: 'July 2018',
@@ -86,7 +86,7 @@ class Projects extends PureComponent {
       {
         image: TeamAquaBackground,
         title: 'Team Aqua',
-        description: 'ruby library development for matrix calculation support',
+        description: 'ruby library for matrix calculations',
         internalLink: undefined,
         externalLink: 'https://github.com/Team-Aqua',
         date: 'Early 2016',
