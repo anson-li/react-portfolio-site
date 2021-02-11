@@ -17,6 +17,15 @@ class AlbertaMES extends PureComponent {
     this.renderReflections = this.renderReflections.bind(this);
   }
 
+  hidePage() {
+    anime.remove(this.el);
+    return anime({
+      targets: this.el,
+      opacity: 0,
+      duration: 0,
+    }).finished;
+  }
+
   animateIn() {
     anime.remove(this.el);
     return anime({

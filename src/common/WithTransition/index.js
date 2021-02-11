@@ -34,6 +34,17 @@ export default function withTransition(WrappedComponent) {
       }
     }
 
+    hidePage(done) {
+      if (typeof this.wrappedComponent.hidePage === 'function') {
+        const promise = this.wrappedComponent.hidePage();
+        if (promise && typeof promise.then === 'function') {
+          promise.then(done);
+        } else {
+          done();
+        }
+      }
+    }
+
     render() {
       return (
         <Transition
@@ -42,8 +53,12 @@ export default function withTransition(WrappedComponent) {
             window.scroll(0, 0);
             // eslint-disable-next-line react/prop-types
             if (this.props.in) {
-              this.handleAnimateIn(done);
+              this.hidePage(done);
+              setTimeout(() => {
+                this.handleAnimateIn(done);
+              }, 100);
             } else {
+              this.hidePage(done);
               this.handleAnimateOut(done);
             }
           }}
