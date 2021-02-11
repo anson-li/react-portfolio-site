@@ -54,7 +54,7 @@ class BannerLink extends PureComponent {
               to={internalLink}
               href={internalLink}
             >
-              <span ref={(e) => { this.bannerlink = e; }}>
+              <span className="project-span" ref={(e) => { this.bannerlink = e; }}>
                 <span className="project-description">{title}</span>
                 <span className="project-date">{date}</span>
               </span>
@@ -67,7 +67,7 @@ class BannerLink extends PureComponent {
               onMouseEnter={() => this.showDescription(description, background, imageref)}
               onMouseLeave={() => this.hideDescription()}
             >
-              <span ref={(e) => { this.bannerlink = e; }}>
+              <span className="project-span" ref={(e) => { this.bannerlink = e; }}>
                 <span className="project-description">{title}</span>
                 <span className="project-date">{date}</span>
               </span>

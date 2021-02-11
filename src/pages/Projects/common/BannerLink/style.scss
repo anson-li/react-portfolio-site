@@ -1,17 +1,23 @@
 .banner-link {
   padding: 1rem;
   letter-spacing: 2px;
+  height: 54px;
 
   h6 {
     text-align: left;
     vertical-align: middle;
   }
+  
+  .project-span {
+    display: flex;
+    justify-content: space-between;
 
-  .project-description {
-    float: left;
-  }
-
-  .project-date {
-    float: right;
+    .project-description {
+      float: left;
+    }
+  
+    .project-date {
+      float: right;
+    }
   }
 }
