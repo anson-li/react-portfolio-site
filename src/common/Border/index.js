@@ -17,28 +17,30 @@ class Border extends PureComponent {
   toggleMenu() {
     this.setState((prevState) => ({
       visibleMenu: !prevState.visibleMenu,
-    }), () => {
-      this.triggerMenuAnimation();
-    });
+    }));
   }
 
   triggerMenuAnimation() {
     const targets = '.menu';
     const { visibleMenu } = this.state;
-    if (visibleMenu) {
-      anime
-        .timeline({ loop: false })
-        .add({
-          targets,
-          opacity: [0, 1],
-          easing: 'easeOutQuart',
-          translateY: {
-            value: 10,
-          },
-          duration: 500,
-        });
+    let animation = null;
+    if (!visibleMenu) {
+      this.setState({ visibleMenu: true }, () => {
+        animation = anime
+          .timeline({ loop: false })
+          .add({
+            targets,
+            opacity: [0, 1],
+            easing: 'easeOutQuart',
+            translateY: {
+              value: 10,
+            },
+            zIndex: 100,
+            duration: 250,
+          });
+      });
     } else {
-      anime
+      animation = anime
         .timeline({ loop: false })
         .add({
           targets,
@@ -47,8 +49,10 @@ class Border extends PureComponent {
           translateY: {
             value: -10,
           },
-          duration: 500,
+          zIndex: -1,
+          duration: 250,
         });
+      animation.finished.then((this.toggleMenu));
     }
   }
 
@@ -72,25 +76,28 @@ class Border extends PureComponent {
   }
 
   renderMobile() {
+    const { visibleMenu } = this.state;
     return (
       <div className="zindex-100 col-md-12 d-block d-sm-none paddingleft-0">
-        <button type="button" id="menu-button" onClick={this.toggleMenu} onKeyDown={this.toggleMenu}>
+        <button type="button" id="menu-button" onClick={this.triggerMenuAnimation} onKeyDown={this.triggerMenuAnimation}>
           <h5 className="toggle menuhead">
             <span className="title">Anson Li</span>
             <div className="hamburger-menu">&#9776;</div>
           </h5>
         </button>
-        <div className="dropdown">
-          <h5>
-            <ul className="menu">
-              <li><a className="strikethrough menulink" href="/">Home</a></li>
-              <li><a className="strikethrough menulink" href="resume">Resume</a></li>
-              <li><a className="strikethrough menulink" href="work">Work</a></li>
-              <li><a className="strikethrough menulink" href="contact">Contact</a></li>
-              <li><a className="strikethrough menulink project" href="projects">Projects</a></li>
-            </ul>
-          </h5>
-        </div>
+        { visibleMenu ? (
+          <div className="dropdown">
+            <h5>
+              <ul className="menu">
+                <li><a className="strikethrough menulink" href="/">Home</a></li>
+                <li><a className="strikethrough menulink" href="resume">Resume</a></li>
+                <li><a className="strikethrough menulink" href="work">Work</a></li>
+                <li><a className="strikethrough menulink" href="contact">Contact</a></li>
+                <li><a className="strikethrough menulink project" href="projects">Projects</a></li>
+              </ul>
+            </h5>
+          </div>
+        ) : null }
       </div>
     );
   }
