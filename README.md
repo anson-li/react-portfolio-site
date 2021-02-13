@@ -15,4 +15,4 @@ And many other technologies to come.
 
 Built over 5 years with ❤️.
 
-Let's chat! Email me at hello@ansonli.ca.
+Let's chat! Email me at hello@anson.li.

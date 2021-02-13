@@ -41,7 +41,7 @@ class MainText extends PureComponent {
         </div>
         <div className="col-md-12 fixed-bottom">
           <p className="item">
-            <span className="serif wow fadeIn d-none d-lg-block" data-wow-duration="1s" data-wow-delay="0.5s">hello@ansonli.ca</span>
+            <span className="serif wow fadeIn d-none d-lg-block" data-wow-duration="1s" data-wow-delay="0.5s">hello@anson.li</span>
           </p>
         </div>
       </div>
