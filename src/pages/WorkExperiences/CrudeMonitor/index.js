@@ -138,15 +138,17 @@ class CrudeMonitor extends PureComponent {
             </p>
           </Col>
           <Col data-wow-delay="1s">
-            <span className="b">TECHNOLOGY ++</span>
-            <br />
-            <br />
-            PHP
-            <br />
-            HTML . CSS . JS
-            <br />
-            d3.js
-            <br />
+            <p className="center-sm paddingtop-0">
+              <span className="b">TECHNOLOGY ++</span>
+              <br />
+              <br />
+              PHP
+              <br />
+              HTML . CSS . JS
+              <br />
+              d3.js
+              <br />
+            </p>
           </Col>
         </Row>
       </Container>
