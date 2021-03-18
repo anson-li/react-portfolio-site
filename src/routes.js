@@ -4,8 +4,6 @@ import Resume from './pages/Resume';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
 
-import Jellicent from './pages/ProjectList/Jellicent';
-
 import Questionmark from './pages/WorkExperiences/Questionmark';
 import CrudeMonitor from './pages/WorkExperiences/CrudeMonitor';
 import AlbertaMES from './pages/WorkExperiences/AlbertaMES';
@@ -38,13 +36,6 @@ export default [
     Component: Projects,
     path: {
       path: '/projects',
-    },
-  },
-  {
-    key: 'jellicent',
-    Component: Jellicent,
-    path: {
-      path: '/jellicent',
     },
   },
   {

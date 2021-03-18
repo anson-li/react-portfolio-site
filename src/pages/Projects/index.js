@@ -12,7 +12,7 @@ import './style.scss';
 
 import DefaultBackground from '../../web/assets/projects/default.jpg';
 import FlightBackground from '../../web/assets/projects/flight.jpg';
-import JellicentBackground from '../../web/assets/projects/jellicent.jpg';
+import AWEBackground from '../../web/assets/projects/jellicent.jpg';
 import LTIBackground from '../../web/assets/projects/lti.jpg';
 import UnleashedBackground from '../../web/assets/projects/unleashedbot.jpg';
 import SSCTEBackground from '../../web/assets/projects/sscte.jpg';
@@ -30,7 +30,7 @@ class Projects extends PureComponent {
     this.imageCount = 7;
     this.imagesLoaded = 0;
 
-    this.jellicent = React.createRef();
+    this.awe = React.createRef();
     this.flight = React.createRef();
     this.unleashed = React.createRef();
     this.lti = React.createRef();
@@ -39,13 +39,14 @@ class Projects extends PureComponent {
     this.sscte = React.createRef();
 
     this.projects = [
-      { image: JellicentBackground,
-        title: 'Jellicent',
+      {
+        image: AWEBackground,
+        title: 'Web Experiments',
         description: 'three.js / react / exploration in web & 3D space',
-        internalLink: '/jellicent',
-        externalLink: undefined,
+        internalLink: undefined,
+        externalLink: 'https://awe.ansonli.ca',
         date: 'January 2020',
-        ref: this.jellicent,
+        ref: this.awe,
       },
       {
         image: FlightBackground,
@@ -106,7 +107,7 @@ class Projects extends PureComponent {
 
   componentDidMount() {
     [
-      DefaultBackground, FlightBackground, JellicentBackground,
+      DefaultBackground, FlightBackground, AWEBackground,
       LTIBackground, UnleashedBackground, SSCTEBackground,
       DailyUIBackground, TeamAquaBackground,
     ].forEach((picture) => {
