@@ -44,7 +44,7 @@ class Projects extends PureComponent {
         title: 'Web Experiments',
         description: 'three.js / react / exploration in web & 3D space',
         internalLink: undefined,
-        externalLink: 'https://awe.ansonli.ca',
+        externalLink: 'https://awe.anson.li',
         date: 'January 2020',
         ref: this.awe,
       },

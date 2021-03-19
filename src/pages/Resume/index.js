@@ -86,14 +86,15 @@ class Resume extends PureComponent {
                         technologies, and a strong suite of supplementary languages.
                         Strong background in team management and support with hands-on
                         experience in project development and management.
+                        <br />
                         <TextList
                           id="overview"
                           items={[
-                            '5 years combined project and software experience in full-stack development',
+                            '6+ years combined project and software experience in full-stack development',
                             'Experience in project management and agile development methods with startups and established business solution'
                             + ' providers; projects ranged from $2k - $3m',
                             'Knowledgeable of asset management, code quality, and code security',
-                            'Proven ability to work in multidisciplinary teams of 4 - 30 members to meet project deliverables and deadlines',
+                            'Passion for learning and adapting to new technologies to produce professional-level code.',
                           ]}
                         />
                       </p>
@@ -137,10 +138,10 @@ class Resume extends PureComponent {
                         <TextList
                           id="atb"
                           items={[
-                            'Developed team member tools for ATB, which was used by ATB team members across the province.',
+                            'Developed a suite of team member tools for ATB, which was used by ATB team members across the province.',
                             'Created support tools for development, including Google chatbots used for emergency coordination and management',
-                            'Member of the Front End CoE team within ATB, which led several initiatives including the development of organization-wide best practices',
-                            'Assisted in migration of key software across various systems',
+                            'Supported the team through infrastructure and architectural research, leading to the implementation and integration of new technologies including Google Calendar API',
+                            'Assisted in migration of key software across various systems as well as pipeline infrastructure development',
                           ]}
                         />
                         <br />
@@ -152,10 +153,10 @@ class Resume extends PureComponent {
                         <TextList
                           id="questionmark-intermediate"
                           items={[
-                            'Led a team of eight team members on developing Questionmark\'s central platform, which is used by clients totaling in excess of $1MM.',
-                            'Created and maintained a variety of products and tools, in coordination with other teams as scrum master.',
-                            'Lead planning and design of critical features, of which directly resulted in revenue in excess of $200,000.',
-                            'Worked with the community to identify Learning Tool Interoperability framework improvements.',
+                            'Led a team of eight team members on developing Questionmark\'s central platform, which is used by clients totaling in excess of $1MM',
+                            'Created and maintained a variety of products and tools, in coordination with other teams as scrum master',
+                            'Lead planning and design of critical features, of which directly resulted in revenue in excess of $200,000',
+                            'Worked with the community to identify Learning Tool Interoperability framework improvements',
                           ]}
                         />
                         <br />
@@ -210,6 +211,65 @@ class Resume extends PureComponent {
                     <TextHeader text="Software Experience" />
                     <TextBody>
                       <p>
+                        <b>React</b>
+                        <TextList
+                          id="frontend"
+                          items={[
+                            '3+ years of experience of building both professional web applications and personal sites',
+                            'Converted personal portfolio to React over the course of several months',
+                            'Oversaw React development as part of the Front-End Center of Excellence team within ATB',
+                          ]}
+                        />
+                        <br />
+                        <b>Additional Front‐End Development</b>
+                        <TextList
+                          id="frontend"
+                          items={[
+                            'Developed and sold various websites for customers with a variety of tools, including PHP and Javascript',
+                            'Oversaw development of corporate websites for companies including Enerfest Inc. and CQI',
+                            'Designed and created various experimental web projects using tools including three.js and GSAP',
+                          ]}
+                        />
+                        <br />
+                        <b>Full Stack Development</b>
+                        <TextList
+                          id="fullstack"
+                          items={[
+                            'Developed AlbertaMES in MEAN, a heuristics‐driven web application for environmental models',
+                            'Developed CrudeMonitor in LAMP, a data management and analytics tool for Canadian crude oil',
+                            'Worked on Team Member Tools as part of ATB\'s initiative, using React and node.js',
+                          ]}
+                        />
+                        <br />
+                        <b>Back‐End Development</b>
+                        <TextList
+                          id="backend"
+                          items={[
+                            'Developed backend structures and integrated them for AlbertaMES',
+                            'Worked with different database implementation methods such as Heroku and BerkeleyDB',
+                          ]}
+                        />
+                        <br />
+                        <b>Python &amp; Google Chatbots</b>
+                        <TextList
+                          id="python"
+                          items={[
+                            'Develop various work support tools using Python and Google App Engine',
+                            'Examples of tools createed include: live issue tracker, GCP outage tracker, Merge Request tracker, Google Chat threadsaver',
+                          ]}
+                        />
+                        <br />
+                        <b>CI/CD</b>
+                        <TextList
+                          id="cicd"
+                          items={[
+                            'Supported project migration to true CI/CD through process development & documentation',
+                            'Designed and built a new process flow for integrating live, cross-environment feature toggles to support true CI/CD',
+                            'Led various deployments as part of the CI/CD process; working with developers, managers, and clients',
+                            'Used Kubernetes and GCP web tools to analyse system health and diagnose errors',
+                          ]}
+                        />
+                        <br />
                         <b>C Programming</b>
                         <TextList
                           id="cprog"
@@ -236,36 +296,6 @@ class Resume extends PureComponent {
                           ]}
                         />
                         <br />
-                        <b>Full Stack Development</b>
-                        <TextList
-                          id="fullstack"
-                          items={[
-                            'Developed AlbertaMES in MEAN, a heuristics‐driven web application for environmental models',
-                            'Developed CrudeMonitor in LAMP, a data management and analytics tool for Canadian crude oil',
-                            'Worked on Team Member Tools as part of ATB\'s initiative, using React and node.js',
-                          ]}
-                        />
-                        <br />
-                        <b>Front‐End Development</b>
-                        <TextList
-                          id="frontend"
-                          items={[
-                            'Developed and sold various websites for customers',
-                            'Oversaw development of corporate websites for companies including Enerfest Inc.',
-                            'Developed various web applications for ATB Financial Ltd.',
-                            'Produced various experimental web projects using tools including three.js',
-                          ]}
-                        />
-                        <br />
-                        <b>Back‐End Development</b>
-                        <TextList
-                          id="backend"
-                          items={[
-                            'Developed backend structures and integrated them for AlbertaMES',
-                            'Worked with different database implementation methods such as Heroku and BerkeleyDB',
-                          ]}
-                        />
-                        <br />
                         <b>Other Work</b>
                         <TextList
                           id="other"
@@ -274,7 +304,8 @@ class Resume extends PureComponent {
                             'Developed using multiple OSes, including Ubuntu, OSX and Windows',
                             'Worked with various graphics and photo editing software including Photoshop and Sketch',
                             'Developed with other languages and frameworks such as Python and ASP.net',
-                            'Implemented other technologies including Github, Sublime Text 3 and Eclipse',
+                            'Experienced in various version control systems, including Git and Subversion',
+                            'Worked with tools including Visual Studio Code, Eclipse and Postman',
                           ]}
                         />
                       </p>
