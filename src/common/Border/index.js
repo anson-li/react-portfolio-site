@@ -68,7 +68,7 @@ class Border extends PureComponent {
               <Link to="/work" className="strikethrough top-item">Work</Link>
               <Link to="/contact" className="strikethrough top-item">Contact</Link>
               <Link to="/projects" className="strikethrough top-item">Projects</Link>
-              <a href="http://awe.anson.li" className="strikethrough project">Experiments</a>
+              <a href="https://awe.anson.li" className="strikethrough project">Experiments</a>
             </h5>
           </div>
         </div>
@@ -95,7 +95,7 @@ class Border extends PureComponent {
                 <li><a className="strikethrough menulink" href="work">Work</a></li>
                 <li><a className="strikethrough menulink" href="contact">Contact</a></li>
                 <li><a className="strikethrough menulink" href="projects">Projects</a></li>
-                <li><a className="strikethrough menulink project" href="http://awe.anson.li">Experiments</a></li>
+                <li><a className="strikethrough menulink project" href="https://awe.anson.li">Experiments</a></li>
               </ul>
             </h5>
           </div>
