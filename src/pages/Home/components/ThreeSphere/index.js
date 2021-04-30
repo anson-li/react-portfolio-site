@@ -115,7 +115,7 @@ class ThreeSphere extends PureComponent {
     this.geometry = new THREE.Geometry();
     this.particles = [];
 
-    for (let i = 0; i < 100; i += 1) {
+    for (let index = 0; index < 100; index += 1) {
       this.particle = new THREE.Sprite(this.material);
       this.particle.position.x = Math.random() * 3 - 1;
       this.particle.position.y = Math.random() * 2 - 1;

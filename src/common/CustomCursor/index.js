@@ -35,7 +35,7 @@ class CustomCursor extends PureComponent {
     });
   }
 
-  hoverFunc (event) {
+  hoverFunc () {
     TweenLite.to(this.circle, 0.3, {
       opacity: 1,
       scale: 0,
@@ -46,7 +46,7 @@ class CustomCursor extends PureComponent {
     });
   }
 
-  unhoverFunc (event) {
+  unhoverFunc () {
     TweenLite.to(this.circle, 0.3, {
       opacity: 1,
       scale: 1,

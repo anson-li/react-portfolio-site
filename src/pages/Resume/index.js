@@ -151,7 +151,8 @@ class Resume extends PureComponent {
                           items={[
                             'Developed a suite of team member tools for ATB, which was used by ATB team members across the province.',
                             'Created support tools for development, including Google chatbots used for emergency coordination and management',
-                            'Supported the team through infrastructure and architectural research, leading to the implementation and integration of new technologies including Google Calendar API',
+                            'Supported the team through infrastructure and architectural research, ' +
+                              'leading to the implementation and integration of new technologies including Google Calendar API',
                             'Assisted in migration of key software across various systems as well as pipeline infrastructure development',
                           ]}
                         />
@@ -164,7 +165,8 @@ class Resume extends PureComponent {
                         <TextList
                           id='questionmark-intermediate'
                           items={[
-                            'Led a team of eight team members on developing Questionmark\'s central platform, which is used by clients totaling in excess of $1MM',
+                            'Led a team of eight team members on developing Questionmark\'s central platform, ' +
+                              'which is used by clients totaling in excess of $1MM',
                             'Created and maintained a variety of products and tools, in coordination with other teams as scrum master',
                             'Lead planning and design of critical features, of which directly resulted in revenue in excess of $200,000',
                             'Worked with the community to identify Learning Tool Interoperability framework improvements',
@@ -209,7 +211,8 @@ class Resume extends PureComponent {
                         <TextList
                           id='aeap'
                           items={[
-                            'Developed heuristics-based environmental model identification system to reduce complexity in selection and implementation of popular environmental models in Canada',
+                            'Developed heuristics-based environmental model identification system to reduce' +
+                              'complexity in selection and implementation of popular environmental models in Canada',
                             'Engaged in full-stack development to design and develop key systems in PHP',
                             'Served as technical reference for both web technologies and ArcGIS for development team',
                           ]}

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import {
   Route, BrowserRouter,
 } from 'react-router-dom';

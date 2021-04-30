@@ -8,15 +8,6 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 class SmoothScroll extends React.Component {
-  ro = new ResizeObserver((elements) => {
-    for (const elem of elements) {
-      const crx = elem.contentRect;
-      this.setState({
-        height: crx.height,
-      });
-    }
-  });
-
   constructor (props) {
     super(props);
     this.state = {
@@ -42,6 +33,15 @@ class SmoothScroll extends React.Component {
     window.removeEventListener('scroll', this.onScroll);
     this.ro.disconnect();
   }
+
+  ro = new ResizeObserver((elements) => {
+    for (const elem of elements) {
+      const crx = elem.contentRect;
+      this.setState({
+        height: crx.height,
+      });
+    }
+  });
 
   onScroll = () => {
     TweenLite.to(this.viewport, 1, {

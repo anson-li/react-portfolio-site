@@ -1,4 +1,3 @@
-/* eslint-disable no-return-assign */
 import anime from 'animejs';
 import React, {
   PureComponent,

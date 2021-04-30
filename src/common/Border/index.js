@@ -15,7 +15,7 @@ class Border extends PureComponent {
     this.renderStandard = this.renderStandard.bind(this);
     this.renderMobile = this.renderMobile.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
-    this.triggerMenuAnimation = this.triggerMenuAnimation.bind(this);
+    this.handleMenuAnimation = this.handleMenuAnimation.bind(this);
   }
 
   toggleMenu () {
@@ -26,11 +26,12 @@ class Border extends PureComponent {
     });
   }
 
-  triggerMenuAnimation () {
+  handleMenuAnimation () {
     const targets = '.menu';
     const {visibleMenu} = this.state;
+    const hiddenMenu = !visibleMenu;
     let animation = null;
-    if (!visibleMenu) {
+    if (hiddenMenu) {
       this.setState({visibleMenu: true}, () => {
         animation = anime
           .timeline({loop: false})
@@ -87,7 +88,7 @@ class Border extends PureComponent {
 
     return (
       <div className='zindex-100 col-md-12 d-block d-sm-none paddingleft-0'>
-        <button id='menu-button' onClick={this.triggerMenuAnimation} onKeyDown={this.triggerMenuAnimation} type='button'>
+        <button id='menu-button' onClick={this.handleMenuAnimation} onKeyDown={this.handleMenuAnimation} type='button'>
           <h5 className='toggle menuhead'>
             <span className='title'>Anson Li</span>
             <div className='hamburger-menu'>&#9776;</div>
