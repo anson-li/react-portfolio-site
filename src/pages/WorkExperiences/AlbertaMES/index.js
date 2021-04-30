@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 import BackgroundAlbertaMES from '../../../web/assets/background/bg-albertames.png';
 import WorkTemplate from '../common/WorkTemplate';
-import withTransition from '../../../common/WithTransition';
+import WithTransition from '../../../common/WithTransition';
 import SmoothScroll from '../../../common/SmoothScroll';
 
 class AlbertaMES extends PureComponent {
@@ -197,8 +197,8 @@ class AlbertaMES extends PureComponent {
 
     return (
       <SmoothScroll>
-        <div ref={(e) => {
-          this.el = e;
+        <div ref={(element) => {
+          this.el = element;
         }}>
           <WorkTemplate
             background={BackgroundAlbertaMES}
@@ -219,4 +219,4 @@ AlbertaMES.propTypes = {
   showLoader: PropTypes.func.isRequired,
 };
 
-export default withTransition(AlbertaMES);
+export default WithTransition(AlbertaMES);

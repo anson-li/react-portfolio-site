@@ -12,7 +12,7 @@ import CrudeMonitorPanel from '../../web/assets/panel/panel-crudemonitor.png';
 import QuestionmarkPanel from '../../web/assets/panel/panel-questionmark.png';
 import ATBFinancialPanel from '../../web/assets/panel/panel-atbfinancial.png';
 
-import withTransition from '../../common/WithTransition';
+import WithTransition from '../../common/WithTransition';
 import WorkTemplate from './common/WorkTemplate';
 import SmoothScroll from '../../common/SmoothScroll';
 import BackgroundImage from '../../common/BackgroundImage';
@@ -76,8 +76,8 @@ class WorkList extends PureComponent {
     return (
       <SmoothScroll>
         <div
-          id='scroll-page' ref={(e) => {
-            this.el = e;
+          id='scroll-page' ref={(element) => {
+            this.el = element;
           }}>
           <div className='fixed-wrapper' id='fixed-wrapper'>
             <div className='main-container'>
@@ -175,4 +175,4 @@ WorkList.propTypes = {
   showLoader: PropTypes.func.isRequired,
 };
 
-export default withTransition(WorkList);
+export default WithTransition(WorkList);

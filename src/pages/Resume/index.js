@@ -17,7 +17,7 @@ import TextHeader from './common/TextHeader';
 import TextBody from './common/TextBody';
 import TextList from './common/TextList';
 
-import withTransition from '../../common/WithTransition';
+import WithTransition from '../../common/WithTransition';
 import SmoothScroll from '../../common/SmoothScroll';
 import BackgroundImage from '../../common/BackgroundImage';
 
@@ -67,8 +67,8 @@ class Resume extends PureComponent {
     return (
       <SmoothScroll>
         <div
-          id='scroll-page' ref={(e) => {
-            this.el = e;
+          id='scroll-page' ref={(element) => {
+            this.el = element;
           }}>
           <div className='fixed-wrapper' id='fixed-wrapper'>
             <div className='main-container'>
@@ -341,4 +341,4 @@ Resume.propTypes = {
   showLoader: PropTypes.func.isRequired,
 };
 
-export default withTransition(Resume);
+export default WithTransition(Resume);

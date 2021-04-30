@@ -14,6 +14,9 @@
     "promise",
     "sort-keys-fix"
   ],
+  "env": {
+    "browser": true
+  },
   // "ignorePatterns": ["*.js"], // Disables tests run for emergency builds! 
   "rules": {
     "react-hooks/exhaustive-deps": 1,

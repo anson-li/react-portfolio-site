@@ -9,7 +9,7 @@ import Background from '../../common/Background';
 import ThreeSphere from './components/ThreeSphere';
 import MainText from './components/MainText';
 
-import withTransition from '../../common/WithTransition';
+import WithTransition from '../../common/WithTransition';
 
 class Home extends PureComponent {
   hidePage () {
@@ -52,8 +52,8 @@ class Home extends PureComponent {
 
     return (
       <div
-        id='main-page' ref={(e) => {
-          this.el = e;
+        id='main-page' ref={(element) => {
+          this.el = element;
         }}>
         <Background />
         <div className='fixed'>
@@ -73,4 +73,4 @@ Home.propTypes = {
   showLoader: PropTypes.func.isRequired,
 };
 
-export default withTransition(Home);
+export default WithTransition(Home);

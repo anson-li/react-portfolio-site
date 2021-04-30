@@ -10,7 +10,7 @@ import {
 } from 'gsap/TextPlugin';
 import PropTypes from 'prop-types';
 
-import withTransition from '../../common/WithTransition';
+import WithTransition from '../../common/WithTransition';
 
 import BannerLink from './common/BannerLink';
 import SmoothScroll from '../../common/SmoothScroll';
@@ -121,9 +121,7 @@ class Projects extends PureComponent {
       SSCTEBackground,
       DailyUIBackground,
       TeamAquaBackground,
-    ].forEach((picture) => {
-      const img = new Image();
-      img.src = picture.fileName;
+    ].forEach(() => {
       this.countImagesLoaded();
     });
 
@@ -142,7 +140,7 @@ class Projects extends PureComponent {
       // zIndex: 1,
       opacity: 1,
     });
-    if (this.prevRef && this.prevRef != ref.current) {
+    if (this.prevRef && this.prevRef !== ref.current) {
       TweenLite.to(this.prevRef, 1, {
         // zIndex: 0,
         opacity: 0,
@@ -208,6 +206,7 @@ class Projects extends PureComponent {
       return <img
         alt='Project background'
         className='box-image-background'
+        key={project.title}
         ref={project.ref}
         src={project.image}
       />;
@@ -221,6 +220,7 @@ class Projects extends PureComponent {
         hideDescription={this.hideDescription}
         imageref={project.ref}
         internalLink={project.internalLink}
+        key={project.title}
         showDescription={this.showDescription}
         title={project.title}
       />;
@@ -229,8 +229,8 @@ class Projects extends PureComponent {
     return (
       <SmoothScroll>
         <div
-          id='scroll-page' ref={(e) => {
-            this.el = e;
+          id='scroll-page' ref={(element) => {
+            this.el = element;
           }}>
           <div className='fixed-wrapper' id='fixed-wrapper'>
             <div className='main-container'>
@@ -240,13 +240,13 @@ class Projects extends PureComponent {
                     <div className='col-lg-12 d-xl-none' style={{padding: '20%'}} />
                     <div className='col-xl-6 col-lg-12 d-none d-xl-block'>
                       <h3
-                        className='description' ref={(e) => {
-                          this.description = e;
+                        className='description' ref={(element) => {
+                          this.description = element;
                         }}>Web Projects</h3>
                       <div id='box-image'>
                         { renderImages }
                       </div>
-                      <div className='spacer-sm	d-xl-none' />
+                      <div className='spacer-sm d-xl-none' />
                     </div>
                     <div className='col-xl-6 col-lg-12'>
                       { renderProjects }
@@ -270,4 +270,4 @@ Projects.propTypes = {
   showLoader: PropTypes.func.isRequired,
 };
 
-export default withTransition(Projects);
+export default WithTransition(Projects);

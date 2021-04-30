@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 import BackgroundATBFinancial from '../../../web/assets/background/bg-atbfinancial.png';
 import WorkTemplate from '../common/WorkTemplate';
-import withTransition from '../../../common/WithTransition';
+import WithTransition from '../../../common/WithTransition';
 import SmoothScroll from '../../../common/SmoothScroll';
 
 class ATBFinancial extends PureComponent {
@@ -222,8 +222,8 @@ class ATBFinancial extends PureComponent {
 
     return (
       <SmoothScroll>
-        <div ref={(e) => {
-          this.el = e;
+        <div ref={(element) => {
+          this.el = element;
         }}>
           <WorkTemplate
             background={BackgroundATBFinancial}
@@ -244,4 +244,4 @@ ATBFinancial.propTypes = {
   showLoader: PropTypes.func.isRequired,
 };
 
-export default withTransition(ATBFinancial);
+export default WithTransition(ATBFinancial);

@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 import BackgroundQuestionmark from '../../../web/assets/background/bg-questionmark.png';
 import WorkTemplate from '../common/WorkTemplate';
-import withTransition from '../../../common/WithTransition';
+import WithTransition from '../../../common/WithTransition';
 import SmoothScroll from '../../../common/SmoothScroll';
 
 class Questionmark extends PureComponent {
@@ -180,8 +180,8 @@ class Questionmark extends PureComponent {
 
     return (
       <SmoothScroll>
-        <div ref={(e) => {
-          this.el = e;
+        <div ref={(element) => {
+          this.el = element;
         }}>
           <WorkTemplate
             background={BackgroundQuestionmark}
@@ -202,4 +202,4 @@ Questionmark.propTypes = {
   showLoader: PropTypes.func.isRequired,
 };
 
-export default withTransition(Questionmark);
+export default WithTransition(Questionmark);

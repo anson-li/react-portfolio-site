@@ -13,8 +13,8 @@ class FadeText extends PureComponent {
     anime
       .timeline({loop})
       .add({
-        delay: (el, i) => {
-          return base + iteration * i;
+        delay: (el, index) => {
+          return base + iteration * index;
         },
         duration: 2250,
         easing: 'easeOutExpo',
@@ -32,8 +32,8 @@ class FadeText extends PureComponent {
         id={id}
       >
         {
-          text.split('').map((v, index) => {
-            return <span className='letter' key={v.concat(index)}>{v}</span>;
+          text.split('').map((character, index) => {
+            return <span className='letter' key={character.concat(index)}>{character}</span>;
           })
         }
       </this.props.type>

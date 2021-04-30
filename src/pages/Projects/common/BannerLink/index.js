@@ -65,8 +65,8 @@ class BannerLink extends PureComponent {
             to={internalLink}
           >
             <span
-              className='project-span' ref={(e) => {
-                this.bannerlink = e;
+              className='project-span' ref={(element) => {
+                this.bannerlink = element;
               }}>
               <span className='project-description'>{title}</span>
               <span className='project-date'>{date}</span>
@@ -83,8 +83,8 @@ class BannerLink extends PureComponent {
             }}
           >
             <span
-              className='project-span' ref={(e) => {
-                this.bannerlink = e;
+              className='project-span' ref={(element) => {
+                this.bannerlink = element;
               }}>
               <span className='project-description'>{title}</span>
               <span className='project-date'>{date}</span>

@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 
 import BackgroundCrudeMonitor from '../../../web/assets/background/bg-oil.png';
 import WorkTemplate from '../common/WorkTemplate';
-import withTransition from '../../../common/WithTransition';
+import WithTransition from '../../../common/WithTransition';
 import SmoothScroll from '../../../common/SmoothScroll';
 
 class CrudeMonitor extends PureComponent {
@@ -194,8 +194,8 @@ class CrudeMonitor extends PureComponent {
 
     return (
       <SmoothScroll>
-        <div ref={(e) => {
-          this.el = e;
+        <div ref={(element) => {
+          this.el = element;
         }}>
           <WorkTemplate
             background={BackgroundCrudeMonitor}
@@ -216,4 +216,4 @@ CrudeMonitor.propTypes = {
   showLoader: PropTypes.func.isRequired,
 };
 
-export default withTransition(CrudeMonitor);
+export default WithTransition(CrudeMonitor);

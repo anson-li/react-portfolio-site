@@ -7,7 +7,7 @@ import {
   Transition,
 } from 'react-transition-group';
 
-export default function withTransition (WrappedComponent) {
+export default function WithTransition (WrappedComponent) {
   return class extends React.Component {
     handleAnimateIn (done) {
       if (typeof this.wrappedComponent.animateIn === 'function') {
@@ -70,8 +70,8 @@ export default function withTransition (WrappedComponent) {
           {(status) => {
             return (
               <WrappedComponent
-                ref={(e) => {
-                  this.wrappedComponent = e;
+                ref={(element) => {
+                  this.wrappedComponent = element;
                 }}
                 {...this.props}
                 transitionStatus={status}

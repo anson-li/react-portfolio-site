@@ -4,7 +4,7 @@ import React, {
 import anime from 'animejs';
 import PropTypes from 'prop-types';
 
-import withTransition from '../../common/WithTransition';
+import WithTransition from '../../common/WithTransition';
 
 import AnsonBackground from '../../web/assets/background/bg-anson.png';
 import LineBreak from '../../web/assets/line-break.png';
@@ -59,8 +59,8 @@ class Contact extends PureComponent {
     return (
       <SmoothScroll>
         <div
-          id='scroll-page' ref={(e) => {
-            this.el = e;
+          id='scroll-page' ref={(element) => {
+            this.el = element;
           }}>
           <div className='fixed-wrapper' id='fixed-wrapper'>
             <div className='main-container'>
@@ -136,4 +136,4 @@ Contact.propTypes = {
   showLoader: PropTypes.func.isRequired,
 };
 
-export default withTransition(Contact);
+export default WithTransition(Contact);
