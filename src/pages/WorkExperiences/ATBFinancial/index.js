@@ -1,5 +1,9 @@
-import React, { PureComponent } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import React, {
+  PureComponent,
+} from 'react';
+import {
+  Container, Row, Col,
+} from 'react-bootstrap';
 import anime from 'animejs';
 import PropTypes from 'prop-types';
 
@@ -9,7 +13,7 @@ import withTransition from '../../../common/WithTransition';
 import SmoothScroll from '../../../common/SmoothScroll';
 
 class ATBFinancial extends PureComponent {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.renderSkills = this.renderSkills.bind(this);
     this.renderProjectDescription = this.renderProjectDescription.bind(this);
@@ -17,55 +21,58 @@ class ATBFinancial extends PureComponent {
     this.renderReflections = this.renderReflections.bind(this);
   }
 
-  hidePage() {
+  hidePage () {
     anime.remove(this.el);
+
     return anime({
-      targets: this.el,
-      opacity: 0,
       duration: 0,
+      opacity: 0,
+      targets: this.el,
     }).finished;
   }
 
-  animateIn() {
+  animateIn () {
     anime.remove(this.el);
+
     return anime({
+      delay: 1000,
+      duration: 1000,
+      easing: 'easeOutExpo',
+      opacity: [0, 1],
       targets: this.el,
       translateY: [-100, 0],
-      opacity: [0, 1],
-      duration: 1000,
-      delay: 1000,
-      easing: 'easeOutExpo',
     }).finished;
   }
 
-  animateOut() {
+  animateOut () {
     anime.remove(this.el);
-    const { showLoader } = this.props;
+    const {showLoader} = this.props;
     showLoader();
+
     return anime({
+      duration: 1000,
+      easing: 'easeOutExpo',
+      opacity: 0,
       targets: this.el,
       translateY: -100,
-      opacity: 0,
-      duration: 1000,
-      easing: 'easeOutExpo',
     }).finished;
   }
 
-  renderSkills() {
+  renderSkills () {
     return (
       <Container>
         <Row>
-          <Col data-wow-delay="1s">
-            <p className="center-sm paddingtop-0">
-              <span className="b">ERA ++</span>
+          <Col data-wow-delay='1s'>
+            <p className='center-sm paddingtop-0'>
+              <span className='b'>ERA ++</span>
               <br />
               <br />
               2019 - Now
             </p>
           </Col>
-          <Col data-wow-delay="1s">
-            <p className="center-sm paddingtop-0">
-              <span className="b">SKILLS ++</span>
+          <Col data-wow-delay='1s'>
+            <p className='center-sm paddingtop-0'>
+              <span className='b'>SKILLS ++</span>
               <br />
               <br />
               Enterprise
@@ -75,9 +82,9 @@ class ATBFinancial extends PureComponent {
               Large Projects
             </p>
           </Col>
-          <Col data-wow-delay="1s">
-            <p className="center-sm paddingtop-0">
-              <span className="b">TECHNOLOGY ++</span>
+          <Col data-wow-delay='1s'>
+            <p className='center-sm paddingtop-0'>
+              <span className='b'>TECHNOLOGY ++</span>
               <br />
               <br />
               React
@@ -93,15 +100,15 @@ class ATBFinancial extends PureComponent {
     );
   }
 
-  renderProjectDescription() {
+  renderProjectDescription () {
     return (
-      <div className="col-md-12">
-        <div className="wow fadeIn">
-          <div className="col-md-12 no-padding">
-            <h3 className="center-sm paddingtop-0">The Project</h3>
+      <div className='col-md-12'>
+        <div className='wow fadeIn'>
+          <div className='col-md-12 no-padding'>
+            <h3 className='center-sm paddingtop-0'>The Project</h3>
             <br />
             <br />
-            <div className="col-md-6">
+            <div className='col-md-6'>
               <p>
                 I joined ATB as part of its transformation journey, which lead 3 years
                 of innovation, technology and discovery. During that journey, I was able to
@@ -114,7 +121,7 @@ class ATBFinancial extends PureComponent {
                 streamline and curate the perfect customer experience.
                 <br />
                 <br />
-                <a href="https://www.atb.com/personal/" className="btn">Take a peek</a>
+                <a className='btn' href='https://www.atb.com/personal/'>Take a peek</a>
               </p>
             </div>
           </div>
@@ -123,23 +130,23 @@ class ATBFinancial extends PureComponent {
     );
   }
 
-  renderProjectOverview() {
+  renderProjectOverview () {
     return (
-      <div className="col-md-12 no-padding">
-        <div className="wow fadeIn">
-          <h3 className="center-sm paddingtop-0">Overview</h3>
+      <div className='col-md-12 no-padding'>
+        <div className='wow fadeIn'>
+          <h3 className='center-sm paddingtop-0'>Overview</h3>
           <br />
           <br />
-          <div className="col-md-3">
-            <div className="box atb-blue"><p>#005EB8</p></div>
+          <div className='col-md-3'>
+            <div className='box atb-blue'><p>#005EB8</p></div>
             &nbsp;&nbsp;&nbsp;
-            <div className="box atb-blue-3"><p>#009BDE</p></div>
+            <div className='box atb-blue-3'><p>#009BDE</p></div>
             &nbsp;&nbsp;&nbsp;
-            <div className="box atb-blue-2"><p>#002385</p></div>
+            <div className='box atb-blue-2'><p>#002385</p></div>
           </div>
           <br />
           <br />
-          <div className="col-md-6">
+          <div className='col-md-6'>
             <p>
               Unleashed, as part of the Team Member Tools initiative, was built
               on top of a React front end, which was supported by node.js and an
@@ -163,14 +170,14 @@ class ATBFinancial extends PureComponent {
     );
   }
 
-  renderReflections() {
+  renderReflections () {
     return (
-      <div className="col-md-12 no-padding">
-        <div className="wow fadeIn">
-          <h3 className="center-sm paddingtop-0">Reflection</h3>
+      <div className='col-md-12 no-padding'>
+        <div className='wow fadeIn'>
+          <h3 className='center-sm paddingtop-0'>Reflection</h3>
           <br />
           <br />
-          <div className="col-md-6">
+          <div className='col-md-6'>
             <p>
               ATB Financial offered me a chance to hone my experience at a large
               enterprise, using larger systems and processes than I have ever worked on.
@@ -186,11 +193,11 @@ class ATBFinancial extends PureComponent {
               <br />
               ●&nbsp;ThreeJS with
               {' '}
-              <a className="project" href="https://github.com/anson-li/flight-to-financial-freedom">Flight to Financial Future</a>
+              <a className='project' href='https://github.com/anson-li/flight-to-financial-freedom'>Flight to Financial Future</a>
               <br />
               ●&nbsp;Google App Engine with
               {' '}
-              <a className="project" href="https://github.com/anson-li/google-bot-flask-template">various bots, including a MIO tracker and a support bot</a>
+              <a className='project' href='https://github.com/anson-li/google-bot-flask-template'>various bots, including a MIO tracker and a support bot</a>
               <br />
               ●&nbsp;Various NoSQL database solutions including Google Firestore
               <br />
@@ -205,23 +212,26 @@ class ATBFinancial extends PureComponent {
     );
   }
 
-  render() {
+  render () {
     const sections = [];
     sections[0] = this.renderSkills();
     sections[1] = this.renderProjectDescription();
     sections[2] = this.renderProjectOverview();
     sections[3] = this.renderReflections();
-    const { hideLoader } = this.props;
+    const {hideLoader} = this.props;
+
     return (
       <SmoothScroll>
-        <div ref={(e) => { this.el = e; }}>
+        <div ref={(e) => {
+          this.el = e;
+        }}>
           <WorkTemplate
             background={BackgroundATBFinancial}
-            title="ATB Financial"
-            section={sections}
-            nextTitle="Questionmark"
-            nextURL="/questionmark"
             hideLoader={hideLoader}
+            nextTitle='Questionmark'
+            nextURL='/questionmark'
+            section={sections}
+            title='ATB Financial'
           />
         </div>
       </SmoothScroll>
@@ -230,8 +240,8 @@ class ATBFinancial extends PureComponent {
 }
 
 ATBFinancial.propTypes = {
-  showLoader: PropTypes.func.isRequired,
   hideLoader: PropTypes.func.isRequired,
+  showLoader: PropTypes.func.isRequired,
 };
 
 export default withTransition(ATBFinancial);

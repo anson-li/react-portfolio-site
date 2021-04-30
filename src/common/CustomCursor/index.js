@@ -1,10 +1,14 @@
-import React, { PureComponent } from 'react';
-import { TweenLite } from 'gsap';
+import React, {
+  PureComponent,
+} from 'react';
+import {
+  TweenLite,
+} from 'gsap';
 
 import './style.scss';
 
 class CustomCursor extends PureComponent {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.moveCircle = this.moveCircle.bind(this);
     this.hoverFunc = this.hoverFunc.bind(this);
@@ -13,14 +17,14 @@ class CustomCursor extends PureComponent {
     this.followTween = null;
   }
 
-  componentDidMount() {
+  componentDidMount () {
     window.addEventListener('mousemove', this.moveCircle);
     window.addEventListener('scroll', this.onScroll);
     window.addEventListener('onmouseover', this.hoverFunc);
     window.addEventListener('onmouseout', this.unhoverFunc);
   }
 
-  moveCircle(e) {
+  moveCircle (e) {
     TweenLite.to(this.circle, 0.2, {
       x: e.x,
       y: e.y,
@@ -31,29 +35,29 @@ class CustomCursor extends PureComponent {
     });
   }
 
-  hoverFunc(e) {
+  hoverFunc (e) {
     TweenLite.to(this.circle, 0.3, {
       opacity: 1,
       scale: 0,
     });
     TweenLite.to(this.follow, 0.3, {
-      scale: 2,
       borderColor: '#ffd5a8',
+      scale: 2,
     });
   }
 
-  unhoverFunc(e) {
+  unhoverFunc (e) {
     TweenLite.to(this.circle, 0.3, {
       opacity: 1,
       scale: 1,
     });
     TweenLite.to(this.follow, 0.3, {
-      scale: 1,
       borderColor: '#FFFFFF',
+      scale: 1,
     });
   }
 
-  onScroll(e) {
+  onScroll (e) {
     TweenLite.to(this.circle, 0.2, {
       x: e.x,
       y: e.y,
@@ -64,11 +68,17 @@ class CustomCursor extends PureComponent {
     });
   }
 
-  render() {
+  render () {
     return (
       <>
-        <div className="cursor-circle" ref={(ref) => { this.circle = ref; }} />
-        <div className="cursor-circle-follow" ref={(ref) => { this.follow = ref; }} />
+        <div
+          className='cursor-circle' ref={(ref) => {
+            this.circle = ref;
+          }} />
+        <div
+          className='cursor-circle-follow' ref={(ref) => {
+            this.follow = ref;
+          }} />
       </>
     );
   }

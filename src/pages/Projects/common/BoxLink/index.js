@@ -1,35 +1,36 @@
-import React, { PureComponent } from 'react';
-import { Link } from 'react-router-dom';
+import React, {
+  PureComponent,
+} from 'react';
+import {
+  Link,
+} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class BoxLink extends PureComponent {
-  render() {
+  render () {
     const {
       internalLink, externalLink,
     } = this.props;
+
     return (
       <>
-        { internalLink
-        && (
-          <Link to={internalLink} href={internalLink} className="btn">View case study</Link>
-        )}
-        { externalLink
-        && (
-          <a href={externalLink} className="btn">View case study</a>
-        )}
+        { internalLink &&
+          <Link className='btn' href={internalLink} to={internalLink}>View case study</Link>}
+        { externalLink &&
+          <a className='btn' href={externalLink}>View case study</a>}
       </>
     );
   }
 }
 
 BoxLink.propTypes = {
-  internalLink: PropTypes.string,
   externalLink: PropTypes.string,
+  internalLink: PropTypes.string,
 };
 
 BoxLink.defaultProps = {
-  internalLink: null,
   externalLink: null,
+  internalLink: null,
 };
 
 export default BoxLink;

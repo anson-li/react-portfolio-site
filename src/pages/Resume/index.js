@@ -1,5 +1,9 @@
-import React, { PureComponent } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import React, {
+  PureComponent,
+} from 'react';
+import {
+  Container, Row, Col,
+} from 'react-bootstrap';
 import anime from 'animejs';
 import PropTypes from 'prop-types';
 
@@ -20,66 +24,73 @@ import BackgroundImage from '../../common/BackgroundImage';
 import './style.scss';
 
 class Resume extends PureComponent {
-  hidePage() {
+  hidePage () {
     anime.remove(this.el);
+
     return anime({
-      targets: this.el,
-      opacity: 0,
       duration: 0,
+      opacity: 0,
+      targets: this.el,
     }).finished;
   }
 
-  animateIn() {
+  animateIn () {
     anime.remove(this.el);
+
     return anime({
+      delay: 1000,
+      duration: 1000,
+      easing: 'easeOutExpo',
+      opacity: [0, 1],
       targets: this.el,
       translateY: [-100, 0],
-      opacity: [0, 1],
-      duration: 1000,
-      delay: 1000,
-      easing: 'easeOutExpo',
     }).finished;
   }
 
-  animateOut() {
+  animateOut () {
     anime.remove(this.el);
-    const { showLoader } = this.props;
+    const {showLoader} = this.props;
     showLoader();
+
     return anime({
+      duration: 1000,
+      easing: 'easeOutExpo',
+      opacity: 0,
       targets: this.el,
       translateY: -100,
-      opacity: 0,
-      duration: 1000,
-      easing: 'easeOutExpo',
     }).finished;
   }
 
-  render() {
-    const { hideLoader } = this.props;
+  render () {
+    const {hideLoader} = this.props;
+
     return (
       <SmoothScroll>
-        <div id="scroll-page" ref={(e) => { this.el = e; }}>
-          <div id="fixed-wrapper" className="fixed-wrapper">
-            <div className="main-container">
-              <div id="scrollContainer" className="flex-container container ">
-                <div className="hide-under col-md-12 left-top">
+        <div
+          id='scroll-page' ref={(e) => {
+            this.el = e;
+          }}>
+          <div className='fixed-wrapper' id='fixed-wrapper'>
+            <div className='main-container'>
+              <div className='flex-container container ' id='scrollContainer'>
+                <div className='hide-under col-md-12 left-top'>
                   <BackgroundImage
-                    src={AlbertaBackground}
-                    alt="Background showing Alberta"
                     afterLoad={hideLoader}
+                    alt='Background showing Alberta'
+                    src={AlbertaBackground}
                   />
-                  <div className="center-sm">
-                    <h2 className="scroll-title">
+                  <div className='center-sm'>
+                    <h2 className='scroll-title'>
                       Anson Li
-                      <a href={ResumePDF} download="resume_ansonli.pdf"><img className="download-img" src={DownloadIcon} alt="Download the resume" /></a>
+                      <a download='resume_ansonli.pdf' href={ResumePDF}><img alt='Download the resume' className='download-img' src={DownloadIcon} /></a>
                     </h2>
-                    <div className="col-md-12">
-                      <img className="line-break" src={LineBreak} alt="Line separator" />
+                    <div className='col-md-12'>
+                      <img alt='Line separator' className='line-break' src={LineBreak} />
                     </div>
                   </div>
 
                   <TextSection animated={false}>
-                    <TextHeader text="Overview" />
+                    <TextHeader text='Overview' />
                     <TextBody>
                       <p>
                         Versatile software engineer with solid experience in full-stack
@@ -88,11 +99,11 @@ class Resume extends PureComponent {
                         experience in project development and management.
                         <br />
                         <TextList
-                          id="overview"
+                          id='overview'
                           items={[
                             '6+ years combined project and software experience in full-stack development',
-                            'Experience in project management and agile development methods with startups and established business solution'
-                            + ' providers; projects ranged from $2k - $3m',
+                            'Experience in project management and agile development methods with startups and established business solution' +
+                            ' providers; projects ranged from $2k - $3m',
                             'Knowledgeable of asset management, code quality, and code security',
                             'Passion for learning and adapting to new technologies to produce professional-level code.',
                           ]}
@@ -102,14 +113,14 @@ class Resume extends PureComponent {
                   </TextSection>
 
                   <TextSection animated={false}>
-                    <TextHeader text="Education" />
+                    <TextHeader text='Education' />
                     <TextBody>
                       <p>
                         BSc., Computer Engineering Cooperative Program, Software Option
                         University of Alberta - Edmonton, AB
                         Completion Date: April 2017
                         <TextList
-                          id="education"
+                          id='education'
                           items={[
                             'Key Electives: Software Quality, Reliable and Secure Systems Design',
                             'Capstone Design Project: Social Web Platform with Stockers Financial Ltd.',
@@ -119,16 +130,16 @@ class Resume extends PureComponent {
                       <br />
                       <Container>
                         <Row>
-                          <Col data-wow-delay="0.5s"><p>University of Alberta Entrance Scholarship</p></Col>
-                          <Col data-wow-delay="1s"><p>Alexander Rutherford Scholarship</p></Col>
-                          <Col data-wow-delay="1.5s"><p>International Baccalaureate Certificate</p></Col>
+                          <Col data-wow-delay='0.5s'><p>University of Alberta Entrance Scholarship</p></Col>
+                          <Col data-wow-delay='1s'><p>Alexander Rutherford Scholarship</p></Col>
+                          <Col data-wow-delay='1.5s'><p>International Baccalaureate Certificate</p></Col>
                         </Row>
                       </Container>
                     </TextBody>
                   </TextSection>
 
                   <TextSection>
-                    <TextHeader text="Work Experience" />
+                    <TextHeader text='Work Experience' />
                     <TextBody>
                       <p>
                         <b>Software Engineer</b>
@@ -136,7 +147,7 @@ class Resume extends PureComponent {
                         <br />
                         February 2019 - Now
                         <TextList
-                          id="atb"
+                          id='atb'
                           items={[
                             'Developed a suite of team member tools for ATB, which was used by ATB team members across the province.',
                             'Created support tools for development, including Google chatbots used for emergency coordination and management',
@@ -151,7 +162,7 @@ class Resume extends PureComponent {
                         <br />
                         May 2017 ‐ December 2018
                         <TextList
-                          id="questionmark-intermediate"
+                          id='questionmark-intermediate'
                           items={[
                             'Led a team of eight team members on developing Questionmark\'s central platform, which is used by clients totaling in excess of $1MM',
                             'Created and maintained a variety of products and tools, in coordination with other teams as scrum master',
@@ -166,7 +177,7 @@ class Resume extends PureComponent {
                         <br />
                         September ‐ December 2016
                         <TextList
-                          id="questionmark-junior"
+                          id='questionmark-junior'
                           items={[
                             'Created a Learning Tools Interoperability tool for connecting Questionmark with major educational institutions',
                             'Completed 7 sprints  as part of a five-member team to integrate and upgrade core Questionmark products',
@@ -181,7 +192,7 @@ class Resume extends PureComponent {
                         <br />
                         May ‐ September 2016
                         <TextList
-                          id="cqi"
+                          id='cqi'
                           items={[
                             'Developed and redesigned Crude Monitor, CQI’s core software title, using LAMP stack (~$500k project)',
                             'Produced 30+ wireframes and prototypes to quickly communicate changes to product owners',
@@ -196,7 +207,7 @@ class Resume extends PureComponent {
                         <br />
                         January ‐ August 2015
                         <TextList
-                          id="aeap"
+                          id='aeap'
                           items={[
                             'Developed heuristics-based environmental model identification system to reduce complexity in selection and implementation of popular environmental models in Canada',
                             'Engaged in full-stack development to design and develop key systems in PHP',
@@ -207,13 +218,13 @@ class Resume extends PureComponent {
                     </TextBody>
                   </TextSection>
 
-                  <TextSection bottomSpacer={false} bottomPadding>
-                    <TextHeader text="Software Experience" />
+                  <TextSection bottomPadding bottomSpacer={false}>
+                    <TextHeader text='Software Experience' />
                     <TextBody>
                       <p>
                         <b>React</b>
                         <TextList
-                          id="frontend"
+                          id='frontend'
                           items={[
                             '3+ years of experience of building both professional web applications and personal sites',
                             'Converted personal portfolio to React over the course of several months',
@@ -223,7 +234,7 @@ class Resume extends PureComponent {
                         <br />
                         <b>Additional Front‐End Development</b>
                         <TextList
-                          id="frontend"
+                          id='frontend'
                           items={[
                             'Developed and sold various websites for customers with a variety of tools, including PHP and Javascript',
                             'Oversaw development of corporate websites for companies including Enerfest Inc. and CQI',
@@ -233,7 +244,7 @@ class Resume extends PureComponent {
                         <br />
                         <b>Full Stack Development</b>
                         <TextList
-                          id="fullstack"
+                          id='fullstack'
                           items={[
                             'Developed AlbertaMES in MEAN, a heuristics‐driven web application for environmental models',
                             'Developed CrudeMonitor in LAMP, a data management and analytics tool for Canadian crude oil',
@@ -243,7 +254,7 @@ class Resume extends PureComponent {
                         <br />
                         <b>Back‐End Development</b>
                         <TextList
-                          id="backend"
+                          id='backend'
                           items={[
                             'Developed backend structures and integrated them for AlbertaMES',
                             'Worked with different database implementation methods such as Heroku and BerkeleyDB',
@@ -252,7 +263,7 @@ class Resume extends PureComponent {
                         <br />
                         <b>Python &amp; Google Chatbots</b>
                         <TextList
-                          id="python"
+                          id='python'
                           items={[
                             'Develop various work support tools using Python and Google App Engine',
                             'Examples of tools createed include: live issue tracker, GCP outage tracker, Merge Request tracker, Google Chat threadsaver',
@@ -261,7 +272,7 @@ class Resume extends PureComponent {
                         <br />
                         <b>CI/CD</b>
                         <TextList
-                          id="cicd"
+                          id='cicd'
                           items={[
                             'Supported project migration to true CI/CD through process development & documentation',
                             'Designed and built a new process flow for integrating live, cross-environment feature toggles to support true CI/CD',
@@ -272,7 +283,7 @@ class Resume extends PureComponent {
                         <br />
                         <b>C Programming</b>
                         <TextList
-                          id="cprog"
+                          id='cprog'
                           items={[
                             'Developed process monitoring software for Linux‐based systems',
                             'Implemented basic algorithmic processes and interpreter',
@@ -281,7 +292,7 @@ class Resume extends PureComponent {
                         <br />
                         <b>Ruby / Ruby on Rails:</b>
                         <TextList
-                          id="ror"
+                          id='ror'
                           items={[
                             'Implemented RoR framework in developing a website designed for statistics analysis and dynamic visual representation',
                           ]}
@@ -289,7 +300,7 @@ class Resume extends PureComponent {
                         <br />
                         <b>Java / Android</b>
                         <TextList
-                          id="java"
+                          id='java'
                           items={[
                             'Developed an android application for trading cards',
                             'Developed various side projects for both Android and Java',
@@ -298,7 +309,7 @@ class Resume extends PureComponent {
                         <br />
                         <b>Other Work</b>
                         <TextList
-                          id="other"
+                          id='other'
                           items={[
                             'Expertise in Microsoft products including Excel, Word, Access, PowerPoint',
                             'Developed using multiple OSes, including Ubuntu, OSX and Windows',
@@ -312,11 +323,11 @@ class Resume extends PureComponent {
                     </TextBody>
                   </TextSection>
                 </div>
-                <div className="flex-container container">
-                  <div className="col-md-12 fixed-bottom" />
+                <div className='flex-container container'>
+                  <div className='col-md-12 fixed-bottom' />
                 </div>
               </div>
-              <div id="bottom" />
+              <div id='bottom' />
             </div>
           </div>
         </div>
@@ -326,8 +337,8 @@ class Resume extends PureComponent {
 }
 
 Resume.propTypes = {
-  showLoader: PropTypes.func.isRequired,
   hideLoader: PropTypes.func.isRequired,
+  showLoader: PropTypes.func.isRequired,
 };
 
 export default withTransition(Resume);

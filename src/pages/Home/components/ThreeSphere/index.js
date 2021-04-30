@@ -1,9 +1,11 @@
-import React, { PureComponent } from 'react';
+import React, {
+  PureComponent,
+} from 'react';
 import PropTypes from 'prop-types';
 import * as THREE from 'three';
 
 class ThreeSphere extends PureComponent {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.mouseX = 0;
@@ -33,13 +35,13 @@ class ThreeSphere extends PureComponent {
     this.stop = this.stop.bind(this);
   }
 
-  componentDidMount() {
+  componentDidMount () {
     setTimeout(() => {
       this.init();
     }, 1000);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     window.removeEventListener('resize', this.onWindowResize);
     this.container.removeChild(this.renderer.domElement);
     this.stop();
@@ -51,7 +53,7 @@ class ThreeSphere extends PureComponent {
     this.renderer = null;
   }
 
-  onWindowResize() {
+  onWindowResize () {
     this.windowHalfX = window.innerWidth / 2;
     this.windowHalfY = window.innerHeight / 2;
     this.camera.aspect = window.innerWidth / window.innerHeight;
@@ -59,12 +61,12 @@ class ThreeSphere extends PureComponent {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
-  onDocumentMouseMove(event) {
+  onDocumentMouseMove (event) {
     this.mouseX = (event.clientX - this.windowHalfX) / 2;
     this.mouseY = (event.clientY - this.windowHalfY) / 2;
   }
 
-  onDocumentTouchStart(event) {
+  onDocumentTouchStart (event) {
     if (event.touches.length > 1) {
       // event.preventDefault();
       this.mouseX = event.touches[0].pageX - this.windowHalfX;
@@ -72,7 +74,7 @@ class ThreeSphere extends PureComponent {
     }
   }
 
-  onDocumentTouchMove(event) {
+  onDocumentTouchMove (event) {
     if (event.touches.length === 1) {
       // event.preventDefault();
       this.mouseX = event.touches[0].pageX - this.windowHalfX;
@@ -83,7 +85,7 @@ class ThreeSphere extends PureComponent {
     }
   }
 
-  init() {
+  init () {
     this.container = document.createElement('div');
     document.body.appendChild(this.container);
 
@@ -94,8 +96,8 @@ class ThreeSphere extends PureComponent {
     this.scene = new THREE.Scene();
 
     this.renderer = new THREE.WebGLRenderer({
-      antialias: true,
       alpha: true,
+      antialias: true,
     });
 
     this.renderer.setSize(window.innerWidth, window.innerHeight);
@@ -109,7 +111,7 @@ class ThreeSphere extends PureComponent {
     this.container.appendChild(this.renderer.domElement);
 
     // particles
-    this.material = new THREE.SpriteMaterial({ color: 0xFFB86F });
+    this.material = new THREE.SpriteMaterial({color: 0xFFB86F});
     this.geometry = new THREE.Geometry();
     this.particles = [];
 
@@ -130,7 +132,9 @@ class ThreeSphere extends PureComponent {
 
     // lines
     const line = new THREE.Line(this.geometry,
-      new THREE.LineBasicMaterial({ color: 0x161616, opacity: 1, linewidth: 0.5 }));
+      new THREE.LineBasicMaterial({color: 0x161616,
+        linewidth: 0.5,
+        opacity: 1}));
     this.scene.add(line);
 
     document.addEventListener('mousemove', this.onDocumentMouseMove, false);
@@ -138,18 +142,18 @@ class ThreeSphere extends PureComponent {
     document.addEventListener('touchmove', this.onDocumentTouchMove, false);
     window.addEventListener('resize', this.onWindowResize, false);
 
-    const { hideLoader } = this.props;
+    const {hideLoader} = this.props;
     hideLoader();
 
     this.animate();
   }
 
-  animate() {
+  animate () {
     this.requestId = requestAnimationFrame(this.animate);
     this.animateFrame();
   }
 
-  animateFrame() {
+  animateFrame () {
     if (this.xDirection) {
       if (this.mouseX >= 500) {
         this.xDirection = false;
@@ -177,19 +181,21 @@ class ThreeSphere extends PureComponent {
     this.camera.position.x += (this.mouseX - this.camera.position.x) * 0.015;
     this.camera.position.y += (-this.mouseY - this.camera.position.y) * 0.015;
     this.camera.lookAt(this.scene.position);
-    this.camera.rotation.x += (5 * Math.PI) / 180;
-    this.camera.rotation.y += (5 * Math.PI) / 180;
+    this.camera.rotation.x += 5 * Math.PI / 180;
+    this.camera.rotation.y += 5 * Math.PI / 180;
     this.renderer.render(this.scene, this.camera);
   }
 
-  stop() {
+  stop () {
     cancelAnimationFrame(this.requestId);
     this.requestId = undefined;
   }
 
-  render() {
+  render () {
     return (
-      <div ref={(ref) => { this.mount = ref; }} />
+      <div ref={(ref) => {
+        this.mount = ref;
+      }} />
     );
   }
 }

@@ -1,5 +1,9 @@
-import React, { PureComponent } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import React, {
+  PureComponent,
+} from 'react';
+import {
+  Container, Row, Col,
+} from 'react-bootstrap';
 import anime from 'animejs';
 import PropTypes from 'prop-types';
 
@@ -9,62 +13,65 @@ import withTransition from '../../../common/WithTransition';
 import SmoothScroll from '../../../common/SmoothScroll';
 
 class Questionmark extends PureComponent {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.renderSkills = this.renderSkills.bind(this);
     this.renderProjectDescription = this.renderProjectDescription.bind(this);
     this.renderProjectDeliverables = this.renderProjectDeliverables.bind(this);
   }
 
-  hidePage() {
+  hidePage () {
     anime.remove(this.el);
+
     return anime({
-      targets: this.el,
-      opacity: 0,
       duration: 0,
+      opacity: 0,
+      targets: this.el,
     }).finished;
   }
 
-  animateIn() {
+  animateIn () {
     anime.remove(this.el);
+
     return anime({
+      delay: 1000,
+      duration: 1000,
+      easing: 'easeOutExpo',
+      opacity: [0, 1],
       targets: this.el,
       translateY: [-100, 0],
-      opacity: [0, 1],
-      duration: 1000,
-      delay: 1000,
-      easing: 'easeOutExpo',
     }).finished;
   }
 
-  animateOut() {
+  animateOut () {
     anime.remove(this.el);
-    const { showLoader } = this.props;
+    const {showLoader} = this.props;
     showLoader();
+
     return anime({
+      duration: 1000,
+      easing: 'easeOutExpo',
+      opacity: 0,
       targets: this.el,
       translateY: -100,
-      opacity: 0,
-      duration: 1000,
-      easing: 'easeOutExpo',
     }).finished;
   }
 
-  renderSkills() {
+  renderSkills () {
     return (
       <Container>
         <Row>
-          <Col data-wow-delay="1s">
-            <p className="center-sm paddingtop-0">
-              <span className="b">ERA ++</span>
+          <Col data-wow-delay='1s'>
+            <p className='center-sm paddingtop-0'>
+              <span className='b'>ERA ++</span>
               <br />
               <br />
               2016 - 2019
             </p>
           </Col>
-          <Col data-wow-delay="1.5s">
-            <p className="center-sm paddingtop-0">
-              <span className="b">SKILLS ++</span>
+          <Col data-wow-delay='1.5s'>
+            <p className='center-sm paddingtop-0'>
+              <span className='b'>SKILLS ++</span>
               <br />
               <br />
               Full stack
@@ -74,9 +81,9 @@ class Questionmark extends PureComponent {
               API Development
             </p>
           </Col>
-          <Col data-wow-delay="2s">
-            <p className="center-sm paddingtop-0">
-              <span className="b">TECHNOLOGY ++</span>
+          <Col data-wow-delay='2s'>
+            <p className='center-sm paddingtop-0'>
+              <span className='b'>TECHNOLOGY ++</span>
               <br />
               <br />
               Drupal . PHP
@@ -92,15 +99,15 @@ class Questionmark extends PureComponent {
     );
   }
 
-  renderProjectDescription() {
+  renderProjectDescription () {
     return (
-      <div className="col-md-12">
-        <div className="wow fadeIn">
-          <div className="col-md-12 no-padding">
-            <h3 className="center-sm paddingtop-0">The Project</h3>
+      <div className='col-md-12'>
+        <div className='wow fadeIn'>
+          <div className='col-md-12 no-padding'>
+            <h3 className='center-sm paddingtop-0'>The Project</h3>
             <br />
             <br />
-            <div className="col-md-6">
+            <div className='col-md-6'>
               <p>
                 Questionmark creates assessment technologies.
                 These are tools that (primarily) deal with building
@@ -121,7 +128,7 @@ class Questionmark extends PureComponent {
                 components developed in previous systems.
                 <br />
                 <br />
-                <a href="http://www.questionmark.com" className="btn">View the site</a>
+                <a className='btn' href='http://www.questionmark.com'>View the site</a>
               </p>
             </div>
           </div>
@@ -130,14 +137,14 @@ class Questionmark extends PureComponent {
     );
   }
 
-  renderProjectDeliverables() {
+  renderProjectDeliverables () {
     return (
-      <div className="wow fadeIn">
-        <div className="col-md-12 no-padding">
-          <h3 className="center-sm paddingtop-0">Deliverables</h3>
+      <div className='wow fadeIn'>
+        <div className='col-md-12 no-padding'>
+          <h3 className='center-sm paddingtop-0'>Deliverables</h3>
           <br />
           <br />
-          <div className="col-md-6">
+          <div className='col-md-6'>
             <p>
               Over the course of two years, I was the primary developer
               attached on the LTI tool, and added / upgraded key features
@@ -164,22 +171,25 @@ class Questionmark extends PureComponent {
     );
   }
 
-  render() {
+  render () {
     const sections = [];
     sections[0] = this.renderSkills();
     sections[1] = this.renderProjectDescription();
     sections[2] = this.renderProjectDeliverables();
-    const { hideLoader } = this.props;
+    const {hideLoader} = this.props;
+
     return (
       <SmoothScroll>
-        <div ref={(e) => { this.el = e; }}>
+        <div ref={(e) => {
+          this.el = e;
+        }}>
           <WorkTemplate
             background={BackgroundQuestionmark}
-            title="Questionmark"
-            section={sections}
-            nextTitle="CQI"
-            nextURL="/crudemonitor"
             hideLoader={hideLoader}
+            nextTitle='CQI'
+            nextURL='/crudemonitor'
+            section={sections}
+            title='Questionmark'
           />
         </div>
       </SmoothScroll>
@@ -188,8 +198,8 @@ class Questionmark extends PureComponent {
 }
 
 Questionmark.propTypes = {
-  showLoader: PropTypes.func.isRequired,
   hideLoader: PropTypes.func.isRequired,
+  showLoader: PropTypes.func.isRequired,
 };
 
 export default withTransition(Questionmark);

@@ -1,6 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, {
+  PureComponent,
+} from 'react';
 import WOW from 'wowjs';
-import { Link } from 'react-router-dom';
+import {
+  Link,
+} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import BodySection from './components/BodySection';
@@ -10,69 +14,69 @@ import FixedScroll from '../../../../common/FixedScroll';
 import LineBreak from '../../../../web/assets/line-break.png';
 
 class WorkTemplate extends PureComponent {
-  componentDidMount() {
+  componentDidMount () {
     new WOW.WOW({
-      boxClass: 'wow',
       animateClass: 'animated',
-      offset: 0,
-      mobile: true,
+      boxClass: 'wow',
       live: false,
+      mobile: true,
+      offset: 0,
     }).init();
   }
 
-  render() {
+  render () {
     const {
       background, title, section, nextURL, nextTitle, redirect, hideLoader,
     } = this.props;
+
     return (
-      <div id="scroll-page">
-        <div id="fixed-wrapper" className="fixed-wrapper">
-          <div className="main-container">
-            <div id="scrollContainer" className="flex-container container ">
-              <div className="hide-under col-md-12 left-top">
+      <div id='scroll-page'>
+        <div className='fixed-wrapper' id='fixed-wrapper'>
+          <div className='main-container'>
+            <div className='flex-container container ' id='scrollContainer'>
+              <div className='hide-under col-md-12 left-top'>
                 <BackgroundImage
-                  src={background}
-                  alt="Background"
                   afterLoad={hideLoader}
+                  alt='Background'
+                  src={background}
                 />
                 <FixedScroll
-                  text="Let&rsquo;s continue →"
+                  text='Let&rsquo;s continue →'
                 />
-                <div className="spacer-sm" />
-                <div className="center-sm">
-                  <h2 className="scroll-title">{title}</h2>
-                  <div className="col-md-12">
-                    <img className="line-break" src={LineBreak} alt="Line break" />
+                <div className='spacer-sm' />
+                <div className='center-sm'>
+                  <h2 className='scroll-title'>{title}</h2>
+                  <div className='col-md-12'>
+                    <img alt='Line break' className='line-break' src={LineBreak} />
                   </div>
                 </div>
-                <div className="spacer-xs" />
+                <div className='spacer-xs' />
                 <br />
 
-                { section.map((item, index) => (
-                  <BodySection
+                { section.map((item, index) => {
+                  return <BodySection
                     item={item}
                     key={'body-'.concat(index)}
-                  />
-                ))}
+                  />;
+                })}
 
                 <br />
                 <br />
-                { redirect && (
-                  <div className="wow fadeIn">
-                    <p className="serif">Next Work →</p>
-                    <h3><Link to={nextURL} className="bigstrike" href={nextURL}>{nextTitle}</Link></h3>
-                  </div>
-                )}
-                <div className="spacer-sm" />
+                { redirect &&
+                <div className='wow fadeIn'>
+                  <p className='serif'>Next Work →</p>
+                  <h3><Link className='bigstrike' href={nextURL} to={nextURL}>{nextTitle}</Link></h3>
+                </div>}
+                <div className='spacer-sm' />
               </div>
             </div>
-            <div className="flex-container container">
+            <div className='flex-container container'>
               <br />
               <br />
-              <div className="col-md-12 fixed-bottom" />
+              <div className='col-md-12 fixed-bottom' />
             </div>
           </div>
-          <div id="bottom" />
+          <div id='bottom' />
         </div>
       </div>
     );
@@ -81,17 +85,17 @@ class WorkTemplate extends PureComponent {
 
 WorkTemplate.propTypes = {
   background: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  section: PropTypes.arrayOf(PropTypes.element).isRequired,
-  nextURL: PropTypes.string.isRequired,
-  nextTitle: PropTypes.string.isRequired,
-  redirect: PropTypes.bool,
   hideLoader: PropTypes.func,
+  nextTitle: PropTypes.string.isRequired,
+  nextURL: PropTypes.string.isRequired,
+  redirect: PropTypes.bool,
+  section: PropTypes.arrayOf(PropTypes.element).isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 WorkTemplate.defaultProps = {
-  redirect: true,
   hideLoader: () => {},
+  redirect: true,
 };
 
 export default WorkTemplate;

@@ -11,67 +11,67 @@ import ATBFinancial from './pages/WorkExperiences/ATBFinancial';
 
 export default [
   {
-    key: 'work',
     Component: WorkList,
+    key: 'work',
     path: {
       path: '/work',
     },
   },
   {
-    key: 'resume',
     Component: Resume,
+    key: 'resume',
     path: {
       path: '/resume',
     },
   },
   {
-    key: 'contact',
     Component: Contact,
+    key: 'contact',
     path: {
       path: '/contact',
     },
   },
   {
-    key: 'projects',
     Component: Projects,
+    key: 'projects',
     path: {
       path: '/projects',
     },
   },
   {
-    key: 'atbfinancial',
     Component: ATBFinancial,
+    key: 'atbfinancial',
     path: {
       path: '/atbfinancial',
     },
   },
   {
-    key: 'questionmark',
     Component: Questionmark,
+    key: 'questionmark',
     path: {
       path: '/questionmark',
     },
   },
   {
-    key: 'crudemonitor',
     Component: CrudeMonitor,
+    key: 'crudemonitor',
     path: {
       path: '/crudemonitor',
     },
   },
   {
-    key: 'albertames',
     Component: AlbertaMES,
+    key: 'albertames',
     path: {
       path: '/albertames',
     },
   },
   {
-    key: 'home',
     Component: Home,
+    key: 'home',
     path: {
-      path: '/',
       exact: true,
+      path: '/',
     },
   },
 ];

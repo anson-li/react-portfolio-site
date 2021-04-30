@@ -1,10 +1,12 @@
-import React, { PureComponent } from 'react';
+import React, {
+  PureComponent,
+} from 'react';
 import PropTypes from 'prop-types';
 
 class TextList extends PureComponent {
-  render() {
+  render () {
     const cleanedItems = [];
-    const { id, items } = this.props;
+    const {id, items} = this.props;
 
     items.forEach((element, index) => {
       cleanedItems.push(
@@ -18,7 +20,7 @@ class TextList extends PureComponent {
     });
 
     return (
-      <span className="text-list">
+      <span className='text-list'>
         <br />
         {cleanedItems}
       </span>

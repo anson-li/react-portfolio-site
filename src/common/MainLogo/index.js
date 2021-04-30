@@ -1,12 +1,16 @@
-import React, { PureComponent } from 'react';
-import { Link } from 'react-router-dom';
+import React, {
+  PureComponent,
+} from 'react';
+import {
+  Link,
+} from 'react-router-dom';
 
 import Logo from '../../web/assets/logo.svg';
 
 class MainLogo extends PureComponent {
-  render() {
+  render () {
     return (
-      <Link to="/" id="logo-main" className="d-none d-md-block logo-main" href="/"><img height="150px" id="id-light" src={Logo} alt="Logo" /></Link>
+      <Link className='d-none d-md-block logo-main' href='/' id='logo-main' to='/'><img alt='Logo' height='150px' id='id-light' src={Logo} /></Link>
     );
   }
 }

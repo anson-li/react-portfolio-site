@@ -1,5 +1,7 @@
 import React from 'react';
-import { TweenLite, Power0 } from 'gsap';
+import {
+  TweenLite, Power0,
+} from 'gsap';
 import WOW from 'wowjs';
 import PropTypes from 'prop-types';
 
@@ -15,51 +17,57 @@ class SmoothScroll extends React.Component {
     }
   });
 
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       height: window.innerHeight,
     };
   }
 
-  componentDidMount() {
+  componentDidMount () {
     window.addEventListener('scroll', this.onScroll);
     this.ro.observe(this.viewport);
-    const { height } = this.state;
+    const {height} = this.state;
     new WOW.WOW({
-      boxClass: 'wow',
       animateClass: 'animated',
-      offset: height - 500,
-      mobile: true,
+      boxClass: 'wow',
       live: false,
+      mobile: true,
+      offset: height - 500,
     }).init();
     this.el = null;
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     window.removeEventListener('scroll', this.onScroll);
     this.ro.disconnect();
   }
 
   onScroll = () => {
     TweenLite.to(this.viewport, 1, {
-      y: -window.pageYOffset,
       ease: Power0,
       force3D: true,
       rotationY: 0.01,
+      y: -window.pageYOffset,
     });
   };
 
-  render() {
-    const { children } = this.props;
-    const { height } = this.state;
+  render () {
+    const {children} = this.props;
+    const {height} = this.state;
+
     return (
       <>
-        <div className="viewport" ref={(ref) => { this.viewport = ref; }}>
+        <div
+          className='viewport' ref={(ref) => {
+            this.viewport = ref;
+          }}>
           {children}
         </div>
         <div
-          ref={(ref) => { this.fake = ref; }}
+          ref={(ref) => {
+            this.fake = ref;
+          }}
           style={{
             height,
           }}

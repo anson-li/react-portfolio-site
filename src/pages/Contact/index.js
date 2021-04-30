@@ -1,4 +1,6 @@
-import React, { PureComponent } from 'react';
+import React, {
+  PureComponent,
+} from 'react';
 import anime from 'animejs';
 import PropTypes from 'prop-types';
 
@@ -14,69 +16,76 @@ import SmoothScroll from '../../common/SmoothScroll';
 import BackgroundImage from '../../common/BackgroundImage';
 
 class Contact extends PureComponent {
-  hidePage() {
+  hidePage () {
     anime.remove(this.el);
+
     return anime({
-      targets: this.el,
-      opacity: 0,
       duration: 0,
+      opacity: 0,
+      targets: this.el,
     }).finished;
   }
 
-  animateIn() {
+  animateIn () {
     anime.remove(this.el);
+
     return anime({
+      delay: 1000,
+      duration: 1000,
+      easing: 'easeOutExpo',
+      opacity: [0, 1],
       targets: this.el,
       translateY: [-100, 0],
-      opacity: [0, 1],
-      duration: 1000,
-      delay: 1000,
-      easing: 'easeOutExpo',
     }).finished;
   }
 
-  animateOut() {
+  animateOut () {
     anime.remove(this.el);
-    const { showLoader } = this.props;
+    const {showLoader} = this.props;
     showLoader();
+
     return anime({
+      duration: 1000,
+      easing: 'easeOutExpo',
+      opacity: 0,
       targets: this.el,
       translateY: -100,
-      opacity: 0,
-      duration: 1000,
-      easing: 'easeOutExpo',
     }).finished;
   }
 
-  render() {
-    const { hideLoader } = this.props;
+  render () {
+    const {hideLoader} = this.props;
+
     return (
       <SmoothScroll>
-        <div id="scroll-page" ref={(e) => { this.el = e; }}>
-          <div id="fixed-wrapper" className="fixed-wrapper">
-            <div className="main-container">
-              <div id="scrollContainer" className="flex-container container ">
-                <div className="hide-under col-md-12 left-top">
+        <div
+          id='scroll-page' ref={(e) => {
+            this.el = e;
+          }}>
+          <div className='fixed-wrapper' id='fixed-wrapper'>
+            <div className='main-container'>
+              <div className='flex-container container ' id='scrollContainer'>
+                <div className='hide-under col-md-12 left-top'>
                   <BackgroundImage
-                    src={AnsonBackground}
-                    alt="Background with Anson"
                     afterLoad={hideLoader}
+                    alt='Background with Anson'
+                    src={AnsonBackground}
                   />
-                  <div className="spacer-sm" />
-                  <div className="center-sm">
-                    <h2 className="scroll-title">Contact</h2>
-                    <div className="col-md-12">
-                      <img className="line-break" src={LineBreak} alt="Line break" />
+                  <div className='spacer-sm' />
+                  <div className='center-sm'>
+                    <h2 className='scroll-title'>Contact</h2>
+                    <div className='col-md-12'>
+                      <img alt='Line break' className='line-break' src={LineBreak} />
                     </div>
                   </div>
-                  <div className="spacer-xs" />
+                  <div className='spacer-xs' />
                   <br />
-                  <div className="col-md-12">
-                    <div className="col-md-6">
+                  <div className='col-md-12'>
+                    <div className='col-md-6'>
                       <p>
                         Hi, I&rsquo;m
                         {' '}
-                        <span className="b"> Anson Li</span>
+                        <span className='b'> Anson Li</span>
                         . I&rsquo;m currently out and about, working as a software developer
                         at ATB. When I&rsquo;m not busy learning the ins and outs of React
                         and NodeJS development, I dedicate my learning to full-stack
@@ -88,16 +97,16 @@ class Contact extends PureComponent {
                         like to know -- I&rsquo;m ready.
                         <br />
                         <br />
-                        <div className="crossfade item-one" data-wow-duration="2s">
-                          <a className="img-icon" href="http://github.com/anson-li">
-                            <img className="bottom" src={HoverGithubIcon} alt="Anson's Github, hightlighted" />
-                            <img className="top" src={GithubIcon} alt="Anson's Github" />
+                        <div className='crossfade item-one' data-wow-duration='2s'>
+                          <a className='img-icon' href='http://github.com/anson-li'>
+                            <img alt="Anson's Github, hightlighted" className='bottom' src={HoverGithubIcon} />
+                            <img alt="Anson's Github" className='top' src={GithubIcon} />
                           </a>
                         </div>
-                        <div className="crossfade item-two" data-wow-duration="3s">
-                          <a className="img-icon" href="https://www.linkedin.com/in/anson-ii">
-                            <img className="bottom" src={HoverLinkedInIcon} alt="Anson's LinkedIn, highlighted" />
-                            <img className="top" src={LinkedInIcon} alt="Anson's LinkedIn" />
+                        <div className='crossfade item-two' data-wow-duration='3s'>
+                          <a className='img-icon' href='https://www.linkedin.com/in/anson-ii'>
+                            <img alt="Anson's LinkedIn, highlighted" className='bottom' src={HoverLinkedInIcon} />
+                            <img alt="Anson's LinkedIn" className='top' src={LinkedInIcon} />
                           </a>
                         </div>
                       </p>
@@ -105,17 +114,17 @@ class Contact extends PureComponent {
                   </div>
                 </div>
               </div>
-              <div className="flex-container container">
+              <div className='flex-container container'>
                 <br />
                 <br />
-                <div className="spacer-sm" />
-                <div className="spacer-sm" />
-                <div className="spacer-sm" />
-                <div className="col-md-12 fixed-bottom" />
+                <div className='spacer-sm' />
+                <div className='spacer-sm' />
+                <div className='spacer-sm' />
+                <div className='col-md-12 fixed-bottom' />
               </div>
             </div>
           </div>
-          <div id="bottom" />
+          <div id='bottom' />
         </div>
       </SmoothScroll>
     );
@@ -123,8 +132,8 @@ class Contact extends PureComponent {
 }
 
 Contact.propTypes = {
-  showLoader: PropTypes.func.isRequired,
   hideLoader: PropTypes.func.isRequired,
+  showLoader: PropTypes.func.isRequired,
 };
 
 export default withTransition(Contact);
