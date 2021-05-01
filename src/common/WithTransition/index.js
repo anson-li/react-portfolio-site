@@ -1,6 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/jsx-props-no-spreading */
-
 // Built from https://codesandbox.io/s/mz6rz6zw3x?file=/src/sections/About.js
 import React from 'react';
 import {
