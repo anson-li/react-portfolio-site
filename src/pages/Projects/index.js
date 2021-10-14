@@ -24,6 +24,7 @@ import UnleashedBackground from '../../web/assets/projects/unleashedbot.jpg';
 import SSCTEBackground from '../../web/assets/projects/sscte.jpg';
 import DailyUIBackground from '../../web/assets/projects/dailyui.jpg';
 import TeamAquaBackground from '../../web/assets/projects/teamaqua.jpg';
+import UbeshiBackground from '../../web/assets/projects/ubeshi.jpg';
 
 gsap.registerPlugin(TextPlugin);
 
@@ -33,7 +34,7 @@ class Projects extends PureComponent {
     this.showDescription = this.showDescription.bind(this);
     this.hideDescription = this.hideDescription.bind(this);
     this.countImagesLoaded = this.countImagesLoaded.bind(this);
-    this.imageCount = 7;
+    this.imageCount = 8;
     this.imagesLoaded = 0;
 
     this.awe = React.createRef();
@@ -43,8 +44,18 @@ class Projects extends PureComponent {
     this.dailyui = React.createRef();
     this.teamaqua = React.createRef();
     this.sscte = React.createRef();
+    this.ubeshi = React.createRef();
 
     this.projects = [
+      {
+        date: 'October 2021',
+        description: 'gsap / gcp / education and exploratory development',
+        externalLink: 'https://www.ubeshi.com',
+        image: UbeshiBackground,
+        internalLink: undefined,
+        ref: this.ubeshi,
+        title: 'Ubeshi',
+      },
       {
         date: 'January 2020',
         description: 'three.js / react / exploration in web & 3D space',
@@ -121,7 +132,9 @@ class Projects extends PureComponent {
       SSCTEBackground,
       DailyUIBackground,
       TeamAquaBackground,
-    ].forEach(() => {
+    ].forEach((picture) => {
+      const img = new Image();
+      img.src = picture.fileName;
       this.countImagesLoaded();
     });
 
