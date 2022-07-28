@@ -48,7 +48,7 @@ class Projects extends PureComponent {
 
     this.projects = [
       {
-        date: 'October 2021',
+        date: 'Active Development',
         description: 'gsap / gcp / education and exploratory development',
         externalLink: 'https://www.ubeshi.com',
         image: UbeshiBackground,
@@ -57,7 +57,7 @@ class Projects extends PureComponent {
         title: 'Ubeshi',
       },
       {
-        date: 'January 2020',
+        date: 'Active Development',
         description: 'three.js / react / exploration in web & 3D space',
         externalLink: 'https://awe.anson.li',
         image: AWEBackground,

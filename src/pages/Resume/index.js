@@ -93,22 +93,61 @@ class Resume extends PureComponent {
                     <TextHeader text='Overview' />
                     <TextBody>
                       <p>
-                        Versatile software engineer with solid experience in full-stack
-                        technologies, and a strong suite of supplementary languages.
-                        Strong background in team management and support with hands-on
-                        experience in project development and management.
+                        Versatile software engineer with solid experience in full-stack technologies,
+                        a strong suite of supplementary languages, and a passion for user experience.
+                        Strong background in team management and support with hands-on experience in
+                        project development and management. Passion for learning and adapting to new
+                        technologies to produce professional-level code.
                         <br />
                         <TextList
                           id='overview'
                           items={[
-                            '6+ years combined project and software experience in full-stack development',
-                            'Experience in project management and agile development methods with startups and established business solution' +
-                            ' providers; projects ranged from $2k - $3m',
-                            'Knowledgeable of asset management, code quality, and code security',
-                            'Passion for learning and adapting to new technologies to produce professional-level code.',
+                            '7+ years of combined experience in full-stack and front-end development',
+                            'Experience in project management and agile development methods with startups and ' +
+                            'established business solution providers; projects ranged from $2k - $3m',
+                            'Strong experience in web design and front-end development through both personal projects and professional business applications',
+                            'Proven ability to work in multidisciplinary teams of 4 - 30 members to meet project deliverables and deadlines',
                           ]}
                         />
                       </p>
+                    </TextBody>
+                  </TextSection>
+
+                  <TextSection>
+                    <TextHeader text='Technical Experience' />
+                    <TextBody>
+                      <Container className='container-border'>
+                        <Row>
+                          <Col data-wow-delay='0.5s' sm={4}><p><b>Web &amp; Frontend Development</b></p></Col>
+                          <Col data-wow-delay='1s' sm={8}>
+                            <p>React, React Native, node.js, Javascript, PHP, HTML/CSS/SASS, three.js, GSAP, Webpack, Babel</p>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col data-wow-delay='0.5s' sm={4}><p><b>Agile</b></p></Col>
+                          <Col data-wow-delay='1s' sm={8}><p>Scrum, Kanban, SAFE, Scrumban</p></Col>
+                        </Row>
+                        <Row>
+                          <Col data-wow-delay='0.5s' sm={4}><p><b>Architectures</b></p></Col>
+                          <Col data-wow-delay='1s' sm={8}><p>JamSTACK, LAMP, MERN, Django, AngularJS, Nginx</p></Col>
+                        </Row>
+                        <Row>
+                          <Col data-wow-delay='0.5s' sm={4}><p><b>Additional Languages</b></p></Col>
+                          <Col data-wow-delay='1s' sm={8}><p>Java, Ruby, Powershell, Python</p></Col>
+                        </Row>
+                        <Row>
+                          <Col data-wow-delay='0.5s' sm={4}><p><b>Source Control &amp; CICD</b></p></Col>
+                          <Col data-wow-delay='1s' sm={8}><p>Git, SVN, Github, Gitlab, Github Actions, Jenkins, GCP</p></Col>
+                        </Row>
+                        <Row>
+                          <Col data-wow-delay='0.5s' sm={4}><p><b>Backend Development</b></p></Col>
+                          <Col data-wow-delay='1s' sm={8}><p>SQLite, MySQL, Google Firestore</p></Col>
+                        </Row>
+                        <Row>
+                          <Col data-wow-delay='0.5s' sm={4}><p><b>UX, UI</b></p></Col>
+                          <Col data-wow-delay='1s' sm={8}><p>Sketch, Photoshop, Figma, Adobe After Effects</p></Col>
+                        </Row>
+                      </Container>
                     </TextBody>
                   </TextSection>
 
@@ -138,10 +177,26 @@ class Resume extends PureComponent {
                     </TextBody>
                   </TextSection>
 
-                  <TextSection>
+                  <TextSection bottomPadding bottomSpacer={false}>
                     <TextHeader text='Work Experience' />
                     <TextBody>
                       <p>
+                        <b>Lead Developer - ATB Ventures</b>
+                        , ATB Financial Ltd. || Edmonton, AB
+                        <br />
+                        June 2021 - Now
+                        <TextList
+                          id='atb-ventures'
+                          items={[
+                            'Accelerated the development and deployment of Proof, a digital wallet built using Hyperledger and React Native.',
+                            'Spearheaded development of key web projects including Proof and Oliu’s customer-facing sites, as well as ATB Ventures’ main site',
+                            'Managed design, workflow and development of key marketing tools including a dynamic email template generator for marketing staff',
+                            'Coordinated with design and engineering teams to create minimum viable products' +
+                              'and proof of concepts using technologies such as GSAP, blockchain, and AI',
+                          ]}
+                        />
+                        <br />
+                        <br />
                         <b>Software Engineer</b>
                         , ATB Financial Ltd. || Edmonton, AB
                         <br />
@@ -161,7 +216,7 @@ class Resume extends PureComponent {
                         <b>Team Gateway - Software Developer</b>
                         , Questionmark Computing Ltd. || Edmonton, AB
                         <br />
-                        May 2017 ‐ December 2018
+                        September 2016 ‐ December 2018
                         <TextList
                           id='questionmark-intermediate'
                           items={[
@@ -170,21 +225,6 @@ class Resume extends PureComponent {
                             'Created and maintained a variety of products and tools, in coordination with other teams as scrum master',
                             'Lead planning and design of critical features, of which directly resulted in revenue in excess of $200,000',
                             'Worked with the community to identify Learning Tool Interoperability framework improvements',
-                          ]}
-                        />
-                        <br />
-                        <br />
-                        <b>Team Gateway - Junior Developer</b>
-                        , Questionmark Computing Ltd. || Edmonton, AB
-                        <br />
-                        September ‐ December 2016
-                        <TextList
-                          id='questionmark-junior'
-                          items={[
-                            'Created a Learning Tools Interoperability tool for connecting Questionmark with major educational institutions',
-                            'Completed 7 sprints  as part of a five-member team to integrate and upgrade core Questionmark products',
-                            'Presented code and deliverables to staff and clientele, to identify key changes and updates on core software',
-                            'Utilised planning and organizational skills to manage tight development deadlines and competing priorities',
                           ]}
                         />
                         <br />
@@ -215,111 +255,6 @@ class Resume extends PureComponent {
                               'complexity in selection and implementation of popular environmental models in Canada',
                             'Engaged in full-stack development to design and develop key systems in PHP',
                             'Served as technical reference for both web technologies and ArcGIS for development team',
-                          ]}
-                        />
-                      </p>
-                    </TextBody>
-                  </TextSection>
-
-                  <TextSection bottomPadding bottomSpacer={false}>
-                    <TextHeader text='Software Experience' />
-                    <TextBody>
-                      <p>
-                        <b>React</b>
-                        <TextList
-                          id='frontend'
-                          items={[
-                            '3+ years of experience of building both professional web applications and personal sites',
-                            'Converted personal portfolio to React over the course of several months',
-                            'Oversaw React development as part of the Front-End Center of Excellence team within ATB',
-                          ]}
-                        />
-                        <br />
-                        <b>Additional Front‐End Development</b>
-                        <TextList
-                          id='frontend'
-                          items={[
-                            'Developed and sold various websites for customers with a variety of tools, including PHP and Javascript',
-                            'Oversaw development of corporate websites for companies including Enerfest Inc. and CQI',
-                            'Designed and created various experimental web projects using tools including three.js and GSAP',
-                          ]}
-                        />
-                        <br />
-                        <b>Full Stack Development</b>
-                        <TextList
-                          id='fullstack'
-                          items={[
-                            'Developed AlbertaMES in MEAN, a heuristics‐driven web application for environmental models',
-                            'Developed CrudeMonitor in LAMP, a data management and analytics tool for Canadian crude oil',
-                            'Worked on Team Member Tools as part of ATB\'s initiative, using React and node.js',
-                          ]}
-                        />
-                        <br />
-                        <b>Back‐End Development</b>
-                        <TextList
-                          id='backend'
-                          items={[
-                            'Developed backend structures and integrated them for AlbertaMES',
-                            'Worked with different database implementation methods such as Heroku and BerkeleyDB',
-                          ]}
-                        />
-                        <br />
-                        <b>Python &amp; Google Chatbots</b>
-                        <TextList
-                          id='python'
-                          items={[
-                            'Develop various work support tools using Python and Google App Engine',
-                            'Examples of tools createed include: live issue tracker, GCP outage tracker, Merge Request tracker, Google Chat threadsaver',
-                          ]}
-                        />
-                        <br />
-                        <b>CI/CD</b>
-                        <TextList
-                          id='cicd'
-                          items={[
-                            'Supported project migration to true CI/CD through process development & documentation',
-                            'Designed and built a new process flow for integrating live, cross-environment feature toggles to support true CI/CD',
-                            'Led various deployments as part of the CI/CD process; working with developers, managers, and clients',
-                            'Used Kubernetes and GCP web tools to analyse system health and diagnose errors',
-                          ]}
-                        />
-                        <br />
-                        <b>C Programming</b>
-                        <TextList
-                          id='cprog'
-                          items={[
-                            'Developed process monitoring software for Linux‐based systems',
-                            'Implemented basic algorithmic processes and interpreter',
-                          ]}
-                        />
-                        <br />
-                        <b>Ruby / Ruby on Rails:</b>
-                        <TextList
-                          id='ror'
-                          items={[
-                            'Implemented RoR framework in developing a website designed for statistics analysis and dynamic visual representation',
-                          ]}
-                        />
-                        <br />
-                        <b>Java / Android</b>
-                        <TextList
-                          id='java'
-                          items={[
-                            'Developed an android application for trading cards',
-                            'Developed various side projects for both Android and Java',
-                          ]}
-                        />
-                        <br />
-                        <b>Other Work</b>
-                        <TextList
-                          id='other'
-                          items={[
-                            'Expertise in Microsoft products including Excel, Word, Access, PowerPoint',
-                            'Developed using multiple OSes, including Ubuntu, OSX and Windows',
-                            'Worked with various graphics and photo editing software including Photoshop and Sketch',
-                            'Developed with other languages and frameworks such as Python and ASP.net',
-                            'Experienced in various version control systems, including Git and Subversion',
-                            'Worked with tools including Visual Studio Code, Eclipse and Postman',
                           ]}
                         />
                       </p>
